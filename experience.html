@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikita Muromtsev - Experience</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <style>
+        html { scroll-behavior: smooth; }
+        .hero.is-dark {
+            background: linear-gradient(135deg, #1e3a8a, #9333ea);
+        }
+        @media screen and (min-width: 769px) {
+            .navbar-menu { display: flex !important; }
+            .navbar-burger { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="./">Home</a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navMenu" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="./#projects">Projects</a>
+                <a class="navbar-item" href="#">Experience</a>
+                <a class="navbar-item" href="./#contact">Contacts</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero is-dark is-medium">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title has-text-light">Experience &amp; CV</h1>
+                <p class="subtitle has-text-light">Highlights of my professional path</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container content">
+            <h2 class="title is-4">Roles &amp; Projects</h2>
+            <ul>
+                <li><strong>BeePlus</strong> – Product manager leading process management system development.</li>
+                <li><strong>Freelance</strong> – Full-stack development, mentoring, Telegram bots.</li>
+                <li><strong>BASEL Group</strong> – Project manager and automation developer.</li>
+                <li><strong>MSU Instructor</strong> – Python teaching and research.</li>
+            </ul>
+            <p class="mt-4">More details on <a href="https://www.linkedin.com/in/muromcevn" target="_blank">LinkedIn</a>.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p><a href="./">Back to main page</a></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.navbar-burger');
+            const menu = document.querySelector('#navMenu');
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+            });
+        });
+    </script>
+</body>
+</html>

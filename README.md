@@ -4,11 +4,13 @@ This repository contains the source for my personal landing page and portfolio. 
 
 Visit the site here: <https://nikmedoed.github.io>
 
-The landing page features:
+Main page features:
 
-- Short introduction and hero section
-- Highlights of my open source projects
-- Brief summary of experience
+- Short introduction and call to view my CV
+- Highlights of selected open source projects
+- Quick about section with link to the full experience page
 - Contact links and donation options
+
+The separate `experience.html` page contains a concise resume.
 
 Feel free to explore the code or get in touch if you have questions!
