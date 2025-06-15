@@ -28,3 +28,10 @@
 .project-card .card-content {
   flex-grow: 1;
 }
+
+.project-card .card-image video,
+.project-card .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
