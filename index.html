@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nikita Muromtsev - Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
     <style>
         html { scroll-behavior: smooth; }
 
@@ -56,8 +56,15 @@
         }
 
         .project-card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
             transition: transform 0.2s, box-shadow 0.2s;
             border-top: 4px solid var(--c-yellow);
+        }
+
+        .project-card .card-footer {
+            margin-top: auto;
         }
 
         .project-card:hover {
@@ -108,7 +115,7 @@
                     <div class="card project-card">
                         <div class="card-content">
                             <p class="title is-5">Pishow</p>
-                            <p>Lightweight slideshow for old devices using pure HTML &amp; meta refresh.</p>
+                            <p>Minimal slideshow server for legacy TVs and tablets. Uses plain HTML with meta refresh; each device has its own queue and settings.</p>
                         </div>
                         <footer class="card-footer">
                             <a href="https://github.com/nikmedoed/pishow" class="card-footer-item">GitHub</a>
@@ -119,7 +126,7 @@
                     <div class="card project-card">
                         <div class="card-content">
                             <p class="title is-5">OLED Screensaver</p>
-                            <p>Black out OLED screens via hotkeys or idle detection without affecting others.</p>
+                            <p>Fullscreen black screen utility to save OLED panels. Auto-activates on idle and can be toggled via global hotkey.</p>
                         </div>
                         <footer class="card-footer">
                             <a href="https://github.com/nikmedoed/oled_screensaver" class="card-footer-item">GitHub</a>
@@ -130,7 +137,7 @@
                     <div class="card project-card">
                         <div class="card-content">
                             <p class="title is-5">Easy Video Compress</p>
-                            <p>Shell-integrated video compressor optimized for social networks.</p>
+                            <p>FFmpeg-based compression script with batch processing and Windows context menu integration.</p>
                         </div>
                         <footer class="card-footer">
                             <a href="https://github.com/nikmedoed/easy-video-compress" class="card-footer-item">GitHub</a>
@@ -141,7 +148,7 @@
                     <div class="card project-card">
                         <div class="card-content">
                             <p class="title is-5">Windows Backup Tool</p>
-                            <p>GUI utility for incremental backups of selected folders.</p>
+                            <p>Incremental backup utility for Windows folders with scheduling and exclusion rules.</p>
                         </div>
                         <footer class="card-footer">
                             <a href="https://github.com/nikmedoed/windows_backup_tool" class="card-footer-item">GitHub</a>
@@ -152,10 +159,98 @@
                     <div class="card project-card">
                         <div class="card-content">
                             <p class="title is-5">Real-time Speech to Input</p>
-                            <p>Whisper-based tool for dictating into any text field in real time.</p>
+                            <p>Whisper-powered utility to dictate directly into any text field with minimal delay.</p>
                         </div>
                         <footer class="card-footer">
                             <a href="https://github.com/nikmedoed/speech_to_input" class="card-footer-item">GitHub</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card project-card">
+                        <div class="card-content">
+                            <p class="title is-5">Telegram Important Notifies</p>
+                            <p>Monitors chosen chats and forwards messages matching configured queries to a target account.</p>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="https://github.com/nikmedoed/Telegram-important-notifies" class="card-footer-item">GitHub</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card project-card">
+                        <div class="card-content">
+                            <p class="title is-5">Meetings Timer</p>
+                            <p>Stage-based timer for online meetings. Helps stick to your agenda even if you go off schedule.</p>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="https://github.com/nikmedoed/meetings-timer" class="card-footer-item">GitHub</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card project-card">
+                        <div class="card-content">
+                            <p class="title is-5">Vocabulary Coach Bot</p>
+                            <p>Telegram bot using Google Sheets as a database to drill answers via typing or multiple choice.</p>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="https://github.com/nikmedoed/vocabulary_coach_bot" class="card-footer-item">GitHub</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card project-card">
+                        <div class="card-content">
+                            <p class="title is-5">PP to Stories</p>
+                            <p>Turns PowerPoint slides into Instagram-ready stories, exporting images and MP4 clips.</p>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="https://github.com/nikmedoed/PP_to_stories" class="card-footer-item">GitHub</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card project-card">
+                        <div class="card-content">
+                            <p class="title is-5">pyMapCollector</p>
+                            <p>Captures large map images by stitching screenshots of interactive services like Miro or maps.</p>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="https://github.com/nikmedoed/pyMapCollector" class="card-footer-item">GitHub</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card project-card">
+                        <div class="card-content">
+                            <p class="title is-5">Tampermonkey Scripts</p>
+                            <p>Collection of handy scripts for multi-site search, playlist management, and UI tweaks.</p>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="https://github.com/nikmedoed/myTampermonkeyScripts" class="card-footer-item">GitHub</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card project-card">
+                        <div class="card-content">
+                            <p class="title is-5">YT Auto Playlist</p>
+                            <p>Browser extension that builds playlists from new YouTube subscriptions with advanced filters.</p>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="https://github.com/nikmedoed/YTautoPlaylist" class="card-footer-item">GitHub</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card project-card">
+                        <div class="card-content">
+                            <p class="title is-5">WhatsApp Utilities</p>
+                            <p>Automation scripts for WhatsApp Web using Selenium with session management and file support.</p>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="https://github.com/nikmedoed/WAutils" class="card-footer-item">GitHub</a>
                         </footer>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 # nikmedoed.github.io
 
-This repository contains the source for my personal landing page and portfolio. The site is a simple static page built with [Bulma](https://bulma.io) and hosted on GitHub Pages. It uses a custom color palette from my "Resist, Invent & Projects" blog.
+This repository contains the source for my personal landing page and portfolio. The site is a simple static page built with [Bulma 1.0](https://bulma.io) and hosted on GitHub Pages. It uses a custom color palette from my "Resist, Invent & Projects" blog.
 
 Visit the site here: <https://nikmedoed.github.io>
 
