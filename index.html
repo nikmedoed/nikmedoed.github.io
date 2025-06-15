@@ -3,97 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikita Muromtsev - Portfolio</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <title>Nikita Muromtsev - Landing Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        .card:hover {
+        .project-card:hover {
             transform: translateY(-5px);
-            transition: all 0.3s ease;
-        }
-
-        .section-title {
-            border-bottom: 2px solid #0d6efd;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        .footer {
-            font-size: 0.9rem;
+            transition: transform 0.2s ease;
         }
     </style>
 </head>
-<body class="bg-light">
-<div class="container py-5">
-    <header class="mb-5">
-        <h1 class="text-primary">Nikita Muromtsev</h1>
-        <p class="lead">Senior Full-Stack Engineer | Technical Product Manager | Universal Engineer</p>
-    </header>
-
-    <section class="mb-5">
-        <h2 class="section-title">About Me</h2>
-        <p>Versatile Python & JavaScript developer with 8+ years of experience. Expert in creating end-to-end management
-            systems, automation solutions, mobile apps, chatbots, and browser extensions. Passionate about systematic
-            thinking, product strategy, and clean code. Open to relocation within the EU or remote opportunities.</p>
-    </section>
-
-    <section class="mb-5">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <!-- Example project card -->
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <h5 class="card-title">📺 Pishow</h5>
-                        <p class="card-text">Lightweight slideshow for old devices using pure HTML & meta refresh.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="https://github.com/nikmedoed/pishow" class="btn btn-primary btn-sm" target="_blank">View
-                            on GitHub</a>
-                    </div>
-                </div>
+<body>
+    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">Nikita Muromtsev</a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navMenu" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="#projects">Projects</a>
+                <a class="navbar-item" href="#experience">Experience</a>
+                <a class="navbar-item" href="#contact">Contacts</a>
             </div>
-            <!-- Repeat cards similarly for other projects -->
+        </div>
+    </nav>
+
+    <section class="hero is-primary is-bold">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title">Nikita Muromtsev</h1>
+                <h2 class="subtitle">Full-stack Developer & Technical Product Manager</h2>
+                <a href="#experience" class="button is-light">If you need a strong specialist, see my experience</a>
+            </div>
         </div>
     </section>
 
-    <section class="mb-5">
-        <h2 class="section-title">Resume</h2>
-        <ul>
-            <li><strong>BeePlus</strong>: Product Manager, process management solutions</li>
-            <li><strong>Freelance</strong>: Full-stack solutions, Python mentoring, React Native apps, Telegram bots
-            </li>
-            <li><strong>BASEL Group</strong>: Project manager & developer, business automation</li>
-            <li><strong>MSU Instructor</strong>: Python, crystallography research, data analysis</li>
-        </ul>
-        <p><a href="https://www.linkedin.com/in/muromcevn" target="_blank">LinkedIn Profile</a></p>
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="title is-3">Featured Projects</h2>
+            <div class="columns is-multiline">
+                <div class="column is-one-third">
+                    <div class="card project-card">
+                        <div class="card-content">
+                            <p class="title is-5">Pishow</p>
+                            <p>Lightweight slideshow for old devices using pure HTML &amp; meta refresh.</p>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="https://github.com/nikmedoed/pishow" class="card-footer-item">GitHub</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card project-card">
+                        <div class="card-content">
+                            <p class="title is-5">OLED Screensaver</p>
+                            <p>Quickly hide OLED screens via hotkeys or idle detection without affecting others.</p>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="https://github.com/nikmedoed/oled_screensaver" class="card-footer-item">GitHub</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card project-card">
+                        <div class="card-content">
+                            <p class="title is-5">Easy Video Compress</p>
+                            <p>Shell-integrated video compressor optimized for messengers and social networks.</p>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="https://github.com/nikmedoed/easy-video-compress" class="card-footer-item">GitHub</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card project-card">
+                        <div class="card-content">
+                            <p class="title is-5">Windows Backup Tool</p>
+                            <p>GUI utility for incremental backups of selected folders with scheduling and exclusions.</p>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="https://github.com/nikmedoed/windows_backup_tool" class="card-footer-item">GitHub</a>
+                        </footer>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card project-card">
+                        <div class="card-content">
+                            <p class="title is-5">Real-time Speech to Input</p>
+                            <p>Whisper-based tool for dictating into any text field in real time.</p>
+                        </div>
+                        <footer class="card-footer">
+                            <a href="https://github.com/nikmedoed/speech_to_input" class="card-footer-item">GitHub</a>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="mb-5">
-        <h2 class="section-title">Contact</h2>
-        <p>Email: <a href="mailto:nikmedoed@gmail.com">nikmedoed@gmail.com</a><br>
-            Telegram: <a href="https://t.me/nikmedoed">@nikmedoed</a></p>
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="title is-3">Experience</h2>
+            <ul>
+                <li><strong>BeePlus</strong>: Product manager building process management solutions</li>
+                <li><strong>Freelance</strong>: Full-stack development, mentoring, Telegram bots</li>
+                <li><strong>BASEL Group</strong>: Project manager and automation developer</li>
+                <li><strong>MSU Instructor</strong>: Python teaching and research</li>
+            </ul>
+            <p class="mt-3"><a href="https://www.linkedin.com/in/muromcevn" target="_blank">LinkedIn Profile</a></p>
+        </div>
     </section>
 
-    <section class="mb-5">
-        <h2 class="section-title">Support Me</h2>
-        <p>If you like my projects, consider supporting me:</p>
-        <ul>
-            <li><a href="https://ko-fi.com/nikmedoed">Ko-fi</a> | <a
-                    href="https://boosty.to/nikmedoed/donate">Boosty</a> | <a href="https://paypal.me/etonikmedoed">PayPal</a>
-                | <a href="https://yoomoney.ru/to/4100119049495394">ЮMoney</a></li>
-            <li>Crypto: BTC (1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7), USDT TRC20 (TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE), TON
-                (UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N)
-            </li>
-        </ul>
+    <section class="section">
+        <div class="container">
+            <h2 class="title is-3">About Me</h2>
+            <p>Versatile Python &amp; JavaScript engineer with 8+ years crafting automation systems and utilities. Passionate about systematic thinking, clean code, and impactful products. Open to European remote opportunities.</p>
+        </div>
     </section>
 
-    <footer class="footer text-muted text-center py-4">
-        &copy; 2025 Nikita Muromtsev. Built with Bootstrap.
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="title is-3">Contacts &amp; Donations</h2>
+            <p>Email: <a href="mailto:nikmedoed@gmail.com">nikmedoed@gmail.com</a> &nbsp;|&nbsp;
+               Telegram: <a href="https://t.me/nikmedoed">@nikmedoed</a></p>
+            <p>Support my work:</p>
+            <ul>
+                <li><a href="https://ko-fi.com/nikmedoed">Ko-fi</a> | <a href="https://boosty.to/nikmedoed/donate">Boosty</a> | <a href="https://paypal.me/etonikmedoed">PayPal</a> | <a href="https://yoomoney.ru/to/4100119049495394">YooMoney</a></li>
+                <li>BTC: <code>1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7</code></li>
+                <li>USDT (TRC20): <code>TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE</code></li>
+                <li>TON (USDT-TON): <code>UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N</code></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>&copy; 2025 Nikita Muromtsev. Built with Bulma.</p>
+            <p><a href="https://github.com/nikmedoed">GitHub</a> | <a href="https://www.linkedin.com/in/muromcevn">LinkedIn</a></p>
+        </div>
     </footer>
-</div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.navbar-burger');
+            const menu = document.querySelector('#navMenu');
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+            });
+        });
+    </script>
 </body>
 </html>
