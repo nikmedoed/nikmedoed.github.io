@@ -1,41 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikita Muromtsev - Experience</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nikita Muromtsev - Experience</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="nav">
-        <div class="logo"><a href="./">Home</a></div>
-        <div class="menu">
-            <a href="./#projects">Projects</a>
-            <a href="#">Experience</a>
-            <a href="./#contact">Contacts</a>
-        </div>
-    </nav>
+  <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="./">Home</a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="./#projects">Projects</a>
+        <a class="navbar-item" href="#">Experience</a>
+        <a class="navbar-item" href="./#contact">Contacts</a>
+      </div>
+    </div>
+  </nav>
 
-    <section class="hero">
-        <h1 class="gradient-text">Experience & CV</h1>
-        <p>Highlights of my professional path</p>
-    </section>
+  <section class="hero is-medium gradient-bg">
+    <div class="hero-body has-text-centered">
+      <h1 class="title gradient-text">Experience & CV</h1>
+      <p class="subtitle">Highlights of my professional path</p>
+    </div>
+  </section>
 
-    <section class="about">
-        <h2>Roles & Projects</h2>
-        <ul style="list-style: disc; max-width: 800px; margin: 0 auto; text-align:left;">
-            <li><strong>BeePlus</strong> – Product manager leading process management system development.</li>
-            <li><strong>Freelance</strong> – Full-stack development, mentoring, Telegram bots.</li>
-            <li><strong>BASEL Group</strong> – Project manager and automation developer.</li>
-            <li><strong>MSU Instructor</strong> – Python teaching and research.</li>
+  <section class="section">
+    <div class="container">
+      <h2 class="title has-text-centered has-text-danger mb-5">Roles & Projects</h2>
+      <div class="content">
+        <ul>
+          <li><strong>BeePlus</strong> – Product manager leading service company process management system.</li>
+          <li><strong>Freelance</strong> – Full-stack development, mentoring and Telegram bots.</li>
+          <li><strong>BASEL Group</strong> – Project manager and automation developer.</li>
+          <li><strong>MSU Instructor</strong> – Python teaching and research.</li>
         </ul>
-        <p style="margin-top:1rem;">More details on <a href="https://www.linkedin.com/in/muromcevn" target="_blank">LinkedIn</a>.</p>
-    </section>
+        <p>More details on <a href="https://www.linkedin.com/in/muromcevn" target="_blank">LinkedIn</a>.</p>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p><a href="./" style="color:#fa33fe">Back to main page</a></p>
-    </footer>
+  <footer class="footer has-background-black has-text-centered has-text-white">
+    <div class="content">
+      <p><a href="./" class="has-text-warning">Back to main page</a></p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach( el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+    });
+  </script>
 </body>
 </html>

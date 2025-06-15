@@ -2,124 +2,250 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nikita Muromtsev - Portfolio</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="nav">
-        <div class="logo"><a href="./">Nikita Muromtsev</a></div>
-        <div class="menu">
-            <a href="#projects">Projects</a>
-            <a href="experience.html">Experience</a>
-            <a href="#contact">Contacts</a>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="./">Nikita Muromtsev</a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="#projects">Featured Projects</a>
+          <a class="navbar-item" href="experience.html">Experience</a>
+          <a class="navbar-item" href="#contact">Contacts</a>
         </div>
+      </div>
     </nav>
 
-    <section class="hero">
-        <h1 class="gradient-text">Resist, Invent & Projects</h1>
-        <p>Full-stack developer & product-minded problem solver</p>
-        <a class="btn" href="experience.html">See my CV</a>
+    <section class="hero is-medium is-bold gradient-bg">
+      <div class="hero-body has-text-centered">
+        <p class="title gradient-text">Resist, Invent & Projects</p>
+        <p class="subtitle">Full-stack developer & product-minded problem solver</p>
+        <a class="button is-warning is-medium" href="experience.html">See my CV</a>
+      </div>
     </section>
 
-    <section id="projects" class="projects">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-            <div class="card">
-                <h3>Pishow</h3>
-                <p>Minimal slideshow server for legacy TVs and tablets using only HTML.</p>
-                <a href="https://github.com/nikmedoed/pishow">GitHub</a>
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="title has-text-centered has-text-link-dark mb-6">Featured Projects</h2>
+        <div class="columns is-multiline">
+
+          <div class="column is-one-third">
+            <div class="card project-card">
+              <div class="card-content">
+                <p class="title is-5">Pishow</p>
+                <p class="content">Lightweight slideshow for old devices using pure HTML & meta refresh.</p>
+              </div>
+              <footer class="card-footer">
+                <a href="https://github.com/nikmedoed/pishow" class="card-footer-item">GitHub</a>
+              </footer>
             </div>
-            <div class="card">
-                <h3>OLED Screensaver</h3>
-                <p>Blackout a specific OLED screen via hotkey or idle timer, leaving others active.</p>
-                <a href="https://github.com/nikmedoed/oled_screensaver">GitHub</a>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="card project-card">
+              <div class="card-content">
+                <p class="title is-5">OLED Screensaver</p>
+                <p class="content">Blacks a selected OLED display via hotkey or idle timer.</p>
+              </div>
+              <footer class="card-footer">
+                <a href="https://github.com/nikmedoed/oled_screensaver" class="card-footer-item">GitHub</a>
+              </footer>
             </div>
-            <div class="card">
-                <h3>Easy Video Compress</h3>
-                <p>FFmpeg-based video compressor for messengers and social networks.</p>
-                <a href="https://github.com/nikmedoed/easy-video-compress">GitHub</a>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="card project-card">
+              <div class="card-content">
+                <p class="title is-5">Easy Video Compress</p>
+                <p class="content">Shell-integrated video compressor for social media and messengers.</p>
+              </div>
+              <footer class="card-footer">
+                <a href="https://github.com/nikmedoed/easy-video-compress" class="card-footer-item">GitHub</a>
+              </footer>
             </div>
-            <div class="card">
-                <h3>Windows Backup Tool</h3>
-                <p>Incremental backup utility for selected folders with scheduling and exclusions.</p>
-                <a href="https://github.com/nikmedoed/windows_backup_tool">GitHub</a>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="card project-card">
+              <div class="card-content">
+                <p class="title is-5">Windows Backup Tool</p>
+                <p class="content">Incremental backup utility with scheduling and exclusions.</p>
+              </div>
+              <footer class="card-footer">
+                <a href="https://github.com/nikmedoed/windows_backup_tool" class="card-footer-item">GitHub</a>
+              </footer>
             </div>
-            <div class="card">
-                <h3>Real-time Speech to Input</h3>
-                <p>Dictate into any text field in real time using Whisper and pynput.</p>
-                <a href="https://github.com/nikmedoed/speech_to_input">GitHub</a>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="card project-card">
+              <div class="card-content">
+                <p class="title is-5">Real-time Speech to Input</p>
+                <p class="content">Whisper-powered dictation into any text input field.</p>
+              </div>
+              <footer class="card-footer">
+                <a href="https://github.com/nikmedoed/speech_to_input" class="card-footer-item">GitHub</a>
+              </footer>
             </div>
-            <div class="card">
-                <h3>Telegram Important Notifies</h3>
-                <p>Monitors chosen chats and forwards messages matching your queries.</p>
-                <a href="https://github.com/nikmedoed/Telegram-important-notifies">GitHub</a>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="card project-card">
+              <div class="card-content">
+                <p class="title is-5">Telegram Important Notifies</p>
+                <p class="content">Monitors chosen chats and forwards messages matching your queries.</p>
+              </div>
+              <footer class="card-footer">
+                <a href="https://github.com/nikmedoed/Telegram-important-notifies" class="card-footer-item">GitHub</a>
+              </footer>
             </div>
-            <div class="card">
-                <h3>Meetings Timer</h3>
-                <p>Stage-based timer that keeps your online meetings on schedule.</p>
-                <a href="https://github.com/nikmedoed/meetings-timer">GitHub</a>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="card project-card">
+              <div class="card-content">
+                <p class="title is-5">Meetings Timer</p>
+                <p class="content">Non-linear stage timer for online meetings.</p>
+              </div>
+              <footer class="card-footer">
+                <a href="https://github.com/nikmedoed/meetings-timer" class="card-footer-item">GitHub</a>
+              </footer>
             </div>
-            <div class="card">
-                <h3>Vocabulary Coach Bot</h3>
-                <p>Telegram bot using Google Sheets as a database to help memorize answers.</p>
-                <a href="https://github.com/nikmedoed/vocabulary_coach_bot">GitHub</a>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="card project-card">
+              <div class="card-content">
+                <p class="title is-5">Vocabulary Coach Bot</p>
+                <p class="content">Telegram bot that trains answers from a Google Sheets database.</p>
+              </div>
+              <footer class="card-footer">
+                <a href="https://github.com/nikmedoed/vocabulary_coach_bot" class="card-footer-item">GitHub</a>
+              </footer>
             </div>
-            <div class="card">
-                <h3>PP to Stories</h3>
-                <p>Export PowerPoint slides as Instagram stories, including video clips.</p>
-                <a href="https://github.com/nikmedoed/PP_to_stories">GitHub</a>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="card project-card">
+              <div class="card-content">
+                <p class="title is-5">PP to Stories</p>
+                <p class="content">Turns PowerPoint slides into social media stories.</p>
+              </div>
+              <footer class="card-footer">
+                <a href="https://github.com/nikmedoed/PP_to_stories" class="card-footer-item">GitHub</a>
+              </footer>
             </div>
-            <div class="card">
-                <h3>pyMapCollector</h3>
-                <p>Capture large images from scrolling maps and whiteboard tools.</p>
-                <a href="https://github.com/nikmedoed/pyMapCollector">GitHub</a>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="card project-card">
+              <div class="card-content">
+                <p class="title is-5">pyMapCollector</p>
+                <p class="content">Extracts large images from interactive maps and boards.</p>
+              </div>
+              <footer class="card-footer">
+                <a href="https://github.com/nikmedoed/pyMapCollector" class="card-footer-item">GitHub</a>
+              </footer>
             </div>
-            <div class="card">
-                <h3>Tampermonkey Scripts</h3>
-                <p>Collection of browser tweaks for search, playlists, and more.</p>
-                <a href="https://github.com/nikmedoed/myTampermonkeyScripts">GitHub</a>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="card project-card">
+              <div class="card-content">
+                <p class="title is-5">Tampermonkey Scripts</p>
+                <p class="content">Browser tweaks for search, playlists, and more.</p>
+              </div>
+              <footer class="card-footer">
+                <a href="https://github.com/nikmedoed/myTampermonkeyScripts" class="card-footer-item">GitHub</a>
+              </footer>
             </div>
-            <div class="card">
-                <h3>YT Auto Playlist</h3>
-                <p>Browser extension that compiles new videos from your YouTube subscriptions.</p>
-                <a href="https://github.com/nikmedoed/YTautoPlaylist">GitHub</a>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="card project-card">
+              <div class="card-content">
+                <p class="title is-5">YT Auto Playlist</p>
+                <p class="content">Automatically compiles new videos from subscriptions.</p>
+              </div>
+              <footer class="card-footer">
+                <a href="https://github.com/nikmedoed/YTautoPlaylist" class="card-footer-item">GitHub</a>
+              </footer>
             </div>
-            <div class="card">
-                <h3>WhatsApp Utilities</h3>
-                <p>Automation scripts and extraction tools for WhatsApp Web.</p>
-                <a href="https://github.com/nikmedoed/WAutils">GitHub</a>
+          </div>
+
+          <div class="column is-one-third">
+            <div class="card project-card">
+              <div class="card-content">
+                <p class="title is-5">WhatsApp Utilities</p>
+                <p class="content">Automation scripts and data tools for WhatsApp Web.</p>
+              </div>
+              <footer class="card-footer">
+                <a href="https://github.com/nikmedoed/WAutils" class="card-footer-item">GitHub</a>
+              </footer>
             </div>
+          </div>
+
         </div>
+      </div>
     </section>
 
-    <section class="about">
-        <h2>About Me</h2>
-        <p>Versatile Python & JavaScript engineer focused on automation and system design.</p>
-        <a href="experience.html">See my résumé</a>
+    <section class="section">
+      <div class="container has-text-centered">
+        <h2 class="title has-text-danger mb-4">About Me</h2>
+        <p class="mb-3">Versatile Python &amp; JavaScript engineer focused on automation and system design.</p>
+        <a class="button is-link is-light" href="experience.html">See my résumé</a>
+      </div>
     </section>
 
-    <section id="contact" class="contact">
-        <h2>Contacts & Donations</h2>
-        <p>Email: <a href="mailto:nikmedoed@gmail.com">nikmedoed@gmail.com</a> | Telegram: <a href="https://t.me/nikmedoed">@nikmedoed</a></p>
-        <p>Support my work:</p>
-        <p>
-            <a class="button" href="https://ko-fi.com/nikmedoed">Ko-fi</a>
-            <a class="button" href="https://boosty.to/nikmedoed/donate">Boosty</a>
-            <a class="button" href="https://paypal.me/etonikmedoed">PayPal</a>
-            <a class="button" href="https://yoomoney.ru/to/4100119049495394">YooMoney</a>
+    <section id="contact" class="section has-background-link-dark has-text-white">
+      <div class="container has-text-centered">
+        <h2 class="title has-text-warning">Contacts & Donations</h2>
+        <p>Email: <a href="mailto:nikmedoed@gmail.com" class="has-text-white">nikmedoed@gmail.com</a> | Telegram: <a href="https://t.me/nikmedoed" class="has-text-white">@nikmedoed</a></p>
+        <div class="buttons is-centered mt-4">
+          <a class="button is-warning" href="https://ko-fi.com/nikmedoed">Ko-fi</a>
+          <a class="button is-warning" href="https://boosty.to/nikmedoed/donate">Boosty</a>
+          <a class="button is-warning" href="https://paypal.me/etonikmedoed">PayPal</a>
+          <a class="button is-warning" href="https://yoomoney.ru/to/4100119049495394">YooMoney</a>
+        </div>
+        <p class="mt-3 is-size-7">
+          <strong>BTC:</strong> 1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7<br>
+          <strong>USDT (TRC20):</strong> TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE<br>
+          <strong>TON (USDT-TON):</strong> UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N
         </p>
-        <p class="small">
-            <strong>BTC:</strong> 1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7<br>
-            <strong>USDT (TRC20):</strong> TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE<br>
-            <strong>TON (USDT-TON):</strong> UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N
-        </p>
+      </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Nikita Muromtsev. <a href="https://github.com/nikmedoed" style="color:#fa33fe">GitHub</a> | <a href="https://www.linkedin.com/in/muromcevn" style="color:#fa33fe">LinkedIn</a></p>
+    <footer class="footer has-background-black has-text-centered has-text-white">
+      <div class="content">
+        <p>&copy; 2025 Nikita Muromtsev. <a href="https://github.com/nikmedoed" class="has-text-warning">GitHub</a> | <a href="https://www.linkedin.com/in/muromcevn" class="has-text-warning">LinkedIn</a></p>
+      </div>
     </footer>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        if ($navbarBurgers.length > 0) {
+          $navbarBurgers.forEach( el => {
+            el.addEventListener('click', () => {
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+              el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
+            });
+          });
+        }
+      });
+    </script>
 </body>
 </html>
