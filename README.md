@@ -13,6 +13,10 @@ Main page features:
 - Brief about section
 - Contact links and donation options
 
+Project cards have a placeholder `<div class="card-image">` where you can insert
+screenshots or short videos. Add your media files under the `media/` directory
+and reference them from these blocks.
+
 The `experience.html` page summarises my work history and links back to the main page.
 
 Feel free to explore the code or get in touch if you have questions!
