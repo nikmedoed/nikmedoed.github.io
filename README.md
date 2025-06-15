@@ -14,6 +14,8 @@ Main page features:
 - Contact links and donation options
 
 Project cards have a placeholder `<div class="card-image">` where you can insert
+Each project card includes a short tagline, a brief description, and tags showing key technologies.
+
 screenshots or short videos. Add your media files under the `media/` directory
 and reference them from these blocks.
 
