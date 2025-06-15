@@ -7,9 +7,40 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <style>
         html { scroll-behavior: smooth; }
-        .hero.is-dark {
-            background: linear-gradient(135deg, #1e3a8a, #9333ea);
+
+        :root {
+            --c-black: #000;
+            --c-red: #ff4515;
+            --c-pink: #fa33fe;
+            --c-magenta: #e60080;
+            --c-violet: #f246fc;
+            --c-blue: #0d3869;
+            --c-yellow: #fffe45;
+            --c-cyan: #09dbc6;
+            --c-gray: #f5f5f5;
         }
+
+        .gradient-text {
+            background: linear-gradient(45deg, var(--c-pink), var(--c-magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero.is-dark {
+            background: linear-gradient(135deg, var(--c-blue), var(--c-violet));
+        }
+
+        .navbar.is-dark {
+            background-color: var(--c-black);
+        }
+
+        .navbar.is-dark .navbar-item,
+        .navbar.is-dark .navbar-burger span { color: var(--c-gray); }
+
+        .navbar.is-dark .navbar-item:hover { background-color: var(--c-violet); color: #fff; }
+
+        body { background: var(--c-gray); color: var(--c-blue); }
+
         @media screen and (min-width: 769px) {
             .navbar-menu { display: flex !important; }
             .navbar-burger { display: none; }
@@ -38,7 +69,7 @@
     <section class="hero is-dark is-medium">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title has-text-light">Experience &amp; CV</h1>
+                <h1 class="title gradient-text">Experience &amp; CV</h1>
                 <p class="subtitle has-text-light">Highlights of my professional path</p>
             </div>
         </div>

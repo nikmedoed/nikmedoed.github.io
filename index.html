@@ -7,23 +7,67 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <style>
         html { scroll-behavior: smooth; }
-        .hero.is-dark {
-            background: linear-gradient(135deg, #1e3a8a, #9333ea);
+
+        :root {
+            --c-black: #000;
+            --c-red: #ff4515;
+            --c-pink: #fa33fe;
+            --c-magenta: #e60080;
+            --c-violet: #f246fc;
+            --c-blue: #0d3869;
+            --c-yellow: #fffe45;
+            --c-cyan: #09dbc6;
+            --c-gray: #f5f5f5;
         }
+
+        .gradient-text {
+            background: linear-gradient(45deg, var(--c-pink), var(--c-magenta));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero.is-dark {
+            background: linear-gradient(135deg, var(--c-blue), var(--c-violet));
+        }
+
+        .navbar.is-dark {
+            background-color: var(--c-black);
+        }
+
+        .navbar.is-dark .navbar-item,
+        .navbar.is-dark .navbar-burger span {
+            color: var(--c-gray);
+        }
+
+        .navbar.is-dark .navbar-item:hover {
+            background-color: var(--c-violet);
+            color: #fff;
+        }
+
+        .button.is-primary {
+            background-color: var(--c-pink);
+            border-color: var(--c-pink);
+            color: var(--c-black);
+        }
+
+        body {
+            background: var(--c-gray);
+            color: var(--c-blue);
+        }
+
         .project-card {
             transition: transform 0.2s, box-shadow 0.2s;
+            border-top: 4px solid var(--c-yellow);
         }
+
         .project-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 0 1rem rgba(0,0,0,0.2);
         }
+
         @media screen and (min-width: 769px) {
-            .navbar-menu {
-                display: flex !important;
-            }
-            .navbar-burger {
-                display: none;
-            }
+            .navbar-menu { display: flex !important; }
+            .navbar-burger { display: none; }
         }
     </style>
 </head>
@@ -49,9 +93,9 @@
     <section class="hero is-dark is-medium">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title has-text-light">Nikita Muromtsev</h1>
+                <h1 class="title gradient-text">Nikita Muromtsev</h1>
                 <h2 class="subtitle has-text-light">Full-stack Developer & Technical Product Manager</h2>
-                <a href="experience.html" class="button is-primary is-medium">See my experience</a>
+                <a href="experience.html" class="button is-primary is-medium mt-4">See my experience</a>
             </div>
         </div>
     </section>
@@ -122,27 +166,30 @@
 
     <section class="section">
         <div class="container">
-            <h2 class="title is-3 has-text-centered">About Me</h2>
-            <p class="has-text-centered">Versatile Python &amp; JavaScript engineer focused on automation and system design. <a href="experience.html">See my resume</a> for more.</p>
+            <h2 class="title is-3 has-text-centered" style="color: var(--c-red);">About Me</h2>
+            <p class="has-text-centered">Versatile Python &amp; JavaScript engineer focused on automation and system design.</p>
+            <div class="has-text-centered mt-4">
+                <a href="experience.html" class="button is-primary">See my resume</a>
+            </div>
         </div>
     </section>
 
     <section id="contact" class="section has-background-light">
         <div class="container">
-            <h2 class="title is-3 has-text-centered">Contacts &amp; Donations</h2>
+            <h2 class="title is-3 has-text-centered gradient-text">Contacts &amp; Donations</h2>
             <div class="columns is-centered">
                 <div class="column is-half has-text-centered">
                     <p>Email: <a href="mailto:nikmedoed@gmail.com">nikmedoed@gmail.com</a><br>
                        Telegram: <a href="https://t.me/nikmedoed">@nikmedoed</a>
                     </p>
                     <p class="mt-3">Support my work:</p>
-                    <p>
-                        <a href="https://ko-fi.com/nikmedoed">Ko-fi</a> |
-                        <a href="https://boosty.to/nikmedoed/donate">Boosty</a> |
-                        <a href="https://paypal.me/etonikmedoed">PayPal</a> |
-                        <a href="https://yoomoney.ru/to/4100119049495394">YooMoney</a>
+                    <p class="buttons is-centered">
+                        <a class="button is-primary is-light mx-1" href="https://ko-fi.com/nikmedoed">Ko-fi</a>
+                        <a class="button is-primary is-light mx-1" href="https://boosty.to/nikmedoed/donate">Boosty</a>
+                        <a class="button is-primary is-light mx-1" href="https://paypal.me/etonikmedoed">PayPal</a>
+                        <a class="button is-primary is-light mx-1" href="https://yoomoney.ru/to/4100119049495394">YooMoney</a>
                     </p>
-                    <p class="mt-3">
+                    <p class="mt-3 is-size-7">
                         <strong>BTC:</strong> 1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7<br>
                         <strong>USDT (TRC20):</strong> TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE<br>
                         <strong>TON (USDT-TON):</strong> UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N
