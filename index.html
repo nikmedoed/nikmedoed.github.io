@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nikita Muromtsev - Landing Page</title>
+    <title>Nikita Muromtsev - Portfolio</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <style>
+        html { scroll-behavior: smooth; }
+        .hero.is-dark {
+            background: linear-gradient(135deg, #1e3a8a, #9333ea);
+        }
+        .project-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
         .project-card:hover {
-            transform: translateY(-5px);
-            transition: transform 0.2s ease;
+            transform: translateY(-6px);
+            box-shadow: 0 0 1rem rgba(0,0,0,0.2);
         }
     </style>
 </head>
 <body>
-    <nav class="navbar is-light" role="navigation" aria-label="main navigation">
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="#">Nikita Muromtsev</a>
             <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
@@ -31,19 +38,19 @@
         </div>
     </nav>
 
-    <section class="hero is-primary is-bold">
+    <section class="hero is-dark is-fullheight-with-navbar">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title">Nikita Muromtsev</h1>
-                <h2 class="subtitle">Full-stack Developer & Technical Product Manager</h2>
-                <a href="#experience" class="button is-light">If you need a strong specialist, see my experience</a>
+                <h1 class="title has-text-light">Nikita Muromtsev</h1>
+                <h2 class="subtitle has-text-light">Full-stack Developer & Technical Product Manager</h2>
+                <a href="#experience" class="button is-primary is-medium">See my experience</a>
             </div>
         </div>
     </section>
 
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="title is-3">Featured Projects</h2>
+            <h2 class="title is-3 has-text-centered">Featured Projects</h2>
             <div class="columns is-multiline">
                 <div class="column is-one-third">
                     <div class="card project-card">
@@ -60,7 +67,7 @@
                     <div class="card project-card">
                         <div class="card-content">
                             <p class="title is-5">OLED Screensaver</p>
-                            <p>Quickly hide OLED screens via hotkeys or idle detection without affecting others.</p>
+                            <p>Black out OLED screens via hotkeys or idle detection without affecting others.</p>
                         </div>
                         <footer class="card-footer">
                             <a href="https://github.com/nikmedoed/oled_screensaver" class="card-footer-item">GitHub</a>
@@ -71,7 +78,7 @@
                     <div class="card project-card">
                         <div class="card-content">
                             <p class="title is-5">Easy Video Compress</p>
-                            <p>Shell-integrated video compressor optimized for messengers and social networks.</p>
+                            <p>Shell-integrated video compressor optimized for social networks.</p>
                         </div>
                         <footer class="card-footer">
                             <a href="https://github.com/nikmedoed/easy-video-compress" class="card-footer-item">GitHub</a>
@@ -82,7 +89,7 @@
                     <div class="card project-card">
                         <div class="card-content">
                             <p class="title is-5">Windows Backup Tool</p>
-                            <p>GUI utility for incremental backups of selected folders with scheduling and exclusions.</p>
+                            <p>GUI utility for incremental backups of selected folders.</p>
                         </div>
                         <footer class="card-footer">
                             <a href="https://github.com/nikmedoed/windows_backup_tool" class="card-footer-item">GitHub</a>
@@ -104,9 +111,9 @@
         </div>
     </section>
 
-    <section id="experience" class="section">
+    <section id="experience" class="section has-background-light">
         <div class="container">
-            <h2 class="title is-3">Experience</h2>
+            <h2 class="title is-3 has-text-centered">Experience</h2>
             <ul>
                 <li><strong>BeePlus</strong>: Product manager building process management solutions</li>
                 <li><strong>Freelance</strong>: Full-stack development, mentoring, Telegram bots</li>
@@ -119,18 +126,17 @@
 
     <section class="section">
         <div class="container">
-            <h2 class="title is-3">About Me</h2>
-            <p>Versatile Python &amp; JavaScript engineer with 8+ years crafting automation systems and utilities. Passionate about systematic thinking, clean code, and impactful products. Open to European remote opportunities.</p>
+            <h2 class="title is-3 has-text-centered">About Me</h2>
+            <p class="has-text-centered">Versatile Python &amp; JavaScript engineer passionate about clean code and automation. Open for European remote opportunities.</p>
         </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="contact" class="section has-background-light">
         <div class="container">
-            <h2 class="title is-3">Contacts &amp; Donations</h2>
-            <p>Email: <a href="mailto:nikmedoed@gmail.com">nikmedoed@gmail.com</a> &nbsp;|&nbsp;
-               Telegram: <a href="https://t.me/nikmedoed">@nikmedoed</a></p>
-            <p>Support my work:</p>
-            <ul>
+            <h2 class="title is-3 has-text-centered">Contacts &amp; Donations</h2>
+            <p class="has-text-centered">Email: <a href="mailto:nikmedoed@gmail.com">nikmedoed@gmail.com</a> &nbsp;|&nbsp; Telegram: <a href="https://t.me/nikmedoed">@nikmedoed</a></p>
+            <p class="has-text-centered">Support my work:</p>
+            <ul class="has-text-centered">
                 <li><a href="https://ko-fi.com/nikmedoed">Ko-fi</a> | <a href="https://boosty.to/nikmedoed/donate">Boosty</a> | <a href="https://paypal.me/etonikmedoed">PayPal</a> | <a href="https://yoomoney.ru/to/4100119049495394">YooMoney</a></li>
                 <li>BTC: <code>1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7</code></li>
                 <li>USDT (TRC20): <code>TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE</code></li>
