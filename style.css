@@ -5,6 +5,10 @@
   --c-yellow: #fffe45;
 }
 
+html, body {
+  font-family: 'Inter', sans-serif;
+}
+
 .gradient-bg {
   background-image: linear-gradient(135deg, var(--c-violet), var(--c-blue));
 }
@@ -29,7 +33,6 @@
   flex-grow: 1;
 }
 
-/* Media container inside project cards */
 .project-media {
   position: relative;
   overflow: hidden;
@@ -99,4 +102,13 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+  
+.tm-icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  -webkit-mask: url("https://upload.wikimedia.org/wikipedia/commons/c/c0/Tampermonkey_logo.svg") no-repeat center / contain;
+  mask: url("https://upload.wikimedia.org/wikipedia/commons/c/c0/Tampermonkey_logo.svg") no-repeat center / contain;
+  background-color: currentColor;
+  vertical-align: middle;
 }
