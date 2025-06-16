@@ -85,6 +85,14 @@
 
 #preview-overlay.active {
   display: flex;
+  pointer-events: auto;
+}
+
+#close-preview {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
 }
 
 .project-media:hover img,
@@ -92,11 +100,17 @@
   transform: scale(1.05);
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1407px) {
   .container {
     width: 100%;
     max-width: none;
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+}
+
+@media (min-width: 1408px) {
+  .container {
+    max-width: 1408px;
   }
 }
