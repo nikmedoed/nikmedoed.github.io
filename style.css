@@ -28,3 +28,13 @@
 .project-card .card-content {
   flex-grow: 1;
 }
+
+.tm-icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  -webkit-mask: url("https://upload.wikimedia.org/wikipedia/commons/c/c0/Tampermonkey_logo.svg") no-repeat center / contain;
+  mask: url("https://upload.wikimedia.org/wikipedia/commons/c/c0/Tampermonkey_logo.svg") no-repeat center / contain;
+  background-color: currentColor;
+  vertical-align: middle;
+}
