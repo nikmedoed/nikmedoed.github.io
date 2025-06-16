@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="dark-theme">
+<body>
   <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="./">Home</a>
@@ -75,10 +75,9 @@
       }
 
       const themeBtn = document.getElementById('theme-toggle');
-      const body = document.body;
+      const root = document.documentElement;
       function applyTheme(theme) {
-        body.classList.remove('dark-theme', 'light-theme');
-        body.classList.add(`${theme}-theme`);
+        root.setAttribute('data-theme', theme);
         const icon = themeBtn.querySelector('i');
         icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         const navbar = document.querySelector('.navbar');
@@ -88,10 +87,12 @@
         }
       }
       if (themeBtn) {
-        const storedTheme = localStorage.getItem('theme') || 'dark';
-        applyTheme(storedTheme);
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const storedTheme = localStorage.getItem('theme');
+        applyTheme(storedTheme || (prefersDark ? 'dark' : 'light'));
         themeBtn.addEventListener('click', () => {
-          const newTheme = body.classList.contains('dark-theme') ? 'light' : 'dark';
+          const current = root.getAttribute('data-theme');
+          const newTheme = current === 'dark' ? 'light' : 'dark';
           localStorage.setItem('theme', newTheme);
           applyTheme(newTheme);
         });
