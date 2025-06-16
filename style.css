@@ -101,6 +101,7 @@ html, body {
   border: none;
   cursor: pointer;
   pointer-events: auto;
+  z-index: 1000;
 }
 
 .project-media:hover img,
