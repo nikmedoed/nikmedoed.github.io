@@ -317,7 +317,10 @@
       </div>
     </section>
 
-    <div id="preview-overlay"><div id="media-preview"></div></div>
+    <div id="preview-overlay">
+      <button id="close-preview" aria-label="Close preview">&times;</button>
+      <div id="media-preview"></div>
+    </div>
     <footer class="footer has-background-black has-text-centered has-text-white">
       <div class="content">
         <p>&copy; 2025 Nikita Muromtsev. <a href="https://github.com/nikmedoed" target="_blank" class="has-text-warning">GitHub</a> | <a href="https://www.linkedin.com/in/muromcevn" target="_blank" class="has-text-warning">LinkedIn</a></p>
@@ -328,6 +331,18 @@
 document.addEventListener('DOMContentLoaded', () => {
   const overlay = document.getElementById('preview-overlay');
   const preview = document.getElementById('media-preview');
+  const closeBtn = document.getElementById('close-preview');
+
+  function hidePreview() {
+    overlay.classList.remove('active');
+    preview.innerHTML = '';
+  }
+
+  overlay.addEventListener('click', hidePreview);
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    hidePreview();
+  });
   document.querySelectorAll('.project-media').forEach(box => {
     const media = box.querySelector('img, video');
     box.addEventListener('mouseenter', () => {
@@ -343,8 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
       overlay.classList.add('active');
     });
     box.addEventListener('mouseleave', () => {
-      overlay.classList.remove('active');
-      preview.innerHTML = '';
+      hidePreview();
     });
   });
   const burgers = Array.from(document.querySelectorAll('.navbar-burger'));
