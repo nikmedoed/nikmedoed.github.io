@@ -28,3 +28,7 @@
 .project-card .card-content {
   flex-grow: 1;
 }
+
+#tech-filter .filter-tag {
+  cursor: pointer;
+}

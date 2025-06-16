@@ -295,24 +295,33 @@
 
         const cards = document.querySelectorAll('.project-card');
         const counts = {};
+        const colors = {};
         cards.forEach(card => {
-          const tags = Array.from(card.querySelectorAll('.tags .tag')).map(t => t.textContent.trim());
+          const tagEls = card.querySelectorAll('.tags .tag');
+          const tags = Array.from(tagEls).map(t => {
+            const text = t.textContent.trim();
+            if (!colors[text]) {
+              const cls = Array.from(t.classList).filter(c => c !== 'tag').join(' ');
+              colors[text] = cls;
+            }
+            counts[text] = (counts[text] || 0) + 1;
+            return text;
+          });
           card.dataset.techs = tags.join(',');
-          tags.forEach(t => counts[t] = (counts[t] || 0) + 1);
         });
         const filterBar = document.getElementById('tech-filter');
         if (filterBar) {
-          filterBar.innerHTML = '<span class="tag filter-tag" data-tech="all">All</span>';
+          filterBar.innerHTML = '<span class="tag filter-tag is-dark" data-tech="all">All</span>';
           Object.keys(counts).sort((a,b) => counts[b]-counts[a]).forEach(t => {
             const s = document.createElement('span');
-            s.className = 'tag filter-tag';
+            s.className = `tag filter-tag ${colors[t]}`;
             s.dataset.tech = t;
-            s.textContent = `${t} (${counts[t]})`;
+            s.textContent = t;
             filterBar.appendChild(s);
           });
           filterBar.addEventListener('click', e => {
-            const tgt = e.target;
-            if (!tgt.classList.contains('filter-tag')) return;
+            const tgt = e.target.closest('.filter-tag');
+            if (!tgt) return;
             const tech = tgt.dataset.tech;
             filterBar.querySelectorAll('.filter-tag').forEach(tag => tag.classList.remove('is-dark'));
             tgt.classList.add('is-dark');
