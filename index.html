@@ -333,6 +333,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const preview = document.getElementById('media-preview');
   const closeBtn = document.getElementById('close-preview');
 
+  function showPreview(media) {
+    preview.innerHTML = '';
+    const clone = media.cloneNode(true);
+    if (clone.tagName === 'VIDEO') {
+      clone.muted = true;
+      clone.autoplay = true;
+      clone.loop = true;
+      clone.playsInline = true;
+    }
+    preview.appendChild(clone);
+    overlay.classList.add('active');
+  }
+
   function hidePreview() {
     overlay.classList.remove('active');
     preview.innerHTML = '';
@@ -343,22 +356,14 @@ document.addEventListener('DOMContentLoaded', () => {
     e.stopPropagation();
     hidePreview();
   });
+
   document.querySelectorAll('.project-media').forEach(box => {
     const media = box.querySelector('img, video');
-    box.addEventListener('mouseenter', () => {
-      preview.innerHTML = '';
-      const clone = media.cloneNode(true);
-      if (clone.tagName === 'VIDEO') {
-        clone.muted = true;
-        clone.autoplay = true;
-        clone.loop = true;
-        clone.playsInline = true;
-      }
-      preview.appendChild(clone);
-      overlay.classList.add('active');
-    });
-    box.addEventListener('mouseleave', () => {
-      hidePreview();
+    box.addEventListener('mouseenter', () => showPreview(media));
+    box.addEventListener('mouseleave', hidePreview);
+    box.addEventListener('click', (e) => {
+      e.preventDefault();
+      showPreview(media);
     });
   });
   const burgers = Array.from(document.querySelectorAll('.navbar-burger'));
