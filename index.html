@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const preview = document.getElementById('media-preview');
   document.querySelectorAll('.project-media').forEach(box => {
     const media = box.querySelector('img, video');
-    box.addEventListener('click', () => {
+    box.addEventListener('mouseenter', () => {
       preview.innerHTML = '';
       const clone = media.cloneNode(true);
       if (clone.tagName === 'VIDEO') {
@@ -339,10 +339,10 @@ document.addEventListener('DOMContentLoaded', () => {
       preview.appendChild(clone);
       overlay.classList.add('active');
     });
-  });
-  overlay.addEventListener('click', () => {
-    overlay.classList.remove('active');
-    preview.innerHTML = '';
+    box.addEventListener('mouseleave', () => {
+      overlay.classList.remove('active');
+      preview.innerHTML = '';
+    });
   });
   const burgers = Array.from(document.querySelectorAll('.navbar-burger'));
   burgers.forEach(el => {

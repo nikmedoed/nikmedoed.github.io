@@ -79,6 +79,7 @@
   backdrop-filter: blur(2px);
   align-items: center;
   justify-content: center;
+  pointer-events: none;
   z-index: 999;
 }
 
@@ -91,9 +92,10 @@
   transform: scale(1.05);
 }
 
-@media (min-width: 1024px) and (max-width: 1407px) {
+@media (min-width: 1024px) and (max-width: 1440px) {
   .container {
-    max-width: 100%;
+    width: 100%;
+    max-width: none;
     padding-left: 1rem;
     padding-right: 1rem;
   }
