@@ -95,14 +95,15 @@ html, body {
   transform: scale(1.05);
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
-  .container {
+@media (min-width: 1024px) and (max-width: 1407px) {
+  .container:not(.is-max-desktop) {
     width: 100%;
-    max-width: none;
+    max-width: none !important;
     padding-left: 1rem;
     padding-right: 1rem;
   }
-  
+}
+
 .tm-icon {
   display: inline-block;
   height: 1em;
