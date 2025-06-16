@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nikita Muromtsev - Experience</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="dark-theme">
   <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="./">Home</a>
@@ -17,14 +18,19 @@
         <span aria-hidden="true"></span>
       </a>
     </div>
-    <div id="navbarMenu" class="navbar-menu">
-      <div class="navbar-end">
-        <a class="navbar-item" href="./#projects">Projects</a>
-        <a class="navbar-item" href="#">Experience</a>
-        <a class="navbar-item" href="./#contact">Contacts</a>
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <a class="navbar-item" href="./#projects">Projects</a>
+          <a class="navbar-item" href="#">Experience</a>
+          <a class="navbar-item" href="./#contact">Contacts</a>
+          <div class="navbar-item">
+            <button id="theme-toggle" class="button is-small">
+              <span class="icon"><i class="fas fa-sun"></i></span>
+            </button>
+          </div>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
   <section class="hero is-medium gradient-bg">
     <div class="hero-body has-text-centered">
@@ -58,13 +64,36 @@
     document.addEventListener('DOMContentLoaded', () => {
       const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
       if ($navbarBurgers.length > 0) {
-        $navbarBurgers.forEach( el => {
+        $navbarBurgers.forEach(el => {
           el.addEventListener('click', () => {
             const target = el.dataset.target;
             const $target = document.getElementById(target);
             el.classList.toggle('is-active');
             $target.classList.toggle('is-active');
           });
+        });
+      }
+
+      const themeBtn = document.getElementById('theme-toggle');
+      const body = document.body;
+      function applyTheme(theme) {
+        body.classList.remove('dark-theme', 'light-theme');
+        body.classList.add(`${theme}-theme`);
+        const icon = themeBtn.querySelector('i');
+        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+          navbar.classList.toggle('is-dark', theme === 'dark');
+          navbar.classList.toggle('is-light', theme === 'light');
+        }
+      }
+      if (themeBtn) {
+        const storedTheme = localStorage.getItem('theme') || 'dark';
+        applyTheme(storedTheme);
+        themeBtn.addEventListener('click', () => {
+          const newTheme = body.classList.contains('dark-theme') ? 'light' : 'dark';
+          localStorage.setItem('theme', newTheme);
+          applyTheme(newTheme);
         });
       }
     });
