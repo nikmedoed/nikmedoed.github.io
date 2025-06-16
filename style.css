@@ -88,6 +88,14 @@ html, body {
 
 #preview-overlay.active {
   display: flex;
+  pointer-events: auto;
+}
+
+#close-preview {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  pointer-events: auto;
 }
 
 .project-media:hover img,
