@@ -89,14 +89,22 @@ html, body {
 
 #preview-overlay.active {
   display: flex;
+}
+
+#preview-overlay.modal {
   pointer-events: auto;
 }
 
 #close-preview {
+  display: none;
   position: absolute;
   top: 1rem;
   right: 1rem;
   pointer-events: auto;
+}
+
+#preview-overlay.modal #close-preview {
+  display: block;
 }
 
 body.no-scroll {

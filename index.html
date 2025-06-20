@@ -454,7 +454,7 @@
         const preview = document.getElementById('media-preview');
         const closeBtn = document.getElementById('close-preview');
 
-        function show(media) {
+        function show(media, modal = false) {
             preview.innerHTML = '';
             const clone = media.cloneNode(true);
             if (clone.tagName === 'VIDEO') {
@@ -465,11 +465,14 @@
             }
             preview.appendChild(clone);
             overlay.classList.add('active');
-            document.body.classList.add('no-scroll');
+            overlay.classList.toggle('modal', modal);
+            if (modal) {
+                document.body.classList.add('no-scroll');
+            }
         }
 
         function hide() {
-            overlay.classList.remove('active');
+            overlay.classList.remove('active', 'modal');
             preview.innerHTML = '';
             document.body.classList.remove('no-scroll');
         }
@@ -479,9 +482,11 @@
             box.addEventListener('mouseenter', () => show(media));
             box.addEventListener('click', (e) => {
                 e.preventDefault();
-                show(media);
+                show(media, true);
             });
-            box.addEventListener('mouseleave', hide);
+            box.addEventListener('mouseleave', () => {
+                if (!overlay.classList.contains('modal')) hide();
+            });
         });
 
         overlay.addEventListener('click', e => {
