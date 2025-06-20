@@ -53,8 +53,8 @@
             <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
                 <div class="card project-card">
                     <div class="card-image">
-                        <figure class="project-media contain">
-                            <img src="media/pishow.svg" alt="Pishow screenshot">
+                        <figure class="project-media">
+                            <video src="media/pishow.mp4" autoplay loop muted playsinline></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -105,8 +105,8 @@
             <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
                 <div class="card project-card">
                     <div class="card-image">
-                        <figure class="project-media contain">
-                            <img src="media/compress.png" alt="Easy Video Compress screenshot">
+                        <figure class="project-media">
+                            <video src="media/compress.mp4" autoplay loop muted playsinline></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -202,8 +202,8 @@
             <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
                 <div class="card project-card">
                     <div class="card-image">
-                        <figure class="project-media contain">
-                            <img src="media/yt-auto.png" alt="YT Auto Playlist screenshot">
+                        <figure class="project-media">
+                            <video src="media/yt-auto.mp4" autoplay loop muted playsinline></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -251,7 +251,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <img src="media/vocabulary.gif" alt="Vocabulary Coach Bot demo">
+                            <video src="media/vocabulary.mp4" autoplay loop muted playsinline></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -363,7 +363,6 @@
 
         </div>
     </div>
-    </div>
 </section>
 
 <section class="section">
@@ -408,17 +407,7 @@
 <script src="header.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-        if ($navbarBurgers.length > 0) {
-            $navbarBurgers.forEach(el => {
-                el.addEventListener('click', () => {
-                    const target = el.dataset.target;
-                    const $target = document.getElementById(target);
-                    el.classList.toggle('is-active');
-                    $target.classList.toggle('is-active');
-                });
-            });
-        }
+
 
         const cards = document.querySelectorAll('.project-card');
         const counts = {};
@@ -479,15 +468,6 @@
             box.addEventListener('mouseleave', () => {
                 overlay.classList.remove('active');
                 preview.innerHTML = '';
-            });
-        });
-        const burgers = Array.from(document.querySelectorAll('.navbar-burger'));
-        burgers.forEach(el => {
-            el.addEventListener('click', () => {
-                const target = el.dataset.target;
-                const menu = document.getElementById(target);
-                el.classList.toggle('is-active');
-                menu.classList.toggle('is-active');
             });
         });
     });
