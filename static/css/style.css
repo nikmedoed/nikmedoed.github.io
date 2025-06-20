@@ -167,3 +167,36 @@ body.no-scroll {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+
+#contact {
+  padding-bottom: 1.5rem;
+  margin-bottom: 0;
+}
+
+.wallets .button.copy-btn {
+  margin-left: 0.25rem;
+}
+
+.button.ko-fi {
+  background-color: #FF5E5B;
+  border-color: #FF5E5B;
+  color: #fff;
+}
+
+.button.boosty {
+  background-color: #FF8C00;
+  border-color: #FF8C00;
+  color: #fff;
+}
+
+.button.paypal {
+  background-color: #0070BA;
+  border-color: #0070BA;
+  color: #fff;
+}
+
+.button.yoomoney {
+  background-color: #6F2DBD;
+  border-color: #6F2DBD;
+  color: #fff;
+}

@@ -151,4 +151,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === overlay || e.target === closeBtn) hide();
         });
     }
+
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const text = btn.dataset.clipboardText;
+            if (!text) return;
+            navigator.clipboard.writeText(text).then(() => {
+                const icon = btn.querySelector('i');
+                if (icon) icon.className = 'fas fa-check';
+                setTimeout(() => {
+                    if (icon) icon.className = 'fas fa-copy';
+                }, 1500);
+            });
+        });
+    });
 });
