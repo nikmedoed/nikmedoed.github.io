@@ -1,34 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html data-theme="dark" lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>Nikita Muromtsev - Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=cyrillic"
           rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+<nav aria-label="main navigation" class="navbar is-dark" role="navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="./">Nikita Muromtsev</a>
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger" data-target="navbarMenu" role="button">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
     </div>
 
-    <div id="navbarMenu" class="navbar-menu">
+    <div class="navbar-menu" id="navbarMenu">
         <div class="navbar-end">
             <a class="navbar-item" href="#projects">Featured Projects</a>
             <a class="navbar-item" href="experience.html">Experience</a>
             <a class="navbar-item" href="#contact">Contacts</a>
             <div class="navbar-item">
-                <button id="theme-toggle" class="button is-small">
+                <button class="button is-small" id="theme-toggle">
                     <span class="icon"><i class="fas fa-sun"></i></span>
                 </button>
             </div>
@@ -44,17 +44,17 @@
     </div>
 </section>
 
-<section id="projects" class="section">
+<section class="section" id="projects">
     <div class="container">
         <h2 class="title has-text-centered has-text-link mb-6">Featured Projects</h2>
-        <div id="tech-filter" class="tags is-justify-content-center mb-5"></div>
+        <div class="tags is-justify-content-center mb-5" id="tech-filter"></div>
         <div class="columns is-multiline">
 
             <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
                 <div class="card project-card">
                     <div class="card-image">
-                        <figure class="project-media contain">
-                            <img src="media/pishow.svg" alt="Pishow screenshot">
+                        <figure class="project-media">
+                            <video autoplay loop muted playsinline src="media/pishow.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -70,8 +70,8 @@
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <a href="https://github.com/nikmedoed/pishow" target="_blank"
-                           class="card-footer-item">GitHub</a>
+                        <a class="card-footer-item" href="https://github.com/nikmedoed/pishow"
+                           target="_blank">GitHub</a>
                     </footer>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <video src="media/oled_screensaver.mp4" autoplay loop muted playsinline></video>
+                            <video autoplay loop muted playsinline src="media/oled_screensaver.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -96,8 +96,8 @@
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <a href="https://github.com/nikmedoed/oled_screensaver" target="_blank"
-                           class="card-footer-item">GitHub</a>
+                        <a class="card-footer-item" href="https://github.com/nikmedoed/oled_screensaver"
+                           target="_blank">GitHub</a>
                     </footer>
                 </div>
             </div>
@@ -105,8 +105,8 @@
             <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
                 <div class="card project-card">
                     <div class="card-image">
-                        <figure class="project-media contain">
-                            <img src="media/compress.png" alt="Easy Video Compress screenshot">
+                        <figure class="project-media">
+                            <video autoplay loop muted playsinline src="media/compress.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -120,8 +120,8 @@
                                 class="tag is-danger is-light">FFmpeg</span></div>
                     </div>
                     <footer class="card-footer">
-                        <a href="https://github.com/nikmedoed/easy-video-compress" target="_blank"
-                           class="card-footer-item">GitHub</a>
+                        <a class="card-footer-item" href="https://github.com/nikmedoed/easy-video-compress"
+                           target="_blank">GitHub</a>
                     </footer>
                 </div>
             </div>
@@ -130,7 +130,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <video src="media/backuptool.mp4" autoplay loop muted playsinline></video>
+                            <video autoplay loop muted playsinline src="media/backuptool.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -144,8 +144,8 @@
                                 class="tag is-danger is-light">PySide6</span></div>
                     </div>
                     <footer class="card-footer">
-                        <a href="https://github.com/nikmedoed/windows_backup_tool" target="_blank"
-                           class="card-footer-item">GitHub</a>
+                        <a class="card-footer-item" href="https://github.com/nikmedoed/windows_backup_tool"
+                           target="_blank">GitHub</a>
                     </footer>
                 </div>
             </div>
@@ -154,7 +154,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <video src="media/speech_input.mp4" autoplay loop muted playsinline></video>
+                            <video autoplay loop muted playsinline src="media/speech_input.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -169,7 +169,7 @@
                                 class="tag is-info is-light">PyAudio</span></div>
                     </div>
                     <footer class="card-footer">
-                        <a href="https://github.com/nikmedoed/speech_to_input" target="_blank" class="card-footer-item">GitHub</a>
+                        <a class="card-footer-item" href="https://github.com/nikmedoed/speech_to_input" target="_blank">GitHub</a>
                     </footer>
                 </div>
             </div>
@@ -178,7 +178,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <img src="media/notifications.png" alt="Telegram Important Notifies screenshot">
+                            <img alt="Telegram Important Notifies screenshot" src="media/notifications.png">
                         </figure>
                     </div>
                     <div class="card-content">
@@ -193,8 +193,8 @@
                                 class="tag is-danger is-light">NLP</span></div>
                     </div>
                     <footer class="card-footer">
-                        <a href="https://github.com/nikmedoed/Telegram-important-notifies" target="_blank"
-                           class="card-footer-item">GitHub</a>
+                        <a class="card-footer-item" href="https://github.com/nikmedoed/Telegram-important-notifies"
+                           target="_blank">GitHub</a>
                     </footer>
                 </div>
             </div>
@@ -202,8 +202,8 @@
             <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
                 <div class="card project-card">
                     <div class="card-image">
-                        <figure class="project-media contain">
-                            <img src="media/yt-auto.png" alt="YT Auto Playlist screenshot">
+                        <figure class="project-media">
+                            <video autoplay loop muted playsinline src="media/yt-auto.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -218,7 +218,7 @@
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <a href="https://github.com/nikmedoed/YTautoPlaylist" target="_blank" class="card-footer-item">GitHub</a>
+                        <a class="card-footer-item" href="https://github.com/nikmedoed/YTautoPlaylist" target="_blank">GitHub</a>
                     </footer>
                 </div>
             </div>
@@ -227,7 +227,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <video src="media/meeting_timer.mp4" autoplay loop muted playsinline></video>
+                            <video autoplay loop muted playsinline src="media/meeting_timer.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -242,7 +242,7 @@
                         </div>
                     </div>
                     <footer class="card-footer">
-                        <a href="https://github.com/nikmedoed/meetings-timer" target="_blank" class="card-footer-item">GitHub</a>
+                        <a class="card-footer-item" href="https://github.com/nikmedoed/meetings-timer" target="_blank">GitHub</a>
                     </footer>
                 </div>
             </div>
@@ -251,7 +251,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <img src="media/vocabulary.gif" alt="Vocabulary Coach Bot demo">
+                            <video autoplay loop muted playsinline src="media/vocabulary.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -266,8 +266,8 @@
                                 class="tag is-danger is-light">NLP</span></div>
                     </div>
                     <footer class="card-footer">
-                        <a href="https://github.com/nikmedoed/vocabulary_coach_bot" target="_blank"
-                           class="card-footer-item">GitHub</a>
+                        <a class="card-footer-item" href="https://github.com/nikmedoed/vocabulary_coach_bot"
+                           target="_blank">GitHub</a>
                     </footer>
                 </div>
             </div>
@@ -276,7 +276,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media contain">
-                            <img src="media/pptx_to_stories.png" alt="PP to Stories screenshot">
+                            <img alt="PP to Stories screenshot" src="media/pptx_to_stories.png">
                         </figure>
                     </div>
                     <div class="card-content">
@@ -289,7 +289,7 @@
                                 class="tag is-warning is-light">Windows API</span></div>
                     </div>
                     <footer class="card-footer">
-                        <a href="https://github.com/nikmedoed/PP_to_stories" target="_blank" class="card-footer-item">GitHub</a>
+                        <a class="card-footer-item" href="https://github.com/nikmedoed/PP_to_stories" target="_blank">GitHub</a>
                     </footer>
                 </div>
             </div>
@@ -298,7 +298,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media contain">
-                            <img src="media/pymap.jpg" alt="pyMapCollector screenshot">
+                            <img alt="pyMapCollector screenshot" src="media/pymap.jpg">
                         </figure>
                     </div>
                     <div class="card-content">
@@ -312,7 +312,7 @@
                                 class="tag is-warning is-light">Selenium</span></div>
                     </div>
                     <footer class="card-footer">
-                        <a href="https://github.com/nikmedoed/pyMapCollector" target="_blank" class="card-footer-item">GitHub</a>
+                        <a class="card-footer-item" href="https://github.com/nikmedoed/pyMapCollector" target="_blank">GitHub</a>
                     </footer>
                 </div>
             </div>
@@ -321,12 +321,12 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <video src="media/tampermonkey.mp4" autoplay loop muted playsinline></video>
+                            <video autoplay loop muted playsinline src="media/tampermonkey.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
-                        <p class="title is-5"><span class="icon"><span class="tm-icon" role="img"
-                                                                       aria-label="Tampermonkey"></span></span> <a
+                        <p class="title is-5"><span class="icon"><span aria-label="Tampermonkey" class="tm-icon"
+                                                                       role="img"></span></span> <a
                                 href="https://github.com/nikmedoed/myTampermonkeyScripts" target="_blank">Tampermonkey
                             Scripts</a></p>
                         <p class="subtitle is-6">Browser tweaks & search helpers.</p>
@@ -336,8 +336,8 @@
                                 class="tag is-danger is-light">Tampermonkey</span></div>
                     </div>
                     <footer class="card-footer">
-                        <a href="https://github.com/nikmedoed/myTampermonkeyScripts" target="_blank"
-                           class="card-footer-item">GitHub</a>
+                        <a class="card-footer-item" href="https://github.com/nikmedoed/myTampermonkeyScripts"
+                           target="_blank">GitHub</a>
                     </footer>
                 </div>
             </div>
@@ -355,14 +355,13 @@
                                 class="tag is-warning is-light">Selenium</span></div>
                     </div>
                     <footer class="card-footer">
-                        <a href="https://github.com/nikmedoed/WAutils" target="_blank"
-                           class="card-footer-item">GitHub</a>
+                        <a class="card-footer-item" href="https://github.com/nikmedoed/WAutils"
+                           target="_blank">GitHub</a>
                     </footer>
                 </div>
             </div>
 
         </div>
-    </div>
     </div>
 </section>
 
@@ -374,11 +373,11 @@
     </div>
 </section>
 
-<section id="contact" class="section has-background-link-dark has-text-white">
+<section class="section has-background-link-dark has-text-white" id="contact">
     <div class="container has-text-centered">
         <h2 class="title has-text-warning">Contacts & Donations</h2>
-        <p>Email: <a href="mailto:nikmedoed@gmail.com" class="has-text-white">nikmedoed@gmail.com</a> | Telegram: <a
-                href="https://t.me/nikmedoed" target="_blank" class="has-text-white">@nikmedoed</a></p>
+        <p>Email: <a class="has-text-white" href="mailto:nikmedoed@gmail.com">nikmedoed@gmail.com</a> | Telegram: <a
+                class="has-text-white" href="https://t.me/nikmedoed" target="_blank">@nikmedoed</a></p>
         <div class="buttons is-centered mt-4">
             <a class="button is-warning" href="https://ko-fi.com/nikmedoed" target="_blank">Ko-fi</a>
             <a class="button is-warning" href="https://boosty.to/nikmedoed/donate" target="_blank">Boosty</a>
@@ -398,27 +397,17 @@
 </div>
 <footer class="footer has-background-black has-text-centered has-text-white">
     <div class="content">
-        <p>&copy; 2025 Nikita Muromtsev. <a href="https://github.com/nikmedoed" target="_blank"
-                                            class="has-text-warning">GitHub</a> | <a
-                href="https://www.linkedin.com/in/muromcevn" target="_blank" class="has-text-warning">LinkedIn</a></p>
+        <p>&copy; 2025 Nikita Muromtsev. <a class="has-text-warning" href="https://github.com/nikmedoed"
+                                            target="_blank">GitHub</a> | <a
+                class="has-text-warning" href="https://www.linkedin.com/in/muromcevn" target="_blank">LinkedIn</a></p>
     </div>
 </footer>
 
 </body>
-<script src="header.js"></script>
+<script src="script.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-        if ($navbarBurgers.length > 0) {
-            $navbarBurgers.forEach(el => {
-                el.addEventListener('click', () => {
-                    const target = el.dataset.target;
-                    const $target = document.getElementById(target);
-                    el.classList.toggle('is-active');
-                    $target.classList.toggle('is-active');
-                });
-            });
-        }
+
 
         const cards = document.querySelectorAll('.project-card');
         const counts = {};
@@ -479,15 +468,6 @@
             box.addEventListener('mouseleave', () => {
                 overlay.classList.remove('active');
                 preview.innerHTML = '';
-            });
-        });
-        const burgers = Array.from(document.querySelectorAll('.navbar-burger'));
-        burgers.forEach(el => {
-            el.addEventListener('click', () => {
-                const target = el.dataset.target;
-                const menu = document.getElementById(target);
-                el.classList.toggle('is-active');
-                menu.classList.toggle('is-active');
             });
         });
     });

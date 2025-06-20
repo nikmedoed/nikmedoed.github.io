@@ -1,107 +1,69 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html data-theme="dark" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nikita Muromtsev - Experience</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=cyrillic" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Nikita Muromtsev - Experience</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=cyrillic"
+          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+<nav aria-label="main navigation" class="navbar is-dark" role="navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="./">Home</a>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
+        <a class="navbar-item" href="./">Home</a>
+        <a aria-expanded="false" aria-label="menu" class="navbar-burger" data-target="navbarMenu" role="button">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
     </div>
-    <div id="navbarMenu" class="navbar-menu">
-      <div class="navbar-end">
-        <a class="navbar-item" href="./#projects">Projects</a>
-        <a class="navbar-item" href="#">Experience</a>
-        <a class="navbar-item" href="./#contact">Contacts</a>
-        <div class="navbar-item">
-          <button id="theme-toggle" class="button is-small">
-            <span class="icon"><i class="fas fa-sun"></i></span>
-          </button>
+    <div class="navbar-menu" id="navbarMenu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="./#projects">Projects</a>
+            <a class="navbar-item" href="#">Experience</a>
+            <a class="navbar-item" href="./#contact">Contacts</a>
+            <div class="navbar-item">
+                <button class="button is-small" id="theme-toggle">
+                    <span class="icon"><i class="fas fa-sun"></i></span>
+                </button>
+            </div>
         </div>
-      </div>
     </div>
-  </nav>
+</nav>
 
-  <section class="hero is-medium gradient-bg">
+<section class="hero is-medium gradient-bg">
     <div class="hero-body has-text-centered">
-      <h1 class="title gradient-text">Experience & CV</h1>
-      <p class="subtitle has-text-light">Highlights of my professional path</p>
+        <h1 class="title gradient-text">Experience & CV</h1>
+        <p class="subtitle has-text-light">Highlights of my professional path</p>
     </div>
-  </section>
+</section>
 
-  <section class="section">
+<section class="section">
     <div class="container">
-      <h2 class="title has-text-centered has-text-danger mb-5">Roles & Projects</h2>
-      <div class="content">
-        <ul>
-          <li><strong>BeePlus</strong> – Product manager leading service company process management system.</li>
-          <li><strong>Freelance</strong> – Full-stack development, mentoring and Telegram bots.</li>
-          <li><strong>BASEL Group</strong> – Project manager and automation developer.</li>
-          <li><strong>MSU Instructor</strong> – Python teaching and research.</li>
-        </ul>
-        <p>More details on <a href="https://www.linkedin.com/in/muromcevn" target="_blank">LinkedIn</a>.</p>
-      </div>
+        <h2 class="title has-text-centered has-text-danger mb-5">Roles & Projects</h2>
+        <div class="content">
+            <ul>
+                <li><strong>BeePlus</strong> – Product manager leading service company process management system.</li>
+                <li><strong>Freelance</strong> – Full-stack development, mentoring and Telegram bots.</li>
+                <li><strong>BASEL Group</strong> – Project manager and automation developer.</li>
+                <li><strong>MSU Instructor</strong> – Python teaching and research.</li>
+            </ul>
+            <p>More details on <a href="https://www.linkedin.com/in/muromcevn" target="_blank">LinkedIn</a>.</p>
+        </div>
     </div>
-  </section>
+</section>
 
-  <footer class="footer has-background-black has-text-centered has-text-white">
+<footer class="footer has-background-black has-text-centered has-text-white">
     <div class="content">
-      <p><a href="./" class="has-text-warning">Back to main page</a></p>
+        <p><a class="has-text-warning" href="./">Back to main page</a></p>
     </div>
-  </footer>
+</footer>
 
-  <script src="header.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-      if ($navbarBurgers.length > 0) {
-        $navbarBurgers.forEach(el => {
-          el.addEventListener('click', () => {
-            const target = el.dataset.target;
-            const $target = document.getElementById(target);
-            el.classList.toggle('is-active');
-            $target.classList.toggle('is-active');
-          });
-        });
-      }
-
-      const themeBtn = document.getElementById('theme-toggle');
-      const root = document.documentElement;
-      function applyTheme(theme) {
-        root.setAttribute('data-theme', theme);
-        const icon = themeBtn.querySelector('i');
-        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-          navbar.classList.toggle('is-dark', theme === 'dark');
-          navbar.classList.toggle('is-light', theme === 'light');
-        }
-      }
-      if (themeBtn) {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const storedTheme = localStorage.getItem('theme');
-        applyTheme(storedTheme || (prefersDark ? 'dark' : 'light'));
-        themeBtn.addEventListener('click', () => {
-          const current = root.getAttribute('data-theme');
-          const newTheme = current === 'dark' ? 'light' : 'dark';
-          localStorage.setItem('theme', newTheme);
-          applyTheme(newTheme);
-        });
-      }
-    });
-  </script>
+<script src="script.js"></script>
 </body>
 </html>
