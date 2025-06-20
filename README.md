@@ -12,7 +12,7 @@ Main page features:
 - Brief about section
 - Contact links and donation options
 
-Project cards have a placeholder `<div class="card-image">` to insert screenshots or short videos stored under `static/media/`.
+Project cards are defined in `data/projects.yaml`. Each entry lists the media file, description and technology tags used to generate a card via a reusable partial.
 
 The `experience` page summarises my work history and links back to the main page.
 
