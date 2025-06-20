@@ -134,3 +134,6 @@ html, body {
   color: inherit;
 }
 
+#tech-filter .filter-tag {
+  cursor: pointer;
+}
