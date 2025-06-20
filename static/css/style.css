@@ -203,7 +203,7 @@ body.no-scroll {
 
 .contact-form {
   max-width: 480px;
-  margin: 0 auto;
+  margin: 0;
 }
 .contact-form .label {
   color: #fff;
@@ -211,4 +211,10 @@ body.no-scroll {
 
 .blog-promo .button {
   margin-top: 0.5rem;
+}
+
+.blog-image-button {
+  width: 180px;
+  height: auto;
+  border-radius: 8px;
 }
