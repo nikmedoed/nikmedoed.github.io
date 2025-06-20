@@ -1,46 +1,9 @@
-<!DOCTYPE html>
-<html data-theme="dark" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1" name="viewport">
-    <title>Nikita Muromtsev - Portfolio</title>
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=cyrillic"
-          rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-</head>
-<body>
-<nav aria-label="main navigation" class="navbar is-dark" role="navigation">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="./">Nikita Muromtsev</a>
-        <a aria-expanded="false" aria-label="menu" class="navbar-burger" data-target="navbarMenu" role="button">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-    </div>
-
-    <div class="navbar-menu" id="navbarMenu">
-        <div class="navbar-end">
-            <a class="navbar-item" href="#projects">Featured Projects</a>
-            <a class="navbar-item" href="experience.html">Experience</a>
-            <a class="navbar-item" href="#contact">Contacts</a>
-            <div class="navbar-item">
-                <button class="button is-small" id="theme-toggle">
-                    <span class="icon"><i class="fas fa-sun"></i></span>
-                </button>
-            </div>
-        </div>
-    </div>
-</nav>
-
+{{ define "main" }}
 <section class="hero is-medium is-bold gradient-bg">
     <div class="hero-body has-text-centered">
         <p class="title gradient-text">Resist, Invent & Projects</p>
         <p class="subtitle has-text-light">Full-stack developer & product-minded problem solver</p>
-        <a class="button is-warning is-medium" href="experience.html">See my CV</a>
+        <a class="button is-warning is-medium" href="{{ "/experience/" | relURL }}">See my CV</a>
     </div>
 </section>
 
@@ -54,7 +17,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <video autoplay loop muted playsinline src="media/pishow.mp4"></video>
+                            <video autoplay loop muted playsinline src="/media/pishow.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -80,7 +43,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <video autoplay loop muted playsinline src="media/oled_screensaver.mp4"></video>
+                            <video autoplay loop muted playsinline src="/media/oled_screensaver.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -106,7 +69,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <video autoplay loop muted playsinline src="media/compress.mp4"></video>
+                            <video autoplay loop muted playsinline src="/media/compress.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -130,7 +93,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <video autoplay loop muted playsinline src="media/backuptool.mp4"></video>
+                            <video autoplay loop muted playsinline src="/media/backuptool.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -154,7 +117,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <video autoplay loop muted playsinline src="media/speech_input.mp4"></video>
+                            <video autoplay loop muted playsinline src="/media/speech_input.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -178,7 +141,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <img alt="Telegram Important Notifies screenshot" src="media/notifications.png">
+                            <img alt="Telegram Important Notifies screenshot" src="/media/notifications.png">
                         </figure>
                     </div>
                     <div class="card-content">
@@ -203,7 +166,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <video autoplay loop muted playsinline src="media/yt-auto.mp4"></video>
+                            <video autoplay loop muted playsinline src="/media/yt-auto.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -227,7 +190,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <video autoplay loop muted playsinline src="media/meeting_timer.mp4"></video>
+                            <video autoplay loop muted playsinline src="/media/meeting_timer.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -251,7 +214,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <video autoplay loop muted playsinline src="media/vocabulary.mp4"></video>
+                            <video autoplay loop muted playsinline src="/media/vocabulary.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -276,7 +239,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media contain">
-                            <img alt="PP to Stories screenshot" src="media/pptx_to_stories.png">
+                            <img alt="PP to Stories screenshot" src="/media/pptx_to_stories.png">
                         </figure>
                     </div>
                     <div class="card-content">
@@ -298,7 +261,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media contain">
-                            <img alt="pyMapCollector screenshot" src="media/pymap.jpg">
+                            <img alt="pyMapCollector screenshot" src="/media/pymap.jpg">
                         </figure>
                     </div>
                     <div class="card-content">
@@ -321,7 +284,7 @@
                 <div class="card project-card">
                     <div class="card-image">
                         <figure class="project-media">
-                            <video autoplay loop muted playsinline src="media/tampermonkey.mp4"></video>
+                            <video autoplay loop muted playsinline src="/media/tampermonkey.mp4"></video>
                         </figure>
                     </div>
                     <div class="card-content">
@@ -369,7 +332,7 @@
     <div class="container has-text-centered">
         <h2 class="title has-text-danger mb-4">About Me</h2>
         <p class="mb-3">Versatile Python &amp; JavaScript engineer focused on automation and system design.</p>
-        <a class="button is-link is-light" href="experience.html">See my résumé</a>
+        <a class="button is-link is-light" href="{{ "/experience/" | relURL }}">See my résumé</a>
     </div>
 </section>
 
@@ -396,104 +359,4 @@
     <button id="close-preview" class="delete is-large" aria-label="close"></button>
     <div id="media-preview"></div>
 </div>
-<footer class="footer has-background-black has-text-centered has-text-white">
-    <div class="content">
-        <p>&copy; 2025 Nikita Muromtsev. <a class="has-text-warning" href="https://github.com/nikmedoed"
-                                            target="_blank">GitHub</a> | <a
-                class="has-text-warning" href="https://www.linkedin.com/in/muromcevn" target="_blank">LinkedIn</a></p>
-    </div>
-</footer>
-
-</body>
-<script src="script.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-
-
-        const cards = document.querySelectorAll('.project-card');
-        const counts = {};
-        const colors = {};
-        cards.forEach(card => {
-            const tagEls = card.querySelectorAll('.tags .tag');
-            const tags = Array.from(tagEls).map(t => {
-                const text = t.textContent.trim();
-                if (!colors[text]) {
-                    const cls = Array.from(t.classList).filter(c => c !== 'tag').join(' ');
-                    colors[text] = cls;
-                }
-                counts[text] = (counts[text] || 0) + 1;
-                return text;
-            });
-            card.dataset.techs = tags.join(',');
-        });
-        const filterBar = document.getElementById('tech-filter');
-        if (filterBar) {
-            filterBar.innerHTML = '<span class="tag filter-tag is-dark" data-tech="all">All</span>';
-            Object.keys(counts).sort((a, b) => counts[b] - counts[a]).forEach(t => {
-                const s = document.createElement('span');
-                s.className = `tag filter-tag ${colors[t]}`;
-                s.dataset.tech = t;
-                s.textContent = t;
-                filterBar.appendChild(s);
-            });
-            filterBar.addEventListener('click', e => {
-                const tgt = e.target.closest('.filter-tag');
-                if (!tgt) return;
-                const tech = tgt.dataset.tech;
-                filterBar.querySelectorAll('.filter-tag').forEach(tag => tag.classList.remove('is-dark'));
-                tgt.classList.add('is-dark');
-                cards.forEach(c => {
-                    const techs = c.dataset.techs.split(',');
-                    c.closest('.column').style.display = tech === 'all' || techs.includes(tech) ? '' : 'none';
-                });
-            });
-        }
-
-
-        const overlay = document.getElementById('preview-overlay');
-        const preview = document.getElementById('media-preview');
-        const closeBtn = document.getElementById('close-preview');
-
-        function show(media, modal = false) {
-            preview.innerHTML = '';
-            const clone = media.cloneNode(true);
-            if (clone.tagName === 'VIDEO') {
-                clone.muted = true;
-                clone.autoplay = true;
-                clone.loop = true;
-                clone.playsInline = true;
-            }
-            preview.appendChild(clone);
-            overlay.classList.add('active');
-            overlay.classList.toggle('modal', modal);
-            if (modal) {
-                document.body.classList.add('no-scroll');
-            }
-        }
-
-        function hide() {
-            overlay.classList.remove('active', 'modal');
-            preview.innerHTML = '';
-            document.body.classList.remove('no-scroll');
-        }
-
-        document.querySelectorAll('.project-media').forEach(box => {
-            const media = box.querySelector('img, video');
-            box.addEventListener('mouseenter', () => show(media));
-            box.addEventListener('click', (e) => {
-                e.preventDefault();
-                show(media, true);
-            });
-            box.addEventListener('mouseleave', () => {
-                if (!overlay.classList.contains('modal')) hide();
-            });
-        });
-
-        overlay.addEventListener('click', e => {
-            if (e.target === overlay || e.target === closeBtn) hide();
-        });
-    });
-
-</script>
-</body>
-</html>
+{{ end }}

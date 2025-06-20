@@ -1,8 +1,7 @@
 # nikmedoed.github.io
 
 This repository contains the source for my personal landing page and portfolio.
-The site is a static page built with **Bulma 1.0** plus a small stylesheet with my
-dark/vivid color palette.
+The site is generated with **Hugo** using Bulma for styling and a small dark/vivid palette.
 
 Visit the site here: <https://nikmedoed.github.io>
 
@@ -13,12 +12,10 @@ Main page features:
 - Brief about section
 - Contact links and donation options
 
-Project cards have a placeholder `<div class="card-image">` where you can insert
-Each project card includes a short tagline, a brief description, and tags showing key technologies.
+Project cards have a placeholder `<div class="card-image">` to insert screenshots or short videos stored under `static/media/`.
 
-screenshots or short videos. Add your media files under the `media/` directory
-and reference them from these blocks.
+The `experience` page summarises my work history and links back to the main page.
 
-The `experience.html` page summarises my work history and links back to the main page.
+To build the site locally run `hugo` and open `public/index.html`.
 
 Feel free to explore the code or get in touch if you have questions!

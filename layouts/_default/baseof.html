@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html data-theme="dark" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }} - Nikita Muromtsev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=cyrillic" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="{{ "/" | relURL }}">Nikita Muromtsev</a>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+            <a class="navbar-item" href="{{ "/#projects" | relURL }}">Featured Projects</a>
+            <a class="navbar-item" href="{{ "/experience/" | relURL }}">Experience</a>
+            <a class="navbar-item" href="{{ "/#contact" | relURL }}">Contacts</a>
+            <div class="navbar-item">
+                <button id="theme-toggle" class="button is-small">
+                    <span class="icon"><i class="fas fa-sun"></i></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+{{ block "main" . }}{{ end }}
+
+<footer class="footer has-background-black has-text-centered has-text-white">
+    <div class="content">
+        <p>&copy; 2025 Nikita Muromtsev. <a href="https://github.com/nikmedoed" target="_blank" class="has-text-warning">GitHub</a> | <a href="https://www.linkedin.com/in/muromcevn" target="_blank" class="has-text-warning">LinkedIn</a></p>
+    </div>
+</footer>
+<script src="/js/script.js"></script>
+</body>
+</html>
