@@ -40,11 +40,6 @@
 }
 
 
-.navbar-brand .navbar-item {
-  display: flex;
-  align-items: center;
-}
-
 #theme-toggle {
   margin-left: 0.5rem;
   background: transparent;
