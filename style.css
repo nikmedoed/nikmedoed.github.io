@@ -33,6 +33,77 @@ html, body {
   flex-grow: 1;
 }
 
+.project-media {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  border-radius: 8px;
+}
+
+.project-media img,
+.project-media video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-media.contain img,
+.project-media.contain video {
+  object-fit: contain;
+}
+
+#media-preview {
+  max-width: 90vw;
+  max-height: 90vh;
+  pointer-events: none;
+}
+
+#media-preview img,
+#media-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+#preview-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(2px);
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 999;
+}
+
+#preview-overlay.active {
+  display: flex;
+}
+
+.project-media:hover img,
+.project-media:hover video {
+  transform: scale(1.05);
+}
+
+@media (min-width: 1024px) and (max-width: 1407px) {
+  .container:not(.is-max-desktop) {
+    width: 100%;
+    max-width: none !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
 .tm-icon {
   display: inline-block;
   height: 1em;
@@ -43,7 +114,7 @@ html, body {
   vertical-align: middle;
 }
 
-/* Sticky header that hides on scroll down */
+
 .navbar {
   position: sticky;
   top: 0;
@@ -54,3 +125,12 @@ html, body {
 .navbar.hidden {
   transform: translateY(-100%);
 }
+
+#theme-toggle {
+  margin-left: 0.5rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: inherit;
+}
+

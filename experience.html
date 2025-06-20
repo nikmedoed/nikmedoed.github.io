@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=cyrillic" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -25,6 +26,11 @@
         <a class="navbar-item" href="./#projects">Projects</a>
         <a class="navbar-item" href="#">Experience</a>
         <a class="navbar-item" href="./#contact">Contacts</a>
+        <div class="navbar-item">
+          <button id="theme-toggle" class="button is-small">
+            <span class="icon"><i class="fas fa-sun"></i></span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -32,7 +38,7 @@
   <section class="hero is-medium gradient-bg">
     <div class="hero-body has-text-centered">
       <h1 class="title gradient-text">Experience & CV</h1>
-      <p class="subtitle">Highlights of my professional path</p>
+      <p class="subtitle has-text-light">Highlights of my professional path</p>
     </div>
   </section>
 
@@ -58,5 +64,44 @@
   </footer>
 
   <script src="header.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+      if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach(el => {
+          el.addEventListener('click', () => {
+            const target = el.dataset.target;
+            const $target = document.getElementById(target);
+            el.classList.toggle('is-active');
+            $target.classList.toggle('is-active');
+          });
+        });
+      }
+
+      const themeBtn = document.getElementById('theme-toggle');
+      const root = document.documentElement;
+      function applyTheme(theme) {
+        root.setAttribute('data-theme', theme);
+        const icon = themeBtn.querySelector('i');
+        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+          navbar.classList.toggle('is-dark', theme === 'dark');
+          navbar.classList.toggle('is-light', theme === 'light');
+        }
+      }
+      if (themeBtn) {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const storedTheme = localStorage.getItem('theme');
+        applyTheme(storedTheme || (prefersDark ? 'dark' : 'light'));
+        themeBtn.addEventListener('click', () => {
+          const current = root.getAttribute('data-theme');
+          const newTheme = current === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('theme', newTheme);
+          applyTheme(newTheme);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
