@@ -162,3 +162,8 @@ body.no-scroll {
 .project-tag {
   cursor: pointer;
 }
+
+.footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
