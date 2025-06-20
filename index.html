@@ -393,6 +393,7 @@
 </section>
 
 <div id="preview-overlay">
+    <button id="close-preview" class="delete is-large" aria-label="close"></button>
     <div id="media-preview"></div>
 </div>
 <footer class="footer has-background-black has-text-centered has-text-white">
@@ -451,24 +452,45 @@
 
         const overlay = document.getElementById('preview-overlay');
         const preview = document.getElementById('media-preview');
+        const closeBtn = document.getElementById('close-preview');
+
+        function show(media, modal = false) {
+            preview.innerHTML = '';
+            const clone = media.cloneNode(true);
+            if (clone.tagName === 'VIDEO') {
+                clone.muted = true;
+                clone.autoplay = true;
+                clone.loop = true;
+                clone.playsInline = true;
+            }
+            preview.appendChild(clone);
+            overlay.classList.add('active');
+            overlay.classList.toggle('modal', modal);
+            if (modal) {
+                document.body.classList.add('no-scroll');
+            }
+        }
+
+        function hide() {
+            overlay.classList.remove('active', 'modal');
+            preview.innerHTML = '';
+            document.body.classList.remove('no-scroll');
+        }
+
         document.querySelectorAll('.project-media').forEach(box => {
             const media = box.querySelector('img, video');
-            box.addEventListener('mouseenter', () => {
-                preview.innerHTML = '';
-                const clone = media.cloneNode(true);
-                if (clone.tagName === 'VIDEO') {
-                    clone.muted = true;
-                    clone.autoplay = true;
-                    clone.loop = true;
-                    clone.playsInline = true;
-                }
-                preview.appendChild(clone);
-                overlay.classList.add('active');
+            box.addEventListener('mouseenter', () => show(media));
+            box.addEventListener('click', (e) => {
+                e.preventDefault();
+                show(media, true);
             });
             box.addEventListener('mouseleave', () => {
-                overlay.classList.remove('active');
-                preview.innerHTML = '';
+                if (!overlay.classList.contains('modal')) hide();
             });
+        });
+
+        overlay.addEventListener('click', e => {
+            if (e.target === overlay || e.target === closeBtn) hide();
         });
     });
 
