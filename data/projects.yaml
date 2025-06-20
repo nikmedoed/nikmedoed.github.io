@@ -9,6 +9,25 @@
     - {name: FastAPI, color: is-primary}
     - {name: PIL, color: is-success}
     - {name: FFmpeg, color: is-danger}
+- title: Windows Backup Tool
+  repo: https://github.com/nikmedoed/windows_backup_tool
+  subtitle: Incremental backups made easy.
+  description: Select which folders to mirror, exclude junk, and schedule automatic runs. Saves game and app settings without huge snapshots.
+  icon: fas fa-hdd
+  media: backuptool.mp4
+  tags:
+    - {name: Python, color: is-link}
+    - {name: PySide6, color: is-danger}
+- title: YT Auto Playlist
+  repo: https://github.com/nikmedoed/YTautoPlaylist
+  subtitle: Curate new YouTube videos.
+  description: Browser extension collects new uploads from your subscriptions into playlists, filtering by tags and duration.
+  icon: fab fa-youtube
+  media: yt-auto.mp4
+  tags:
+    - {name: JavaScript, color: is-warning}
+    - {name: WebExtension, color: is-success}
+    - {name: Google API, color: is-info}
 - title: OLED Screensaver
   repo: https://github.com/nikmedoed/oled_screensaver
   subtitle: Keep OLED pixels safe.
@@ -29,15 +48,6 @@
   tags:
     - {name: Python, color: is-link}
     - {name: FFmpeg, color: is-danger}
-- title: Windows Backup Tool
-  repo: https://github.com/nikmedoed/windows_backup_tool
-  subtitle: Incremental backups made easy.
-  description: Select which folders to mirror, exclude junk, and schedule automatic runs. Saves game and app settings without huge snapshots.
-  icon: fas fa-hdd
-  media: backuptool.mp4
-  tags:
-    - {name: Python, color: is-link}
-    - {name: PySide6, color: is-danger}
 - title: Real-time Speech to Input
   repo: https://github.com/nikmedoed/speech_to_input
   subtitle: Whisper typing on-the-fly.
@@ -59,16 +69,6 @@
     - {name: Python, color: is-link}
     - {name: Telethon, color: is-info}
     - {name: NLP, color: is-danger}
-- title: YT Auto Playlist
-  repo: https://github.com/nikmedoed/YTautoPlaylist
-  subtitle: Curate new YouTube videos.
-  description: Browser extension collects new uploads from your subscriptions into playlists, filtering by tags and duration.
-  icon: fab fa-youtube
-  media: yt-auto.mp4
-  tags:
-    - {name: JavaScript, color: is-warning}
-    - {name: WebExtension, color: is-success}
-    - {name: Google API, color: is-info}
 - title: Meetings Timer
   repo: https://github.com/nikmedoed/meetings-timer
   subtitle: Stay on schedule online.
@@ -117,6 +117,16 @@
   tags:
     - {name: JavaScript, color: is-warning}
     - {name: Tampermonkey, color: is-danger}
+- title: Fast File Sharing
+  repo: https://github.com/nikmedoed/file_upload_for_share
+  subtitle: Host big files for Notion.
+  description: Rust app and Nginx config to upload media via WebDAV and share secret links for embedding without limits.
+  icon: fas fa-upload
+  media: null
+  tags:
+    - {name: Rust, color: is-warning}
+    - {name: WebDAV, color: is-info}
+    - {name: Nginx, color: is-primary}
 - title: WhatsApp Utilities
   repo: https://github.com/nikmedoed/WAutils
   subtitle: Automate WhatsApp Web tasks.

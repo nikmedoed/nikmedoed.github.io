@@ -96,6 +96,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 c.closest('.column').style.display = tech === 'all' || techs.includes(tech) ? '' : 'none';
             });
         });
+
+        document.querySelectorAll('.project-tag').forEach(tag => {
+            tag.classList.add('filter-tag');
+            tag.addEventListener('click', () => {
+                const tech = tag.dataset.tech;
+                const target = filterBar.querySelector(`[data-tech="${tech}"]`);
+                if (target) target.click();
+            });
+        });
     }
 
     const overlay = document.getElementById('preview-overlay');

@@ -23,7 +23,7 @@
             <p class="subtitle is-6">{{ .subtitle }}</p>
             <p class="content">{{ .description }}</p>
             <div class="tags">
-                {{ range .tags }}<span class="tag {{ .color }} is-light">{{ .name }}</span>{{ end }}
+                {{ range .tags }}<span class="tag {{ .color }} is-light project-tag" data-tech="{{ .name }}">{{ .name }}</span>{{ end }}
             </div>
         </div>
         <footer class="card-footer">
