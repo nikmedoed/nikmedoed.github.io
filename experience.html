@@ -12,6 +12,22 @@
   <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a class="navbar-item" href="./">Home</a>
+      <div class="bd-nav-themes is-hidden-desktop">
+        <button id="theme-cycle" class="bd-cycle button is-small is-sun" data-target="exp-theme-menu">
+          <span class="icon"><i class="fas fa-sun"></i></span>
+        </button>
+        <div id="exp-theme-menu" class="bd-nav-menu">
+          <button data-scheme="light" class="bd-nav-item">
+            <span class="icon"><i class="fas fa-sun"></i></span><span>Light</span>
+          </button>
+          <button data-scheme="dark" class="bd-nav-item">
+            <span class="icon"><i class="fas fa-moon"></i></span><span>Dark</span>
+          </button>
+          <button data-scheme="system" class="bd-nav-item">
+            <span class="icon"><i class="fas fa-desktop"></i></span><span>System</span>
+          </button>
+        </div>
+      </div>
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
@@ -19,15 +35,28 @@
       </a>
     </div>
     <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <div class="bd-nav-themes is-hidden-touch">
+          <button id="theme-cycle-desktop" class="bd-cycle button is-small is-sun" data-target="exp-theme-menu-desktop">
+            <span class="icon"><i class="fas fa-sun"></i></span>
+          </button>
+          <div id="exp-theme-menu-desktop" class="bd-nav-menu">
+            <button data-scheme="light" class="bd-nav-item">
+              <span class="icon"><i class="fas fa-sun"></i></span><span>Light</span>
+            </button>
+            <button data-scheme="dark" class="bd-nav-item">
+              <span class="icon"><i class="fas fa-moon"></i></span><span>Dark</span>
+            </button>
+            <button data-scheme="system" class="bd-nav-item">
+              <span class="icon"><i class="fas fa-desktop"></i></span><span>System</span>
+            </button>
+          </div>
+        </div>
+      </div>
       <div class="navbar-end">
         <a class="navbar-item" href="./#projects">Projects</a>
         <a class="navbar-item" href="#">Experience</a>
         <a class="navbar-item" href="./#contact">Contacts</a>
-        <div class="navbar-item">
-          <button id="theme-toggle" class="button is-small">
-            <span class="icon"><i class="fas fa-sun"></i></span>
-          </button>
-        </div>
       </div>
     </div>
   </nav>
@@ -35,7 +64,7 @@
   <section class="hero is-medium gradient-bg">
     <div class="hero-body has-text-centered">
       <h1 class="title gradient-text">Experience & CV</h1>
-      <p class="subtitle has-text-light">Highlights of my professional path</p>
+      <p class="subtitle theme-text">Highlights of my professional path</p>
     </div>
   </section>
 
@@ -62,41 +91,64 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-      if ($navbarBurgers.length > 0) {
-        $navbarBurgers.forEach(el => {
-          el.addEventListener('click', () => {
-            const target = el.dataset.target;
-            const $target = document.getElementById(target);
-            el.classList.toggle('is-active');
-            $target.classList.toggle('is-active');
-          });
+      const burgers = Array.from(document.querySelectorAll('.navbar-burger'));
+      burgers.forEach(b => {
+        b.addEventListener('click', () => {
+          const target = b.dataset.target;
+          const menu = document.getElementById(target);
+          b.classList.toggle('is-active');
+          menu.classList.toggle('is-active');
+        });
+      });
+
+      const root = document.documentElement;
+      const cycleBtns = document.querySelectorAll('.bd-cycle');
+      const menus = document.querySelectorAll('.bd-nav-menu');
+      const schemeBtns = document.querySelectorAll('[data-scheme]');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+      function systemTheme() {
+        return prefersDark.matches ? 'dark' : 'light';
+      }
+
+      function applyTheme(scheme) {
+        const theme = scheme === 'system' ? systemTheme() : scheme;
+        root.setAttribute('data-theme', theme);
+        document.querySelectorAll('.navbar').forEach(nav => {
+          nav.classList.toggle('is-dark', theme === 'dark');
+          nav.classList.toggle('is-light', theme === 'light');
+        });
+        cycleBtns.forEach(btn => {
+          btn.classList.toggle('is-sun', theme === 'light');
+          btn.classList.toggle('is-moon', theme === 'dark');
+        });
+        schemeBtns.forEach(btn => {
+          btn.classList.toggle('is-active', btn.dataset.scheme === scheme);
         });
       }
 
-      const themeBtn = document.getElementById('theme-toggle');
-      const root = document.documentElement;
-      function applyTheme(theme) {
-        root.setAttribute('data-theme', theme);
-        const icon = themeBtn.querySelector('i');
-        icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-          navbar.classList.toggle('is-dark', theme === 'dark');
-          navbar.classList.toggle('is-light', theme === 'light');
-        }
-      }
-      if (themeBtn) {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const storedTheme = localStorage.getItem('theme');
-        applyTheme(storedTheme || (prefersDark ? 'dark' : 'light'));
-        themeBtn.addEventListener('click', () => {
-          const current = root.getAttribute('data-theme');
-          const newTheme = current === 'dark' ? 'light' : 'dark';
-          localStorage.setItem('theme', newTheme);
-          applyTheme(newTheme);
+      let currentScheme = localStorage.getItem('theme') || 'system';
+      applyTheme(currentScheme);
+
+      schemeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentScheme = btn.dataset.scheme;
+          localStorage.setItem('theme', currentScheme);
+          applyTheme(currentScheme);
+          menus.forEach(m => m.classList.remove('is-active'));
         });
-      }
+      });
+
+      cycleBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const menu = document.getElementById(btn.dataset.target);
+          menu.classList.toggle('is-active');
+        });
+      });
+
+      prefersDark.addEventListener('change', () => {
+        if (currentScheme === 'system') applyTheme('system');
+      });
     });
   </script>
 </body>

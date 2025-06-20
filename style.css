@@ -40,11 +40,49 @@
 }
 
 
-#theme-toggle {
+.bd-nav-themes {
+  position: relative;
   margin-left: 0.5rem;
+}
+.bd-cycle {
   background: transparent;
   border: none;
   box-shadow: none;
   color: inherit;
+}
+.bd-nav-menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 10;
+  padding: 0.25rem 0;
+}
+[data-theme="dark"] .bd-nav-menu {
+  background: #363636;
+}
+.bd-nav-menu.is-active {
+  display: flex;
+  flex-direction: column;
+}
+.bd-nav-item {
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  color: inherit;
+}
+.bd-nav-item.is-active {
+  font-weight: bold;
+}
+.theme-text {
+  color: white;
+}
+[data-theme="light"] .theme-text {
+  color: #363636;
 }
 
