@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,6 +26,11 @@
           <a class="navbar-item" href="#projects">Featured Projects</a>
           <a class="navbar-item" href="experience.html">Experience</a>
           <a class="navbar-item" href="#contact">Contacts</a>
+          <div class="navbar-item">
+            <button id="theme-toggle" class="button is-small">
+              <span class="icon"><i class="fas fa-sun"></i></span>
+            </button>
+          </div>
         </div>
       </div>
     </nav>
@@ -33,7 +38,7 @@
     <section class="hero is-medium is-bold gradient-bg">
       <div class="hero-body has-text-centered">
         <p class="title gradient-text">Resist, Invent & Projects</p>
-        <p class="subtitle">Full-stack developer & product-minded problem solver</p>
+        <p class="subtitle has-text-light">Full-stack developer & product-minded problem solver</p>
         <a class="button is-warning is-medium" href="experience.html">See my CV</a>
       </div>
     </section>
@@ -325,7 +330,46 @@
     </footer>
 
     <script>
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {  
+  
+        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+        if ($navbarBurgers.length > 0) {
+          $navbarBurgers.forEach(el => {
+            el.addEventListener('click', () => {
+              const target = el.dataset.target;
+              const $target = document.getElementById(target);
+              el.classList.toggle('is-active');
+              $target.classList.toggle('is-active');
+            });
+          });
+        }
+
+        const themeBtn = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+        function applyTheme(theme) {
+          root.setAttribute('data-theme', theme);
+          const icon = themeBtn.querySelector('i');
+          icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+          const navbar = document.querySelector('.navbar');
+          if (navbar) {
+            navbar.classList.toggle('is-dark', theme === 'dark');
+            navbar.classList.toggle('is-light', theme === 'light');
+          }
+        }
+        if (themeBtn) {
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const storedTheme = localStorage.getItem('theme');
+          applyTheme(storedTheme || (prefersDark ? 'dark' : 'light'));
+          themeBtn.addEventListener('click', () => {
+            const current = root.getAttribute('data-theme');
+            const newTheme = current === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('theme', newTheme);
+            applyTheme(newTheme);
+          });
+        }
+      });
+  
+  
   const overlay = document.getElementById('preview-overlay');
   const preview = document.getElementById('media-preview');
   document.querySelectorAll('.project-media').forEach(box => {
