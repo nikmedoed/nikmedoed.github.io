@@ -165,4 +165,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    const form = document.getElementById('contact-form');
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const subject = encodeURIComponent(document.getElementById('subject').value);
+            const body = encodeURIComponent(document.getElementById('message').value);
+            const email = ['nikmedoed', 'gmail.com'].join('@');
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        });
+    }
 });

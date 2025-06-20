@@ -200,3 +200,15 @@ body.no-scroll {
   border-color: #6F2DBD;
   color: #fff;
 }
+
+.contact-form {
+  max-width: 480px;
+  margin: 0 auto;
+}
+.contact-form .label {
+  color: #fff;
+}
+
+.blog-promo .button {
+  margin-top: 0.5rem;
+}
