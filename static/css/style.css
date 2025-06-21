@@ -213,11 +213,25 @@ body.no-scroll {
   margin-top: 0.5rem;
 }
 .blog-promo .button.blog-btn {
+  position: relative;
   padding: 0;
   border-radius: 0.5rem;
+  overflow: hidden;
+  display: inline-block;
 }
 .blog-promo .blog-btn img {
   display: block;
   border-radius: 0.5rem;
   max-height: 3rem;
+}
+.blog-promo .blog-btn span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 4px #000;
+  background: rgba(0, 0, 0, 0.35);
 }
