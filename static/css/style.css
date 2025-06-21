@@ -212,3 +212,12 @@ body.no-scroll {
 .blog-promo .button {
   margin-top: 0.5rem;
 }
+.blog-promo .button.blog-btn {
+  padding: 0;
+  border-radius: 0.5rem;
+}
+.blog-promo .blog-btn img {
+  display: block;
+  border-radius: 0.5rem;
+  max-height: 3rem;
+}
