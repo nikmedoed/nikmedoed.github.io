@@ -151,4 +151,29 @@ document.addEventListener('DOMContentLoaded', () => {
             if (e.target === overlay || e.target === closeBtn) hide();
         });
     }
+
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const text = btn.dataset.clipboardText;
+            if (!text) return;
+            navigator.clipboard.writeText(text).then(() => {
+                const icon = btn.querySelector('i');
+                if (icon) icon.className = 'fas fa-check';
+                setTimeout(() => {
+                    if (icon) icon.className = 'fas fa-copy';
+                }, 1500);
+            });
+        });
+    });
+
+    const form = document.getElementById('contact-form');
+    if (form) {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            const subject = encodeURIComponent(document.getElementById('subject').value);
+            const body = encodeURIComponent(document.getElementById('message').value);
+            const email = ['nikmedoed', 'gmail.com'].join('@');
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        });
+    }
 });

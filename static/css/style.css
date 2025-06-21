@@ -162,3 +162,78 @@ body.no-scroll {
 .project-tag {
   cursor: pointer;
 }
+
+.footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#contact {
+  padding-bottom: 1.5rem;
+  margin-bottom: 0;
+}
+
+.wallets .button.copy-btn {
+  margin-left: 0.25rem;
+}
+
+.button.ko-fi {
+  background-color: #FF5E5B;
+  border-color: #FF5E5B;
+  color: #fff;
+}
+
+.button.boosty {
+  background-color: #FF8C00;
+  border-color: #FF8C00;
+  color: #fff;
+}
+
+.button.paypal {
+  background-color: #0070BA;
+  border-color: #0070BA;
+  color: #fff;
+}
+
+.button.yoomoney {
+  background-color: #6F2DBD;
+  border-color: #6F2DBD;
+  color: #fff;
+}
+
+.contact-form {
+  max-width: 480px;
+  margin: 0 auto;
+}
+.contact-form .label {
+  color: #fff;
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.blog-promo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+.blog-promo .button.blog-btn {
+  padding: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: inline-block;
+  box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.7), 0 2px 3px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.2s;
+}
+.blog-promo .button.blog-btn:hover {
+  box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.9), 0 4px 6px rgba(0, 0, 0, 0.35);
+}
+.blog-promo .blog-btn img {
+  display: block;
+  border-radius: 0.5rem;
+  max-height: 5rem;
+}
