@@ -220,11 +220,11 @@ body.no-scroll {
   border-radius: 0.5rem;
   overflow: hidden;
   display: inline-block;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.7), 0 2px 3px rgba(0, 0, 0, 0.25);
   transition: box-shadow 0.2s;
 }
 .blog-promo .button.blog-btn:hover {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.9), 0 4px 6px rgba(0, 0, 0, 0.35);
 }
 .blog-promo .blog-btn img {
   display: block;
