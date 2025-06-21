@@ -212,7 +212,8 @@ body.no-scroll {
 .contact-links {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  justify-content: space-around;
+  height: 100%;
 }
 
 .blog-promo {
@@ -235,5 +236,5 @@ body.no-scroll {
 .blog-promo .blog-btn img {
   display: block;
   border-radius: 0.5rem;
-  max-height: 3rem;
+  max-height: 4rem;
 }
