@@ -209,6 +209,13 @@ body.no-scroll {
   color: #fff;
 }
 
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .blog-promo {
   display: flex;
   flex-direction: row;
