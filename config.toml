@@ -3,5 +3,5 @@ languageCode = "en-us"
 title = "Nikita Muromtsev"
 
 [params]
-# Endpoint for the contact form. Replace with your own Formspree URL.
-formspree_endpoint = "https://formspree.io/f/xwkjaeoq"
+# Endpoint for the contact form. Leave empty or remove if not using Formspree.
+formspree_endpoint = ""

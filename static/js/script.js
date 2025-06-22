@@ -199,7 +199,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 subject: document.getElementById('subject').value,
                 message: document.getElementById('message').value
             };
-            const endpoint = form.dataset.endpoint || 'https://formspree.io/f/xwkjaeoq';
+            const endpoint = form.dataset.endpoint;
+            if (!endpoint) {
+                showNotification('Contact form is not configured.', 'is-danger');
+                return;
+            }
             fetch(endpoint, {
                 method: 'POST',
                 headers: {
