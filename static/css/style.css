@@ -167,6 +167,7 @@ body.no-scroll {
 .footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 #about {
@@ -233,7 +234,7 @@ body.no-scroll {
 .blog-promo .blog-btn img {
   display: block;
   border-radius: 0.5rem;
-  max-height: 5rem;
+  max-height: 4rem;
 }
 
 .support-box {
@@ -245,12 +246,17 @@ body.no-scroll {
 }
 
 #email-btn {
-  width: 15rem;
+  width: 12rem;
 }
 
 .contact-box {
   background-color: #421537;
   color: #fff;
+}
+
+.contact-box.box {
+  background-color: #421537;
+  border-color: #421537;
 }
 
 .contact-box .label {
