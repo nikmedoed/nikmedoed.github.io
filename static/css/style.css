@@ -28,6 +28,12 @@ html, body {
   margin-right: auto;
 }
 
+/* Subtle highlight for hero tagline */
+.tagline-accent {
+  color: #c6db09;
+  font-style: italic;
+}
+
 .project-card {
   display: flex;
   flex-direction: column;
@@ -278,10 +284,18 @@ body.no-scroll {
   color: #fff;
 }
 
-/* Hero buttons use theme lime color */
+/* Hero buttons use different theme colors but equal width */
 .hero-buttons .button {
-  background-color: #c6db09;
-  border-color: #c6db09;
+  width: 9rem;
+}
+.hero-buttons .about-btn {
+  background-color: var(--c-blue);
+  border-color: var(--c-blue);
+  color: #fff;
+}
+.hero-buttons .projects-btn {
+  background-color: var(--c-yellow);
+  border-color: var(--c-yellow);
   color: #000;
 }
 
