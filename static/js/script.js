@@ -1,10 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     const currentLang = document.documentElement.lang;
+    const baseAttr = document.documentElement.dataset.base || '/';
+    const basePath = baseAttr.replace(/\/$/, '');
     const storedLang = localStorage.getItem('lang');
+    const translations = {
+        en: {all: 'All', sent: 'Message sent!', fail: 'Failed to send message.'},
+        ru: {all: 'Все', sent: 'Сообщение отправлено!', fail: 'Не удалось отправить сообщение.'}
+    };
     if (!storedLang) {
         const navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-        if (navLang.startsWith('ru') && currentLang === 'en' && location.pathname === '/') {
-            location.href = '/ru/';
+        if (navLang.startsWith('ru') && currentLang === 'en') {
+            const newPath = basePath + '/ru' + location.pathname.slice(basePath.length) + location.search + location.hash;
+            localStorage.setItem('lang', 'ru');
+            location.replace(newPath);
             return;
         }
     }
@@ -100,7 +108,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const filterBar = document.getElementById('tech-filter');
     if (filterBar) {
-        filterBar.innerHTML = '<span class="tag filter-tag is-dark" data-tech="all">All</span>';
+        const allLabel = (translations[currentLang] && translations[currentLang].all) || 'All';
+        filterBar.innerHTML = `<span class="tag filter-tag is-dark" data-tech="all">${allLabel}</span>`;
         Object.keys(counts).sort((a, b) => counts[b] - counts[a]).forEach(t => {
             const s = document.createElement('span');
             s.className = `tag filter-tag ${colors[t]}`;
@@ -193,12 +202,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showNotification(key, type = 'is-success') {
         if (!notifyContainer) return;
-        const messages = {
-            en: {sent: 'Message sent!', fail: 'Failed to send message.'},
-            ru: {sent: 'Сообщение отправлено!', fail: 'Не удалось отправить сообщение.'}
-        };
         const lang = document.documentElement.lang;
-        const msg = (messages[lang] && messages[lang][key]) || key;
+        const msg = (translations[lang] && translations[lang][key]) || key;
         const note = document.createElement('div');
         note.className = `notification ${type}`;
         note.textContent = msg;

@@ -15,7 +15,8 @@
         <h2 class="title has-text-centered has-text-link mb-6">{{ i18n "projectsTitle" }}</h2>
         <div class="tags is-justify-content-center mb-5" id="tech-filter"></div>
         <div class="columns is-multiline">
-            {{ range .Site.Data.projects }}
+            {{ $lang := .Site.Language.Lang }}
+            {{ range index .Site.Data $lang "projects" }}
             {{ partial "project-card.html" . }}
             {{ end }}
 
