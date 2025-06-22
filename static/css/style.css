@@ -56,6 +56,9 @@ html, body {
 .project-card .card-content {
   flex-grow: 1;
 }
+.project-card .title .icon {
+  margin-right: 0.5rem;
+}
 
 .project-media {
   position: relative;
