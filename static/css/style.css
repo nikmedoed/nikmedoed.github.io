@@ -222,7 +222,6 @@ body.no-scroll {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   gap: 0.5rem;
 }
 
@@ -267,7 +266,7 @@ body.no-scroll {
 }
 
 #email-btn {
-  width: 5rem;
+  width: auto;
 }
 
 .footer .content {
