@@ -199,7 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 subject: document.getElementById('subject').value,
                 message: document.getElementById('message').value
             };
-            fetch('https://formspree.io/f/xwkjaeoq', {
+            const endpoint = form.dataset.endpoint || 'https://formspree.io/f/xwkjaeoq';
+            fetch(endpoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

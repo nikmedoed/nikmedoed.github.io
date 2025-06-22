@@ -1,3 +1,7 @@
 baseURL = "https://nikmedoed.github.io/"
 languageCode = "en-us"
 title = "Nikita Muromtsev"
+
+[params]
+# Endpoint for the contact form. Replace with your own Formspree URL.
+formspree_endpoint = "https://formspree.io/f/xwkjaeoq"

@@ -86,7 +86,7 @@
                 <div id="email-modal" class="modal">
                     <div class="modal-background"></div>
                     <div class="modal-content">
-                        <form id="contact-form" class="box contact-box">
+                        <form id="contact-form" class="box contact-box" data-endpoint="{{ .Site.Params.formspree_endpoint }}">
                             <div class="field">
                                 <label class="label has-text-white" for="email">Your Email</label>
                                 <div class="control">
