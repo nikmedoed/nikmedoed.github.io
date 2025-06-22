@@ -39,10 +39,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const navbar = document.querySelector('.navbar');
-    let lastScroll = window.pageYOffset || document.documentElement.scrollTop;
+    let lastScroll = window.scrollY;
     if (navbar) {
         window.addEventListener('scroll', () => {
-            const current = window.pageYOffset || document.documentElement.scrollTop;
+            const current = window.scrollY;
             if (current <= 0) {
                 navbar.classList.remove('hidden');
                 lastScroll = current;
