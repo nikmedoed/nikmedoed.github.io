@@ -14,18 +14,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeBtn = document.getElementById('theme-toggle');
     const root = document.documentElement;
 
-    function getStorage() {
-        try {
-            const testKey = '__storage_test__';
-            localStorage.setItem(testKey, testKey);
-            localStorage.removeItem(testKey);
-            return localStorage;
-        } catch (e) {
-            return null;
-        }
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
     }
 
-    const store = getStorage();
+    function setCookie(name, value, days) {
+        const expires = new Date(Date.now() + days * 864e5).toUTCString();
+        document.cookie = `${name}=${value}; path=/; expires=${expires}`;
+    }
 
     function applyTheme(theme) {
         root.setAttribute('data-theme', theme);
@@ -41,19 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (themeBtn) {
-        const storedTheme = store ? store.getItem('theme') : null;
+        const storedTheme = getCookie('theme');
         applyTheme(storedTheme || 'dark');
         themeBtn.addEventListener('click', () => {
             const current = root.getAttribute('data-theme');
             const newTheme = current === 'dark' ? 'light' : 'dark';
-            if (store) {
-                try {
-                    const existing = store.getItem('theme');
-                    if (existing !== newTheme) store.setItem('theme', newTheme);
-                } catch (e) {
-                    // ignore quota errors
-                }
-            }
+            setCookie('theme', newTheme, 365);
             applyTheme(newTheme);
         });
     }
