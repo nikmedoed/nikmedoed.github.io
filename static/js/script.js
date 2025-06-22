@@ -14,6 +14,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeBtn = document.getElementById('theme-toggle');
     const root = document.documentElement;
 
+    function getStorage() {
+        try {
+            const testKey = '__storage_test__';
+            localStorage.setItem(testKey, testKey);
+            localStorage.removeItem(testKey);
+            return localStorage;
+        } catch (e) {
+            return null;
+        }
+    }
+
+    const store = getStorage();
+
     function applyTheme(theme) {
         root.setAttribute('data-theme', theme);
         if (themeBtn) {
@@ -28,12 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (themeBtn) {
-        const storedTheme = localStorage.getItem('theme');
+        const storedTheme = store ? store.getItem('theme') : null;
         applyTheme(storedTheme || 'dark');
         themeBtn.addEventListener('click', () => {
             const current = root.getAttribute('data-theme');
             const newTheme = current === 'dark' ? 'light' : 'dark';
-            localStorage.setItem('theme', newTheme);
+            if (store) {
+                try {
+                    const existing = store.getItem('theme');
+                    if (existing !== newTheme) store.setItem('theme', newTheme);
+                } catch (e) {
+                    // ignore quota errors
+                }
+            }
             applyTheme(newTheme);
         });
     }
