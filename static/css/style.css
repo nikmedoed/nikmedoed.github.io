@@ -1,8 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=cyrillic");
 :root {
   --c-pink: #fa33fa;
   --c-violet: #371542;
   --c-blue: #194d91;
   --c-yellow: #fffe45;
+  --c-rose: #ed7086;
 }
 
 html, body {
@@ -30,8 +32,13 @@ html, body {
 
 /* Subtle highlight for hero tagline */
 .tagline-accent {
-  color: #c6db09;
+  color: var(--c-rose);
   font-style: italic;
+}
+
+/* Utility color class for About section and accents */
+.has-text-rose {
+  color: var(--c-rose) !important;
 }
 
 .project-card {
