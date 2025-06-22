@@ -167,13 +167,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const form = document.getElementById('contact-form');
+    const emailBtn = document.getElementById('email-btn');
+    const emailModal = document.getElementById('email-modal');
+    if (emailBtn && emailModal) {
+        const closeModal = () => emailModal.classList.remove('is-active');
+        emailBtn.addEventListener('click', () => {
+            emailModal.classList.add('is-active');
+        });
+        emailModal.querySelector('.modal-background').addEventListener('click', closeModal);
+        emailModal.querySelector('.modal-close').addEventListener('click', closeModal);
+    }
     if (form) {
         form.addEventListener('submit', e => {
             e.preventDefault();
-            const subject = encodeURIComponent(document.getElementById('subject').value);
+            const subject = encodeURIComponent(document.getElementById('email').value);
             const body = encodeURIComponent(document.getElementById('message').value);
             const email = ['nikmedoed', 'gmail.com'].join('@');
             window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+            if (emailModal) emailModal.classList.remove('is-active');
         });
     }
 });
