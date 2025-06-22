@@ -171,6 +171,8 @@ body.no-scroll {
 }
 
 #about {
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: 3rem;
 }
 
@@ -244,11 +246,13 @@ body.no-scroll {
 
 .about-column {
   background-color: var(--c-violet);
+  padding: 3rem 1.5rem;
 }
 
 
 .support-column {
   background-color: var(--c-blue);
+  padding: 3rem 1.5rem;
 }
 
 .telegram-link {
