@@ -15,7 +15,7 @@
         {{ end }}
         <div class="card-content">
             <p class="title is-5">
-                <span class="icon mr-2">
+                <span class="icon">
                     {{ if eq .icon "tm-icon" }}<span aria-label="Tampermonkey" class="tm-icon" role="img"></span>{{ else }}<i class="{{ .icon }}"></i>{{ end }}
                 </span>
                 <a href="{{ .repo }}" target="_blank">{{ .title }}</a>
