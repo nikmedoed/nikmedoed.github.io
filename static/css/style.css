@@ -251,8 +251,10 @@ body.no-scroll {
 
 
 /* Dark modal form styling */
+
+/* Email form modal styling in theme colors */
 .contact-box {
-  background-color: #2b2b2b;
+  background-color: var(--c-violet);
   color: #fff;
 }
 
@@ -264,8 +266,8 @@ body.no-scroll {
 }
 
 .contact-box.box {
-  background-color: #2b2b2b;
-  border-color: #2b2b2b;
+  background-color: var(--c-violet);
+  border-color: var(--c-violet);
 }
 
 /* Customise email modal overlay */
