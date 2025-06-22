@@ -322,3 +322,14 @@ body.no-scroll {
   transform: translateX(-50%);
   z-index: 1000;
 }
+
+/* Split background colors for About and Support columns */
+.about-column {
+  background-color: var(--c-violet);
+  padding: 2rem;
+}
+
+.support-column {
+  background-color: var(--c-blue);
+  padding: 2rem;
+}
