@@ -4,7 +4,6 @@
   --c-violet: #371542;
   --c-blue: #194d91;
   --c-yellow: #fffe45;
-  --c-rose: #ed7086;
 }
 
 html, body {
@@ -32,13 +31,13 @@ html, body {
 
 /* Subtle highlight for hero tagline */
 .tagline-accent {
-  color: var(--c-rose);
+  color: var(--c-yellow);
   font-style: italic;
 }
 
-/* Utility color class for About section and accents */
-.has-text-rose {
-  color: var(--c-rose) !important;
+/* Utility color classes for section accents */
+.has-text-blue {
+  color: var(--c-blue) !important;
 }
 
 .project-card {
