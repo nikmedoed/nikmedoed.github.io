@@ -167,11 +167,11 @@ body.no-scroll {
 .footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
+  width: 100%;
 }
 
-#contact {
-  padding-bottom: 1.5rem;
-  margin-bottom: 0;
+#about {
+  padding-bottom: 0;
 }
 
 .wallets .button.copy-btn {
@@ -245,4 +245,8 @@ body.no-scroll {
 
 .telegram-link {
   color: #27a7e7;
+}
+
+.contact-box {
+  background-color: #421537;
 }
