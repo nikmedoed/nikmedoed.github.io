@@ -299,8 +299,8 @@ body.no-scroll {
   width: 9rem;
 }
 .hero-buttons .about-btn {
-  background-color: var(--c-blue);
-  border-color: var(--c-blue);
+  background-color: var(--c-rose);
+  border-color: var(--c-rose);
   color: #fff;
 }
 .hero-buttons .projects-btn {
