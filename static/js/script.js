@@ -185,14 +185,26 @@
     if (form) {
         form.addEventListener('submit', e => {
             e.preventDefault();
-            const subject = encodeURIComponent(document.getElementById('subject').value);
-            const body = encodeURIComponent(document.getElementById('message').value);
-            const email = ['nikmedoed', 'gmail.com'].join('@');
-            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-            if (emailModal) {
-                emailModal.classList.remove('is-active');
-                document.documentElement.classList.remove('is-clipped');
-            }
+            const data = {
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+            fetch('https://formspree.io/f/xwkjaeoq', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }).then(() => {
+                alert('Message sent!');
+                form.reset();
+            }).catch(() => {
+                alert('Failed to send message.');
+            }).finally(() => {
+                if (emailModal) {
+                    emailModal.classList.remove('is-active');
+                    document.documentElement.classList.remove('is-clipped');
+                }
+            });
         });
     }
     };

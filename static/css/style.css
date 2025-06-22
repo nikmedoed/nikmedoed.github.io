@@ -168,6 +168,8 @@ body.no-scroll {
   padding-top: 2rem;
   padding-bottom: 2rem;
   width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 #about {
@@ -256,5 +258,19 @@ body.no-scroll {
 }
 
 .contact-box {
-  background-color: #421537;
+  background-color: #f5f5f5;
+  color: #363636;
+}
+
+.contact-box .label {
+  color: #363636;
+}
+
+#email-btn {
+  width: 5rem;
+}
+
+.footer .content {
+  margin-left: 0;
+  margin-right: 0;
 }
