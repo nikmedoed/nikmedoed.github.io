@@ -15,15 +15,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const root = document.documentElement;
 
     function getCookie(name) {
-        const value = `; ${document.cookie}`;
-        const parts = value.split(`; ${name}=`);
-        if (parts.length === 2) return parts.pop().split(';').shift();
-        return null;
+        const match = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]*)'));
+        return match ? decodeURIComponent(match[1]) : null;
     }
 
     function setCookie(name, value, days) {
         const expires = new Date(Date.now() + days * 864e5).toUTCString();
-        document.cookie = `${name}=${value}; path=/; expires=${expires}`;
+        document.cookie = `${name}=${encodeURIComponent(value)}; path=/; expires=${expires}`;
+    }
+
+    function getStorage() {
+        try {
+            const test = '__s_test__';
+            localStorage.setItem(test, test);
+            localStorage.removeItem(test);
+            return localStorage;
+        } catch (_) {
+            return null;
+        }
     }
 
     function applyTheme(theme) {
@@ -39,13 +48,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    const storage = getStorage();
+
     if (themeBtn) {
-        const storedTheme = getCookie('theme');
+        const storedTheme = storage ? storage.getItem('theme') : getCookie('theme');
         applyTheme(storedTheme || 'dark');
         themeBtn.addEventListener('click', () => {
             const current = root.getAttribute('data-theme');
             const newTheme = current === 'dark' ? 'light' : 'dark';
-            setCookie('theme', newTheme, 365);
+            if (storage) {
+                try {
+                    storage.setItem('theme', newTheme);
+                } catch (_) {
+                    setCookie('theme', newTheme, 365);
+                }
+            } else {
+                setCookie('theme', newTheme, 365);
+            }
             applyTheme(newTheme);
         });
     }
