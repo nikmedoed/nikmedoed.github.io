@@ -244,6 +244,12 @@ body.no-scroll {
   background-color: #421537;
 }
 
+.wallets strong,
+.wallets span,
+.wallets .button {
+  vertical-align: middle;
+}
+
 .telegram-link {
   color: #27a7e7;
 }
