@@ -28,12 +28,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (themeBtn) {
-        const storedTheme = localStorage.getItem('theme');
-        applyTheme(storedTheme || 'dark');
+        let storedTheme;
+        try {
+            storedTheme = localStorage.getItem('theme');
+        } catch (e) {
+            storedTheme = null;
+        }
+        applyTheme(storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
         themeBtn.addEventListener('click', () => {
             const current = root.getAttribute('data-theme');
             const newTheme = current === 'dark' ? 'light' : 'dark';
-            localStorage.setItem('theme', newTheme);
+            if (storedTheme !== newTheme) {
+                try {
+                    localStorage.setItem('theme', newTheme);
+                    storedTheme = newTheme;
+                } catch (e) {}
+            }
             applyTheme(newTheme);
         });
     }
