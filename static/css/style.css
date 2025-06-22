@@ -21,6 +21,12 @@ html, body {
   -webkit-text-fill-color: transparent;
 }
 
+.hero-subtitle {
+  max-width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .project-card {
   display: flex;
   flex-direction: column;
