@@ -199,11 +199,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 subject: document.getElementById('subject').value,
                 message: document.getElementById('message').value
             };
-            fetch('https://formspree.io/f/xwkjaeoq', {
+            fetch("https://script.google.com/macros/s/AKfycbzlupb8JGBgQpClUJOMk3y8_ZfMzmQSV4zqf3KlxtwPlXqkdoBmvurL_Bcln2adh9_n/exec", {
                 method: 'POST',
+                mode: 'no-cors',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
             }).then(() => {
