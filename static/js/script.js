@@ -199,8 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 subject: document.getElementById('subject').value,
                 message: document.getElementById('message').value
             };
-            const url = window.CONTACT_SCRIPT_URL || '';
-            fetch(url, {
+            fetch("https://script.google.com/macros/s/AKfycbzlupb8JGBgQpClUJOMk3y8_ZfMzmQSV4zqf3KlxtwPlXqkdoBmvurL_Bcln2adh9_n/exec", {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {

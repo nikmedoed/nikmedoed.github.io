@@ -28,19 +28,15 @@ process submissions. Create a new script at
 
 ```javascript
 function doPost(e) {
-  var data = JSON.parse(e.postData.contents);
-  var sheet = SpreadsheetApp.create("Contact Responses");
-  sheet.appendRow([new Date(), data.email, data.subject, data.message]);
-  MailApp.sendEmail({
-    to: "your@email",
-    replyTo: data.email,
-    subject: data.subject,
-    htmlBody: data.message
-  });
-  return ContentService.createTextOutput('OK');
+    var data = JSON.parse(e.postData.contents);
+    var sheet = SpreadsheetApp.openById('YOUR_SPREADSHEET_ID').getActiveSheet();
+    sheet.appendRow([new Date(), data.email, data.subject, data.message]);
+    MailApp.sendEmail({
+        to: "your@email",
+        replyTo: data.email,
+        subject: data.subject,
+        htmlBody: data.message
+    });
+    return ContentService.createTextOutput('OK');
 }
 ```
-
-After deployment, set `window.CONTACT_SCRIPT_URL` in `static/js/script.js` to the
-web app URL so that messages are forwarded to your inbox and logged to the
-sheet.
