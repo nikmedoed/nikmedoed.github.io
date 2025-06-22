@@ -1,5 +1,4 @@
-(() => {
-    const init = () => {
+document.addEventListener('DOMContentLoaded', () => {
     const $navbarBurgers = Array.from(document.querySelectorAll('.navbar-burger'));
     if ($navbarBurgers.length > 0) {
         $navbarBurgers.forEach(el => {
@@ -207,10 +206,4 @@
             });
         });
     }
-    };
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        init();
-    }
-})();
+});
