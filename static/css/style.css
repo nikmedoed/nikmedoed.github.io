@@ -4,6 +4,7 @@
   --c-violet: #371542;
   --c-blue: #194d91;
   --c-yellow: #fffe45;
+  --c-rose: #ed7086;
 }
 
 html, body {
@@ -38,6 +39,9 @@ html, body {
 /* Utility color classes for section accents */
 .has-text-blue {
   color: var(--c-blue) !important;
+}
+.has-text-rose {
+  color: var(--c-rose) !important;
 }
 
 .project-card {
