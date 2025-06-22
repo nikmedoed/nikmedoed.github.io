@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const currentLang = document.documentElement.lang;
+    const storedLang = localStorage.getItem('lang');
+    if (!storedLang) {
+        const navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        if (navLang.startsWith('ru') && currentLang === 'en' && location.pathname === '/') {
+            location.href = '/ru/';
+            return;
+        }
+    }
+    document.querySelectorAll('.lang-switch').forEach(btn => {
+        btn.addEventListener('click', () => {
+            localStorage.setItem('lang', btn.dataset.lang);
+        });
+    });
     const $navbarBurgers = Array.from(document.querySelectorAll('.navbar-burger'));
     if ($navbarBurgers.length > 0) {
         $navbarBurgers.forEach(el => {
@@ -177,8 +191,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const notifyContainer = document.getElementById('notification-container');
 
-    function showNotification(msg, type = 'is-success') {
+    function showNotification(key, type = 'is-success') {
         if (!notifyContainer) return;
+        const messages = {
+            en: {sent: 'Message sent!', fail: 'Failed to send message.'},
+            ru: {sent: 'Сообщение отправлено!', fail: 'Не удалось отправить сообщение.'}
+        };
+        const lang = document.documentElement.lang;
+        const msg = (messages[lang] && messages[lang][key]) || key;
         const note = document.createElement('div');
         note.className = `notification ${type}`;
         note.textContent = msg;
@@ -222,10 +242,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify(data)
             }).then(() => {
-                showNotification('Message sent!', 'is-success');
+                showNotification('sent', 'is-success');
                 form.reset();
             }).catch(() => {
-                showNotification('Failed to send message.', 'is-danger');
+                showNotification('fail', 'is-danger');
             }).finally(() => {
                 if (sendBtn) {
                     sendBtn.classList.remove('is-loading');

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="dark" lang="en">
+<html data-theme="dark" lang="{{ .Site.Language.Lang }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,9 +28,16 @@
     </div>
     <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-end">
-            <a class="navbar-item" href="{{ "/#projects" | relURL }}">Featured Projects</a>
-            <a class="navbar-item" href="https://t.me/etonikmedoed" target="_blank">Blog</a>
-            <a class="navbar-item" href="{{ "/#about" | relURL }}">Contacts</a>
+            <a class="navbar-item" href="{{ "/#projects" | relURL }}">{{ i18n "projectsTitle" }}</a>
+            <a class="navbar-item" href="https://t.me/etonikmedoed" target="_blank">{{ i18n "navBlog" | default "Blog" }}</a>
+            <a class="navbar-item" href="{{ "/#about" | relURL }}">{{ i18n "navContacts" | default "Contacts" }}</a>
+            <div class="navbar-item">
+                {{ if eq .Site.Language.Lang "en" }}
+                <a class="lang-switch" data-lang="ru" href="/ru/">RU</a>
+                {{ else }}
+                <a class="lang-switch" data-lang="en" href="/">EN</a>
+                {{ end }}
+            </div>
             <div class="navbar-item">
                 <button id="theme-toggle" class="button is-small">
                     <span class="icon"><i class="fas fa-sun"></i></span>
@@ -45,7 +52,7 @@
 {{ block "main" . }}{{ end }}
 
 <footer class="footer has-background-black has-text-centered has-text-white">
-    <p class="is-italic mb-2">Have a vision, aspire to be a leader, make some humor, Resist, Invent &amp; Projects.</p>
+    <p class="is-italic mb-2">{{ i18n "footerQuote" }}</p>
     <p>&copy; 2025 Nikita Muromtsev.
         <a href="https://github.com/nikmedoed" target="_blank" class="has-text-warning">GitHub</a> |
         <a href="https://www.linkedin.com/in/muromcevn" target="_blank" class="has-text-warning">LinkedIn</a> |
