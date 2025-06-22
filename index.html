@@ -10,6 +10,13 @@
         .card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
         .section-title { border-bottom: 2px solid #0d6efd; display: inline-block; margin-bottom: 20px; }
         .footer { font-size: 0.9rem; }
+        #contactModal .modal-content { background-color: #1545FF; color: #fff; }
+        #contactModal .form-control { background-color: #F5F5F5; }
+        #contactModal .btn-emerald {
+            background-color: #C6DB09;
+            border-color: #C6DB09;
+            color: #000;
+        }
     </style>
 </head>
 <body class="bg-light">
@@ -58,6 +65,7 @@
         <h2 class="section-title">Contact</h2>
         <p>Email: <a href="mailto:nikmedoed@gmail.com">nikmedoed@gmail.com</a><br>
         Telegram: <a href="https://t.me/nikmedoed">@nikmedoed</a></p>
+        <button class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#contactModal">Send Message</button>
     </section>
 
     <section class="mb-5">
@@ -72,6 +80,36 @@
     <footer class="footer text-muted text-center py-4">
         &copy; 2025 Nikita Muromtsev. Built with Bootstrap.
     </footer>
+    
+    <!-- Contact Modal -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="contactModalLabel">Send Message</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="3" placeholder="Your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-emerald">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
