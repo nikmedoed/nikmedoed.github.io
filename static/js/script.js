@@ -28,9 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (themeBtn) {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         const storedTheme = localStorage.getItem('theme');
-        applyTheme(storedTheme || (prefersDark ? 'dark' : 'light'));
+        applyTheme(storedTheme || 'dark');
         themeBtn.addEventListener('click', () => {
             const current = root.getAttribute('data-theme');
             const newTheme = current === 'dark' ? 'light' : 'dark';
@@ -166,6 +165,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const notifyContainer = document.getElementById('notification-container');
+
+    function showNotification(msg, type = 'is-success') {
+        if (!notifyContainer) return;
+        const note = document.createElement('div');
+        note.className = `notification ${type}`;
+        note.textContent = msg;
+        notifyContainer.appendChild(note);
+        setTimeout(() => note.remove(), 3000);
+    }
+
     const form = document.getElementById('contact-form');
     const emailBtn = document.getElementById('email-btn');
     const emailModal = document.getElementById('email-modal');
@@ -191,13 +201,16 @@ document.addEventListener('DOMContentLoaded', () => {
             };
             fetch('https://formspree.io/f/xwkjaeoq', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
                 body: JSON.stringify(data)
             }).then(() => {
-                alert('Message sent!');
+                showNotification('Message sent!', 'is-success');
                 form.reset();
             }).catch(() => {
-                alert('Failed to send message.');
+                showNotification('Failed to send message.', 'is-danger');
             }).finally(() => {
                 if (emailModal) {
                     emailModal.classList.remove('is-active');
