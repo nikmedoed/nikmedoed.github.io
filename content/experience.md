@@ -1,5 +1,5 @@
 ---
-title: Experience
+title: Experience × CV × Portfolio
 ---
 
 <section class="hero is-medium gradient-bg">
