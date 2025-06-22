@@ -177,6 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const form = document.getElementById('contact-form');
+    const sendBtn = document.getElementById('send-btn');
     const emailBtn = document.getElementById('email-btn');
     const emailModal = document.getElementById('email-modal');
     if (emailBtn && emailModal) {
@@ -194,6 +195,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form) {
         form.addEventListener('submit', e => {
             e.preventDefault();
+            if (sendBtn) {
+                sendBtn.classList.add('is-loading');
+                sendBtn.disabled = true;
+            }
             const data = {
                 email: document.getElementById('email').value,
                 subject: document.getElementById('subject').value,
@@ -212,6 +217,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }).catch(() => {
                 showNotification('Failed to send message.', 'is-danger');
             }).finally(() => {
+                if (sendBtn) {
+                    sendBtn.classList.remove('is-loading');
+                    sendBtn.disabled = false;
+                }
                 if (emailModal) {
                     emailModal.classList.remove('is-active');
                     document.documentElement.classList.remove('is-clipped');
