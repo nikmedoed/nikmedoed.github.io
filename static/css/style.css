@@ -1,0 +1,305 @@
+:root {
+  --c-pink: #fa33fa;
+  --c-violet: #371542;
+  --c-blue: #194d91;
+  --c-yellow: #fffe45;
+  --c-rose: #ed7086;
+}
+
+html, body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+.gradient-bg {
+  background-image: linear-gradient(135deg, var(--c-violet), var(--c-blue));
+}
+
+.gradient-text {
+  background-image: linear-gradient(45deg, var(--c-pink), var(--c-yellow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  max-width: 60rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Subtle highlight for hero tagline */
+.tagline-accent {
+  color: var(--c-yellow);
+  font-style: italic;
+}
+
+/* Utility color classes for section accents */
+.has-text-blue {
+  color: var(--c-blue) !important;
+}
+.has-text-rose {
+  color: var(--c-rose) !important;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.project-card .card-content {
+  flex-grow: 1;
+}
+
+.project-media {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%;
+  border-radius: 8px;
+}
+
+.project-media img,
+.project-media video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-media.contain img,
+.project-media.contain video {
+  object-fit: contain;
+}
+
+#media-preview {
+  max-width: 90vw;
+  max-height: 90vh;
+  pointer-events: none;
+  position: relative;
+}
+
+#media-preview img,
+#media-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+#preview-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(2px);
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 999;
+}
+
+#preview-overlay.active {
+  display: flex;
+}
+
+#preview-overlay.modal {
+  pointer-events: auto;
+}
+
+#close-preview {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  pointer-events: auto;
+}
+
+#preview-overlay.modal #close-preview {
+  display: block;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.project-media:hover img,
+.project-media:hover video {
+  transform: scale(1.05);
+}
+
+@media (min-width: 1024px) and (max-width: 1407px) {
+  .container:not(.is-max-desktop) {
+    width: 100%;
+    max-width: none !important;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.tm-icon {
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  -webkit-mask: url("https://upload.wikimedia.org/wikipedia/commons/c/c0/Tampermonkey_logo.svg") no-repeat center / contain;
+  mask: url("https://upload.wikimedia.org/wikipedia/commons/c/c0/Tampermonkey_logo.svg") no-repeat center / contain;
+  background-color: currentColor;
+  vertical-align: middle;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: transform 0.3s ease;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+#theme-toggle {
+  margin-left: 0.5rem;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: inherit;
+}
+
+#tech-filter .filter-tag {
+  cursor: pointer;
+}
+
+.project-tag {
+  cursor: pointer;
+}
+
+.footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 0;
+}
+
+#about {
+  padding-bottom: 3rem;
+}
+
+.button.ko-fi {
+  background-color: #FF5E5B;
+  border-color: #FF5E5B;
+  color: #fff;
+}
+
+.button.boosty {
+  background-color: #FF8C00;
+  border-color: #FF8C00;
+  color: #fff;
+}
+
+.button.paypal {
+  background-color: #0070BA;
+  border-color: #0070BA;
+  color: #fff;
+}
+
+.button.yoomoney {
+  background-color: #6F2DBD;
+  border-color: #6F2DBD;
+  color: #fff;
+}
+
+.blog-promo {
+  gap: 0.5rem;
+}
+.blog-promo .button.blog-btn {
+  padding: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  display: inline-block;
+  box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.7), 0 2px 3px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.2s;
+}
+.blog-promo .button.blog-btn:hover {
+  box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.9), 0 4px 6px rgba(0, 0, 0, 0.35);
+}
+.blog-promo .blog-btn img {
+  display: block;
+  border-radius: 0.5rem;
+  max-height: 4rem;
+}
+
+.support-box {
+  background-color: #421537;
+}
+
+.wallets strong,
+.wallets span,
+.wallets .button {
+  vertical-align: middle;
+}
+
+.telegram-link {
+  color: #27a7e7;
+}
+
+#email-btn {
+  width: 12rem;
+}
+
+.contact-box {
+  background-color: var(--c-blue);
+  border-color: var(--c-blue);
+  color: #fff;
+}
+
+.contact-box input,
+.contact-box textarea {
+  background-color: #f5f5f5;
+  color: #000;
+  border-color: #d1d1d1;
+}
+
+.contact-box .label {
+  color: #fff;
+}
+
+/* Hero buttons use different theme colors but equal width */
+.hero-buttons .button {
+  width: 9rem;
+}
+.hero-buttons .about-btn {
+  background-color: var(--c-rose);
+  border-color: var(--c-rose);
+  color: #000;
+}
+.hero-buttons .projects-btn {
+  background-color: var(--c-yellow);
+  border-color: var(--c-yellow);
+  color: #000;
+}
+
+#contact-form .button.is-link {
+  background-color: #c6db09;
+  border-color: #c6db09;
+  color: #000;
+}
+
+.notification-container {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
