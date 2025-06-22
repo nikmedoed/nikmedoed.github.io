@@ -191,10 +191,6 @@ document.addEventListener('DOMContentLoaded', () => {
         emailModal.querySelector('.modal-background').addEventListener('click', closeModal);
         emailModal.querySelector('.modal-close').addEventListener('click', closeModal);
     }
-    function openMailClient(data) {
-        const mailto = `mailto:grafniksan@gmail.com?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(data.message + "\n\nFrom: " + data.email)}`;
-        window.location.href = mailto;
-    }
     if (form) {
         form.addEventListener('submit', e => {
             e.preventDefault();
@@ -215,12 +211,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     showNotification('Message sent!', 'is-success');
                     form.reset();
                 } else {
-                    showNotification('Sending via your email client...', 'is-warning');
-                    openMailClient(data);
+                    showNotification('Failed to send message.', 'is-danger');
                 }
             }).catch(() => {
-                showNotification('Failed to send via form, using mail client instead.', 'is-danger');
-                openMailClient(data);
+                showNotification('Failed to send message.', 'is-danger');
             }).finally(() => {
                 if (emailModal) {
                     emailModal.classList.remove('is-active');
