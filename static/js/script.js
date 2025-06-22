@@ -34,16 +34,21 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (e) {
             storedTheme = null;
         }
-        applyTheme(storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
+        const systemPref = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        applyTheme(storedTheme || systemPref);
         themeBtn.addEventListener('click', () => {
             const current = root.getAttribute('data-theme');
             const newTheme = current === 'dark' ? 'light' : 'dark';
-            if (storedTheme !== newTheme) {
+            if (newTheme === systemPref) {
+                try {
+                    localStorage.removeItem('theme');
+                } catch (e) {}
+            } else if (storedTheme !== newTheme) {
                 try {
                     localStorage.setItem('theme', newTheme);
-                    storedTheme = newTheme;
                 } catch (e) {}
             }
+            storedTheme = newTheme;
             applyTheme(newTheme);
         });
     }
