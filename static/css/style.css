@@ -249,8 +249,10 @@ body.no-scroll {
   width: 12rem;
 }
 
+
+/* Dark modal form styling */
 .contact-box {
-  background-color: #421537;
+  background-color: #2b2b2b;
   color: #fff;
 }
 
@@ -262,8 +264,18 @@ body.no-scroll {
 }
 
 .contact-box.box {
-  background-color: #421537;
-  border-color: #421537;
+  background-color: #2b2b2b;
+  border-color: #2b2b2b;
+}
+
+/* Customise email modal overlay */
+#email-modal .modal-background {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+#email-modal .modal-content {
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .contact-box .label {
