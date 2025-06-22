@@ -22,7 +22,8 @@ html, body {
 }
 
 .hero-subtitle {
-  max-width: 40rem;
+  max-width: 60rem;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
 }
