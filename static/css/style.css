@@ -278,6 +278,13 @@ body.no-scroll {
   color: #fff;
 }
 
+/* Hero buttons use theme lime color */
+.hero-buttons .button {
+  background-color: #c6db09;
+  border-color: #c6db09;
+  color: #000;
+}
+
 #contact-form .button.is-link {
   background-color: #c6db09;
   border-color: #c6db09;
