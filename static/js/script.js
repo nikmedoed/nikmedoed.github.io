@@ -199,11 +199,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 subject: document.getElementById('subject').value,
                 message: document.getElementById('message').value
             };
-            fetch('https://formspree.io/f/xwkjaeoq', {
+            const url = window.CONTACT_SCRIPT_URL || '';
+            fetch(url, {
                 method: 'POST',
+                mode: 'no-cors',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
             }).then(() => {

@@ -19,3 +19,28 @@ The `experience` page summarises my work history and links back to the main page
 To build the site locally run `hugo` and open `public/index.html`.
 
 Feel free to explore the code or get in touch if you have questions!
+
+## Contact form setup
+
+The contact form on the main page expects a Google Apps Script endpoint to
+process submissions. Create a new script at
+<https://script.google.com> and deploy it as a web app using the following code:
+
+```javascript
+function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  var sheet = SpreadsheetApp.create("Contact Responses");
+  sheet.appendRow([new Date(), data.email, data.subject, data.message]);
+  MailApp.sendEmail({
+    to: "your@email",
+    replyTo: data.email,
+    subject: data.subject,
+    htmlBody: data.message
+  });
+  return ContentService.createTextOutput('OK');
+}
+```
+
+After deployment, set `window.CONTACT_SCRIPT_URL` in `static/js/script.js` to the
+web app URL so that messages are forwarded to your inbox and logged to the
+sheet.
