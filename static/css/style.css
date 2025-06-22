@@ -7,6 +7,7 @@
 
 html, body {
   font-family: 'Inter', sans-serif;
+  margin: 0;
 }
 
 .gradient-bg {
@@ -166,11 +167,13 @@ body.no-scroll {
 .footer {
   padding-top: 2rem;
   padding-bottom: 2rem;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-#contact {
-  padding-bottom: 1.5rem;
-  margin-bottom: 0;
+#about {
+  padding-bottom: 0;
 }
 
 .wallets .button.copy-btn {
@@ -215,6 +218,13 @@ body.no-scroll {
   gap: 0.75rem;
 }
 
+.contact-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .blog-promo {
   display: flex;
   flex-direction: row;
@@ -236,4 +246,30 @@ body.no-scroll {
   display: block;
   border-radius: 0.5rem;
   max-height: 5rem;
+}
+
+.support-box {
+  background-color: #421537;
+}
+
+.telegram-link {
+  color: #27a7e7;
+}
+
+.contact-box {
+  background-color: #f5f5f5;
+  color: #363636;
+}
+
+.contact-box .label {
+  color: #363636;
+}
+
+#email-btn {
+  width: auto;
+}
+
+.footer .content {
+  margin-left: 0;
+  margin-right: 0;
 }
