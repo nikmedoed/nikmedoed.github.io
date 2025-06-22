@@ -301,7 +301,7 @@ body.no-scroll {
 .hero-buttons .about-btn {
   background-color: var(--c-rose);
   border-color: var(--c-rose);
-  color: #fff;
+  color: #000;
 }
 .hero-buttons .projects-btn {
   background-color: var(--c-yellow);
