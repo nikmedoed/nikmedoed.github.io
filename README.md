@@ -18,8 +18,9 @@ The `experience` page summarises my work history and links back to the main page
 
 To build the site locally run `hugo` and open `public/index.html`.
 
-The contact form posts to a Formspree endpoint defined in `config.toml` under
-`params.formspree_endpoint`. Provide your own endpoint URL to enable message
-delivery. If left empty the form will show an error message.
+The contact form sends submissions to an optional endpoint defined in
+`config.toml` under `params.contact_endpoint`. If the request fails or the
+endpoint is blank, the form opens the user’s email client using the address in
+`params.contact_email`.
 
 Feel free to explore the code or get in touch if you have questions!

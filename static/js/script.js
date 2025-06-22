@@ -200,32 +200,45 @@ document.addEventListener('DOMContentLoaded', () => {
                 message: document.getElementById('message').value
             };
             const endpoint = form.dataset.endpoint;
-            if (!endpoint) {
-                showNotification('Contact form is not configured.', 'is-danger');
-                return;
-            }
-            fetch(endpoint, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify(data)
-            }).then(res => {
-                if (res.ok) {
-                    showNotification('Message sent!', 'is-success');
-                    form.reset();
+            const contactEmail = form.dataset.email;
+
+            const fallback = () => {
+                if (contactEmail) {
+                    const mailto = `mailto:${contactEmail}?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(data.message + '\n\nfrom: ' + data.email)}`;
+                    window.location.href = mailto;
                 } else {
-                    showNotification('Failed to send message.', 'is-danger');
+                    showNotification('No contact method available.', 'is-danger');
                 }
-            }).catch(() => {
-                showNotification('Failed to send message.', 'is-danger');
-            }).finally(() => {
+            };
+
+            if (endpoint) {
+                fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                }).then(res => {
+                    if (res.ok) {
+                        showNotification('Message sent!', 'is-success');
+                        form.reset();
+                    } else {
+                        fallback();
+                    }
+                }).catch(fallback).finally(() => {
+                    if (emailModal) {
+                        emailModal.classList.remove('is-active');
+                        document.documentElement.classList.remove('is-clipped');
+                    }
+                });
+            } else {
+                fallback();
                 if (emailModal) {
                     emailModal.classList.remove('is-active');
                     document.documentElement.classList.remove('is-clipped');
                 }
-            });
+            }
         });
     }
 });

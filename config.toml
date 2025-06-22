@@ -3,5 +3,7 @@ languageCode = "en-us"
 title = "Nikita Muromtsev"
 
 [params]
-# Endpoint for the contact form. Leave empty or remove if not using Formspree.
-formspree_endpoint = ""
+# Optional endpoint that receives contact form submissions
+contact_endpoint = ""
+# Address used when falling back to an email link
+contact_email = "nikmedoed@example.com"
