@@ -1,4 +1,4 @@
 ---
-title: Home
+title: routine automation & awareness tools
 ---
 
