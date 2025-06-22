@@ -241,6 +241,18 @@ body.no-scroll {
   background-color: #421537;
 }
 
+.about-column {
+  background-color: var(--c-violet);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.support-column {
+  background-color: var(--c-blue);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
 .telegram-link {
   color: #27a7e7;
 }
