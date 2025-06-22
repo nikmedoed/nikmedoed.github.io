@@ -197,10 +197,6 @@ body.no-scroll {
   padding-bottom: 3rem;
 }
 
-.wallets .button.copy-btn {
-  margin-left: 0.25rem;
-}
-
 .button.ko-fi {
   background-color: #FF5E5B;
   border-color: #FF5E5B;
@@ -224,21 +220,6 @@ body.no-scroll {
   border-color: #6F2DBD;
   color: #fff;
 }
-
-.contact-form {
-  max-width: 480px;
-  margin: 0 auto;
-}
-.contact-form .label {
-  color: #fff;
-}
-
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
 
 .blog-promo {
   gap: 0.5rem;
