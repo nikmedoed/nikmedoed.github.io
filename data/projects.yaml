@@ -1,0 +1,304 @@
+- id: pishow
+  repo: https://github.com/nikmedoed/pishow
+  icon: fas fa-image
+  media: pishow.mp4
+  title:
+    en: Pishow
+    ru: Pishow
+  subtitle:
+    en: Slideshow for legacy screens.
+    ru: Слайдшоу для устаревших экранов
+  description:
+    en: Small Python server cycles through images and videos from your network. Each
+      device keeps its own queue and settings with an admin panel for control.
+    ru: Небольшой Python-сервер показывает изображения и видео из вашей сети. У каждого
+      устройства своя очередь и настройки с панелью управления.
+  tags:
+  - name: Python
+    color: is-link
+  - name: FastAPI
+    color: is-primary
+  - name: PIL
+    color: is-success
+  - name: FFmpeg
+    color: is-danger
+- id: windows-backup-tool
+  repo: https://github.com/nikmedoed/windows_backup_tool
+  icon: fas fa-hdd
+  media: backuptool.mp4
+  title:
+    en: Windows Backup Tool
+    ru: Windows Backup Tool
+  subtitle:
+    en: Incremental backups made easy.
+    ru: Удобные инкрементальные бэкапы
+  description:
+    en: Select which folders to mirror, exclude junk, and schedule automatic runs.
+      Saves game and app settings without huge snapshots.
+    ru: Выберите папки для зеркалирования, исключите мусор и запланируйте автоматические
+      запуски. Сохраняет настройки игр и приложений без огромных снимков.
+  tags:
+  - name: Python
+    color: is-link
+  - name: PySide6
+    color: is-danger
+- id: yt-auto-playlist
+  repo: https://github.com/nikmedoed/YTautoPlaylist
+  icon: fab fa-youtube
+  media: yt-auto.mp4
+  title:
+    en: YT Auto Playlist
+    ru: YT Auto Playlist
+  subtitle:
+    en: Curate new YouTube videos.
+    ru: Собирает новые видео YouTube
+  description:
+    en: Browser extension collects new uploads from your subscriptions into playlists,
+      filtering by tags and duration.
+    ru: Расширение браузера собирает новые ролики из подписок в плейлист, фильтруя
+      по тегам и длительности.
+  tags:
+  - name: JavaScript
+    color: is-warning
+  - name: WebExtension
+    color: is-success
+  - name: Google API
+    color: is-info
+- id: oled-screensaver
+  repo: https://github.com/nikmedoed/oled_screensaver
+  icon: fas fa-tv
+  media: oled_screensaver.mp4
+  title:
+    en: OLED Screensaver
+    ru: OLED Screensaver
+  subtitle:
+    en: Keep OLED pixels safe.
+    ru: Бережёт пиксели OLED
+  description:
+    en: Tray app blacks out a selected screen on idle or via hotkey, hiding the cursor
+      and letting you pause auto-lock when needed.
+    ru: Трей-приложение гасит выбранный экран по таймеру или горячей клавише, скрывает
+      курсор и позволяет отложить автозамок.
+  tags:
+  - name: Python
+    color: is-link
+  - name: pystray
+    color: is-info
+  - name: pynput
+    color: is-warning
+  - name: Tkinter
+    color: is-success
+- id: easy-video-compress
+  repo: https://github.com/nikmedoed/easy-video-compress
+  icon: fas fa-video
+  media: compress.mp4
+  title:
+    en: Easy Video Compress
+    ru: Easy Video Compress
+  subtitle:
+    en: Batch compress videos fast.
+    ru: Быстрое сжатие видео
+  description:
+    en: FFmpeg wrapper with progress bars and Windows shell integration. Target a
+      fixed size to embed clips in Notion or share online.
+    ru: Обёртка FFmpeg с индикаторами прогресса и интеграцией в оболочку Windows.
+      Можно задать целевой размер файла.
+  tags:
+  - name: Python
+    color: is-link
+  - name: FFmpeg
+    color: is-danger
+- id: real-time-speech-to-input
+  repo: https://github.com/nikmedoed/speech_to_input
+  icon: fas fa-microphone
+  media: speech_input.mp4
+  title:
+    en: Real-time Speech to Input
+    ru: Real-time Speech to Input
+  subtitle:
+    en: Whisper typing on-the-fly.
+    ru: Ввод речи в текст
+  description:
+    en: Streams microphone audio to Whisper and injects the recognized text into any
+      field. Handy for accessibility or multitasking.
+    ru: Передаёт звук микрофона в Whisper и вставляет распознанный текст в любое поле.
+      Удобно для доступности и многозадачности.
+  tags:
+  - name: Python
+    color: is-link
+  - name: Whisper
+    color: is-primary
+  - name: pynput
+    color: is-warning
+  - name: PyAudio
+    color: is-info
+- id: telegram-important-notifies
+  repo: https://github.com/nikmedoed/Telegram-important-notifies
+  icon: fas fa-paper-plane
+  media: notifications.png
+  title:
+    en: Telegram Important Notifies
+    ru: Telegram Important Notifies
+  subtitle:
+    en: Never miss key messages.
+    ru: Не пропускайте важные сообщения
+  description:
+    en: Telethon-based monitor that scans chosen chats and forwards posts containing
+      your keywords. Runs via systemd as a background service.
+    ru: Монитор на Telethon ищет ключевые слова в выбранных чатах и пересылает такие
+      посты. Работает как сервис systemd.
+  tags:
+  - name: Python
+    color: is-link
+  - name: Telethon
+    color: is-info
+  - name: NLP
+    color: is-danger
+- id: meetings-timer
+  repo: https://github.com/nikmedoed/meetings-timer
+  icon: fas fa-stopwatch
+  media: meeting_timer.mp4
+  title:
+    en: Meetings Timer
+    ru: Meetings Timer
+  subtitle:
+    en: Stay on schedule online.
+    ru: Не выбивайтесь из графика
+  description:
+    en: Desktop timer with adjustable stages shows whether you are ahead or behind.
+      Ideal for presentations and complex events.
+    ru: Настраиваемый таймер показывает, опережаете ли вы план. Подходит для презентаций
+      и сложных мероприятий.
+  tags:
+  - name: Tauri
+    color: is-danger
+  - name: JavaScript
+    color: is-warning
+  - name: Svelte
+    color: is-primary
+- id: vocabulary-coach-bot
+  repo: https://github.com/nikmedoed/vocabulary_coach_bot
+  icon: fas fa-brain
+  media: vocabulary.mp4
+  title:
+    en: Vocabulary Coach Bot
+    ru: Vocabulary Coach Bot
+  subtitle:
+    en: Train answers in Telegram.
+    ru: Тренируйтесь отвечать в Telegram
+  description:
+    en: Bot uses Google Sheets as a question database and quizzes you via typing or
+      multiple choice. Great for learning vocabulary or interview scripts.
+    ru: Бот использует Google Sheets как базу вопросов и проверяет ответы текстом
+      или вариантами. Помогает учить слова и готовиться к интервью.
+  tags:
+  - name: Python
+    color: is-link
+  - name: aiogram
+    color: is-info
+  - name: Google Apps Script
+    color: is-success
+  - name: NLP
+    color: is-danger
+- id: pp-to-stories
+  repo: https://github.com/nikmedoed/PP_to_stories
+  icon: fas fa-images
+  media: pptx_to_stories.png
+  title:
+    en: PP to Stories
+    ru: PP to Stories
+  subtitle:
+    en: PowerPoint to Instagram stories.
+    ru: Слайды PowerPoint в сторис
+  description:
+    en: Command-line tool converts slides into PNG images or short MP4 clips. Handy
+      for repurposing presentations as social media content.
+    ru: Командная утилита превращает слайды в PNG или короткие MP4. Удобно делиться
+      презентациями в соцсетях.
+  tags:
+  - name: Python
+    color: is-link
+  - name: Windows API
+    color: is-warning
+- id: pymapcollector
+  repo: https://github.com/nikmedoed/pyMapCollector
+  icon: fas fa-map
+  media: pymap.jpg
+  title:
+    en: pyMapCollector
+    ru: pyMapCollector
+  subtitle:
+    en: Stitch high-res map images.
+    ru: Склейка карт в высоком разрешении
+  description:
+    en: Automates scrolling on interactive maps or Miro boards, capturing screenshots
+      and merging them into a large PNG.
+    ru: Автоматически прокручивает интерактивные карты или доски Miro, делает скриншоты
+      и объединяет их в большой PNG.
+  tags:
+  - name: Python
+    color: is-link
+  - name: Selenium
+    color: is-warning
+- id: tampermonkey-scripts
+  repo: https://github.com/nikmedoed/myTampermonkeyScripts
+  icon: tm-icon
+  media: tampermonkey.mp4
+  title:
+    en: Tampermonkey Scripts
+    ru: Tampermonkey Scripts
+  subtitle:
+    en: Browser tweaks & search helpers.
+    ru: Улучшения для браузера
+  description:
+    en: Collection of user scripts for multi-site search, playlist exports, and UI
+      fixes. Install via Tampermonkey.
+    ru: Коллекция пользовательских скриптов для мультипоиска, экспорта плейлистов
+      и исправления интерфейса. Устанавливаются через Tampermonkey.
+  tags:
+  - name: JavaScript
+    color: is-warning
+  - name: Tampermonkey
+    color: is-danger
+- id: fast-file-sharing
+  repo: https://github.com/nikmedoed/file_upload_for_share
+  icon: fas fa-upload
+  media: null
+  title:
+    en: Fast File Sharing
+    ru: Fast File Sharing
+  subtitle:
+    en: Host big files for Notion.
+    ru: Храните большие файлы для Notion
+  description:
+    en: Rust app and Nginx config to upload media via WebDAV and share secret links
+      for embedding without limits.
+    ru: Приложение на Rust и конфиг Nginx для загрузки файлов по WebDAV и обмена секретными
+      ссылками без ограничений.
+  tags:
+  - name: Rust
+    color: is-warning
+  - name: WebDAV
+    color: is-info
+  - name: Nginx
+    color: is-primary
+- id: whatsapp-utilities
+  repo: https://github.com/nikmedoed/WAutils
+  icon: fas fa-robot
+  media: null
+  title:
+    en: WhatsApp Utilities
+    ru: WhatsApp Utilities
+  subtitle:
+    en: Automate WhatsApp Web tasks.
+    ru: Автоматизация WhatsApp Web
+  description:
+    en: Selenium scripts handle message blasts, file attachments and session management.
+      Useful for community announcements.
+    ru: Скрипты Selenium рассылают сообщения, прикрепляют файлы и управляют сессиями.
+      Полезно для рассылок в сообществах.
+  tags:
+  - name: Python
+    color: is-link
+  - name: Selenium
+    color: is-warning

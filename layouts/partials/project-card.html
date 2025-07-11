@@ -1,12 +1,17 @@
+{{ $p := .project }}
+{{ $lang := .lang }}
+{{ $title := index $p.title $lang | default (index $p.title "en") }}
+{{ $subtitle := index $p.subtitle $lang | default (index $p.subtitle "en") }}
+{{ $description := index $p.description $lang | default (index $p.description "en") }}
 <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
     <div class="card project-card">
-        {{ if .media }}
+        {{ if $p.media }}
         <div class="card-image">
-            <figure class="project-media{{ if not (strings.HasSuffix .media ".mp4") }} contain{{ end }}">
-                {{ if (strings.HasSuffix .media ".mp4") }}
-                <video autoplay loop muted playsinline src="/media/{{ .media }}"></video>
+            <figure class="project-media{{ if not (strings.HasSuffix $p.media ".mp4") }} contain{{ end }}">
+                {{ if (strings.HasSuffix $p.media ".mp4") }}
+                <video autoplay loop muted playsinline src="/media/{{ $p.media }}"></video>
                 {{ else }}
-                <img alt="{{ .title }} screenshot" src="/media/{{ .media }}">
+                <img alt="{{ $title }} screenshot" src="/media/{{ $p.media }}">
                 {{ end }}
             </figure>
         </div>
@@ -16,18 +21,18 @@
         <div class="card-content">
             <p class="title is-5">
                 <span class="icon">
-                    {{ if eq .icon "tm-icon" }}<span aria-label="Tampermonkey" class="tm-icon" role="img"></span>{{ else }}<i class="{{ .icon }}"></i>{{ end }}
+                    {{ if eq $p.icon "tm-icon" }}<span aria-label="Tampermonkey" class="tm-icon" role="img"></span>{{ else }}<i class="{{ $p.icon }}"></i>{{ end }}
                 </span>
-                <a href="{{ .repo }}" target="_blank">{{ .title }}</a>
+                <a href="{{ $p.repo }}" target="_blank">{{ $title }}</a>
             </p>
-            <p class="subtitle is-6">{{ .subtitle }}</p>
-            <p class="content">{{ .description }}</p>
+            <p class="subtitle is-6">{{ $subtitle }}</p>
+            <p class="content">{{ $description }}</p>
             <div class="tags">
-                {{ range .tags }}<span class="tag {{ .color }} is-light project-tag" data-tech="{{ .name }}">{{ .name }}</span>{{ end }}
+                {{ range $p.tags }}<span class="tag {{ .color }} is-light project-tag" data-tech="{{ .name }}">{{ .name }}</span>{{ end }}
             </div>
         </div>
         <footer class="card-footer">
-            <a class="card-footer-item" href="{{ .repo }}" target="_blank">GitHub</a>
+            <a class="card-footer-item" href="{{ $p.repo }}" target="_blank">GitHub</a>
         </footer>
     </div>
 </div>

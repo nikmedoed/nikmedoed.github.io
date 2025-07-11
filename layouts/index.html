@@ -16,8 +16,8 @@
         <div class="tags is-justify-content-center mb-5" id="tech-filter"></div>
         <div class="columns is-multiline">
             {{ $lang := .Site.Language.Lang }}
-            {{ range index .Site.Data $lang "projects" }}
-            {{ partial "project-card.html" . }}
+            {{ range .Site.Data.projects }}
+            {{ partial "project-card.html" (dict "project" . "lang" $lang) }}
             {{ end }}
 
         </div>
