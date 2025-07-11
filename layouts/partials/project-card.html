@@ -1,6 +1,6 @@
 {{ $p := .project }}
 {{ $lang := .lang }}
-{{ $title := index $p.title $lang | default (index $p.title "en") }}
+{{ $title := $p.title }}
 {{ $subtitle := index $p.subtitle $lang | default (index $p.subtitle "en") }}
 {{ $description := index $p.description $lang | default (index $p.description "en") }}
 <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
@@ -28,7 +28,10 @@
             <p class="subtitle is-6">{{ $subtitle }}</p>
             <p class="content">{{ $description }}</p>
             <div class="tags">
-                {{ range $p.tags }}<span class="tag {{ .color }} is-light project-tag" data-tech="{{ .name }}">{{ .name }}</span>{{ end }}
+                {{ range $p.tags }}
+                {{ $color := index $.Site.Data.tag_colors . | default "is-light" }}
+                <span class="tag {{ $color }} is-light project-tag" data-tech="{{ . }}">{{ . }}</span>
+                {{ end }}
             </div>
         </div>
         <footer class="card-footer">

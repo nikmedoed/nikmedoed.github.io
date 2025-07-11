@@ -2,9 +2,7 @@
   repo: https://github.com/nikmedoed/pishow
   icon: fas fa-image
   media: pishow.mp4
-  title:
-    en: Pishow
-    ru: Pishow
+  title: Pishow
   subtitle:
     en: Slideshow for legacy screens.
     ru: Слайдшоу для устаревших экранов
@@ -14,21 +12,15 @@
     ru: Небольшой Python-сервер показывает изображения и видео из вашей сети. У каждого
       устройства своя очередь и настройки с панелью управления.
   tags:
-  - name: Python
-    color: is-link
-  - name: FastAPI
-    color: is-primary
-  - name: PIL
-    color: is-success
-  - name: FFmpeg
-    color: is-danger
+  - Python
+  - FastAPI
+  - PIL
+  - FFmpeg
 - id: windows-backup-tool
   repo: https://github.com/nikmedoed/windows_backup_tool
   icon: fas fa-hdd
   media: backuptool.mp4
-  title:
-    en: Windows Backup Tool
-    ru: Windows Backup Tool
+  title: Windows Backup Tool
   subtitle:
     en: Incremental backups made easy.
     ru: Удобные инкрементальные бэкапы
@@ -38,17 +30,13 @@
     ru: Выберите папки для зеркалирования, исключите мусор и запланируйте автоматические
       запуски. Сохраняет настройки игр и приложений без огромных снимков.
   tags:
-  - name: Python
-    color: is-link
-  - name: PySide6
-    color: is-danger
+  - Python
+  - PySide6
 - id: yt-auto-playlist
   repo: https://github.com/nikmedoed/YTautoPlaylist
   icon: fab fa-youtube
   media: yt-auto.mp4
-  title:
-    en: YT Auto Playlist
-    ru: YT Auto Playlist
+  title: YT Auto Playlist
   subtitle:
     en: Curate new YouTube videos.
     ru: Собирает новые видео YouTube
@@ -58,19 +46,14 @@
     ru: Расширение браузера собирает новые ролики из подписок в плейлист, фильтруя
       по тегам и длительности.
   tags:
-  - name: JavaScript
-    color: is-warning
-  - name: WebExtension
-    color: is-success
-  - name: Google API
-    color: is-info
+  - JavaScript
+  - WebExtension
+  - Google API
 - id: oled-screensaver
   repo: https://github.com/nikmedoed/oled_screensaver
   icon: fas fa-tv
   media: oled_screensaver.mp4
-  title:
-    en: OLED Screensaver
-    ru: OLED Screensaver
+  title: OLED Screensaver
   subtitle:
     en: Keep OLED pixels safe.
     ru: Бережёт пиксели OLED
@@ -80,21 +63,15 @@
     ru: Трей-приложение гасит выбранный экран по таймеру или горячей клавише, скрывает
       курсор и позволяет отложить автозамок.
   tags:
-  - name: Python
-    color: is-link
-  - name: pystray
-    color: is-info
-  - name: pynput
-    color: is-warning
-  - name: Tkinter
-    color: is-success
+  - Python
+  - pystray
+  - pynput
+  - Tkinter
 - id: easy-video-compress
   repo: https://github.com/nikmedoed/easy-video-compress
   icon: fas fa-video
   media: compress.mp4
-  title:
-    en: Easy Video Compress
-    ru: Easy Video Compress
+  title: Easy Video Compress
   subtitle:
     en: Batch compress videos fast.
     ru: Быстрое сжатие видео
@@ -104,17 +81,13 @@
     ru: Обёртка FFmpeg с индикаторами прогресса и интеграцией в оболочку Windows.
       Можно задать целевой размер файла.
   tags:
-  - name: Python
-    color: is-link
-  - name: FFmpeg
-    color: is-danger
+  - Python
+  - FFmpeg
 - id: real-time-speech-to-input
   repo: https://github.com/nikmedoed/speech_to_input
   icon: fas fa-microphone
   media: speech_input.mp4
-  title:
-    en: Real-time Speech to Input
-    ru: Real-time Speech to Input
+  title: Real-time Speech to Input
   subtitle:
     en: Whisper typing on-the-fly.
     ru: Ввод речи в текст
@@ -124,21 +97,15 @@
     ru: Передаёт звук микрофона в Whisper и вставляет распознанный текст в любое поле.
       Удобно для доступности и многозадачности.
   tags:
-  - name: Python
-    color: is-link
-  - name: Whisper
-    color: is-primary
-  - name: pynput
-    color: is-warning
-  - name: PyAudio
-    color: is-info
+  - Python
+  - Whisper
+  - pynput
+  - PyAudio
 - id: telegram-important-notifies
   repo: https://github.com/nikmedoed/Telegram-important-notifies
   icon: fas fa-paper-plane
   media: notifications.png
-  title:
-    en: Telegram Important Notifies
-    ru: Telegram Important Notifies
+  title: Telegram Important Notifies
   subtitle:
     en: Never miss key messages.
     ru: Не пропускайте важные сообщения
@@ -148,19 +115,14 @@
     ru: Монитор на Telethon ищет ключевые слова в выбранных чатах и пересылает такие
       посты. Работает как сервис systemd.
   tags:
-  - name: Python
-    color: is-link
-  - name: Telethon
-    color: is-info
-  - name: NLP
-    color: is-danger
+  - Python
+  - Telethon
+  - NLP
 - id: meetings-timer
   repo: https://github.com/nikmedoed/meetings-timer
   icon: fas fa-stopwatch
   media: meeting_timer.mp4
-  title:
-    en: Meetings Timer
-    ru: Meetings Timer
+  title: Meetings Timer
   subtitle:
     en: Stay on schedule online.
     ru: Не выбивайтесь из графика
@@ -170,19 +132,14 @@
     ru: Настраиваемый таймер показывает, опережаете ли вы план. Подходит для презентаций
       и сложных мероприятий.
   tags:
-  - name: Tauri
-    color: is-danger
-  - name: JavaScript
-    color: is-warning
-  - name: Svelte
-    color: is-primary
+  - Tauri
+  - JavaScript
+  - Svelte
 - id: vocabulary-coach-bot
   repo: https://github.com/nikmedoed/vocabulary_coach_bot
   icon: fas fa-brain
   media: vocabulary.mp4
-  title:
-    en: Vocabulary Coach Bot
-    ru: Vocabulary Coach Bot
+  title: Vocabulary Coach Bot
   subtitle:
     en: Train answers in Telegram.
     ru: Тренируйтесь отвечать в Telegram
@@ -192,21 +149,15 @@
     ru: Бот использует Google Sheets как базу вопросов и проверяет ответы текстом
       или вариантами. Помогает учить слова и готовиться к интервью.
   tags:
-  - name: Python
-    color: is-link
-  - name: aiogram
-    color: is-info
-  - name: Google Apps Script
-    color: is-success
-  - name: NLP
-    color: is-danger
+  - Python
+  - aiogram
+  - Google Apps Script
+  - NLP
 - id: pp-to-stories
   repo: https://github.com/nikmedoed/PP_to_stories
   icon: fas fa-images
   media: pptx_to_stories.png
-  title:
-    en: PP to Stories
-    ru: PP to Stories
+  title: PP to Stories
   subtitle:
     en: PowerPoint to Instagram stories.
     ru: Слайды PowerPoint в сторис
@@ -216,17 +167,13 @@
     ru: Командная утилита превращает слайды в PNG или короткие MP4. Удобно делиться
       презентациями в соцсетях.
   tags:
-  - name: Python
-    color: is-link
-  - name: Windows API
-    color: is-warning
+  - Python
+  - Windows API
 - id: pymapcollector
   repo: https://github.com/nikmedoed/pyMapCollector
   icon: fas fa-map
   media: pymap.jpg
-  title:
-    en: pyMapCollector
-    ru: pyMapCollector
+  title: pyMapCollector
   subtitle:
     en: Stitch high-res map images.
     ru: Склейка карт в высоком разрешении
@@ -236,17 +183,13 @@
     ru: Автоматически прокручивает интерактивные карты или доски Miro, делает скриншоты
       и объединяет их в большой PNG.
   tags:
-  - name: Python
-    color: is-link
-  - name: Selenium
-    color: is-warning
+  - Python
+  - Selenium
 - id: tampermonkey-scripts
   repo: https://github.com/nikmedoed/myTampermonkeyScripts
   icon: tm-icon
   media: tampermonkey.mp4
-  title:
-    en: Tampermonkey Scripts
-    ru: Tampermonkey Scripts
+  title: Tampermonkey Scripts
   subtitle:
     en: Browser tweaks & search helpers.
     ru: Улучшения для браузера
@@ -256,17 +199,13 @@
     ru: Коллекция пользовательских скриптов для мультипоиска, экспорта плейлистов
       и исправления интерфейса. Устанавливаются через Tampermonkey.
   tags:
-  - name: JavaScript
-    color: is-warning
-  - name: Tampermonkey
-    color: is-danger
+  - JavaScript
+  - Tampermonkey
 - id: fast-file-sharing
   repo: https://github.com/nikmedoed/file_upload_for_share
   icon: fas fa-upload
   media: null
-  title:
-    en: Fast File Sharing
-    ru: Fast File Sharing
+  title: Fast File Sharing
   subtitle:
     en: Host big files for Notion.
     ru: Храните большие файлы для Notion
@@ -276,19 +215,14 @@
     ru: Приложение на Rust и конфиг Nginx для загрузки файлов по WebDAV и обмена секретными
       ссылками без ограничений.
   tags:
-  - name: Rust
-    color: is-warning
-  - name: WebDAV
-    color: is-info
-  - name: Nginx
-    color: is-primary
+  - Rust
+  - WebDAV
+  - Nginx
 - id: whatsapp-utilities
   repo: https://github.com/nikmedoed/WAutils
   icon: fas fa-robot
   media: null
-  title:
-    en: WhatsApp Utilities
-    ru: WhatsApp Utilities
+  title: WhatsApp Utilities
   subtitle:
     en: Automate WhatsApp Web tasks.
     ru: Автоматизация WhatsApp Web
@@ -298,7 +232,5 @@
     ru: Скрипты Selenium рассылают сообщения, прикрепляют файлы и управляют сессиями.
       Полезно для рассылок в сообществах.
   tags:
-  - name: Python
-    color: is-link
-  - name: Selenium
-    color: is-warning
+  - Python
+  - Selenium
