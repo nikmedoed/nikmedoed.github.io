@@ -1,25 +1,25 @@
-"FFmpeg": is-danger
-"FastAPI": is-primary
-"Google API": is-info
-"Google Apps Script": is-success
-"JavaScript": is-warning
-"NLP": is-danger
-"Nginx": is-primary
-"PIL": is-success
-"PyAudio": is-info
-"PySide6": is-danger
-"Python": is-link
-"Rust": is-warning
-"Selenium": is-warning
-"Svelte": is-primary
-"Tampermonkey": is-danger
-"Tauri": is-danger
-"Telethon": is-info
-"Tkinter": is-success
-"WebDAV": is-info
-"WebExtension": is-success
-"Whisper": is-primary
-"Windows API": is-warning
-"aiogram": is-info
-"pynput": is-warning
-"pystray": is-info
+FFmpeg: is-danger
+FastAPI: is-primary
+Google API: is-info
+Google Apps Script: is-success
+JavaScript: is-warning
+NLP: is-danger
+Nginx: is-primary
+PIL: is-success
+PyAudio: is-info
+PySide6: is-danger
+Python: is-link
+Rust: is-warning
+Selenium: is-warning
+Svelte: is-primary
+Tampermonkey: is-danger
+Tauri: is-danger
+Telethon: is-info
+Tkinter: is-success
+WebDAV: is-info
+WebExtension: is-success
+Whisper: is-primary
+Windows API: is-warning
+aiogram: is-info
+pynput: is-warning
+pystray: is-info
