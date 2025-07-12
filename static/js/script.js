@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
         filterBar.innerHTML = `<span class="tag filter-tag is-dark" data-tech="all">${allLabel}</span>`;
         Object.keys(counts).sort((a, b) => counts[b] - counts[a]).forEach(t => {
             const s = document.createElement('span');
-            s.className = `tag filter-tag ${colors[t]}`;
+            s.className = `tag filter-tag has-text-dark ${colors[t]}`;
             s.dataset.tech = t;
             s.textContent = t;
             filterBar.appendChild(s);
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         document.querySelectorAll('.project-tag').forEach(tag => {
-            tag.classList.add('filter-tag');
+            tag.classList.add('filter-tag', 'has-text-dark');
             tag.addEventListener('click', () => {
                 const tech = tag.dataset.tech;
                 const target = filterBar.querySelector(`[data-tech="${tech}"]`);
