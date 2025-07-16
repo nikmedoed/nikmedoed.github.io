@@ -43,9 +43,10 @@ I'm a versatile developer with a strong product-oriented mindset, focused on **a
 
 ### GitHub Pages Deployment
 
-To avoid duplicate workflows, disable GitHub's default `pages-build-deployment`.
-Open **Settings → Pages**, choose **Deploy from a branch**, and select the
-`gh-pages` branch published by the `Deploy Hugo site` workflow.
+Disable GitHub's default `pages-build-deployment` workflow to avoid duplicate
+builds. In **Settings → Pages**, set **Source** to **GitHub Actions** so the
+`Deploy Hugo site to Pages` workflow publishes the site from the `gh-pages`
+branch.
 
 ---
 
