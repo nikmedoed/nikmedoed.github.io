@@ -1,58 +1,42 @@
-# Hi, I'm Nikita Muromtsev 👋
+# nikmedoed.github.io
 
-**Full-stack Developer | Technical Product Manager | Creative Problem Solver | Automation Engineer**
+This repository contains the source for my personal landing page and portfolio.
+The site is generated with **Hugo** using Bulma for styling and a small dark/vivid palette.
 
-_Building clean, scalable tools with Python, TypeScript & cross-platform tech._
+Visit the site here: <https://nikmedoed.github.io>
 
-I'm a versatile developer with a strong product-oriented mindset, focused on **automation** and **digitalization of processes**, and building **management systems** through web apps, mobile apps, Telegram bots, browser extensions, and Windows tools.
+Main page features:
 
-🌍 **Open to:** Remote / European opportunities as a Python/TypeScript Developer.
+- Short introduction with a link to my CV
+- Grid of highlighted open source projects
+- Brief about section
+- Contact links and donation options
 
-📧 [Email](mailto:nikmedoed@gmail.com) | 💬 [Telegram](https://t.me/nikmedoed) | 🔗 [LinkedIn](https://www.linkedin.com/in/muromcevn) | 🌐 [Personal Page](https://nikmedoed.github.io) | 📝 [Blog (RU)](https://t.me/etonikmedoed)
+Project cards are defined in `data/projects.yaml`. Each entry lists the media file, description and technology tags used to generate a card via a reusable partial.
 
----
+The `experience` page summarises my work history and links back to the main page.
 
-### 🛠 Tech Overview
+To build the site locally run `hugo` and open `public/index.html`.
 
-**Main Stack**
+Feel free to explore the code or get in touch if you have questions!
 
-- **Languages**: Python, TypeScript, JavaScript
-- **Frameworks**: FastAPI, React Native, Svelte, Tauri, SQLAlchemy, Aiogram, Selenium, HTMX, Telethon, Chrome Extensions
-- **Databases**: Redis, MongoDB, MariaDB/MySQL, SQLite, PostgreSQL
-- **Dev Tools**: Docker, Alembic, Celery, Uvicorn
-- **Tools**: Jinja2, Pandas, Asyncio, APScheduler, aiohttp, Pillow, matplotlib, openpyxl, pynput, pyperclip, Quill, PyInstaller, Whisper, Google APIs
-- **Mobile**: WebView, AsyncStorage, Notifee, InAppPurchases, Firebase, Expo
+## Contact form setup
 
-**Have experience**: Rust, Qt, Django, Telebot, Tkinter, librosa, sounddevice, Vite, MobX, Redux
+The contact form on the main page expects a Google Apps Script endpoint to
+process submissions. Create a new script at
+<https://script.google.com> and deploy it as a web app using the following code:
 
----
-
-### 🚀 Projects You Might Find Interesting
-
-- 📺 [**Pishow**](https://github.com/nikmedoed/pishow): Lightweight slideshow for older devices (smart TVs, tablets) using pure HTML & meta refresh.
-- 🖥️ [**OLED Screensaver**](https://github.com/nikmedoed/oled_screensaver): Blacks OLED displays via hotkeys or idle detection without affecting other screens.
-- 📹 [**Easy Video Compress**](https://github.com/nikmedoed/easy-video-compress): Free, shell-integrated video compressor-optimizer for social media, messengers, Notion, and more.
-- 💾 [**Windows Backup Tool**](https://github.com/nikmedoed/windows_backup_tool): GUI-driven incremental backup utility for Windows folders, featuring scheduling and exclusions.
-- ✉️ [**Telegram Important Notifies**](https://github.com/nikmedoed/Telegram-important-notifies): Monitors selected chats and forwards important Telegram messages based on queries.
-- ⏱️ [**Meetings Timer**](https://github.com/nikmedoed/meetings-timer): Non-linear stage timer to keep multi-part online meetings on track, with flexible stage control.
-- 🎙️ [**Real-time Speech to Input**](https://github.com/nikmedoed/speech_to_input): Whisper-powered real-time dictation into any text input.
-- 🧠 [**Vocabulary Coach Bot**](https://github.com/nikmedoed/vocabulary_coach_bot): Telegram bot using Google Sheets as a database to train answers via multiple choice or intelligent text matching input.
-- 🖼️ [**PP to Stories**](https://github.com/nikmedoed/PP_to_stories): Use PowerPoint as a stories editor, with automated media export ready for upload.
-- 🗺️ [**pyMapCollector**](https://github.com/nikmedoed/pyMapCollector): Extract large images from interactive web pages by stitching scroll-based segments (Miro, maps, etc.).
-- 🧰 [**Tampermonkey Scripts**](https://github.com/nikmedoed/myTampermonkeyScripts): Suite of browser scripts for multi-site search, UI tweaks, playlist exports, and more.
-
----
-
-### 💖 Support My Work
-
-If you appreciate my projects and want to support me:
-
-☕ [Ko-fi](https://ko-fi.com/nikmedoed) | 💎 [Boosty](https://boosty.to/nikmedoed/donate) | 💰 [PayPal](https://paypal.me/etonikmedoed) | 💳 [YooMoney](https://yoomoney.ru/to/4100119049495394)  | 🍺 [Buy Me a Coffee](https://buymeacoffee.com/nikmedoed)
-
-- **BTC:** `1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7`
-- **USDT (TRC20):** `TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE`
-- **TON (USDT-TON):** `UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N`
-
----
-
-> _"Have a vision, aspire to be a leader, make some humor, Resist, Invent & Projects"_
+```javascript
+function doPost(e) {
+    var data = JSON.parse(e.postData.contents);
+    var sheet = SpreadsheetApp.openById('YOUR_SPREADSHEET_ID').getActiveSheet();
+    sheet.appendRow([new Date(), data.email, data.subject, data.message]);
+    MailApp.sendEmail({
+        to: "your@email",
+        replyTo: data.email,
+        subject: data.subject,
+        htmlBody: data.message
+    });
+    return ContentService.createTextOutput('OK');
+}
+```
