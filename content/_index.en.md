@@ -1,5 +1,5 @@
 ---
 title: routine automation & awareness tools
-description: Open-source tools and projects by Nikita Muromtsev for automating routine tasks and improving workflows.
+description: Open-source tools by Nikita Muromtsev for automating routine tasks and improving awareness.
 ---
 
