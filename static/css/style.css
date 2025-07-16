@@ -3,6 +3,7 @@
   --c-violet: #371542;
   --c-blue: #194d91;
   --c-yellow: #fffe45;
+  --c-orange: #ff4515;
   --c-rose: #ed7086;
 }
 
@@ -196,8 +197,12 @@ body.no-scroll {
   padding-top: 2rem;
   padding-bottom: 2rem;
   margin-top: 0;
-  background-color: #000;
-  border-top: 2px solid var(--c-violet);
+  background-color: var(--c-violet);
+}
+
+.footer a {
+  color: var(--c-yellow);
+  font-weight: 600;
 }
 
 #about {
@@ -258,9 +263,7 @@ body.no-scroll {
 }
 
 .support-box {
-  background-color: #421537;
-  border: 2px solid var(--c-pink);
-  box-shadow: 0 0 0.75rem rgba(250, 51, 250, 0.4);
+  background-image: linear-gradient(135deg, var(--c-violet), var(--c-blue));
 }
 
 /* Ensure strong text inside dark boxes remains legible */
@@ -302,6 +305,17 @@ body.no-scroll {
   color: #fff;
 }
 
+#send-btn {
+  background-color: var(--c-orange);
+  border-color: var(--c-orange);
+  font-weight: 600;
+  color: #fff;
+}
+
+#send-btn:hover {
+  filter: brightness(1.1);
+}
+
 /* Hero buttons use different theme colors but equal width */
 .hero-buttons .button {
   width: 9rem;
@@ -318,9 +332,9 @@ body.no-scroll {
 }
 
 #contact-form .button.is-link {
-  background-color: #c6db09;
-  border-color: #c6db09;
-  color: #000;
+  background-color: var(--c-orange);
+  border-color: var(--c-orange);
+  color: #fff;
 }
 
 .notification-container {
@@ -340,10 +354,9 @@ html[data-theme='light'] #about .has-text-white {
   color: inherit !important;
 }
 html[data-theme='light'] .support-box {
-  background-color: #f5f5f5 !important;
-  border-color: var(--c-pink) !important;
-  box-shadow: 0 0 0.75rem rgba(250, 51, 250, 0.3) !important;
+  background-image: linear-gradient(135deg, #fefefe, #f5f5ff) !important;
   color: #000 !important;
+  border: 1px solid var(--c-violet) !important;
 }
 html[data-theme='light'] .contact-box {
   background-color: #f5f5f5 !important;
@@ -355,8 +368,10 @@ html[data-theme='light'] .contact-box .label {
 }
 html[data-theme='light'] footer.footer {
   background-color: #e0e0e0 !important;
-  border-top: 2px solid var(--c-violet) !important;
   color: #000 !important;
+}
+html[data-theme='light'] footer.footer a {
+  color: var(--c-blue) !important;
 }
 html[data-theme='light'] footer.footer .has-text-white {
   color: inherit !important;
