@@ -284,13 +284,7 @@ body.no-scroll {
   color: #fff;
 }
 
-/* Hero buttons use different theme colors but equal width */
-.hero-buttons .button {
-  width: 9rem;
-}
-.hero-buttons.is-flex-wrap-nowrap {
-  flex-wrap: nowrap;
-}
+/* Hero buttons use theme colors and stay on one line */
 .hero-buttons .about-btn {
   background-color: var(--c-rose);
   border-color: var(--c-rose);
@@ -307,12 +301,6 @@ body.no-scroll {
   .hero-body.px-1-mobile {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
-  }
-  .hero-buttons.is-flex-wrap-nowrap {
-    flex-wrap: nowrap;
-  }
-  .hero-buttons .button {
-    width: 8rem;
   }
 }
 
