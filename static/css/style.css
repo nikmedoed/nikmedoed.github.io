@@ -240,10 +240,19 @@ body.no-scroll {
 .blog-promo .button.blog-btn:hover {
   box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.9), 0 4px 6px rgba(0, 0, 0, 0.35);
 }
+
 .blog-promo .blog-btn img {
   display: block;
   border-radius: 0.5rem;
   max-height: 4rem;
+}
+
+@media (max-width: 425px) {
+  .contact-row,
+  .blog-promo {
+    flex-direction: column;
+    text-align: center;
+  }
 }
 
 .support-box {
