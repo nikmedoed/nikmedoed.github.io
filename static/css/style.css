@@ -55,6 +55,12 @@ html, body {
 }
 .project-card .card-content {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card .card-content .tags {
+  margin-top: auto;
 }
 
 .project-media {
