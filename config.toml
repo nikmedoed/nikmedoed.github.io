@@ -1,5 +1,11 @@
 baseURL = "https://nikmedoed.github.io/"
 defaultContentLanguage = "en"
+# Default language for the site
+languageCode = "en"
+enableRobotsTXT = true
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
 # defaultContentLanguageInSubdir = false
 [languages]
   [languages.en]
