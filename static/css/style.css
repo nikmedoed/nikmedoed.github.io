@@ -255,6 +255,9 @@ body.no-scroll {
 .wallets .button {
   vertical-align: middle;
 }
+.wallets span {
+  word-break: break-all;
+}
 
 .telegram-link {
   color: #27a7e7;
