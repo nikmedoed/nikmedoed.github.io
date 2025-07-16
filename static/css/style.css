@@ -240,20 +240,37 @@ body.no-scroll {
 .blog-promo .button.blog-btn:hover {
   box-shadow: 0 0 0.5rem rgba(255, 255, 255, 0.9), 0 4px 6px rgba(0, 0, 0, 0.35);
 }
+
 .blog-promo .blog-btn img {
   display: block;
   border-radius: 0.5rem;
   max-height: 4rem;
 }
 
+@media (max-width: 425px) {
+  .contact-row,
+  .blog-promo {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 .support-box {
   background-color: #421537;
+}
+
+/* Ensure strong text inside dark boxes remains legible */
+.has-text-white strong {
+  color: inherit;
 }
 
 .wallets strong,
 .wallets span,
 .wallets .button {
-  vertical-align: middle;
+    vertical-align: middle;
+}
+.wallets span {
+  word-break: break-all;
 }
 
 .telegram-link {
@@ -282,9 +299,17 @@ body.no-scroll {
 }
 
 /* Hero buttons use different theme colors but equal width */
+.hero-buttons {
+  gap: 1.5rem;
+}
+.hero-buttons .button:not(:last-child) {
+  margin-right: 0;
+  margin-bottom: 0;
+}
 .hero-buttons .button {
   width: 9rem;
 }
+
 .hero-buttons .about-btn {
   background-color: var(--c-rose);
   border-color: var(--c-rose);

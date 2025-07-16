@@ -1,7 +1,7 @@
 {{ define "main" }}
 <section class="hero is-medium is-bold gradient-bg">
     <div class="hero-body has-text-centered">
-        <p class="title gradient-text mb-4">{{ i18n "heroTitle" }}</p>
+        <h1 class="title gradient-text mb-4">{{ i18n "heroTitle" }}</h1>
         <p class="subtitle has-text-light hero-subtitle mb-5">{{ i18n "heroSubtitle" | safeHTML }}</p>
         <div class="buttons is-centered mt-5 hero-buttons">
             <a class="button about-btn" href="#about">{{ i18n "heroAboutBtn" }}</a>
@@ -66,7 +66,7 @@
                 </div>
 
                 <h2 class="title has-text-centered has-text-warning mb-4 mt-6">{{ i18n "contactTitle" }}</h2>
-                <div class="columns is-vcentered contact-row">
+                <div class="columns is-vcentered is-mobile contact-row">
                     <div class="column">
                         <span>{{ i18n "contactIntro" | safeHTML }}</span>
                     </div>
@@ -74,7 +74,7 @@
                         <button id="email-btn" class="button is-link is-light">{{ i18n "sendEmail" }}</button>
                     </div>
                 </div>
-                <div class="columns is-vcentered blog-promo mt-4">
+                <div class="columns is-vcentered is-mobile blog-promo mt-4">
                     <div class="column">
                         <span>{{ i18n "blogPromoText" }}</span>
                     </div>

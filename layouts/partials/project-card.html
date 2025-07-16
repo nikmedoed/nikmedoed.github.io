@@ -19,7 +19,7 @@
         <div class="card-image"></div>
         {{ end }}
         <div class="card-content">
-            <p class="title is-5">
+            <p class="title is-5 icon-text">
                 <span class="icon">
                     {{ if eq $p.icon "tm-icon" }}<span aria-label="Tampermonkey" class="tm-icon" role="img"></span>{{ else }}<i class="{{ $p.icon }}"></i>{{ end }}
                 </span>
@@ -29,7 +29,7 @@
             <p class="content">{{ $description }}</p>
             <div class="tags">
                 {{ range $p.tags }}
-                {{ $color := index $.Site.Data.tag_colors . | default "is-light" }}
+                {{ $color := index site.Data.tag_colors . | default "is-light" }}
                 <span class="tag {{ $color }} is-light has-text-dark project-tag" data-tech="{{ . }}">{{ . }}</span>
                 {{ end }}
             </div>
