@@ -33,6 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const $navbarItems = Array.from(document.querySelectorAll('#navbarMenu .navbar-item'));
+    if ($navbarItems.length > 0) {
+        $navbarItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const burger = document.querySelector('.navbar-burger');
+                const menu = document.getElementById('navbarMenu');
+                if (burger && menu && burger.classList.contains('is-active')) {
+                    burger.classList.remove('is-active');
+                    menu.classList.remove('is-active');
+                }
+            });
+        });
+    }
+
     const themeBtn = document.getElementById('theme-toggle');
     const root = document.documentElement;
 
