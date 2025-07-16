@@ -326,3 +326,28 @@ body.no-scroll {
   transform: translateX(-50%);
   z-index: 1000;
 }
+
+/* Theme overrides for light mode */
+html[data-theme='light'] #about {
+  background-color: #f5f5f5;
+  color: #000;
+}
+html[data-theme='light'] #about .has-text-white {
+  color: inherit;
+}
+html[data-theme='light'] .support-box {
+  background-color: #f5f5f5;
+  color: #000;
+}
+html[data-theme='light'] .contact-box {
+  background-color: #f5f5f5;
+  border-color: #d1d1d1;
+  color: #000;
+}
+html[data-theme='light'] .contact-box .label {
+  color: #000;
+}
+html[data-theme='light'] footer.footer {
+  background-color: #f5f5f5;
+  color: #000;
+}
