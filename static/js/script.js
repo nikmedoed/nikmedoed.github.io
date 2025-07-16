@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const currentLang = document.documentElement.lang;
+    const baseAttr = document.documentElement.dataset.base || '/';
+    const basePath = baseAttr.replace(/\/$/, '');
+    const storedLang = localStorage.getItem('lang');
+    const translations = {
+        en: {all: 'All', sent: 'Message sent!', fail: 'Failed to send message.'},
+        ru: {all: 'Все', sent: 'Сообщение отправлено!', fail: 'Не удалось отправить сообщение.'}
+    };
+    if (!storedLang) {
+        const navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+        if (navLang.startsWith('ru') && currentLang === 'en') {
+            const newPath = basePath + '/ru' + location.pathname.slice(basePath.length) + location.search + location.hash;
+            localStorage.setItem('lang', 'ru');
+            location.replace(newPath);
+            return;
+        }
+    }
+    document.querySelectorAll('.lang-switch').forEach(btn => {
+        btn.addEventListener('click', () => {
+            localStorage.setItem('lang', btn.dataset.lang);
+        });
+    });
     const $navbarBurgers = Array.from(document.querySelectorAll('.navbar-burger'));
     if ($navbarBurgers.length > 0) {
         $navbarBurgers.forEach(el => {
@@ -86,10 +108,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const filterBar = document.getElementById('tech-filter');
     if (filterBar) {
-        filterBar.innerHTML = '<span class="tag filter-tag is-dark" data-tech="all">All</span>';
+        const allLabel = (translations[currentLang] && translations[currentLang].all) || 'All';
+        filterBar.innerHTML = `<span class="tag filter-tag is-dark" data-tech="all">${allLabel}</span>`;
         Object.keys(counts).sort((a, b) => counts[b] - counts[a]).forEach(t => {
             const s = document.createElement('span');
-            s.className = `tag filter-tag ${colors[t]}`;
+            s.className = `tag filter-tag has-text-dark ${colors[t]}`;
             s.dataset.tech = t;
             s.textContent = t;
             filterBar.appendChild(s);
@@ -107,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         document.querySelectorAll('.project-tag').forEach(tag => {
-            tag.classList.add('filter-tag');
+            tag.classList.add('filter-tag', 'has-text-dark');
             tag.addEventListener('click', () => {
                 const tech = tag.dataset.tech;
                 const target = filterBar.querySelector(`[data-tech="${tech}"]`);
@@ -177,8 +200,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const notifyContainer = document.getElementById('notification-container');
 
-    function showNotification(msg, type = 'is-success') {
+    function showNotification(key, type = 'is-success') {
         if (!notifyContainer) return;
+        const lang = document.documentElement.lang;
+        const msg = (translations[lang] && translations[lang][key]) || key;
         const note = document.createElement('div');
         note.className = `notification ${type}`;
         note.textContent = msg;
@@ -222,10 +247,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify(data)
             }).then(() => {
-                showNotification('Message sent!', 'is-success');
+                showNotification('sent', 'is-success');
                 form.reset();
             }).catch(() => {
-                showNotification('Failed to send message.', 'is-danger');
+                showNotification('fail', 'is-danger');
             }).finally(() => {
                 if (sendBtn) {
                     sendBtn.classList.remove('is-loading');
