@@ -302,7 +302,7 @@ body.no-scroll {
   color: #000;
 }
 
-# Ensure hero layout stays on one line and paddings shrink on mobile
+/* Ensure hero layout stays on one line and paddings shrink on mobile */
 @media screen and (max-width: 768px) {
   .hero-body.px-1-mobile {
     padding-left: 0.25rem;
