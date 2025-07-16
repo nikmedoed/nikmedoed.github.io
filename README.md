@@ -40,3 +40,8 @@ function doPost(e) {
     return ContentService.createTextOutput('OK');
 }
 ```
+
+### GitHub Pages Deployment
+
+Disable GitHub's default `pages-build-deployment` workflow to avoid duplicate
+builds. In **Settings → Pages**, set **Source** to **GitHub Actions** and select Hugo if workflow it doesn't exist.
