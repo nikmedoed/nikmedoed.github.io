@@ -288,6 +288,13 @@ body.no-scroll {
   width: 12rem;
 }
 
+html[data-theme='light'] #email-btn {
+  background-color: var(--c-orange) !important;
+  border-color: var(--c-orange) !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
 .contact-box {
   background-color: var(--c-blue);
   border-color: var(--c-blue);
