@@ -29,7 +29,7 @@
             <p class="content">{{ $description }}</p>
             <div class="tags">
                 {{ range $p.tags }}
-                {{ $color := index $.Site.Data.tag_colors . | default "is-light" }}
+                {{ $color := index site.Data.tag_colors . | default "is-light" }}
                 <span class="tag {{ $color }} is-light has-text-dark project-tag" data-tech="{{ . }}">{{ . }}</span>
                 {{ end }}
             </div>
