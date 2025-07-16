@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
         Object.keys(counts).sort((a, b) => counts[b] - counts[a]).forEach(t => {
             const s = document.createElement('span');
             const color = colors[t] || tagColors[t] || 'is-light';
-            s.className = `tag filter-tag has-text-dark ${color}`;
+            s.className = `tag filter-tag has-text-dark ${color} is-light`;
             s.dataset.tech = t;
             s.textContent = t;
             filterBar.appendChild(s);
