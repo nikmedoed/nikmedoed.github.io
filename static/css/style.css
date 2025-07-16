@@ -313,8 +313,5 @@ body.no-scroll {
   z-index: 1000;
 }
 
-@media screen and (max-width: 768px) {
-  .hero-buttons { flex-wrap: nowrap; }
-  .hero-buttons .button { width: 8rem; }
-}
+
 
