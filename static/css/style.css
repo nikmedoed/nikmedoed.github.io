@@ -300,7 +300,7 @@ body.no-scroll {
 
 /* Hero buttons use different theme colors but equal width */
 .hero-buttons {
-  gap: 0.75rem 1.5rem;
+  gap: 1.5rem;
 }
 .hero-buttons .button:not(:last-child) {
   margin-right: 0;
