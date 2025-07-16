@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {all: 'All', sent: 'Message sent!', fail: 'Failed to send message.'},
         ru: {all: 'Все', sent: 'Сообщение отправлено!', fail: 'Не удалось отправить сообщение.'}
     };
+
+    const tagColorsEl = document.getElementById('tag-colors-data');
+    const tagColors = tagColorsEl ? JSON.parse(tagColorsEl.textContent) : {};
     if (!storedLang) {
         const navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
         if (navLang.startsWith('ru') && currentLang === 'en') {
@@ -93,13 +96,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const counts = {};
     const colors = {};
     cards.forEach(card => {
-        const tagEls = card.querySelectorAll('.tags .tag');
+        const tagEls = card.querySelectorAll('.project-tag');
         const tags = Array.from(tagEls).map(t => {
             const text = t.textContent.trim();
+            const color = tagColors[text] || 'is-light';
             if (!colors[text]) {
-                const cls = Array.from(t.classList).filter(c => c !== 'tag').join(' ');
-                colors[text] = cls;
+                colors[text] = color;
             }
+            t.classList.add(color);
             counts[text] = (counts[text] || 0) + 1;
             return text;
         });
@@ -112,7 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
         filterBar.innerHTML = `<span class="tag filter-tag is-dark" data-tech="all">${allLabel}</span>`;
         Object.keys(counts).sort((a, b) => counts[b] - counts[a]).forEach(t => {
             const s = document.createElement('span');
-            s.className = `tag filter-tag has-text-dark ${colors[t]}`;
+            const color = colors[t] || tagColors[t] || 'is-light';
+            s.className = `tag filter-tag has-text-dark ${color}`;
             s.dataset.tech = t;
             s.textContent = t;
             filterBar.appendChild(s);

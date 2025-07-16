@@ -56,6 +56,10 @@
 
 <div id="notification-container" class="notification-container"></div>
 
+<script id="tag-colors-data" type="application/json">
+{{- $.Site.Data.tag_colors | jsonify -}}
+</script>
+
 {{ block "main" . }}{{ end }}
 
 <footer class="footer has-background-black has-text-centered has-text-white">
