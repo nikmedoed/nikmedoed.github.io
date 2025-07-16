@@ -299,9 +299,17 @@ body.no-scroll {
 }
 
 /* Hero buttons use different theme colors but equal width */
+.hero-buttons {
+  gap: 1.5rem;
+}
+.hero-buttons .button:not(:last-child) {
+  margin-right: 0;
+  margin-bottom: 0;
+}
 .hero-buttons .button {
   width: 9rem;
 }
+
 .hero-buttons .about-btn {
   background-color: var(--c-rose);
   border-color: var(--c-rose);
