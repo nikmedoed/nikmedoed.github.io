@@ -23,9 +23,7 @@
                 <span class="icon">
                     {{ if eq $p.icon "tm-icon" }}<span aria-label="Tampermonkey" class="tm-icon" role="img"></span>{{ else }}<i class="{{ $p.icon }}"></i>{{ end }}
                 </span>
-                <span>
-                    <a href="{{ $p.repo }}" target="_blank">{{ $title }}</a>
-                </span>
+                <a href="{{ $p.repo }}" target="_blank">{{ $title }}</a>
             </p>
             <p class="subtitle is-6">{{ $subtitle }}</p>
             <p class="content">{{ $description }}</p>
