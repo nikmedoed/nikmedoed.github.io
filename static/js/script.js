@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         en: {all: 'All', sent: 'Message sent!', fail: 'Failed to send message.'},
         ru: {all: 'Все', sent: 'Сообщение отправлено!', fail: 'Не удалось отправить сообщение.'}
     };
+    let lastScroll = window.scrollY;
     if (!storedLang) {
         const navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
         if (navLang.startsWith('ru') && currentLang === 'en') {
@@ -29,6 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 const $target = document.getElementById(target);
                 el.classList.toggle('is-active');
                 $target.classList.toggle('is-active');
+                const nav = document.querySelector('.navbar');
+                if (nav) {
+                    nav.classList.remove('hidden');
+                    lastScroll = window.scrollY;
+                }
             });
         });
     }
@@ -42,6 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (burger && menu && burger.classList.contains('is-active')) {
                     burger.classList.remove('is-active');
                     menu.classList.remove('is-active');
+                }
+                const nav = document.querySelector('.navbar');
+                if (nav) {
+                    nav.classList.remove('hidden');
+                    lastScroll = window.scrollY;
                 }
             });
         });
@@ -85,9 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const navbar = document.querySelector('.navbar');
-    let lastScroll = window.scrollY;
     if (navbar) {
         window.addEventListener('scroll', () => {
+            const burger = document.querySelector('.navbar-burger');
+            if (burger && burger.classList.contains('is-active')) {
+                navbar.classList.remove('hidden');
+                return;
+            }
             const current = window.scrollY;
             if (current <= 0) {
                 navbar.classList.remove('hidden');
