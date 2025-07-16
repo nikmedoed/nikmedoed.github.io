@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (themeBtn) {
         let storedTheme;
+        let lastWrite = 0;
         try {
             storedTheme = localStorage.getItem('theme');
         } catch (e) {
@@ -38,10 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
         themeBtn.addEventListener('click', () => {
             const current = root.getAttribute('data-theme');
             const newTheme = current === 'dark' ? 'light' : 'dark';
-            if (storedTheme !== newTheme) {
+            const now = Date.now();
+            if (storedTheme !== newTheme && now - lastWrite > 1000) {
                 try {
                     localStorage.setItem('theme', newTheme);
                     storedTheme = newTheme;
+                    lastWrite = now;
                 } catch (e) {}
             }
             applyTheme(newTheme);
