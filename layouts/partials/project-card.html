@@ -4,7 +4,7 @@
         <div class="card-image">
             <figure class="project-media{{ if not (strings.HasSuffix .media ".mp4") }} contain{{ end }}">
                 {{ if (strings.HasSuffix .media ".mp4") }}
-                <video autoplay loop muted playsinline src="/media/{{ .media }}"></video>
+                <video class="vc-cancelled" autoplay loop muted playsinline src="/media/{{ .media }}"></video>
                 {{ else }}
                 <img alt="{{ .title }} screenshot" src="/media/{{ .media }}">
                 {{ end }}
