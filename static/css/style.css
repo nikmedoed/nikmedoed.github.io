@@ -288,6 +288,9 @@ body.no-scroll {
 .hero-buttons .button {
   width: 9rem;
 }
+.hero-buttons.is-flex-wrap-nowrap {
+  flex-wrap: nowrap;
+}
 .hero-buttons .about-btn {
   background-color: var(--c-rose);
   border-color: var(--c-rose);
@@ -297,6 +300,20 @@ body.no-scroll {
   background-color: var(--c-yellow);
   border-color: var(--c-yellow);
   color: #000;
+}
+
+# Ensure hero layout stays on one line and paddings shrink on mobile
+@media screen and (max-width: 768px) {
+  .hero-body.px-1-mobile {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  .hero-buttons.is-flex-wrap-nowrap {
+    flex-wrap: nowrap;
+  }
+  .hero-buttons .button {
+    width: 8rem;
+  }
 }
 
 #contact-form .button.is-link {
