@@ -1,5 +1,5 @@
 ---
-title: Experience
+title: Experience × CV × Portfolio
 ---
 
 <section class="hero is-medium gradient-bg">
@@ -26,6 +26,6 @@ title: Experience
 
 <footer class="footer has-background-black has-text-centered has-text-white">
     <div class="content">
-        <p><a class="has-text-warning" href="{{ "/" | relURL }}">Back to main page</a></p>
+        <p><a class="has-text-warning" href="{{ "/" | relURL }}">{{ i18n "backToMain" }}</a></p>
     </div>
 </footer>
