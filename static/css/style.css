@@ -259,10 +259,15 @@ body.no-scroll {
   background-color: #421537;
 }
 
+/* Ensure strong text inside dark boxes remains legible */
+.has-text-white strong {
+  color: inherit;
+}
+
 .wallets strong,
 .wallets span,
 .wallets .button {
-  vertical-align: middle;
+    vertical-align: middle;
 }
 .wallets span {
   word-break: break-all;
