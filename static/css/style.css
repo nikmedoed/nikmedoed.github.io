@@ -302,6 +302,10 @@ body.no-scroll {
 .hero-buttons {
   gap: 0.75rem;
 }
+.hero-buttons .button:not(:last-child) {
+  margin-right: 0;
+  margin-bottom: 0;
+}
 .hero-buttons .button {
   width: 9rem;
 }
