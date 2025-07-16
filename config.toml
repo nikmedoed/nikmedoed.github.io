@@ -10,3 +10,8 @@ defaultContentLanguage = "en"
     languageName = "Русский"
     weight = 2
     contentDir = "content"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
