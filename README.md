@@ -41,6 +41,12 @@ I'm a versatile developer with a strong product-oriented mindset, focused on **a
 - 🗺️ [**pyMapCollector**](https://github.com/nikmedoed/pyMapCollector): Extract large images from interactive web pages by stitching scroll-based segments (Miro, maps, etc.).
 - 🧰 [**Tampermonkey Scripts**](https://github.com/nikmedoed/myTampermonkeyScripts): Suite of browser scripts for multi-site search, UI tweaks, playlist exports, and more.
 
+### GitHub Pages Deployment
+
+To avoid duplicate workflows, disable GitHub's default `pages-build-deployment`.
+Open **Settings → Pages**, choose **Deploy from a branch**, and select the
+`gh-pages` branch published by the `Deploy Hugo site` workflow.
+
 ---
 
 ### 💖 Support My Work
