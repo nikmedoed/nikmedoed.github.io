@@ -299,6 +299,12 @@ body.no-scroll {
   color: #000;
 }
 
+@media (max-width: 768px) {
+  .hero-buttons .button {
+    width: 8rem;
+  }
+}
+
 #contact-form .button.is-link {
   background-color: #c6db09;
   border-color: #c6db09;
