@@ -1,5 +1,6 @@
 ---
 title: Experience × CV × Portfolio
+description: Overview of my professional experience, CV and portfolio projects.
 ---
 
 <section class="hero is-medium gradient-bg">

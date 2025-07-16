@@ -1,5 +1,6 @@
 ---
 title: "Опыт × Резюме × Портфолио"
+description: Краткий обзор профессионального опыта, резюме и примеры проектов.
 ---
 
 <section class="hero is-medium gradient-bg">
