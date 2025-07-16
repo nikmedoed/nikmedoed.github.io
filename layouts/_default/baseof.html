@@ -57,7 +57,7 @@
 <div id="notification-container" class="notification-container"></div>
 
 <script id="tag-colors-data" type="application/json">
-{{- $.Site.Data.tag_colors | jsonify -}}
+{{- $.Site.Data.tag_colors | jsonify | safeJS -}}
 </script>
 
 {{ block "main" . }}{{ end }}

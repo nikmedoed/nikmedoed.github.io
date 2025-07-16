@@ -9,7 +9,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const tagColorsEl = document.getElementById('tag-colors-data');
-    const tagColors = tagColorsEl ? JSON.parse(tagColorsEl.textContent) : {};
+    let tagColors = {};
+    if (tagColorsEl) {
+        try {
+            tagColors = JSON.parse(tagColorsEl.textContent.trim());
+        } catch (e) {
+            console.error('Failed to parse tag colors', e);
+        }
+    }
     if (!storedLang) {
         const navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
         if (navLang.startsWith('ru') && currentLang === 'en') {
