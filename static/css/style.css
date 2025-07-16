@@ -3,6 +3,7 @@
   --c-violet: #371542;
   --c-blue: #194d91;
   --c-yellow: #fffe45;
+  --c-orange: #ff4515;
   --c-rose: #ed7086;
 }
 
@@ -196,6 +197,12 @@ body.no-scroll {
   padding-top: 2rem;
   padding-bottom: 2rem;
   margin-top: 0;
+  background-color: var(--c-violet);
+}
+
+.footer a {
+  color: var(--c-yellow);
+  font-weight: 600;
 }
 
 #about {
@@ -256,7 +263,7 @@ body.no-scroll {
 }
 
 .support-box {
-  background-color: #421537;
+  background-image: linear-gradient(135deg, var(--c-violet), var(--c-blue));
 }
 
 /* Ensure strong text inside dark boxes remains legible */
@@ -281,6 +288,13 @@ body.no-scroll {
   width: 12rem;
 }
 
+html[data-theme='light'] #email-btn {
+  background-color: var(--c-orange) !important;
+  border-color: var(--c-orange) !important;
+  color: #fff !important;
+  font-weight: 600;
+}
+
 .contact-box {
   background-color: var(--c-blue);
   border-color: var(--c-blue);
@@ -296,6 +310,17 @@ body.no-scroll {
 
 .contact-box .label {
   color: #fff;
+}
+
+#send-btn {
+  background-color: var(--c-orange);
+  border-color: var(--c-orange);
+  font-weight: 600;
+  color: #fff;
+}
+
+#send-btn:hover {
+  filter: brightness(1.1);
 }
 
 /* Hero buttons use different theme colors but equal width */
@@ -322,9 +347,9 @@ body.no-scroll {
 }
 
 #contact-form .button.is-link {
-  background-color: #c6db09;
-  border-color: #c6db09;
-  color: #000;
+  background-color: var(--c-orange);
+  border-color: var(--c-orange);
+  color: #fff;
 }
 
 .notification-container {
@@ -333,4 +358,28 @@ body.no-scroll {
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
+}
+
+/* Theme overrides for light mode */
+html[data-theme='light'] #about {
+  background-color: #f5f5f5 !important;
+  color: #000 !important;
+}
+html[data-theme='light'] #about .has-text-white {
+  color: inherit !important;
+}
+html[data-theme='light'] .support-box {
+  background-image: linear-gradient(135deg, #fefefe, #f5f5ff) !important;
+  color: #000 !important;
+  border: 1px solid var(--c-violet) !important;
+}
+html[data-theme='light'] footer.footer {
+  background-color: #e0e0e0 !important;
+  color: #000 !important;
+}
+html[data-theme='light'] footer.footer a {
+  color: var(--c-blue) !important;
+}
+html[data-theme='light'] footer.footer .has-text-white {
+  color: inherit !important;
 }
