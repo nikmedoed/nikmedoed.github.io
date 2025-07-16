@@ -301,6 +301,13 @@ html[data-theme='light'] #email-btn {
   color: #fff;
 }
 
+/* Ensure contact box stays dark in light theme */
+html[data-theme='light'] .contact-box {
+  background-color: var(--c-blue) !important;
+  border-color: var(--c-blue) !important;
+  color: #fff !important;
+}
+
 .contact-box input,
 .contact-box textarea {
   background-color: #f5f5f5;
