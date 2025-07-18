@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    function trackEvent(name, label = '') {
+        if (typeof gtag === 'function') {
+            gtag('event', name, { event_category: 'interaction', event_label: label });
+        }
+        if (typeof ym === 'function') {
+            ym(103383232, 'reachGoal', name);
+        }
+    }
     const currentLang = document.documentElement.lang;
     const baseAttr = document.documentElement.dataset.base || '/';
     const basePath = baseAttr.replace(/\/$/, '');
@@ -150,6 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const tgt = e.target.closest('.filter-tag');
             if (!tgt) return;
             const tech = tgt.dataset.tech;
+            trackEvent('tag_click', tech);
             filterBar.querySelectorAll('.filter-tag').forEach(tag => tag.classList.remove('is-dark'));
             tgt.classList.add('is-dark');
             cards.forEach(c => {
@@ -215,6 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.copy-btn').forEach(btn => {
         btn.addEventListener('click', () => {
+            trackEvent('support_click', 'copy');
             const text = btn.dataset.clipboardText;
             if (!text) return;
             navigator.clipboard.writeText(text).then(() => {
@@ -224,6 +234,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (icon) icon.className = 'fas fa-copy';
                 }, 1500);
             });
+        });
+    });
+
+    document.querySelectorAll('.support-box .buttons .button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            trackEvent('support_click', btn.textContent.trim());
+        });
+    });
+
+    document.querySelectorAll('a[href*="t.me"]').forEach(link => {
+        link.addEventListener('click', () => {
+            trackEvent('telegram_click');
         });
     });
 
@@ -250,6 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.classList.remove('is-clipped');
         };
         emailBtn.addEventListener('click', () => {
+            trackEvent('email_click');
             emailModal.classList.add('is-active');
             document.documentElement.classList.add('is-clipped');
         });
