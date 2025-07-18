@@ -45,3 +45,6 @@ function doPost(e) {
 
 Disable GitHub's default `pages-build-deployment` workflow to avoid duplicate
 builds. In **Settings → Pages**, set **Source** to **GitHub Actions** and select Hugo if workflow it doesn't exist.
+## License
+
+This project is licensed under the [MIT License](LICENSE).
