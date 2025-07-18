@@ -43,5 +43,4 @@ function doPost(e) {
 
 ### GitHub Pages Deployment
 
-Disable GitHub's default `pages-build-deployment` workflow to avoid duplicate
-builds. In **Settings → Pages**, set **Source** to **GitHub Actions** and select Hugo if workflow it doesn't exist.
+Disable GitHub’s default `pages-build-deployment` workflow to avoid duplicate builds. In **Settings → Pages**, set **Source** to **GitHub Actions** and select the Hugo workflow if one isn’t already present.
