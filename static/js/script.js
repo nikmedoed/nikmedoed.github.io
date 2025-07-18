@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
             gtag('event', name, { event_category: 'interaction', event_label: label });
         }
         if (typeof ym === 'function') {
-            ym(103383232, 'reachGoal', name);
+            ym(103383232, 'reachGoal', name, { label });
         }
     }
     const currentLang = document.documentElement.lang;
