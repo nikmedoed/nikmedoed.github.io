@@ -18,21 +18,22 @@ html, body {
   overflow: hidden;
 }
 
+
 .gradient-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(135deg, var(--c-violet), var(--c-blue));
-  transform: rotate(var(--rotate, 0deg)) scale(1.5) translateY(var(--wave, 0px));
+  background-image: linear-gradient(var(--angle, 135deg), var(--c-violet), var(--c-blue));
+  transform: scale(1.5) translateY(var(--wave, 0px));
   transform-origin: center;
   z-index: -1;
-  animation: gradient-rotate 30s linear infinite,
+  animation: gradient-angle 30s linear infinite,
              gradient-wave 8s ease-in-out infinite;
 }
 
-@property --rotate {
+@property --angle {
   syntax: "<angle>";
-  initial-value: 0deg;
+  initial-value: 135deg;
   inherits: false;
 }
 
@@ -42,12 +43,12 @@ html, body {
   inherits: false;
 }
 
-@keyframes gradient-rotate {
+@keyframes gradient-angle {
   from {
-    --rotate: 0deg;
+    --angle: 135deg;
   }
   to {
-    --rotate: 360deg;
+    --angle: 495deg;
   }
 }
 
