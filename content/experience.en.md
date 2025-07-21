@@ -1,7 +1,6 @@
 ---
 title: Experience × CV × Portfolio
 description: Overview of my professional experience, CV and portfolio projects.
-og_image: /favicon/web-app-manifest-512x512.png
 ---
 
 <section class="hero is-medium gradient-bg">
