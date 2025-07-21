@@ -1,6 +1,7 @@
 ---
 title: "Опыт × Резюме × Портфолио"
 description: Краткий обзор профессионального опыта, резюме и примеры проектов.
+og_image: /favicon/web-app-manifest-512x512.png
 ---
 
 <section class="hero is-medium gradient-bg">
