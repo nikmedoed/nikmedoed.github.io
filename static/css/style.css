@@ -16,6 +16,7 @@ html, body {
 .gradient-bg {
   position: relative;
   overflow: hidden;
+  z-index: 0;
 }
 
 
@@ -309,6 +310,7 @@ body.no-scroll {
 .support-box {
   position: relative;
   overflow: hidden;
+  z-index: 0;
 }
 
 .support-box::before {
