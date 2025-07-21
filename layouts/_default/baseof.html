@@ -9,7 +9,13 @@
     <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ i18n "metaDescription" }}{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="{{ .Site.BaseURL }}favicon/android-chrome-512x512.png">
+    <meta property="og:image" content="{{ with .Params.og_image }}{{ . | absURL }}{{ else }}{{ .Site.BaseURL }}favicon/web-app-manifest-512x512.png{{ end }}">
+    <meta property="og:site_name" content="Nikita Muromtsev">
+    <meta property="og:locale" content="{{ .Site.Language.Lang }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ .Title }} | Muromtsev Nikita">
+    <meta name="twitter:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ i18n "metaDescription" }}{{ end }}">
+    <meta name="twitter:image" content="{{ with .Params.og_image }}{{ . | absURL }}{{ else }}{{ .Site.BaseURL }}favicon/web-app-manifest-512x512.png{{ end }}">
     <link rel="canonical" href="{{ .Permalink }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
