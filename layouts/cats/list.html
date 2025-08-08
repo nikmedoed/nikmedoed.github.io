@@ -1,0 +1,27 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <h1 class="title has-text-centered has-text-link">{{ i18n "catsTitle" }}</h1>
+    <div class="content has-text-centered mb-6">
+      <p>{{ i18n "catsIntro" }}</p>
+      <p>{{ i18n "catsHelp" }}</p>
+    </div>
+    <div class="tags is-justify-content-center mb-4" id="status-filter">
+      <span class="tag is-dark" data-status="all">{{ i18n "filterAll" }}</span>
+      <span class="tag" data-status="sterilized">{{ i18n "filterSterilized" }}</span>
+      <span class="tag" data-status="intact">{{ i18n "filterNotSterilized" }}</span>
+      <span class="tag" data-status="treatment">{{ i18n "filterTreatment" }}</span>
+    </div>
+    <div class="tags is-justify-content-center mb-5" id="year-filter">
+      <span class="tag is-dark" data-year="all">{{ i18n "filterAllYears" }}</span>
+    </div>
+    <div class="columns is-multiline">
+      {{ $lang := .Site.Language.Lang }}
+      {{ range .Site.Data.cats }}
+        {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $.Site.Data.cats) }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+<script src="/js/cats.js"></script>
+{{ end }}

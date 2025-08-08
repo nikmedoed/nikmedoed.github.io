@@ -1,0 +1,27 @@
+{{ $cat := .cat }}
+{{ $lang := .lang }}
+{{ $cats := .cats }}
+<div class="column is-one-third">
+  <div class="card cat-card" id="cat-{{ $cat.id }}" data-year="{{ substr $cat.birth 0 4 }}" data-birth="{{ $cat.birth }}" data-sterilized="{{ if $cat.sterilized }}yes{{ else }}no{{ end }}" data-treatment="{{ if $cat.treatment }}yes{{ else }}no{{ end }}">
+    <div class="card-image has-text-centered pt-4">
+      <figure class="image is-128x128 is-inline-block">
+        <img class="is-rounded" src="{{ $cat.photo }}" alt="{{ $cat.name }}">
+      </figure>
+    </div>
+    <div class="card-content has-text-centered">
+      <p class="title is-4">{{ $cat.name }}</p>
+      <p class="subtitle is-6">{{ index $cat.description $lang }}</p>
+      <p class="is-size-7">{{ i18n "age" }}: <span class="cat-age"></span></p>
+      <div class="tags is-centered mt-2">
+        <span class="tag {{ if $cat.sterilized }}is-success{{ else }}is-warning{{ end }}">
+          {{ if $cat.sterilized }}{{ i18n "filterSterilized" }}{{ else }}{{ i18n "filterNotSterilized" }}{{ end }}
+        </span>
+        {{ if $cat.treatment }}<span class="tag is-danger">{{ $cat.treatment }}</span>{{ end }}
+        {{ range $cat.relatives }}
+          {{ $rel := index (where $cats "id" .) 0 }}
+          {{ if $rel }}<span class="tag is-info cat-relative" data-target="cat-{{ $rel.id }}">{{ $rel.name }}</span>{{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

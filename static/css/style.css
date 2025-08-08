@@ -109,6 +109,28 @@ html, body {
   margin-top: auto;
 }
 
+.cat-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.cat-card .card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cat-card .card-content .tags {
+  margin-top: auto;
+}
+.cat-card.highlight {
+  box-shadow: 0 0 0 3px #ffdd57;
+}
+
 .project-media {
   position: relative;
   overflow: hidden;
