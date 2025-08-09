@@ -29,6 +29,45 @@
         <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N"><span class="icon"><i class="fas fa-copy"></i></span></button>
       </p>
     </div>
+    <h2 class="title has-text-centered has-text-warning mb-4">{{ i18n "contactTitle" }}</h2>
+    <div class="columns is-vcentered is-mobile contact-row">
+      <div class="column">
+        <span>{{ i18n "contactIntro" | safeHTML }}</span>
+      </div>
+      <div class="column is-narrow">
+        <button id="email-btn" class="button is-link is-light">{{ i18n "sendEmail" }}</button>
+      </div>
+    </div>
+    <p class="has-text-centered mt-2">{{ i18n "contactSocialNote" }}</p>
+    <div id="email-modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <form id="contact-form" class="box contact-box">
+          <div class="field">
+            <label class="label has-text-white" for="email">{{ i18n "formYourEmail" }}</label>
+            <div class="control">
+              <input id="email" class="input" type="email" placeholder="{{ i18n "formPlaceholderEmail" }}">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label has-text-white" for="subject">{{ i18n "formSubject" }}</label>
+            <div class="control">
+              <input id="subject" class="input" type="text" placeholder="{{ i18n "formPlaceholderSubject" }}">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label has-text-white" for="message">{{ i18n "formMessage" }}</label>
+            <div class="control">
+              <textarea id="message" class="textarea" placeholder="{{ i18n "formPlaceholderMessage" }}"></textarea>
+            </div>
+          </div>
+          <div class="field mt-2">
+            <button id="send-btn" type="submit" class="button is-link is-fullwidth">{{ i18n "formSend" }}</button>
+          </div>
+        </form>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
     <div class="tags is-justify-content-center mb-4" id="status-filter">
       <span class="tag is-dark" data-status="all">{{ i18n "filterAll" }}</span>
       <span class="tag is-success" data-status="sterilized">{{ i18n "filterSterilized" }}</span>

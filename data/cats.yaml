@@ -2,49 +2,48 @@
   name:
     en: Barsik
     ru: Барсик
+  gender: male
   photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
   description:
     en: Playful striped kitten, always exploring.
     ru: Игривый полосатый котёнок, обожает исследовать.
-  birth: 2022-03
+  birth: 2025-02
   sterilized: true
-  relatives:
-    - id: murka
-      relation:
-        en: mother
-        ru: мама
+  parents:
+    - murka
+    - snezhok
   treatment:
     en: ""
     ru: ""
+
 - id: murka
   name:
     en: Murka
     ru: Мурка
+  gender: female
   photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
   description:
     en: Calm and affectionate, loves to cuddle.
     ru: Спокойная и ласковая, любит обниматься.
   birth: 2021-06
   sterilized: false
-  relatives:
-    - id: barsik
-      relation:
-        en: son
-        ru: сын
+  parents: []
   treatment:
     en: "paw injury"
     ru: "травма лапы"
+
 - id: snezhok
   name:
     en: Snezhok
     ru: Снежок
+  gender: male
   photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
   description:
     en: Loves to nap in the sun.
     ru: Любит дремать на солнце.
-  birth: 2020-11
+  birth: 2024-09
   sterilized: true
-  relatives: []
+  parents: []
   treatment:
     en: ""
     ru: ""

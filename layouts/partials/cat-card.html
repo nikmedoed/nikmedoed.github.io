@@ -19,9 +19,26 @@
           </span>
           {{ $t := index $cat.treatment $lang }}
           {{ if $t }}<span class="tag is-danger">{{ $t }}</span>{{ end }}
-          {{ range $cat.relatives }}
-            {{ $relCat := index (where $cats "id" .id) 0 }}
-            {{ if $relCat }}<span class="tag is-info cat-relative" data-target="cat-{{ $relCat.id }}">{{ index .relation $lang }}: {{ index $relCat.name $lang }}</span>{{ end }}
+          <span class="tag is-light">{{ i18n (printf "gender%s" (title $cat.gender)) }}</span>
+          <span class="tag is-link cat-category"></span>
+          {{ range $id := $cat.parents }}
+            {{ $p := index (where $cats "id" $id) 0 }}
+            {{ if $p }}
+              {{ $key := cond (eq $p.gender "female") "mother" "father" }}
+              <span class="tag is-info cat-relative" data-target="cat-{{ $p.id }}">{{ i18n $key }}: {{ index $p.name $lang }}</span>
+            {{ end }}
+          {{ end }}
+          {{ $children := where $cats "parents" "intersect" (slice $cat.id) }}
+          {{ range $child := $children }}
+            {{ $key := cond (eq $child.gender "female") "daughter" "son" }}
+            <span class="tag is-info cat-relative" data-target="cat-{{ $child.id }}">{{ i18n $key }}: {{ index $child.name $lang }}</span>
+          {{ end }}
+          {{ if $cat.parents }}
+            {{ $siblings := uniq (where (where $cats "id" "ne" $cat.id) "parents" "intersect" $cat.parents) }}
+            {{ range $sib := $siblings }}
+              {{ $key := cond (eq $sib.gender "female") "sister" "brother" }}
+              <span class="tag is-info cat-relative" data-target="cat-{{ $sib.id }}">{{ i18n $key }}: {{ index $sib.name $lang }}</span>
+            {{ end }}
           {{ end }}
         </div>
       </div>

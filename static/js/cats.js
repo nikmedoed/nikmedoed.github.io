@@ -54,14 +54,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const lang = document.documentElement.lang;
     const labels = {
-        en: {y: 'y', m: 'm'},
-        ru: {y: 'г.', m: 'мес.'}
+        en: {y: 'y', m: 'm', kitten: 'Kitten', teen: 'Teen', adult: 'Adult'},
+        ru: {y: 'г.', m: 'мес.', kitten: 'Котёнок', teen: 'Подросток', adult: 'Взрослый'}
     };
+    const catClasses = {kitten: 'is-primary', teen: 'is-info', adult: 'is-dark'};
 
     cards.forEach(card => {
         const birth = card.dataset.birth;
         const ageSpan = card.querySelector('.cat-age');
-        if (birth && ageSpan) {
+        const categorySpan = card.querySelector('.cat-category');
+        if (birth && ageSpan && categorySpan) {
             const [year, month] = birth.split('-').map(Number);
             const now = new Date();
             let y = now.getFullYear() - year;
@@ -71,6 +73,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 m += 12;
             }
             ageSpan.textContent = `${y} ${labels[lang].y} ${m} ${labels[lang].m}`;
+            const months = y * 12 + m;
+            let category = 'adult';
+            if (months < 4) category = 'kitten';
+            else if (months < 12) category = 'teen';
+            categorySpan.textContent = labels[lang][category];
+            categorySpan.classList.add(catClasses[category]);
         }
     });
 
