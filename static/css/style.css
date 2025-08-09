@@ -109,6 +109,40 @@ html, body {
   margin-top: auto;
 }
 
+.cat-card {
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.cat-card .tags {
+  margin-top: 0.5rem;
+}
+.cat-card img.cat-photo {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.cat-card.highlight {
+  box-shadow: 0 0 0 3px #ffdd57;
+}
+
+#status-filter .tag,
+#year-filter .tag,
+.cat-card .tag {
+  user-select: none;
+}
+
+#status-filter .tag,
+#year-filter .tag,
+.cat-card .cat-relative {
+  cursor: pointer;
+}
+
 .project-media {
   position: relative;
   overflow: hidden;
