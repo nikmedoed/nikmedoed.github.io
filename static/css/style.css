@@ -110,9 +110,6 @@ html, body {
 }
 
 .cat-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 1.5rem;
   border-radius: 8px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -122,11 +119,11 @@ html, body {
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 .cat-card .tags {
-  margin-top: auto;
+  margin-top: 0.5rem;
 }
 .cat-card img.cat-photo {
-  width: 150px;
-  height: 150px;
+  width: 128px;
+  height: 128px;
   border-radius: 50%;
   object-fit: cover;
 }

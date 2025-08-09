@@ -1,5 +1,7 @@
 - id: barsik
-  name: Барсик
+  name:
+    en: Barsik
+    ru: Барсик
   photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
   description:
     en: Playful striped kitten, always exploring.
@@ -7,10 +9,17 @@
   birth: 2022-03
   sterilized: true
   relatives:
-    - murka
-  treatment: ""
+    - id: murka
+      relation:
+        en: mother
+        ru: мама
+  treatment:
+    en: ""
+    ru: ""
 - id: murka
-  name: Мурка
+  name:
+    en: Murka
+    ru: Мурка
   photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
   description:
     en: Calm and affectionate, loves to cuddle.
@@ -18,10 +27,17 @@
   birth: 2021-06
   sterilized: false
   relatives:
-    - barsik
-  treatment: "травма лапы"
+    - id: barsik
+      relation:
+        en: son
+        ru: сын
+  treatment:
+    en: "paw injury"
+    ru: "травма лапы"
 - id: snezhok
-  name: Снежок
+  name:
+    en: Snezhok
+    ru: Снежок
   photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
   description:
     en: Loves to nap in the sun.
@@ -29,4 +45,6 @@
   birth: 2020-11
   sterilized: true
   relatives: []
-  treatment: ""
+  treatment:
+    en: ""
+    ru: ""
