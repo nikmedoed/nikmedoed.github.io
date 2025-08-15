@@ -1,7 +1,13 @@
 {{ define "main" }}
+<section class="hero is-medium">
+  <div class="hero-body has-text-centered">
+    <div class="container">
+      <h1 class="title has-text-link">{{ i18n "catsTitle" }}</h1>
+    </div>
+  </div>
+</section>
 <section class="section">
   <div class="container">
-    <h1 class="title has-text-centered has-text-link">{{ i18n "catsTitle" }}</h1>
     <div class="content has-text-centered mb-5">
       <p>{{ i18n "catsIntro" }}</p>
     </div>
@@ -11,28 +17,37 @@
       <a class="button" href="https://tiktok.com/" target="_blank">{{ i18n "catsMediaTikTok" }}</a>
       <a class="button" href="https://docs.google.com/" target="_blank">{{ i18n "catsMediaSpreadsheet" }}</a>
     </div>
-    <h2 class="title has-text-centered has-text-warning mb-4">{{ i18n "supportTitle" }}</h2>
-    <div class="box support-box has-text-centered mb-6">
-      <p>{{ i18n "supportText" }}</p>
-      <div class="buttons is-centered mt-2">
-        <a class="button ko-fi" href="https://ko-fi.com/nikmedoed" target="_blank">Ko-fi</a>
-        <a class="button boosty" href="https://boosty.to/nikmedoed/donate" target="_blank">Boosty</a>
-        <a class="button paypal" href="https://paypal.me/etonikmedoed" target="_blank">PayPal</a>
-        <a class="button yoomoney" href="https://yoomoney.ru/to/4100119049495394" target="_blank">YooMoney</a>
+    <div class="columns is-vcentered mb-6">
+      <div class="column">
+        <h2 class="title has-text-warning mb-4">{{ i18n "catsSupportTitle" }}</h2>
+        <div class="box support-box has-text-centered">
+          <p>{{ i18n "catsSupportText" }}</p>
+          <div class="buttons is-centered mt-2">
+            <a class="button ko-fi" href="https://ko-fi.com/nikmedoed" target="_blank">Ko-fi</a>
+            <a class="button boosty" href="https://boosty.to/nikmedoed/donate" target="_blank">Boosty</a>
+            <a class="button paypal" href="https://paypal.me/etonikmedoed" target="_blank">PayPal</a>
+            <a class="button yoomoney" href="https://yoomoney.ru/to/4100119049495394" target="_blank">YooMoney</a>
+          </div>
+          <p class="is-size-6 is-family-monospace wallets mt-3">
+            <strong>BTC:</strong> <span data-addr="1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7">1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7</span>
+            <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7"><span class="icon"><i class="fas fa-copy"></i></span></button><br>
+            <strong>USDT (TRC20):</strong> <span data-addr="TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE">TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE</span>
+            <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE"><span class="icon"><i class="fas fa-copy"></i></span></button><br>
+            <strong>TON (USDT-TON):</strong> <span data-addr="UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N">UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N</span>
+            <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N"><span class="icon"><i class="fas fa-copy"></i></span></button>
+          </p>
+        </div>
       </div>
-      <p class="is-size-6 is-family-monospace wallets mt-3">
-        <strong>BTC:</strong> <span data-addr="1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7">1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7</span>
-        <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7"><span class="icon"><i class="fas fa-copy"></i></span></button><br>
-        <strong>USDT (TRC20):</strong> <span data-addr="TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE">TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE</span>
-        <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE"><span class="icon"><i class="fas fa-copy"></i></span></button><br>
-        <strong>TON (USDT-TON):</strong> <span data-addr="UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N">UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N</span>
-        <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N"><span class="icon"><i class="fas fa-copy"></i></span></button>
-      </p>
+      <div class="column">
+        <figure class="image">
+          <img src="https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg" alt="preview">
+        </figure>
+      </div>
     </div>
     <h2 class="title has-text-centered has-text-warning mb-4">{{ i18n "contactTitle" }}</h2>
     <div class="columns is-vcentered is-mobile contact-row">
       <div class="column">
-        <span>{{ i18n "contactIntro" | safeHTML }}</span>
+        <span>{{ i18n "catsContactIntro" | safeHTML }}</span>
       </div>
       <div class="column is-narrow">
         <button id="email-btn" class="button is-link is-light">{{ i18n "sendEmail" }}</button>

@@ -1,7 +1,7 @@
 {{ $cat := .cat }}
 {{ $lang := .lang }}
 {{ $cats := .cats }}
-<div class="column is-12-tablet is-6-desktop">
+<div class="column is-12-mobile is-6-tablet is-4-desktop">
   <div class="box cat-card" id="cat-{{ $cat.id }}" data-year="{{ substr $cat.birth 0 4 }}" data-birth="{{ $cat.birth }}" data-sterilized="{{ if $cat.sterilized }}yes{{ else }}no{{ end }}" data-treatment="{{ if (index $cat.treatment $lang) }}yes{{ else }}no{{ end }}">
     <article class="media">
       <figure class="media-left">
