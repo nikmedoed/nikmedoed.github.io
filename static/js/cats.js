@@ -116,15 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalPhotos.innerHTML = '';
                 const photos = card.dataset.photos ? card.dataset.photos.split('|') : [];
                 photos.forEach(url => {
-                    const col = document.createElement('div');
-                    col.className = 'column is-6';
                     const fig = document.createElement('figure');
                     fig.className = 'image';
                     const img = document.createElement('img');
                     img.src = url.trim();
+                    img.alt = card.dataset.name;
                     fig.appendChild(img);
-                    col.appendChild(fig);
-                    modalPhotos.appendChild(col);
+                    modalPhotos.appendChild(fig);
                 });
                 modal.classList.add('is-active');
             });

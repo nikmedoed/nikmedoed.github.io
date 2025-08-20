@@ -162,6 +162,22 @@ html, body {
   cursor: pointer;
 }
 
+.cat-modal-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.cat-modal-photos img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+#cat-modal .modal-content {
+  width: 90vw;
+}
+
 .project-media {
   position: relative;
   overflow: hidden;
