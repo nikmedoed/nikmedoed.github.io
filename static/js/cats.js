@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const sterFilter = document.getElementById('filter-ster');
     const genderFilter = document.getElementById('filter-gender');
     const healthFilter = document.getElementById('filter-health');
-    const wildFilter = document.getElementById('filter-wild');
+    const tameFilter = document.getElementById('filter-tame');
     const yearFilter = document.getElementById('year-filter');
     const resetBtn = document.getElementById('filter-reset');
 
-    const filters = { ster: null, gender: null, health: null, wild: null, years: [] };
+    const filters = { ster: null, gender: null, health: null, tame: null, years: [] };
 
     if (yearFilter) {
         const years = [...new Set(cards.map(c => c.dataset.year))].sort().reverse();
@@ -31,14 +31,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const matchGender = !filters.gender || c.dataset.gender === filters.gender;
             const matchHealth =
                 !filters.health ||
-                (filters.health === 'healthy' && c.dataset.treatment === 'no') ||
-                (filters.health === 'care' && c.dataset.treatment === 'yes');
-            const matchWild =
-                !filters.wild ||
-                (filters.wild === 'wild' && c.dataset.wild === 'yes') ||
-                (filters.wild === 'tame' && c.dataset.wild === 'no');
+                (filters.health === 'healthy' && c.dataset.treatment === 'no');
+            const matchTame =
+                !filters.tame ||
+                (filters.tame === 'yes' && c.dataset.wild === 'no' && c.dataset.wanderer === 'no');
             const matchYear = filters.years.length === 0 || filters.years.includes(c.dataset.year);
-            c.parentElement.style.display = matchSter && matchGender && matchHealth && matchWild && matchYear ? '' : 'none';
+            c.parentElement.style.display = matchSter && matchGender && matchHealth && matchTame && matchYear ? '' : 'none';
         });
     }
 
@@ -68,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setupSingleSelect(sterFilter, 'ster', 'ster');
     setupSingleSelect(genderFilter, 'gender', 'gender');
     setupSingleSelect(healthFilter, 'health', 'health');
-    setupSingleSelect(wildFilter, 'wild', 'wild');
+    setupSingleSelect(tameFilter, 'tame', 'tame');
 
     if (yearFilter) {
         yearFilter.addEventListener('click', e => {
@@ -91,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (resetBtn) {
         resetBtn.addEventListener('click', () => {
-            filters.ster = filters.gender = filters.health = filters.wild = null;
+            filters.ster = filters.gender = filters.health = filters.tame = null;
             filters.years = [];
             document.querySelectorAll('#cat-filters .tag').forEach(tag => {
                 if (tag === resetBtn) return;
