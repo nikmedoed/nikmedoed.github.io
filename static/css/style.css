@@ -452,9 +452,34 @@ html[data-theme='light'] #email-btn {
 }
 
 .contact-box {
-  background-color: var(--c-blue);
-  border-color: var(--c-blue);
+  position: relative;
+  overflow: hidden;
   color: #fff;
+  z-index: 0;
+  background-color: transparent;
+}
+
+.contact-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(var(--angle, 135deg), var(--c-violet), var(--c-blue));
+  transform: scale(1.5) translateY(var(--wave, 0px));
+  transform-origin: center;
+  z-index: -1;
+  animation: gradient-angle 30s linear infinite,
+             gradient-wave 8s ease-in-out infinite;
+}
+
+html[data-theme='light'] .contact-box::before {
+  background-image: linear-gradient(var(--angle, 135deg), #fefefe, #f5f5ff) !important;
+}
+html[data-theme='light'] .contact-box {
+  color: #000 !important;
+  border: 1px solid var(--c-violet) !important;
+}
+html[data-theme='light'] .contact-box .label {
+  color: #000;
 }
 
 .contact-box input,
@@ -469,8 +494,8 @@ html[data-theme='light'] #email-btn {
 }
 
 #send-btn {
-  background-color: var(--c-orange);
-  border-color: var(--c-orange);
+  background-color: var(--c-violet);
+  border-color: var(--c-violet);
   font-weight: 600;
   color: #fff;
 }
