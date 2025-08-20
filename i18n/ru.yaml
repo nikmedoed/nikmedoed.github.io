@@ -41,7 +41,7 @@ metaDescription: "Никита Муромцев — разработчик и т
 navCats: "Коты"
 catsTitle: "Коты улицы Нансена"
 catsHeroTitle: "Коты улицы Нансена ищут дом и поддержки"
-catsHeroSubtitle: "<a href=\"#cats-list\" class=\"cats-count-link\">{{ .Count }} хвостов ищут дом</a>. Заберите или помогите финансово. Мы лечим, стерилизуем и заботимся об уличных котах."
+catsHeroSubtitle: "<a href=\"#cat-filters\" class=\"cats-count-link\">{{ .Count }} хвостов ищут дом</a>. Заберите или помогите финансово. Мы лечим, стерилизуем и заботимся об уличных котах."
 catsIntro: |
   <p>Уличные коты всегда вызывают у Томы дикое желание покормить их. Уже много лет в её сумке всегда лежат паучи кошачьей еды. И вот мы приехали в Ереван, где много бездомных животных.</p>
 
@@ -68,6 +68,9 @@ filterSterilized: "Стерилизован"
 filterNotSterilized: "Не стерилизован"
 filterTreatment: "Лечится"
 filterAllYears: "Все годы"
+filterHealthy: "Здоров"
+filterTame: "Ручной"
+filterWild: "Дикий"
 genderMale: "Кот"
 genderFemale: "Кошка"
 mother: "мама"

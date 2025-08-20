@@ -2,9 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const cards = Array.from(document.querySelectorAll('.cat-card'));
     if (!cards.length) return;
 
-    const statusFilter = document.getElementById('status-filter');
+    const sterFilter = document.getElementById('filter-ster');
+    const genderFilter = document.getElementById('filter-gender');
+    const healthFilter = document.getElementById('filter-health');
+    const wildFilter = document.getElementById('filter-wild');
     const yearFilter = document.getElementById('year-filter');
-    let genderFilter = 'all';
+
+    const filters = { ster: 'all', gender: 'all', health: 'all', wild: 'all', year: 'all' };
 
     if (yearFilter) {
         const years = [...new Set(cards.map(c => c.dataset.year))].sort().reverse();
@@ -18,31 +22,71 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function applyFilters() {
-        const status = statusFilter ? (statusFilter.querySelector('.is-dark')?.dataset.status || 'all') : 'all';
-        const year = yearFilter ? (yearFilter.querySelector('.is-dark')?.dataset.year || 'all') : 'all';
         cards.forEach(c => {
-            const matchStatus =
-                status === 'all' ||
-                (status === 'sterilized' && c.dataset.sterilized === 'yes') ||
-                (status === 'intact' && c.dataset.sterilized === 'no') ||
-                (status === 'treatment' && c.dataset.treatment === 'yes');
-            const matchYear = year === 'all' || c.dataset.year === year;
-            const matchGender = genderFilter === 'all' || c.dataset.gender === genderFilter;
-            c.parentElement.style.display = matchStatus && matchYear && matchGender ? '' : 'none';
+            const matchSter =
+                filters.ster === 'all' ||
+                (filters.ster === 'yes' && c.dataset.sterilized === 'yes') ||
+                (filters.ster === 'no' && c.dataset.sterilized === 'no');
+            const matchGender = filters.gender === 'all' || c.dataset.gender === filters.gender;
+            const matchHealth =
+                filters.health === 'all' ||
+                (filters.health === 'healthy' && c.dataset.treatment === 'no') ||
+                (filters.health === 'care' && c.dataset.treatment === 'yes');
+            const matchWild =
+                filters.wild === 'all' ||
+                (filters.wild === 'wild' && c.dataset.wild === 'yes') ||
+                (filters.wild === 'tame' && c.dataset.wild === 'no');
+            const matchYear = filters.year === 'all' || c.dataset.year === filters.year;
+            c.parentElement.style.display = matchSter && matchGender && matchHealth && matchWild && matchYear ? '' : 'none';
         });
     }
 
     function setActive(tag, container) {
-        container.querySelectorAll('.tag').forEach(t => t.classList.remove('is-dark'));
-        tag.classList.add('is-dark');
-        applyFilters();
+        container.querySelectorAll('.tag').forEach(t => {
+            t.classList.remove('is-selected');
+            if (!t.classList.contains('is-dark')) t.classList.add('is-light');
+        });
+        tag.classList.add('is-selected');
+        tag.classList.remove('is-light');
     }
 
-    if (statusFilter) {
-        statusFilter.addEventListener('click', e => {
+    if (sterFilter) {
+        sterFilter.addEventListener('click', e => {
             const tag = e.target.closest('.tag');
             if (!tag) return;
-            setActive(tag, statusFilter);
+            filters.ster = tag.dataset.ster;
+            setActive(tag, sterFilter);
+            applyFilters();
+        });
+    }
+
+    if (genderFilter) {
+        genderFilter.addEventListener('click', e => {
+            const tag = e.target.closest('.tag');
+            if (!tag) return;
+            filters.gender = tag.dataset.gender;
+            setActive(tag, genderFilter);
+            applyFilters();
+        });
+    }
+
+    if (healthFilter) {
+        healthFilter.addEventListener('click', e => {
+            const tag = e.target.closest('.tag');
+            if (!tag) return;
+            filters.health = tag.dataset.health;
+            setActive(tag, healthFilter);
+            applyFilters();
+        });
+    }
+
+    if (wildFilter) {
+        wildFilter.addEventListener('click', e => {
+            const tag = e.target.closest('.tag');
+            if (!tag) return;
+            filters.wild = tag.dataset.wild;
+            setActive(tag, wildFilter);
+            applyFilters();
         });
     }
 
@@ -50,9 +94,13 @@ document.addEventListener('DOMContentLoaded', () => {
         yearFilter.addEventListener('click', e => {
             const tag = e.target.closest('.tag');
             if (!tag) return;
+            filters.year = tag.dataset.year;
             setActive(tag, yearFilter);
+            applyFilters();
         });
     }
+
+    applyFilters();
 
     const lang = document.documentElement.lang;
     const labels = {
@@ -91,7 +139,11 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.cat-gender').forEach(icon => {
         icon.addEventListener('click', () => {
             const g = icon.dataset.gender;
-            genderFilter = genderFilter === g ? 'all' : g;
+            filters.gender = filters.gender === g ? 'all' : g;
+            if (genderFilter) {
+                const tag = genderFilter.querySelector(`[data-gender="${filters.gender}"]`) || genderFilter.querySelector('[data-gender="all"]');
+                setActive(tag, genderFilter);
+            }
             applyFilters();
         });
     });
@@ -111,10 +163,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.cat-ster-tag').forEach(tag => {
         tag.addEventListener('click', () => {
-            if (!statusFilter) return;
-            const status = tag.dataset.status;
-            const target = statusFilter.querySelector(`[data-status="${status}"]`);
-            if (target) setActive(target, statusFilter);
+            if (!sterFilter) return;
+            const status = tag.dataset.status === 'sterilized' ? 'yes' : 'no';
+            const target = sterFilter.querySelector(`[data-ster="${status}"]`);
+            if (target) {
+                filters.ster = status;
+                setActive(target, sterFilter);
+                applyFilters();
+            }
         });
     });
 
