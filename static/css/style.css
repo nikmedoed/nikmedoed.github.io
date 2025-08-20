@@ -163,12 +163,16 @@ html, body {
 }
 
 .cat-modal-photos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1rem;
+  margin: 0 auto;
 }
 
-.cat-modal-photos img {
+.cat-photo-item {
+  width: 300px;
+  margin-bottom: 1rem;
+}
+
+.cat-photo-item img {
+  display: block;
   width: 100%;
   height: auto;
   object-fit: contain;

@@ -99,8 +99,19 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalName = document.getElementById('cat-modal-name');
         const modalDesc = document.getElementById('cat-modal-desc');
         const modalPhotos = document.getElementById('cat-modal-photos');
+        let msnry;
+        const photoCache = {};
 
         function closeModal() {
+            const currentId = modal.dataset.currentId;
+            if (currentId) {
+                photoCache[currentId] = Array.from(modalPhotos.children);
+                delete modal.dataset.currentId;
+            }
+            if (msnry) {
+                msnry.destroy();
+                msnry = null;
+            }
             modal.classList.remove('is-active');
             modalPhotos.innerHTML = '';
         }
@@ -111,18 +122,33 @@ document.addEventListener('DOMContentLoaded', () => {
         cards.forEach(card => {
             card.addEventListener('click', e => {
                 if (e.target.closest('.cat-relative')) return;
+                const id = card.id;
+                modal.dataset.currentId = id;
                 modalName.textContent = card.dataset.name;
                 modalDesc.textContent = card.dataset.description;
                 modalPhotos.innerHTML = '';
-                const photos = card.dataset.photos ? card.dataset.photos.split('|') : [];
-                photos.forEach(url => {
-                    const fig = document.createElement('figure');
-                    fig.className = 'image';
-                    const img = document.createElement('img');
-                    img.src = url.trim();
-                    img.alt = card.dataset.name;
-                    fig.appendChild(img);
-                    modalPhotos.appendChild(fig);
+                if (photoCache[id]) {
+                    photoCache[id].forEach(node => modalPhotos.appendChild(node));
+                } else {
+                    const photos = card.dataset.photos ? card.dataset.photos.split('|') : [];
+                    photoCache[id] = photos.map(url => {
+                        const div = document.createElement('div');
+                        div.className = 'cat-photo-item';
+                        const img = document.createElement('img');
+                        img.src = url.trim();
+                        img.alt = card.dataset.name;
+                        div.appendChild(img);
+                        modalPhotos.appendChild(div);
+                        return div;
+                    });
+                }
+                imagesLoaded(modalPhotos, () => {
+                    msnry = new Masonry(modalPhotos, {
+                        itemSelector: '.cat-photo-item',
+                        columnWidth: 300,
+                        gutter: 10,
+                        fitWidth: true
+                    });
                 });
                 modal.classList.add('is-active');
             });
