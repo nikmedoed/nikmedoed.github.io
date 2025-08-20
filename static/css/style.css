@@ -162,6 +162,9 @@ html, body {
 .cat-gender i {
   pointer-events: none;
 }
+.cat-flag {
+  cursor: help;
+}
 
 #status-filter .tag,
 #year-filter .tag,
@@ -471,16 +474,6 @@ html[data-theme='light'] #email-btn {
              gradient-wave 8s ease-in-out infinite;
 }
 
-html[data-theme='light'] .contact-box::before {
-  background-image: linear-gradient(var(--angle, 135deg), #fefefe, #f5f5ff) !important;
-}
-html[data-theme='light'] .contact-box {
-  color: #000 !important;
-  border: 1px solid var(--c-violet) !important;
-}
-html[data-theme='light'] .contact-box .label {
-  color: #000;
-}
 
 .contact-box input,
 .contact-box textarea {

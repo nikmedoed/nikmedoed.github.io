@@ -2,7 +2,7 @@
 {{ $lang := .lang }}
 {{ $cats := .cats }}
 <div class="column is-12-mobile is-6-tablet is-4-desktop">
-  <div class="card cat-card" id="cat-{{ $cat.id }}" data-year="{{ substr $cat.birth 0 4 }}" data-birth="{{ $cat.birth }}" data-sterilized="{{ if $cat.sterilized }}yes{{ else }}no{{ end }}" data-treatment="{{ if (index $cat.treatment $lang) }}yes{{ else }}no{{ end }}" data-gender="{{ $cat.gender }}">
+  <div class="card cat-card" id="cat-{{ $cat.id }}" data-year="{{ substr $cat.birth 0 4 }}" data-birth="{{ $cat.birth }}" data-sterilized="{{ if $cat.sterilized }}yes{{ else }}no{{ end }}" data-treatment="{{ if (index $cat.treatment $lang) }}yes{{ else }}no{{ end }}" data-gender="{{ $cat.gender }}" data-wild="{{ if $cat.wild }}yes{{ else }}no{{ end }}" data-wanderer="{{ if $cat.wanderer }}yes{{ else }}no{{ end }}">
     <div class="card-image">
       <figure class="image is-3by2">
         <img class="cat-photo" src="{{ $cat.photo }}" alt="{{ index $cat.name $lang }}">
@@ -19,7 +19,15 @@
             {{ if $cat.sterilized }}{{ i18n "filterSterilized" }}{{ else }}{{ i18n "filterNotSterilized" }}{{ end }}
           </span>
         </div>
-        <p class="is-size-7 mb-0 cat-age"></p>
+        <div class="is-flex is-align-items-center">
+          {{ if $cat.wild }}
+          <span class="icon is-small cat-flag mr-1" title="{{ i18n "wildTooltip" }}"><i class="fas fa-paw"></i></span>
+          {{ end }}
+          {{ if $cat.wanderer }}
+          <span class="icon is-small cat-flag mr-1" title="{{ i18n "wandererTooltip" }}"><i class="fas fa-route"></i></span>
+          {{ end }}
+          <p class="is-size-7 mb-0 cat-age"></p>
+        </div>
       </div>
 
       <p class="content mb-0">{{ index $cat.description $lang }}</p>
