@@ -21,14 +21,14 @@
         </div>
         <div class="is-flex is-align-items-center">
           {{ if $cat.wild }}
-          <span class="icon is-small cat-flag mr-1" title="{{ i18n "wildTooltip" }}"><i class="fas fa-paw"></i></span>
+          <span class="icon is-medium cat-flag mr-2" data-tooltip="{{ i18n "wildTooltip" }}" tabindex="0"><i class="fa-solid fa-explosion fa-lg"></i></span>
           {{ end }}
           {{ if $cat.wanderer }}
-          <span class="icon is-small cat-flag mr-1" title="{{ i18n "wandererTooltip" }}"><i class="fas fa-route"></i></span>
+          <span class="icon is-medium cat-flag mr-2" data-tooltip="{{ i18n "wandererTooltip" }}" tabindex="0"><i class="fas fa-route fa-lg"></i></span>
           {{ end }}
-          <p class="is-size-7 mb-0 cat-age"></p>
+          <p class="is-size-7 mb-0 cat-age ml-2"></p>
+          </div>
         </div>
-      </div>
 
       <p class="content mb-0">{{ index $cat.description $lang }}</p>
 

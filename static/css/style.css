@@ -164,6 +164,27 @@ html, body {
 }
 .cat-flag {
   cursor: help;
+  position: relative;
+}
+
+.cat-flag[data-tooltip]:hover::after,
+.cat-flag[data-tooltip]:focus::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.75rem;
+  z-index: 10;
+}
+
+.cat-flag:focus {
+  outline: none;
 }
 
 #status-filter .tag,
@@ -518,6 +539,12 @@ html[data-theme='light'] #email-btn {
   background-color: var(--c-yellow);
   border-color: var(--c-yellow);
   color: #000;
+}
+
+.charity-btn {
+  background-color: var(--c-violet);
+  border-color: var(--c-violet);
+  color: #fff;
 }
 
 #contact-form .button.is-link {
