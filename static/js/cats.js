@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = Array.from(document.querySelectorAll('.cat-banner'));
+    const cards = Array.from(document.querySelectorAll('.cat-tile'));
     if (!cards.length) return;
 
     const statusFilter = document.getElementById('status-filter');

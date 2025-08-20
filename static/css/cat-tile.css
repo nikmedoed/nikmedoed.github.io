@@ -1,0 +1,69 @@
+/* Dense, readable tile card for cats (Bulma).
+   Goal: compact height, normal-size typography, clean rhythm. */
+
+:root {
+  --cat-radius: 12px;
+}
+
+.cat-tile {
+  border-radius: var(--cat-radius);
+  overflow: hidden;
+  transition: transform .12s ease, box-shadow .12s ease;
+  box-shadow: 0 6px 20px rgba(10,10,10,.06);
+}
+.cat-tile:hover { transform: translateY(-1px); box-shadow: 0 10px 26px rgba(10,10,10,.08); }
+
+/* Photo keeps 4:3 ratio via Bulma's is-4by3; ensure cover fit */
+.cat-tile-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* fill without distortion */
+  object-position: center;
+  display: block;
+}
+
+/* Content spacing */
+.cat-tile .card-content { padding: .9rem .95rem 1rem; }
+
+/* Name: not huge, but clearly larger than body */
+.cat-name {
+  /* ~18–20px fluid */
+  font-size: clamp(1.125rem, 1rem + .5vw, 1.25rem);
+  font-weight: 800;
+  letter-spacing: -.01em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Age pill: readable (no micro text) */
+.cat-age-pill {
+  font-size: .95rem;
+  border-radius: 999px;
+  padding: .2em .6em;
+  white-space: nowrap;
+}
+
+/* Description: 2 lines max to hold row height */
+.cat-desc {
+  font-size: 1rem;            /* normal body size */
+  line-height: 1.35;
+  margin: .25rem 0 .5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;      /* clamp to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Tags: normal size, compact gaps; allow up to ~2 rows */
+.cat-tags { margin-top: .25rem; }
+.cat-tags .tag { margin: 0 .35rem .35rem 0; }
+
+/* Density presets */
+.cat-tile.is-compact .card-content { padding: .7rem .8rem .8rem; }
+.cat-tile.is-compact .cat-name { font-size: clamp(1.0625rem, .95rem + .4vw, 1.1875rem); }
+.cat-tile.is-compact .cat-desc { -webkit-line-clamp: 1; }
+
+/* Responsive: keep the same look; no micro on mobile */
+@media (max-width: 768px) {
+  .cat-tile .card-content { padding: .85rem .9rem .95rem; }
+}
