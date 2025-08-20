@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function closeModal() {
             const currentId = modal.dataset.currentId;
             if (currentId) {
-                photoCache[currentId] = Array.from(modalPhotos.children);
+                photoCache[currentId] = Array.from(modalPhotos.querySelectorAll('.cat-photo-item'));
                 delete modal.dataset.currentId;
             }
             if (msnry) {
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 msnry = null;
             }
             modal.classList.remove('is-active');
-            modalPhotos.innerHTML = '';
+            modalPhotos.innerHTML = '<div class="cat-photo-sizer"></div>';
         }
 
         modal.querySelector('.modal-background').addEventListener('click', closeModal);
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.dataset.currentId = id;
                 modalName.textContent = card.dataset.name;
                 modalDesc.textContent = card.dataset.description;
-                modalPhotos.innerHTML = '';
+                modalPhotos.innerHTML = '<div class="cat-photo-sizer"></div>';
                 if (photoCache[id]) {
                     photoCache[id].forEach(node => modalPhotos.appendChild(node));
                 } else {
@@ -145,9 +145,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 imagesLoaded(modalPhotos, () => {
                     msnry = new Masonry(modalPhotos, {
                         itemSelector: '.cat-photo-item',
-                        columnWidth: 300,
+                        columnWidth: '.cat-photo-sizer',
                         gutter: 10,
-                        fitWidth: true
+                        percentPosition: true
                     });
                 });
                 modal.classList.add('is-active');
