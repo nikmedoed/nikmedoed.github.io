@@ -5,6 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const statusFilter = document.getElementById('status-filter');
     const yearFilter = document.getElementById('year-filter');
 
+    cards.forEach(card => {
+        const birth = card.dataset.birth;
+        if (birth) {
+            const [y, m] = birth.split('-').map(Number);
+            card.dataset.year = String(y);
+            const now = new Date();
+            let years = now.getFullYear() - y;
+            let months = now.getMonth() + 1 - m;
+            if (months < 0) { years--; months += 12; }
+            const total = years * 12 + months;
+            let category = 'adult';
+            if (total < 4) category = 'kitten';
+            else if (total < 12) category = 'teen';
+            card.dataset.category = category;
+        }
+    });
+
     if (yearFilter) {
         const years = [...new Set(cards.map(c => c.dataset.year))].sort().reverse();
         years.forEach(y => {
@@ -51,34 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
             setActive(tag, yearFilter);
         });
     }
-
-    const lang = document.documentElement.lang;
-    const labels = {
-        en: {y: 'y', m: 'm', kitten: 'Kitten', teen: 'Teen', adult: 'Adult'},
-        ru: {y: 'г.', m: 'мес.', kitten: 'Котёнок', teen: 'Подросток', adult: 'Взрослый'}
-    };
-
-    cards.forEach(card => {
-        const birth = card.dataset.birth;
-        const ageSpan = card.querySelector('.cat-age');
-        if (birth && ageSpan) {
-            const [year, month] = birth.split('-').map(Number);
-            const now = new Date();
-            let y = now.getFullYear() - year;
-            let m = now.getMonth() + 1 - month;
-            if (m < 0) {
-                y--;
-                m += 12;
-            }
-            ageSpan.textContent = `${y} ${labels[lang].y} ${m} ${labels[lang].m}`;
-            const months = y * 12 + m;
-            let category = 'adult';
-            if (months < 4) category = 'kitten';
-            else if (months < 12) category = 'teen';
-            card.dataset.category = category;
-        }
-    });
-
     document.querySelectorAll('.cat-relative').forEach(tag => {
         tag.addEventListener('click', () => {
             const id = tag.dataset.target;

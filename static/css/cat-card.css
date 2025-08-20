@@ -1,0 +1,69 @@
+/* Compact, balanced vertical card for cats */
+/* Uses Bulma, overrides only spacing/shape/photo behavior. */
+
+.cat-card {
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.cat-card .card-content {
+  padding: 0; /* we'll control inner paddings manually */
+}
+
+/* Photo wrapper: centered square with soft corners */
+.cat-photo-frame {
+  /* width scales responsively; keeps the card compact */
+  width: clamp(180px, 65%, 256px);
+  margin: 1rem auto 0.75rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #f5f5f5;
+  box-shadow: 0 6px 18px rgba(10, 10, 10, 0.08);
+}
+
+.cat-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* crop without distortion */
+  object-position: center;
+  display: block;
+}
+
+/* Tighten vertical rhythm */
+.cat-card .title {
+  line-height: 1.2;
+}
+
+.cat-card .content {
+  line-height: 1.4;
+  margin-bottom: 0.75rem !important;
+}
+
+.cat-card .tags {
+  margin-top: 0.25rem !important;
+}
+
+.cat-card .tag {
+  margin: 0.25rem;
+  user-select: none;
+}
+
+.cat-card .cat-relative {
+  cursor: pointer;
+}
+
+.cat-card.highlight {
+  box-shadow: 0 0 0 3px #ffdd57;
+}
+
+/* Slightly larger photo on wide screens, still compact */
+@media (min-width: 1024px) {
+  .cat-photo-frame {
+    width: clamp(200px, 70%, 280px);
+  }
+}
+
+/* Optional: a denser variant if ever needed */
+.cat-card.is-compact .p-4 { padding: 0.75rem !important; }
+.cat-card.is-compact .cat-photo-frame { margin: 0.75rem auto 0.5rem; }

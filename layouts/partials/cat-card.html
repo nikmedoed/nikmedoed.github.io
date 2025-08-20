@@ -1,40 +1,75 @@
 {{ $cat := .cat }}
 {{ $lang := .lang }}
 {{ $cats := .cats }}
+
 <div class="column is-12-mobile is-6-tablet is-4-desktop">
-  <div class="box cat-card has-text-centered" id="cat-{{ $cat.id }}" data-year="{{ substr $cat.birth 0 4 }}" data-birth="{{ $cat.birth }}" data-sterilized="{{ if $cat.sterilized }}yes{{ else }}no{{ end }}" data-treatment="{{ if (index $cat.treatment $lang) }}yes{{ else }}no{{ end }}">
-    <figure class="image is-256x256 is-inline-block">
-      <img class="cat-photo" src="{{ $cat.photo }}" alt="{{ index $cat.name $lang }}">
-    </figure>
-    <p class="title is-4 mb-0">{{ index $cat.name $lang }}</p>
-    <p class="is-size-6 mt-0 mb-3">{{ i18n "age" }}: <span class="cat-age"></span></p>
-    <p class="subtitle is-6 mb-2">{{ index $cat.description $lang }}</p>
-    <div class="tags is-centered mt-2">
-      <span class="tag {{ if $cat.sterilized }}is-success{{ else }}is-warning{{ end }}">
-        {{ if $cat.sterilized }}{{ i18n "filterSterilized" }}{{ else }}{{ i18n "filterNotSterilized" }}{{ end }}
-      </span>
-      {{ $t := index $cat.treatment $lang }}
-      {{ if $t }}<span class="tag is-danger">{{ $t }}</span>{{ end }}
-      <span class="tag is-light">{{ i18n (printf "gender%s" (title $cat.gender)) }}</span>
-      {{ range $id := $cat.parents }}
-        {{ $p := index (where $cats "id" $id) 0 }}
-        {{ if $p }}
-          {{ $key := cond (eq $p.gender "female") "mother" "father" }}
-          <span class="tag is-info cat-relative" data-target="cat-{{ $p.id }}">{{ i18n $key }}: {{ index $p.name $lang }}</span>
-        {{ end }}
-      {{ end }}
-      {{ $children := where $cats "parents" "intersect" (slice $cat.id) }}
-      {{ range $child := $children }}
-        {{ $key := cond (eq $child.gender "female") "daughter" "son" }}
-        <span class="tag is-info cat-relative" data-target="cat-{{ $child.id }}">{{ i18n $key }}: {{ index $child.name $lang }}</span>
-      {{ end }}
-      {{ if $cat.parents }}
-        {{ $siblings := uniq (where (where $cats "id" "ne" $cat.id) "parents" "intersect" $cat.parents) }}
-        {{ range $sib := $siblings }}
-          {{ $key := cond (eq $sib.gender "female") "sister" "brother" }}
-          <span class="tag is-info cat-relative" data-target="cat-{{ $sib.id }}">{{ i18n $key }}: {{ index $sib.name $lang }}</span>
-        {{ end }}
-      {{ end }}
+  <article
+    class="card cat-card"
+    id="cat-{{ $cat.id }}"
+    data-birth="{{ $cat.birth }}"
+    data-sterilized="{{ if $cat.sterilized }}yes{{ else }}no{{ end }}"
+    data-treatment="{{ if (index $cat.treatment $lang) }}yes{{ else }}no{{ end }}"
+  >
+    <!-- Photo block -->
+    <div class="card-content p-0">
+      <div class="cat-photo-frame">
+        <img
+          class="cat-photo"
+          src="{{ $cat.photo }}"
+          alt="{{ index $cat.name $lang }}"
+          loading="lazy"
+        />
+      </div>
+
+      <!-- Text content -->
+      <div class="p-4 pt-3">
+        <h3 class="title is-5 has-text-centered mb-0">
+          {{ index $cat.name $lang }}
+        </h3>
+        <p class="has-text-centered is-size-6 mt-0 mb-3">
+          <!-- Age text will be filled by JS from data-birth -->
+          <span class="cat-age"></span>
+        </p>
+
+        <p class="content is-6 mb-3">
+          {{ index $cat.description $lang }}
+        </p>
+
+        <!-- Tags -->
+        <div class="tags is-centered is-flex-wrap-wrap mt-1">
+          <!-- Binary examples -->
+          {{ if $cat.sterilized }}
+            <span class="tag is-success"> {{ i18n "filterSterilized" }} </span>
+          {{ else }}
+            <span class="tag is-warning"> {{ i18n "filterNotSterilized" }} </span>
+          {{ end }}
+
+          {{ $t := index $cat.treatment $lang }}
+          {{ if $t }}
+            <span class="tag is-danger is-light">{{ $t }}</span>
+          {{ end }}
+
+          <span class="tag is-light">
+            {{ i18n (printf "gender%s" (title $cat.gender)) }}
+          </span>
+
+          <!-- Free-form tags list (optional) -->
+          {{ range $tag := $cat.tags }}
+            <span class="tag is-link is-light">{{ $tag }}</span>
+          {{ end }}
+
+          <!-- Родственников можно оставить кликабельными, если нужно -->
+          {{ range $id := $cat.parents }}
+            {{ $p := index (where $cats "id" $id) 0 }}
+            {{ if $p }}
+              {{ $key := cond (eq $p.gender "female") "mother" "father" }}
+              <span class="tag is-info is-light cat-relative" data-target="cat-{{ $p.id }}">
+                {{ i18n $key }}: {{ index $p.name $lang }}
+              </span>
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
     </div>
-  </div>
+  </article>
 </div>
