@@ -41,14 +41,25 @@ metaDescription: "Nikita Muromtsev is a developer and technical manager about pr
 catsTitle: "Cats of Nansen street"
 catsHeroTitle: "Nansen street cats seek homes and support"
 catsHeroSubtitle: "{{ .Count }} tails seek a home. Adopt or support financially. We treat, sterilize and care for street cats."
-catsIntro: "Help us improve the lives of the local cats. Since 2023 we have been treating, sterilizing and feeding the cats that wander into our yard. Our first followers have grown into happy adult companions, but new guests keep coming for help. There are more mouths to feed and sterilizations require funding. We want to find a home for all of them. With us they grow up kind and affectionate friends. We'd take them all but can't."
+catsIntro: |
+  Street cats have always triggered Toma’s wild urge to feed them. For many years, she has always carried pouches of cat food in her bag. And then we came to Yerevan, where stray animals are everywhere.
+
+  At first, Toma fed the fluffballs only occasionally. But soon one cat started systematically shouting at our window, loudly demanding dinner… And that was the trap. Now we were already feeding her kittens, which she demonstratively handed over to us before going off to enjoy her freedom.
+
+  For that, we had her spayed. While organizing everything, we met neighbors and their own strays. This is how a little group of settled, friendly buddies formed around us.
+
+  Everything was fine, but in 2025 new pregnant cats appeared — and now we have a crowd of kittens. If wild wanderers drop by, they don’t stay. But we simply cannot abandon our tame little tails.
+
+  Once, Nansen helped refugees gain the right to a home and a future. Now we want to give a similar chance to the street cats of his street.
+
+  Help us find homes for these friendly companions — or support our initiative financially.
 catsMediaTelegram: "Telegram"
 catsMediaInstagram: "Instagram"
 catsMediaTikTok: "TikTok"
 catsMediaSpreadsheet: "Expense sheet"
 catsSupportTitle: "Help Nansen street cats"
 catsSupportText: "We need funds for food, surgeries, medicine and finding homes for our buddies"
-catsContactIntro: "Reach us through <a class=\"has-text-weight-bold\" href=\"#cats-hero\">the networks above</a> or →"
+catsContactIntro: "Other ways to help: reach us via <a class=\"has-text-weight-bold\" href=\"#cats-hero\">the networks above</a> or →"
 catsIntroTitle: "Who, What & Why"
 heroCharityBtn: "Charity: adopt or sponsor a street cat"
 filterAll: "All"

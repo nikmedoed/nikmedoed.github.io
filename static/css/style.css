@@ -165,13 +165,15 @@ html, body {
 .cat-flag {
   cursor: help;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .cat-flag[data-tooltip]:hover::after,
 .cat-flag[data-tooltip]:focus::after {
   content: attr(data-tooltip);
   position: absolute;
-  top: 100%;
+  bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.8);
@@ -181,6 +183,7 @@ html, body {
   white-space: nowrap;
   font-size: 0.75rem;
   z-index: 10;
+  margin-bottom: 4px;
 }
 
 .cat-flag:focus {
@@ -545,6 +548,16 @@ html[data-theme='light'] #email-btn {
   background-color: var(--c-violet);
   border-color: var(--c-violet);
   color: #fff;
+}
+
+.hero-buttons .button:hover,
+.charity-btn:hover {
+  filter: brightness(0.9);
+}
+
+.cats-count-link {
+  color: inherit;
+  text-decoration: underline;
 }
 
 #contact-form .button.is-link {

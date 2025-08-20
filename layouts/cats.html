@@ -3,7 +3,8 @@
   <div class="hero-body has-text-centered">
     <div class="container">
       <h1 class="title has-text-white">{{ i18n "catsHeroTitle" }}</h1>
-      <p class="subtitle has-text-light mt-2">{{ i18n "catsHeroSubtitle" (dict "Count" (len $.Site.Data.cats)) }}</p>
+      {{ $adoptable := where (where $.Site.Data.cats "wild" false) "wanderer" false }}
+      <p class="subtitle has-text-light mt-2"><a href="#cats-list" class="cats-count-link">{{ i18n "catsHeroSubtitle" (dict "Count" (len $adoptable)) }}</a></p>
       <div class="buttons is-centered mt-5">
         <a class="button telegram" href="https://t.me/" target="_blank">
           <span class="icon"><i class="fab fa-telegram"></i></span><span>{{ i18n "catsMediaTelegram" }}</span>
@@ -95,7 +96,7 @@
     <div class="tags is-justify-content-center mb-5" id="year-filter">
       <span class="tag is-dark" data-year="all">{{ i18n "filterAllYears" }}</span>
     </div>
-    <div class="columns is-multiline">
+    <div class="columns is-multiline" id="cats-list">
       {{ $lang := .Site.Language.Lang }}
       {{ range .Site.Data.cats }}
         {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $.Site.Data.cats) }}
