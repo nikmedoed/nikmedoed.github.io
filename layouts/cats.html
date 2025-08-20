@@ -95,7 +95,9 @@
     <div class="columns is-multiline">
       {{ $lang := .Site.Language.Lang }}
       {{ range .Site.Data.cats }}
-        {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $.Site.Data.cats) }}
+        <div class="column is-12-mobile is-6-tablet is-4-desktop">
+          {{ partial "cat-hcard.html" (dict "cat" . "lang" $lang) }}
+        </div>
       {{ end }}
     </div>
   </div>
