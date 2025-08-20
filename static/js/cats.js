@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const statusFilter = document.getElementById('status-filter');
     const yearFilter = document.getElementById('year-filter');
+    let genderFilter = 'all';
 
     if (yearFilter) {
         const years = [...new Set(cards.map(c => c.dataset.year))].sort().reverse();
@@ -26,7 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 (status === 'intact' && c.dataset.sterilized === 'no') ||
                 (status === 'treatment' && c.dataset.treatment === 'yes');
             const matchYear = year === 'all' || c.dataset.year === year;
-            c.parentElement.style.display = matchStatus && matchYear ? '' : 'none';
+            const matchGender = genderFilter === 'all' || c.dataset.gender === genderFilter;
+            c.parentElement.style.display = matchStatus && matchYear && matchGender ? '' : 'none';
         });
     }
 
@@ -54,16 +56,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const lang = document.documentElement.lang;
     const labels = {
-        en: {y: 'y', m: 'm', kitten: 'Kitten', teen: 'Teen', adult: 'Adult'},
-        ru: {y: 'г.', m: 'мес.', kitten: 'Котёнок', teen: 'Подросток', adult: 'Взрослый'}
+        en: {y: 'y', m: 'm'},
+        ru: {y: 'г.', m: 'мес.'}
     };
-    const catClasses = {kitten: 'is-primary', teen: 'is-info', adult: 'is-dark'};
 
     cards.forEach(card => {
         const birth = card.dataset.birth;
         const ageSpan = card.querySelector('.cat-age');
-        const categorySpan = card.querySelector('.cat-category');
-        if (birth && ageSpan && categorySpan) {
+        if (birth && ageSpan) {
             const [year, month] = birth.split('-').map(Number);
             const now = new Date();
             let y = now.getFullYear() - year;
@@ -73,12 +73,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 m += 12;
             }
             ageSpan.textContent = `${y} ${labels[lang].y} ${m} ${labels[lang].m}`;
-            const months = y * 12 + m;
-            let category = 'adult';
-            if (months < 4) category = 'kitten';
-            else if (months < 12) category = 'teen';
-            categorySpan.textContent = labels[lang][category];
-            categorySpan.classList.add(catClasses[category]);
         }
     });
 
@@ -91,6 +85,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 el.classList.add('highlight');
                 setTimeout(() => el.classList.remove('highlight'), 2000);
             }
+        });
+    });
+
+    document.querySelectorAll('.cat-gender').forEach(icon => {
+        icon.addEventListener('click', () => {
+            const g = icon.dataset.gender;
+            genderFilter = genderFilter === g ? 'all' : g;
+            applyFilters();
         });
     });
 });

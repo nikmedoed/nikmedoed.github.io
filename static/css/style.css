@@ -128,8 +128,6 @@ html, body {
 }
 
 .cat-card {
-  padding: 1.5rem;
-  border-radius: 8px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .cat-card:hover {
@@ -139,19 +137,28 @@ html, body {
 .cat-card .tags {
   margin-top: 0.5rem;
 }
+.cat-card .card-image .image {
+  overflow: hidden;
+}
 .cat-card img.cat-photo {
-  width: 128px;
-  height: 128px;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 .cat-card.highlight {
   box-shadow: 0 0 0 3px #ffdd57;
 }
+.cat-gender {
+  cursor: pointer;
+}
+.cat-gender i {
+  pointer-events: none;
+}
 
 #status-filter .tag,
 #year-filter .tag,
-.cat-card .tag {
+.cat-card .tag,
+.cat-gender {
   user-select: none;
 }
 
