@@ -63,15 +63,16 @@
 <div id="notification-container" class="notification-container"></div>
 <section class="section">
   <div class="container">
-    {{ partial "cat-profile.html" (dict "cat" .cat "lang" .Site.Language.Lang "cats" .Site.Data.cats) }}
-    {{ $photos := after 1 .cat.photos }}
-    {{ if gt (len $photos) 0 }}
-    <div class="cat-gallery mt-5">
+    <div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true }'>
+      <div class="grid-sizer"></div>
+      {{ partial "cat-profile.html" (dict "cat" .cat "lang" .Site.Language.Lang "cats" .Site.Data.cats) }}
+      {{ $photos := after 1 .cat.photos }}
       {{ range $url := $photos }}
-        <a href="{{ $url }}" data-fslightbox="gallery"><img src="{{ $url }}" alt="{{ index $.cat.name $.Site.Language.Lang }}"></a>
+      <div class="grid-item">
+        <a href="{{ $url }}" data-fslightbox="gallery"><img src="{{ $url }}" alt="{{ index $.cat.name $.Site.Language.Lang }}" loading="lazy"></a>
+      </div>
       {{ end }}
     </div>
-    {{ end }}
   </div>
 </section>
 <footer class="footer has-background-black has-text-centered has-text-white">
@@ -85,6 +86,8 @@
 </footer>
 <script src="/js/script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.min.js"></script>
-<script src="/js/cats.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="/js/cat-page.js"></script>
 </body>
 </html>
