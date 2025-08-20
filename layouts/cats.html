@@ -1,23 +1,72 @@
 {{ define "main" }}
-<section class="hero is-medium">
+<section class="hero is-medium is-bold cats-hero">
   <div class="hero-body has-text-centered">
     <div class="container">
-      <h1 class="title has-text-link">{{ i18n "catsTitle" }}</h1>
+      <h1 class="title has-text-white">{{ i18n "catsHeroTitle" }}</h1>
+      <div class="buttons is-centered mt-5">
+        <a class="button telegram" href="https://t.me/" target="_blank">
+          <span class="icon"><i class="fab fa-telegram"></i></span><span>{{ i18n "catsMediaTelegram" }}</span>
+        </a>
+        <a class="button instagram" href="https://instagram.com/" target="_blank">
+          <span class="icon"><i class="fab fa-instagram"></i></span><span>{{ i18n "catsMediaInstagram" }}</span>
+        </a>
+        <a class="button tiktok" href="https://tiktok.com/" target="_blank">
+          <span class="icon"><i class="fab fa-tiktok"></i></span><span>{{ i18n "catsMediaTikTok" }}</span>
+        </a>
+        <a class="button spreadsheet" href="https://docs.google.com/" target="_blank">
+          <span class="icon"><i class="fas fa-table"></i></span><span>{{ i18n "catsMediaSpreadsheet" }}</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
 <section class="section">
   <div class="container">
-    <div class="content has-text-centered mb-5">
-      <p>{{ i18n "catsIntro" }}</p>
-    </div>
-    <div class="buttons is-centered mb-5">
-      <a class="button" href="https://t.me/" target="_blank">{{ i18n "catsMediaTelegram" }}</a>
-      <a class="button" href="https://instagram.com/" target="_blank">{{ i18n "catsMediaInstagram" }}</a>
-      <a class="button" href="https://tiktok.com/" target="_blank">{{ i18n "catsMediaTikTok" }}</a>
-      <a class="button" href="https://docs.google.com/" target="_blank">{{ i18n "catsMediaSpreadsheet" }}</a>
-    </div>
-    <div class="columns is-vcentered mb-6">
+    <div class="columns is-variable is-6 mb-6">
+      <div class="column">
+        <div class="content mb-5">
+          <p>{{ i18n "catsIntro" }}</p>
+        </div>
+        <h2 class="title has-text-warning mb-4">{{ i18n "contactTitle" }}</h2>
+        <div class="columns is-vcentered is-mobile contact-row">
+          <div class="column">
+            <span>{{ i18n "catsContactIntro" | safeHTML }}</span>
+          </div>
+          <div class="column is-narrow">
+            <button id="email-btn" class="button is-link is-light">{{ i18n "sendEmail" }}</button>
+          </div>
+        </div>
+        <p class="mt-2">{{ i18n "contactSocialNote" }}</p>
+        <div id="email-modal" class="modal">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <form id="contact-form" class="box contact-box">
+              <div class="field">
+                <label class="label has-text-white" for="email">{{ i18n "formYourEmail" }}</label>
+                <div class="control">
+                  <input id="email" class="input" type="email" placeholder="{{ i18n "formPlaceholderEmail" }}">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label has-text-white" for="subject">{{ i18n "formSubject" }}</label>
+                <div class="control">
+                  <input id="subject" class="input" type="text" placeholder="{{ i18n "formPlaceholderSubject" }}">
+                </div>
+              </div>
+              <div class="field">
+                <label class="label has-text-white" for="message">{{ i18n "formMessage" }}</label>
+                <div class="control">
+                  <textarea id="message" class="textarea" placeholder="{{ i18n "formPlaceholderMessage" }}"></textarea>
+                </div>
+              </div>
+              <div class="field mt-2">
+                <button id="send-btn" type="submit" class="button is-link is-fullwidth">{{ i18n "formSend" }}</button>
+              </div>
+            </form>
+          </div>
+          <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+      </div>
       <div class="column">
         <h2 class="title has-text-warning mb-4">{{ i18n "catsSupportTitle" }}</h2>
         <div class="box support-box has-text-centered">
@@ -38,50 +87,6 @@
           </p>
         </div>
       </div>
-      <div class="column">
-        <figure class="image">
-          <img src="https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg" alt="preview">
-        </figure>
-      </div>
-    </div>
-    <h2 class="title has-text-centered has-text-warning mb-4">{{ i18n "contactTitle" }}</h2>
-    <div class="columns is-vcentered is-mobile contact-row">
-      <div class="column">
-        <span>{{ i18n "catsContactIntro" | safeHTML }}</span>
-      </div>
-      <div class="column is-narrow">
-        <button id="email-btn" class="button is-link is-light">{{ i18n "sendEmail" }}</button>
-      </div>
-    </div>
-    <p class="has-text-centered mt-2">{{ i18n "contactSocialNote" }}</p>
-    <div id="email-modal" class="modal">
-      <div class="modal-background"></div>
-      <div class="modal-content">
-        <form id="contact-form" class="box contact-box">
-          <div class="field">
-            <label class="label has-text-white" for="email">{{ i18n "formYourEmail" }}</label>
-            <div class="control">
-              <input id="email" class="input" type="email" placeholder="{{ i18n "formPlaceholderEmail" }}">
-            </div>
-          </div>
-          <div class="field">
-            <label class="label has-text-white" for="subject">{{ i18n "formSubject" }}</label>
-            <div class="control">
-              <input id="subject" class="input" type="text" placeholder="{{ i18n "formPlaceholderSubject" }}">
-            </div>
-          </div>
-          <div class="field">
-            <label class="label has-text-white" for="message">{{ i18n "formMessage" }}</label>
-            <div class="control">
-              <textarea id="message" class="textarea" placeholder="{{ i18n "formPlaceholderMessage" }}"></textarea>
-            </div>
-          </div>
-          <div class="field mt-2">
-            <button id="send-btn" type="submit" class="button is-link is-fullwidth">{{ i18n "formSend" }}</button>
-          </div>
-        </form>
-      </div>
-      <button class="modal-close is-large" aria-label="close"></button>
     </div>
     <div class="tags is-justify-content-center mb-4" id="status-filter">
       <span class="tag is-dark" data-status="all">{{ i18n "filterAll" }}</span>

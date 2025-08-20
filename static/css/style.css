@@ -75,6 +75,24 @@ html, body {
   margin-right: auto;
 }
 
+.cats-hero {
+  position: relative;
+  background-image: url('https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+}
+.cats-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.cats-hero .hero-body {
+  position: relative;
+  z-index: 1;
+}
+
 /* Subtle highlight for hero tagline */
 .tagline-accent {
   color: var(--c-yellow);
@@ -309,6 +327,30 @@ body.no-scroll {
 .button.yoomoney {
   background-color: #6F2DBD;
   border-color: #6F2DBD;
+  color: #fff;
+}
+
+.button.telegram {
+  background-color: #229ED9;
+  border-color: #229ED9;
+  color: #fff;
+}
+
+.button.instagram {
+  background-color: #E1306C;
+  border-color: #E1306C;
+  color: #fff;
+}
+
+.button.tiktok {
+  background-color: #000;
+  border-color: #000;
+  color: #fff;
+}
+
+.button.spreadsheet {
+  background-color: #34A853;
+  border-color: #34A853;
   color: #fff;
 }
 
