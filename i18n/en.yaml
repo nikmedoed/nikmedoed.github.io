@@ -40,26 +40,26 @@ backToMain: "Back to main page"
 metaDescription: "Nikita Muromtsev is a developer and technical manager about projects and open-source tools for automating routine and increasing awareness using Python and JavaScript."
 catsTitle: "Cats of Nansen street"
 catsHeroTitle: "Nansen street cats seek homes and support"
-catsHeroSubtitle: "{{ .Count }} tails seek a home. Adopt or support financially. We treat, sterilize and care for street cats."
+catsHeroSubtitle: "<a href=\"#cats-list\" class=\"cats-count-link\">{{ .Count }} tails seek a home</a>. Adopt or support financially. We treat, sterilize and care for street cats."
 catsIntro: |
-  Street cats have always triggered Toma’s wild urge to feed them. For many years, she has always carried pouches of cat food in her bag. And then we came to Yerevan, where stray animals are everywhere.
+  <p>Street cats have always triggered Toma’s wild urge to feed them. For many years, she has always carried pouches of cat food in her bag. And then we came to Yerevan, where stray animals are everywhere.</p>
 
-  At first, Toma fed the fluffballs only occasionally. But soon one cat started systematically shouting at our window, loudly demanding dinner… And that was the trap. Now we were already feeding her kittens, which she demonstratively handed over to us before going off to enjoy her freedom.
+  <p>At first, Toma fed the fluffballs only occasionally. But soon one cat started systematically shouting at our window, loudly demanding dinner… And that was the trap. Now we were already feeding her kittens, which she demonstratively handed over to us before going off to enjoy her freedom.</p>
 
-  For that, we had her spayed. While organizing everything, we met neighbors and their own strays. This is how a little group of settled, friendly buddies formed around us.
+  <p>For that, we had her spayed. While organizing everything, we met neighbors and their own strays. This is how a little group of settled, friendly buddies formed around us.</p>
 
-  Everything was fine, but in 2025 new pregnant cats appeared — and now we have a crowd of kittens. If wild wanderers drop by, they don’t stay. But we simply cannot abandon our tame little tails.
+  <p>Everything was fine, but in 2025 new pregnant cats appeared — and now we have a crowd of kittens. If wild wanderers drop by, they don’t stay. But we simply cannot abandon our tame little tails.</p>
 
-  Once, Nansen helped refugees gain the right to a home and a future. Now we want to give a similar chance to the street cats of his street.
+  <p>Once, Nansen helped refugees gain the right to a home and a future. Now we want to give a similar chance to the street cats of his street.</p>
 
-  Help us find homes for these friendly companions — or support our initiative financially.
+  <p>Help us find homes for these friendly companions — or support our initiative financially.</p>
 catsMediaTelegram: "Telegram"
 catsMediaInstagram: "Instagram"
 catsMediaTikTok: "TikTok"
 catsMediaSpreadsheet: "Expense sheet"
 catsSupportTitle: "Help Nansen street cats"
 catsSupportText: "We need funds for food, surgeries, medicine and finding homes for our buddies"
-catsContactIntro: "Other ways to help: reach us via <a class=\"has-text-weight-bold\" href=\"#cats-hero\">the networks above</a> or →"
+catsContactIntro: "Other ways to help:<br>reach us via <a class=\"has-text-weight-bold\" href=\"#cats-hero\">the networks above</a> or →"
 catsIntroTitle: "Who, What & Why"
 heroCharityBtn: "Charity: adopt or sponsor a street cat"
 filterAll: "All"

@@ -77,7 +77,7 @@ html, body {
 
 .cats-hero {
   position: relative;
-  background-image: url('https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg');
+  background-image: url('https://res.cloudinary.com/nikmedoed/image/upload/v1755716393/20250813_195232-3293dadb.jpg');
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -170,7 +170,7 @@ html, body {
 }
 
 .cat-flag[data-tooltip]:hover::after,
-.cat-flag[data-tooltip]:focus::after {
+.cat-flag.tooltip-active::after {
   content: attr(data-tooltip);
   position: absolute;
   bottom: 100%;

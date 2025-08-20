@@ -96,6 +96,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    document.querySelectorAll('.cat-flag').forEach(flag => {
+        flag.addEventListener('click', e => {
+            e.preventDefault();
+            flag.classList.toggle('tooltip-active');
+        });
+    });
+
+    document.addEventListener('click', e => {
+        if (!e.target.closest('.cat-flag')) {
+            document.querySelectorAll('.cat-flag.tooltip-active').forEach(f => f.classList.remove('tooltip-active'));
+        }
+    });
+
     document.querySelectorAll('.cat-ster-tag').forEach(tag => {
         tag.addEventListener('click', () => {
             if (!statusFilter) return;
