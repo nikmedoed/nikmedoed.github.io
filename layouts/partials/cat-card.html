@@ -22,10 +22,10 @@
         <p class="is-size-7 mb-0 cat-age"></p>
       </div>
 
-      <p class="content mb-2">{{ index $cat.description $lang }}</p>
+      <p class="content mb-0">{{ index $cat.description $lang }}</p>
 
       {{ if $cat.parents }}
-      <div class="mb-1">
+      <div class="mt-1">
         <span class="has-text-weight-semibold">{{ i18n "parentsLabel" }}:</span>
         {{ range $id := $cat.parents }}
           {{ $p := index (where $cats "id" $id) 0 }}
@@ -41,7 +41,7 @@
 
       {{ $children := where $cats "parents" "intersect" (slice $cat.id) }}
       {{ if $children }}
-      <div class="mb-1">
+      <div class="mt-1">
         <span class="has-text-weight-semibold">{{ i18n "childrenLabel" }}:</span>
         {{ range $child := $children }}
           <span class="tag is-info cat-relative ml-1" data-target="cat-{{ $child.id }}">
