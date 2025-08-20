@@ -1,7 +1,7 @@
 {{ $cat := .cat }}
 {{ $lang := .lang }}
 {{ $cats := .cats }}
-<div class="box cat-card grid-item" id="cat-{{ $cat.id }}" data-year="{{ substr $cat.birth 0 4 }}" data-birth="{{ $cat.birth }}" data-sterilized="{{ if $cat.sterilized }}yes{{ else }}no{{ end }}" data-treatment="{{ if (index $cat.treatment $lang) }}yes{{ else }}no{{ end }}">
+<div class="box cat-card cat-profile" data-birth="{{ $cat.birth }}">
   <article class="media">
     <div class="media-content">
       <p class="title is-4">{{ index $cat.name $lang }}</p>
@@ -26,13 +26,6 @@
         {{ range $child := $children }}
           {{ $key := cond (eq $child.gender "female") "daughter" "son" }}
           <a class="tag is-info" href="{{ (printf "/cats/%s" $child.id) | relLangURL }}">{{ i18n $key }}: {{ index $child.name $lang }}</a>
-        {{ end }}
-        {{ if $cat.parents }}
-          {{ $siblings := uniq (where (where $cats "id" "ne" $cat.id) "parents" "intersect" $cat.parents) }}
-          {{ range $sib := $siblings }}
-            {{ $key := cond (eq $sib.gender "female") "sister" "brother" }}
-            <a class="tag is-info" href="{{ (printf "/cats/%s" $sib.id) | relLangURL }}">{{ i18n $key }}: {{ index $sib.name $lang }}</a>
-          {{ end }}
         {{ end }}
       </div>
     </div>
