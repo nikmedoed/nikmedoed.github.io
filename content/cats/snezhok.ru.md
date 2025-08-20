@@ -1,4 +1,0 @@
----
-title: Снежок
-catId: snezhok
----

@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Muromtsev Nikita: {{ .Title }}</title>
-    <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ i18n "metaDescription" }}{{ end }}">
-    <meta property="og:title" content="{{ .Title }} | Muromtsev Nikita">
-    <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ i18n "metaDescription" }}{{ end }}">
-    <meta property="og:url" content="{{ .Permalink }}">
+    <title>Muromtsev Nikita: {{ index .cat.name .Site.Language.Lang }}</title>
+    <meta name="description" content="{{ index .cat.description .Site.Language.Lang }}">
+    <meta property="og:title" content="{{ index .cat.name .Site.Language.Lang }} | Muromtsev Nikita">
+    <meta property="og:description" content="{{ index .cat.description .Site.Language.Lang }}">
+    <meta property="og:url" content="{{ printf "%s/cats/%s/" .Site.BaseURL .cat.id }}">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="{{ with .Params.og_image }}{{ . | absURL }}{{ else }}{{ .Site.BaseURL }}favicon/web-app-manifest-512x512.png{{ end }}">
+    <meta property="og:image" content="{{ (index .cat.photos 0) }}">
     <meta property="og:site_name" content="Nikita Muromtsev">
     <meta property="og:locale" content="{{ .Site.Language.Lang }}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ .Title }} | Muromtsev Nikita">
-    <meta name="twitter:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ i18n "metaDescription" }}{{ end }}">
-    <meta name="twitter:image" content="{{ with .Params.og_image }}{{ . | absURL }}{{ else }}{{ .Site.BaseURL }}favicon/web-app-manifest-512x512.png{{ end }}">
-    <link rel="canonical" href="{{ .Permalink }}">
+    <meta name="twitter:title" content="{{ index .cat.name .Site.Language.Lang }} | Muromtsev Nikita">
+    <meta name="twitter:description" content="{{ index .cat.description .Site.Language.Lang }}">
+    <meta name="twitter:image" content="{{ (index .cat.photos 0) }}">
+    <link rel="canonical" href="{{ printf "%s/cats/%s/" .Site.BaseURL .cat.id }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=cyrillic" rel="stylesheet">
@@ -30,7 +30,6 @@
     <link rel="manifest" href="/favicon/site.webmanifest">
 </head>
 <body>
-{{ partial "generate-cat-pages.html" . }}
 <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="{{ "/" | relURL }}">Nikita Muromtsev</a>
@@ -47,16 +46,10 @@
             <a class="navbar-item" href="https://t.me/etonikmedoed" target="_blank">{{ i18n "navBlog" | default "Blog" }}</a>
             <a class="navbar-item" href="{{ "/#about" | relURL }}">{{ i18n "navContacts" | default "Contacts" }}</a>
             <div class="navbar-item">
-                {{ if .IsTranslated }}
-                  {{ range .Translations }}
-                  <a class="lang-switch" data-lang="{{ .Lang }}" href="{{ .RelPermalink }}">{{ upper .Lang }}</a>
-                  {{ end }}
+                {{ if eq .Site.Language.Lang "en" }}
+                <a class="lang-switch" data-lang="ru" href="{{ (printf "/ru/cats/%s/" $.cat.id) | relURL }}">RU</a>
                 {{ else }}
-                  {{ if eq .Site.Language.Lang "en" }}
-                  <a class="lang-switch" data-lang="ru" href="/ru/">RU</a>
-                  {{ else }}
-                  <a class="lang-switch" data-lang="en" href="/">EN</a>
-                  {{ end }}
+                <a class="lang-switch" data-lang="en" href="{{ (printf "/cats/%s/" $.cat.id) | relURL }}">EN</a>
                 {{ end }}
             </div>
             <div class="navbar-item">
@@ -67,11 +60,20 @@
         </div>
     </div>
 </nav>
-
 <div id="notification-container" class="notification-container"></div>
-
-{{ block "main" . }}{{ end }}
-
+<section class="section">
+  <div class="container">
+    {{ partial "cat-profile.html" (dict "cat" .cat "lang" .Site.Language.Lang "cats" .Site.Data.cats) }}
+    {{ $photos := after 1 .cat.photos }}
+    {{ if gt (len $photos) 0 }}
+    <div class="cat-gallery mt-5">
+      {{ range $url := $photos }}
+        <a href="{{ $url }}" data-fslightbox="gallery"><img src="{{ $url }}" alt="{{ index $.cat.name $.Site.Language.Lang }}"></a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
 <footer class="footer has-background-black has-text-centered has-text-white">
     <p class="is-italic mb-2">{{ i18n "footerQuote" }}</p>
     <p>&copy; 2025 Nikita Muromtsev.
@@ -82,5 +84,7 @@
     </p>
 </footer>
 <script src="/js/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fslightbox/3.4.1/index.min.js"></script>
+<script src="/js/cats.js"></script>
 </body>
 </html>

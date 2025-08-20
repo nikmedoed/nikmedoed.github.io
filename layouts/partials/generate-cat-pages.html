@@ -1,0 +1,9 @@
+{{- $tpl := resources.Get "cat-page.html" -}}
+{{- range $site := .Site.Sites -}}
+  {{- $lang := $site.Language.Lang -}}
+  {{- range $cat := $site.Data.cats -}}
+    {{- $path := printf "%s/cats/%s/index.html" (cond (eq $lang $.Site.Language.Lang) "" $lang) $cat.id -}}
+    {{- $page := $tpl | resources.ExecuteAsTemplate $path (dict "cat" $cat "Site" $site) -}}
+    {{- $page.RelPermalink -}}
+  {{- end -}}
+{{- end -}}
