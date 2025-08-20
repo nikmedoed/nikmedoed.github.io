@@ -195,14 +195,29 @@ html, body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem 1rem;
+  gap: 0.25rem 0.5rem;
 }
 
 #cat-filters .filter-group {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 0.25rem;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+#year-filter {
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  #cat-filters .filter-group {
+    flex-wrap: wrap;
+  }
+  #year-filter {
+    white-space: normal;
+  }
 }
 
 #cat-filters .tag,
