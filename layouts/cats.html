@@ -94,16 +94,23 @@
       <span class="tag is-warning" data-status="intact">{{ i18n "filterNotSterilized" }}</span>
       <span class="tag is-danger" data-status="treatment">{{ i18n "filterTreatment" }}</span>
     </div>
-    <div class="tags is-justify-content-center mb-5" id="year-filter">
+  <div class="tags is-justify-content-center mb-5" id="year-filter">
       <span class="tag is-dark" data-year="all">{{ i18n "filterAllYears" }}</span>
     </div>
+    {{ $lang := .Site.Language.Lang }}
+    <div class="columns is-multiline" id="cats-grid">
+      {{ range where .Site.Data.cats "status" "ne" "lost" }}
+        {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $.Site.Data.cats) }}
+      {{ end }}
+    </div>
+    <h2 class="title has-text-warning mt-6">{{ i18n "catsLostTitle" }}</h2>
+    <p class="mb-5">{{ i18n "catsLostIntro" }}</p>
     <div class="columns is-multiline">
-      {{ $lang := .Site.Language.Lang }}
-      {{ range .Site.Data.cats }}
+      {{ range where .Site.Data.cats "status" "eq" "lost" }}
         {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $.Site.Data.cats) }}
       {{ end }}
     </div>
   </div>
-</section>
-<script src="/js/cats.js"></script>
-{{ end }}
+  </section>
+  <script src="/js/cats.js"></script>
+  {{ end }}

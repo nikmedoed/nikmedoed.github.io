@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const cards = Array.from(document.querySelectorAll('.cat-card'));
+    const container = document.getElementById('cats-grid');
+    const cards = container ? Array.from(container.querySelectorAll('.cat-card')) : [];
     if (!cards.length) return;
 
     const statusFilter = document.getElementById('status-filter');

@@ -1,61 +1,143 @@
-- id: barsik
-  name:
-    en: Barsik
-    ru: Барсик
-  gender: male
-  photos:
-    - https://i.pinimg.com/originals/09/4e/e0/094ee0d312d6fb870f22e4e57a69bdd7.jpg
-    - https://wallpapers.com/images/featured-full/cat-pictures-zc3gu0636kmldm04.jpg
-    - https://i.pinimg.com/736x/75/ca/fe/75cafe6296d44abd2891a0f69eaafb94.jpg
-  description:
-    en: Playful striped kitten, always exploring.
-    ru: Игривый полосатый котёнок, обожает исследовать.
-  birth: 2025-02
-  sterilized: true
-  parents:
-    - murka
-    - snezhok
-  treatment:
-    en: ""
-    ru: ""
+ - id: barsik
+   name:
+     en: Barsik
+     ru: Барсик
+   gender: male
+   photos:
+     - https://i.pinimg.com/originals/09/4e/e0/094ee0d312d6fb870f22e4e57a69bdd7.jpg
+     - https://wallpapers.com/images/featured-full/cat-pictures-zc3gu0636kmldm04.jpg
+     - https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+     - https://i.pinimg.com/736x/75/ca/fe/75cafe6296d44abd2891a0f69eaafb94.jpg
+     - https://i.ytimg.com/vi/vPPx29Co0vk/maxresdefault.jpg
+   description:
+     en: Playful striped kitten, always exploring every corner of the yard, chasing leaves and inventing new games. He climbs every fence, greets neighbors with a curious stare, and turns each day into a small adventure.
+     ru: Игривый полосатый котёнок, постоянно исследующий каждый уголок двора, гоняется за листьями и придумывает новые игры. Он забирается на каждый забор, встречает соседей любопытным взглядом и превращает каждый день в маленькое приключение.
+   birth: 2025-02
+   sterilized: true
+   parents:
+     - murka
+     - snezhok
+   treatment:
+     en: ""
+     ru: ""
 
-- id: murka
-  name:
-    en: Murka
-    ru: Мурка
-  gender: female
-  photos:
-    - https://wallpapers.com/images/featured-full/cat-pictures-zc3gu0636kmldm04.jpg
-    - https://i.pinimg.com/736x/75/ca/fe/75cafe6296d44abd2891a0f69eaafb94.jpg
-    - https://i.ytimg.com/vi/vPPx29Co0vk/maxresdefault.jpg
-    - https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/960px-Cat_November_2010-1a.jpg
-  description:
-    en: Calm and affectionate, loves to cuddle.
-    ru: Спокойная и ласковая, любит обниматься.
-  birth: 2021-06
-  sterilized: false
-  parents: []
-  treatment:
-    en: "paw injury"
-    ru: "травма лапы"
+ - id: murka
+   name:
+     en: Murka
+     ru: Мурка
+   gender: female
+   photos:
+     - https://wallpapers.com/images/featured-full/cat-pictures-zc3gu0636kmldm04.jpg
+     - https://i.ytimg.com/vi/vPPx29Co0vk/maxresdefault.jpg
+     - https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+     - https://i.pinimg.com/originals/09/4e/e0/094ee0d312d6fb870f22e4e57a69bdd7.jpg
+   description:
+     en: Calm and affectionate, she loves to cuddle under any blanket she finds. Murka patiently watches the younger cats play, purring softly, and always makes room for a warm lap. Her gentle nature comforts everyone around her.
+     ru: Спокойная и ласковая, обожает устраиваться под любым найденным пледом. Мурка терпеливо наблюдает, как малыши играют, тихо урча, и всегда находит место на тёплых коленях. Её мягкий характер согревает всех вокруг.
+   birth: 2021-06
+   sterilized: false
+   parents: []
+   treatment:
+     en: "paw injury"
+     ru: "травма лапы"
 
-- id: snezhok
-  name:
-    en: Snezhok
-    ru: Снежок
-  gender: male
-  photos:
-    - https://i.pinimg.com/736x/75/ca/fe/75cafe6296d44abd2891a0f69eaafb94.jpg
-    - https://i.ytimg.com/vi/vPPx29Co0vk/maxresdefault.jpg
-    - https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/960px-Cat_November_2010-1a.jpg
-    - https://i.pinimg.com/originals/09/4e/e0/094ee0d312d6fb870f22e4e57a69bdd7.jpg
-    - https://wallpapers.com/images/featured-full/cat-pictures-zc3gu0636kmldm04.jpg
-  description:
-    en: Loves to nap in the sun.
-    ru: Любит дремать на солнце.
-  birth: 2024-09
-  sterilized: true
-  parents: []
-  treatment:
-    en: ""
-    ru: ""
+ - id: snezhok
+   name:
+     en: Snezhok
+     ru: Снежок
+   gender: male
+   photos:
+     - https://i.pinimg.com/736x/75/ca/fe/75cafe6296d44abd2891a0f69eaafb94.jpg
+     - https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/960px-Cat_November_2010-1a.jpg
+     - https://i.pinimg.com/originals/09/4e/e0/094ee0d312d6fb870f22e4e57a69bdd7.jpg
+     - https://i.ytimg.com/vi/vPPx29Co0vk/maxresdefault.jpg
+   description:
+     en: Loves to nap in the sun, stretching out on warm stones and dreaming for hours. Between naps he strolls with regal calm, observing the world as if it were his kingdom. A true philosopher in a fluffy coat.
+     ru: Любит дремать на солнце, растянувшись на тёплых камнях и часами видя сладкие сны. Между дремотой он гуляет с царственным спокойствием, наблюдая за миром как за своим королевством. Настоящий философ в пушистой шубке.
+   birth: 2024-09
+   sterilized: true
+   parents: []
+   treatment:
+     en: ""
+     ru: ""
+
+ - id: pushok
+   name:
+     en: Pushok
+     ru: Пушок
+   gender: male
+   photos:
+     - https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+     - https://i.pinimg.com/originals/09/4e/e0/094ee0d312d6fb870f22e4e57a69bdd7.jpg
+     - https://i.pinimg.com/736x/75/ca/fe/75cafe6296d44abd2891a0f69eaafb94.jpg
+     - https://wallpapers.com/images/featured-full/cat-pictures-zc3gu0636kmldm04.jpg
+   description:
+     en: Energetic youngster with fur like a tiny cloud. He dashes after butterflies, tumbles through tall grass, and returns proudly with twigs in his teeth. His cheerful spirit lifts the mood of the entire yard.
+     ru: Энергичный юнец с шерстью словно маленькое облачко. Он носится за бабочками, кувыркается в высокой траве и возвращается гордо с веточкой в зубах. Его весёлый характер поднимает настроение всему двору.
+   birth: 2023-03
+   sterilized: true
+   parents: []
+   treatment:
+     en: ""
+     ru: ""
+
+ - id: vasya
+   name:
+     en: Vasya
+     ru: Вася
+   gender: male
+   photos:
+     - https://wallpapers.com/images/featured-full/cat-pictures-zc3gu0636kmldm04.jpg
+     - https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+     - https://i.ytimg.com/vi/vPPx29Co0vk/maxresdefault.jpg
+   description:
+     en: Street-smart tomcat who knows every hiding spot and shortcut. He meows loudly for treats, patrols our entrance each evening, and keeps stray dogs at bay. Despite his rough look he melts when scratched behind the ear.
+     ru: Умудрённый дворовой кот, знающий все тайники и короткие пути. Он громко требует угощение, каждый вечер патрулирует подъезд и отпугивает бродячих собак. Несмотря на суровый вид, тает от почесушек за ушком.
+   birth: 2022-11
+   sterilized: false
+   parents: []
+   treatment:
+     en: ""
+     ru: ""
+
+ - id: luna
+   name:
+     en: Luna
+     ru: Луна
+   gender: female
+   photos:
+     - https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/960px-Cat_November_2010-1a.jpg
+     - https://i.pinimg.com/originals/09/4e/e0/094ee0d312d6fb870f22e4e57a69bdd7.jpg
+     - https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+     - https://i.pinimg.com/736x/75/ca/fe/75cafe6296d44abd2891a0f69eaafb94.jpg
+     - https://wallpapers.com/images/featured-full/cat-pictures-zc3gu0636kmldm04.jpg
+   description:
+     en: Graceful night wanderer with bright, curious eyes. She silently appears at dusk, weaving between shadows before curling up on the doorstep. Luna loves quiet conversations and softly purrs like distant thunder.
+     ru: Грациозная ночная путешественница с яркими любопытными глазами. Она незаметно появляется в сумерках, скользит между тенями и сворачивается клубком у порога. Луна любит тихие беседы и урчит, как далёкий гром.
+   birth: 2024-04
+   sterilized: false
+   parents: []
+   treatment:
+     en: ""
+     ru: ""
+
+ - id: ryzhik
+   name:
+     en: Ryzhik
+     ru: Рыжик
+   gender: male
+   status: lost
+   photos:
+     - https://i.ytimg.com/vi/vPPx29Co0vk/maxresdefault.jpg
+     - https://wallpapers.com/images/featured-full/cat-pictures-zc3gu0636kmldm04.jpg
+     - https://i.pinimg.com/736x/75/ca/fe/75cafe6296d44abd2891a0f69eaafb94.jpg
+   description:
+     en: Fiery orange hunter who once ruled our yard with boundless energy. He chased every rustle, greeted every passerby, and brightened rainy days with his antics. One day he wandered off and never returned, leaving only warm memories.
+     ru: Огненно-рыжий охотник, некогда царивший во дворе с неукротимой энергией. Он гонялся за каждым шорохом, приветствовал каждого прохожего и разгонял пасмурные дни своими выходками. Однажды он ушёл гулять и не вернулся, оставив лишь тёплые воспоминания.
+   birth: 2020-07
+   sterilized: true
+   parents: []
+   treatment:
+     en: ""
+     ru: ""
+

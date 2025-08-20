@@ -1,14 +1,8 @@
 {{ $cat := .cat }}
 {{ $lang := .lang }}
 {{ $cats := .cats }}
-{{ $avatar := index $cat.photos 0 }}
 <div class="box cat-card grid-item" id="cat-{{ $cat.id }}" data-year="{{ substr $cat.birth 0 4 }}" data-birth="{{ $cat.birth }}" data-sterilized="{{ if $cat.sterilized }}yes{{ else }}no{{ end }}" data-treatment="{{ if (index $cat.treatment $lang) }}yes{{ else }}no{{ end }}">
   <article class="media">
-    <figure class="media-left">
-      <p class="image is-128x128">
-        <img class="cat-photo" src="{{ $avatar }}" alt="{{ index $cat.name $lang }}">
-      </p>
-    </figure>
     <div class="media-content">
       <p class="title is-4">{{ index $cat.name $lang }}</p>
       <p class="subtitle is-5">{{ index $cat.description $lang }}</p>
