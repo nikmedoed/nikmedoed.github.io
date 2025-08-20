@@ -93,6 +93,18 @@ html, body {
   z-index: 1;
 }
 
+@keyframes cat-button-shake {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, -2px); }
+  40% { transform: translate(-2px, 2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+.cats-hero .buttons .button:hover {
+  animation: cat-button-shake 0.3s ease-in-out infinite;
+}
+
 /* Subtle highlight for hero tagline */
 .tagline-accent {
   color: var(--c-yellow);
