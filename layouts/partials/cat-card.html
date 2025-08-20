@@ -15,36 +15,50 @@
           <span class="icon cat-gender ml-2" data-gender="{{ $cat.gender }}">
             <i class="fas {{ if eq $cat.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i>
           </span>
+          <span class="tag is-rounded ml-2 {{ if $cat.sterilized }}is-success{{ else }}is-warning{{ end }}">
+            {{ if $cat.sterilized }}{{ i18n "filterSterilized" }}{{ else }}{{ i18n "filterNotSterilized" }}{{ end }}
+          </span>
         </div>
         <p class="is-size-7 mb-0 cat-age"></p>
       </div>
+
       <p class="content mb-2">{{ index $cat.description $lang }}</p>
-      <div class="tags mt-2">
-        <span class="tag {{ if $cat.sterilized }}is-success{{ else }}is-warning{{ end }}">
-          {{ if $cat.sterilized }}{{ i18n "filterSterilized" }}{{ else }}{{ i18n "filterNotSterilized" }}{{ end }}
-        </span>
-        {{ $t := index $cat.treatment $lang }}
-        {{ if $t }}<span class="tag is-danger">{{ $t }}</span>{{ end }}
+
+      {{ if $cat.parents }}
+      <div class="mb-1">
+        <span class="has-text-weight-semibold">{{ i18n "parentsLabel" }}:</span>
         {{ range $id := $cat.parents }}
           {{ $p := index (where $cats "id" $id) 0 }}
           {{ if $p }}
-            {{ $key := cond (eq $p.gender "female") "mother" "father" }}
-            <span class="tag is-info cat-relative" data-target="cat-{{ $p.id }}">{{ i18n $key }}: {{ index $p.name $lang }}</span>
-          {{ end }}
-        {{ end }}
-        {{ $children := where $cats "parents" "intersect" (slice $cat.id) }}
-        {{ range $child := $children }}
-          {{ $key := cond (eq $child.gender "female") "daughter" "son" }}
-          <span class="tag is-info cat-relative" data-target="cat-{{ $child.id }}">{{ i18n $key }}: {{ index $child.name $lang }}</span>
-        {{ end }}
-        {{ if $cat.parents }}
-          {{ $siblings := uniq (where (where $cats "id" "ne" $cat.id) "parents" "intersect" $cat.parents) }}
-          {{ range $sib := $siblings }}
-            {{ $key := cond (eq $sib.gender "female") "sister" "brother" }}
-            <span class="tag is-info cat-relative" data-target="cat-{{ $sib.id }}">{{ i18n $key }}: {{ index $sib.name $lang }}</span>
+            <span class="tag is-info cat-relative ml-1" data-target="cat-{{ $p.id }}">
+              <span class="icon is-small mr-1"><i class="fas {{ if eq $p.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i></span>
+              <span>{{ index $p.name $lang }}</span>
+            </span>
           {{ end }}
         {{ end }}
       </div>
+      {{ end }}
+
+      {{ $children := where $cats "parents" "intersect" (slice $cat.id) }}
+      {{ if $children }}
+      <div class="mb-1">
+        <span class="has-text-weight-semibold">{{ i18n "childrenLabel" }}:</span>
+        {{ range $child := $children }}
+          <span class="tag is-info cat-relative ml-1" data-target="cat-{{ $child.id }}">
+            <span class="icon is-small mr-1"><i class="fas {{ if eq $child.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i></span>
+            <span>{{ index $child.name $lang }}</span>
+          </span>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      {{ $t := index $cat.treatment $lang }}
+      {{ if $t }}
+      <div class="tags bottom-tags">
+        <span class="tag is-danger">{{ $t }}</span>
+      </div>
+      {{ end }}
     </div>
   </div>
 </div>
+

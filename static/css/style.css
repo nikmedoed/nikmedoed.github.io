@@ -128,14 +128,22 @@ html, body {
 }
 
 .cat-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .cat-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
-.cat-card .tags {
-  margin-top: 0.5rem;
+.cat-card .card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.cat-card .bottom-tags {
+  margin-top: auto;
 }
 .cat-card .card-image .image {
   overflow: hidden;
