@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const years = [...new Set(cards.map(c => c.dataset.year))].sort().reverse();
         years.forEach(y => {
             const span = document.createElement('span');
-            span.className = 'tag is-light';
+            span.className = 'tag is-link is-light';
             span.dataset.year = y;
             span.textContent = y;
             yearFilter.appendChild(span);
