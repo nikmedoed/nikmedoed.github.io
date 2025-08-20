@@ -162,28 +162,17 @@ html, body {
   cursor: pointer;
 }
 
-.cat-modal-photos {
-  margin: 0 auto;
+.cat-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
 }
 
-.cat-photo-item,
-.cat-photo-sizer {
-  width: 33.333%;
-}
-
-.cat-photo-item {
-  margin-bottom: 1rem;
-}
-
-.cat-photo-item img {
-  display: block;
+.cat-gallery img {
   width: 100%;
   height: auto;
+  display: block;
   object-fit: contain;
-}
-
-#cat-modal .modal-content {
-  width: 90vw;
 }
 
 .project-media {

@@ -1,0 +1,4 @@
+---
+title: Барсик
+catId: barsik
+---

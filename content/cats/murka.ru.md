@@ -1,0 +1,4 @@
+---
+title: Мурка
+catId: murka
+---

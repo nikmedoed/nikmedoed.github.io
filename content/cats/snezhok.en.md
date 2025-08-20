@@ -1,0 +1,4 @@
+---
+title: Snezhok
+catId: snezhok
+---

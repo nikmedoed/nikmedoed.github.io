@@ -83,7 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelectorAll('.cat-relative').forEach(tag => {
-        tag.addEventListener('click', () => {
+        tag.addEventListener('click', e => {
+            e.preventDefault();
             const id = tag.dataset.target;
             const el = document.getElementById(id);
             if (el) {
@@ -93,65 +94,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    const modal = document.getElementById('cat-modal');
-    if (modal) {
-        const modalName = document.getElementById('cat-modal-name');
-        const modalDesc = document.getElementById('cat-modal-desc');
-        const modalPhotos = document.getElementById('cat-modal-photos');
-        let msnry;
-        const photoCache = {};
-
-        function closeModal() {
-            const currentId = modal.dataset.currentId;
-            if (currentId) {
-                photoCache[currentId] = Array.from(modalPhotos.querySelectorAll('.cat-photo-item'));
-                delete modal.dataset.currentId;
-            }
-            if (msnry) {
-                msnry.destroy();
-                msnry = null;
-            }
-            modal.classList.remove('is-active');
-            modalPhotos.innerHTML = '<div class="cat-photo-sizer"></div>';
-        }
-
-        modal.querySelector('.modal-background').addEventListener('click', closeModal);
-        modal.querySelector('.modal-close').addEventListener('click', closeModal);
-
-        cards.forEach(card => {
-            card.addEventListener('click', e => {
-                if (e.target.closest('.cat-relative')) return;
-                const id = card.id;
-                modal.dataset.currentId = id;
-                modalName.textContent = card.dataset.name;
-                modalDesc.textContent = card.dataset.description;
-                modalPhotos.innerHTML = '<div class="cat-photo-sizer"></div>';
-                if (photoCache[id]) {
-                    photoCache[id].forEach(node => modalPhotos.appendChild(node));
-                } else {
-                    const photos = card.dataset.photos ? card.dataset.photos.split('|') : [];
-                    photoCache[id] = photos.map(url => {
-                        const div = document.createElement('div');
-                        div.className = 'cat-photo-item';
-                        const img = document.createElement('img');
-                        img.src = url.trim();
-                        img.alt = card.dataset.name;
-                        div.appendChild(img);
-                        modalPhotos.appendChild(div);
-                        return div;
-                    });
-                }
-                imagesLoaded(modalPhotos, () => {
-                    msnry = new Masonry(modalPhotos, {
-                        itemSelector: '.cat-photo-item',
-                        columnWidth: '.cat-photo-sizer',
-                        gutter: 10,
-                        percentPosition: true
-                    });
-                });
-                modal.classList.add('is-active');
-            });
-        });
-    }
 });
