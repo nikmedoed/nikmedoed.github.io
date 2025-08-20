@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const years = [...new Set(cards.map(c => c.dataset.year))].sort().reverse();
         years.forEach(y => {
             const span = document.createElement('span');
-            span.className = 'tag is-link is-light';
+            span.className = 'tag is-light has-text-link';
             span.dataset.year = y;
             span.textContent = y;
             yearFilter.appendChild(span);
@@ -78,12 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const idx = filters.years.indexOf(y);
             if (idx > -1) {
                 filters.years.splice(idx, 1);
-                tag.classList.remove('is-selected');
-                if (!tag.classList.contains('is-light')) tag.classList.add('is-light');
+                tag.classList.remove('is-selected', 'is-link');
+                tag.classList.add('is-light', 'has-text-link');
             } else {
                 filters.years.push(y);
-                tag.classList.add('is-selected');
-                tag.classList.remove('is-light');
+                tag.classList.add('is-selected', 'is-link');
+                tag.classList.remove('is-light', 'has-text-link');
             }
             applyFilters();
         });
@@ -95,7 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
             filters.years = [];
             document.querySelectorAll('#cat-filters .tag').forEach(tag => {
                 if (tag === resetBtn) return;
-                tag.classList.remove('is-selected');
+                tag.classList.remove('is-selected', 'is-link');
+                if (tag.parentElement && tag.parentElement.id === 'year-filter') {
+                    tag.classList.add('has-text-link');
+                }
                 if (!tag.classList.contains('is-light')) tag.classList.add('is-light');
             });
             applyFilters();
