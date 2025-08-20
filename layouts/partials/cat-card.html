@@ -1,0 +1,37 @@
+{{ $cat := .cat }}
+{{ $lang := .lang }}
+
+<article class="card cat-card" id="cat-{{ $cat.id }}" data-birth="{{ $cat.birth }}" data-sterilized="{{ if $cat.sterilized }}yes{{ else }}no{{ end }}" data-treatment="{{ if (index $cat.treatment $lang) }}yes{{ else }}no{{ end }}">
+  <div class="card-content p-0">
+    <div class="columns is-vcentered is-variable is-4">
+      <div class="column is-narrow">
+        <figure class="image cat-photo-frame">
+          <img class="cat-photo" src="{{ $cat.photo }}" alt="{{ index $cat.name $lang }}" loading="lazy">
+        </figure>
+      </div>
+      <div class="column">
+        <h3 class="cat-name has-text-centered mb-0">{{ index $cat.name $lang }}</h3>
+        <p class="cat-age has-text-centered mt-0 mb-3"></p>
+        <p class="cat-desc">
+          {{ index $cat.description $lang }}
+        </p>
+        <div class="tags is-centered cat-tags">
+          {{ if $cat.sterilized }}
+            <span class="tag is-success">{{ i18n "filterSterilized" }}</span>
+          {{ else }}
+            <span class="tag is-warning">{{ i18n "filterNotSterilized" }}</span>
+          {{ end }}
+
+          {{ $t := index $cat.treatment $lang }}
+          {{ if $t }}<span class="tag is-danger is-light">{{ $t }}</span>{{ end }}
+
+          <span class="tag is-light">{{ i18n (printf "gender%s" (title $cat.gender)) }}</span>
+
+          {{ range $tag := $cat.tags }}
+            <span class="tag is-link is-light">{{ $tag }}</span>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,5 +1,5 @@
 // Render age like "2 г. 3 мес." or "10 мес." into .cat-age elements.
-// Uses data-birth="YYYY-MM-DD" on .cat-tile.
+// Uses data-birth="YYYY-MM-DD" on .cat-card.
 function calcAge(iso) {
   if (!iso) return "";
   const b = new Date(iso);
@@ -15,8 +15,8 @@ function calcAge(iso) {
   return `${y} г. ${m} мес.`;
 }
 
-function renderCatTileAges(root = document) {
-  root.querySelectorAll(".cat-tile").forEach(card => {
+function renderCatCardAges(root = document) {
+  root.querySelectorAll(".cat-card").forEach(card => {
     const el = card.querySelector(".cat-age");
     if (!el) return;
     const birth = card.getAttribute("data-birth");
@@ -25,5 +25,5 @@ function renderCatTileAges(root = document) {
 }
 
 document.readyState === "loading"
-  ? document.addEventListener("DOMContentLoaded", renderCatTileAges)
-  : renderCatTileAges();
+  ? document.addEventListener("DOMContentLoaded", renderCatCardAges)
+  : renderCatCardAges();
