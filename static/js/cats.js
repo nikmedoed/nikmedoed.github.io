@@ -7,14 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const healthFilter = document.getElementById('filter-health');
     const wildFilter = document.getElementById('filter-wild');
     const yearFilter = document.getElementById('year-filter');
+    const resetBtn = document.getElementById('filter-reset');
 
-    const filters = { ster: 'all', gender: 'all', health: 'all', wild: 'all', year: 'all' };
+    const filters = { ster: null, gender: null, health: null, wild: null, years: [] };
 
     if (yearFilter) {
         const years = [...new Set(cards.map(c => c.dataset.year))].sort().reverse();
         years.forEach(y => {
             const span = document.createElement('span');
-            span.className = 'tag';
+            span.className = 'tag is-light';
             span.dataset.year = y;
             span.textContent = y;
             yearFilter.appendChild(span);
@@ -24,78 +25,79 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyFilters() {
         cards.forEach(c => {
             const matchSter =
-                filters.ster === 'all' ||
+                !filters.ster ||
                 (filters.ster === 'yes' && c.dataset.sterilized === 'yes') ||
                 (filters.ster === 'no' && c.dataset.sterilized === 'no');
-            const matchGender = filters.gender === 'all' || c.dataset.gender === filters.gender;
+            const matchGender = !filters.gender || c.dataset.gender === filters.gender;
             const matchHealth =
-                filters.health === 'all' ||
+                !filters.health ||
                 (filters.health === 'healthy' && c.dataset.treatment === 'no') ||
                 (filters.health === 'care' && c.dataset.treatment === 'yes');
             const matchWild =
-                filters.wild === 'all' ||
+                !filters.wild ||
                 (filters.wild === 'wild' && c.dataset.wild === 'yes') ||
                 (filters.wild === 'tame' && c.dataset.wild === 'no');
-            const matchYear = filters.year === 'all' || c.dataset.year === filters.year;
+            const matchYear = filters.years.length === 0 || filters.years.includes(c.dataset.year);
             c.parentElement.style.display = matchSter && matchGender && matchHealth && matchWild && matchYear ? '' : 'none';
         });
     }
 
-    function setActive(tag, container) {
-        container.querySelectorAll('.tag').forEach(t => {
-            t.classList.remove('is-selected');
-            if (!t.classList.contains('is-dark')) t.classList.add('is-light');
-        });
-        tag.classList.add('is-selected');
-        tag.classList.remove('is-light');
-    }
-
-    if (sterFilter) {
-        sterFilter.addEventListener('click', e => {
+    function setupSingleSelect(container, key, attr) {
+        if (!container) return;
+        container.addEventListener('click', e => {
             const tag = e.target.closest('.tag');
             if (!tag) return;
-            filters.ster = tag.dataset.ster;
-            setActive(tag, sterFilter);
+            const value = tag.dataset[attr];
+            if (filters[key] === value) {
+                filters[key] = null;
+                tag.classList.remove('is-selected');
+                if (!tag.classList.contains('is-light')) tag.classList.add('is-light');
+            } else {
+                filters[key] = value;
+                container.querySelectorAll('.tag').forEach(t => {
+                    t.classList.remove('is-selected');
+                    if (!t.classList.contains('is-light')) t.classList.add('is-light');
+                });
+                tag.classList.add('is-selected');
+                tag.classList.remove('is-light');
+            }
             applyFilters();
         });
     }
 
-    if (genderFilter) {
-        genderFilter.addEventListener('click', e => {
-            const tag = e.target.closest('.tag');
-            if (!tag) return;
-            filters.gender = tag.dataset.gender;
-            setActive(tag, genderFilter);
-            applyFilters();
-        });
-    }
-
-    if (healthFilter) {
-        healthFilter.addEventListener('click', e => {
-            const tag = e.target.closest('.tag');
-            if (!tag) return;
-            filters.health = tag.dataset.health;
-            setActive(tag, healthFilter);
-            applyFilters();
-        });
-    }
-
-    if (wildFilter) {
-        wildFilter.addEventListener('click', e => {
-            const tag = e.target.closest('.tag');
-            if (!tag) return;
-            filters.wild = tag.dataset.wild;
-            setActive(tag, wildFilter);
-            applyFilters();
-        });
-    }
+    setupSingleSelect(sterFilter, 'ster', 'ster');
+    setupSingleSelect(genderFilter, 'gender', 'gender');
+    setupSingleSelect(healthFilter, 'health', 'health');
+    setupSingleSelect(wildFilter, 'wild', 'wild');
 
     if (yearFilter) {
         yearFilter.addEventListener('click', e => {
             const tag = e.target.closest('.tag');
             if (!tag) return;
-            filters.year = tag.dataset.year;
-            setActive(tag, yearFilter);
+            const y = tag.dataset.year;
+            const idx = filters.years.indexOf(y);
+            if (idx > -1) {
+                filters.years.splice(idx, 1);
+                tag.classList.remove('is-selected');
+                if (!tag.classList.contains('is-light')) tag.classList.add('is-light');
+            } else {
+                filters.years.push(y);
+                tag.classList.add('is-selected');
+                tag.classList.remove('is-light');
+            }
+            applyFilters();
+        });
+    }
+
+    if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+            filters.ster = filters.gender = filters.health = filters.wild = null;
+            filters.years = [];
+            document.querySelectorAll('#cat-filters .tag').forEach(tag => {
+                if (tag === resetBtn) return;
+                tag.classList.remove('is-selected');
+                if (!tag.classList.contains('is-light')) tag.classList.add('is-light');
+            });
             applyFilters();
         });
     }
@@ -139,10 +141,19 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.cat-gender').forEach(icon => {
         icon.addEventListener('click', () => {
             const g = icon.dataset.gender;
-            filters.gender = filters.gender === g ? 'all' : g;
+            filters.gender = filters.gender === g ? null : g;
             if (genderFilter) {
-                const tag = genderFilter.querySelector(`[data-gender="${filters.gender}"]`) || genderFilter.querySelector('[data-gender="all"]');
-                setActive(tag, genderFilter);
+                genderFilter.querySelectorAll('.tag').forEach(t => {
+                    t.classList.remove('is-selected');
+                    if (!t.classList.contains('is-light')) t.classList.add('is-light');
+                });
+                if (filters.gender) {
+                    const tag = genderFilter.querySelector(`[data-gender="${filters.gender}"]`);
+                    if (tag) {
+                        tag.classList.add('is-selected');
+                        tag.classList.remove('is-light');
+                    }
+                }
             }
             applyFilters();
         });
@@ -166,11 +177,21 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!sterFilter) return;
             const status = tag.dataset.status === 'sterilized' ? 'yes' : 'no';
             const target = sterFilter.querySelector(`[data-ster="${status}"]`);
-            if (target) {
+            if (!target) return;
+            if (filters.ster === status) {
+                filters.ster = null;
+                target.classList.remove('is-selected');
+                if (!target.classList.contains('is-light')) target.classList.add('is-light');
+            } else {
                 filters.ster = status;
-                setActive(target, sterFilter);
-                applyFilters();
+                sterFilter.querySelectorAll('.tag').forEach(t => {
+                    t.classList.remove('is-selected');
+                    if (!t.classList.contains('is-light')) t.classList.add('is-light');
+                });
+                target.classList.add('is-selected');
+                target.classList.remove('is-light');
             }
+            applyFilters();
         });
     });
 

@@ -190,6 +190,17 @@ html, body {
   outline: none;
 }
 
+#cat-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem 1rem;
+}
+
+#cat-filters .filter-group {
+  display: flex;
+}
+
 #cat-filters .tag,
 .cat-card .tag,
 .cat-gender {
