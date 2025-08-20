@@ -202,6 +202,36 @@ html, body {
   outline: none;
 }
 
+#cat-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem 1rem;
+}
+
+#cat-filters .filter-group {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+#year-filter {
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  #cat-filters .filter-group {
+    flex-wrap: wrap;
+  }
+  #year-filter {
+    white-space: normal;
+  }
+}
+
 #cat-filters .tag,
 .cat-card .tag,
 .cat-gender {
@@ -214,8 +244,12 @@ html, body {
   cursor: pointer;
 }
 
+#cat-filters .tag {
+  transition: transform 0.15s;
+}
+
 #cat-filters .tag.is-selected {
-  box-shadow: 0 0 0 1px currentColor inset;
+  transform: scale(1.1);
 }
 
 .cat-card .cat-ster-tag {

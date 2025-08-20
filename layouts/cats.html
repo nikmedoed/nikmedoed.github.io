@@ -24,7 +24,7 @@
 </section>
 <section class="section">
   <div class="container">
-    <div class="columns is-variable is-6 mb-6">
+    <div class="columns is-variable is-6 mb-4">
       <div class="column">
         <h2 class="title has-text-link mb-4">{{ i18n "catsIntroTitle" }}</h2>
         <div class="content mb-5">{{ i18n "catsIntro" | safeHTML }}</div>
@@ -89,30 +89,26 @@
       </div>
       <button class="modal-close is-large" aria-label="close"></button>
     </div>
-      <div id="cat-filters">
-        <div class="tags are-small is-justify-content-center mb-2" id="filter-ster">
-          <span class="tag is-dark is-selected" data-ster="all">{{ i18n "filterAll" }}</span>
+      <h2 class="title has-text-link has-text-centered mb-4">{{ i18n "catsAdoptHeading" }}</h2>
+      <div id="cat-filters" class="is-flex is-flex-wrap-wrap is-justify-content-center mb-5">
+        <div class="tags are-small filter-group">
+          <span class="tag is-dark" id="filter-reset">{{ i18n "filterAll" }}</span>
+        </div>
+        <div class="tags are-small filter-group" id="filter-ster">
           <span class="tag is-success is-light" data-ster="yes">{{ i18n "filterSterilized" }}</span>
           <span class="tag is-warning is-light" data-ster="no">{{ i18n "filterNotSterilized" }}</span>
         </div>
-        <div class="tags are-small is-justify-content-center mb-2" id="filter-gender">
-          <span class="tag is-dark is-selected" data-gender="all">{{ i18n "filterAll" }}</span>
+        <div class="tags are-small filter-group" id="filter-gender">
           <span class="tag is-danger is-light" data-gender="female">{{ i18n "genderFemale" }}</span>
-          <span class="tag is-link is-light" data-gender="male">{{ i18n "genderMale" }}</span>
+          <span class="tag is-info is-light" data-gender="male">{{ i18n "genderMale" }}</span>
         </div>
-        <div class="tags are-small is-justify-content-center mb-2" id="filter-health">
-          <span class="tag is-dark is-selected" data-health="all">{{ i18n "filterAll" }}</span>
+        <div class="tags are-small filter-group" id="filter-health">
           <span class="tag is-success is-light" data-health="healthy">{{ i18n "filterHealthy" }}</span>
-          <span class="tag is-danger is-light" data-health="care">{{ i18n "filterTreatment" }}</span>
         </div>
-        <div class="tags are-small is-justify-content-center mb-2" id="filter-wild">
-          <span class="tag is-dark is-selected" data-wild="all">{{ i18n "filterAll" }}</span>
-          <span class="tag is-link is-light" data-wild="tame">{{ i18n "filterTame" }}</span>
-          <span class="tag is-danger is-light" data-wild="wild">{{ i18n "filterWild" }}</span>
+        <div class="tags are-small filter-group" id="filter-tame">
+          <span class="tag is-info is-light" data-tame="yes">{{ i18n "filterTame" }}</span>
         </div>
-        <div class="tags are-small is-justify-content-center mb-5" id="year-filter">
-          <span class="tag is-dark is-selected" data-year="all">{{ i18n "filterAllYears" }}</span>
-        </div>
+        <div class="tags are-small filter-group" id="year-filter"></div>
       </div>
     <div class="columns is-multiline" id="cats-list">
       {{ $lang := .Site.Language.Lang }}
