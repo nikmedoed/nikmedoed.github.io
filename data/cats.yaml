@@ -5,8 +5,8 @@
   gender: male
   photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
   description:
-    en: Playful striped kitten, always exploring.
-    ru: Игривый полосатый котёнок, обожает исследовать.
+    en: Playful striped kitten who explores every corner of the yard. He chases each falling leaf, climbs the nearest fence, and makes friends with anyone offering a pat. Friendly with people and other cats alike, he quickly becomes the center of attention. Despite his energy, he loves curling up for a nap on warm laps.
+    ru: Игривый полосатый котёнок, который исследует каждый угол двора. Гоняется за каждым падающим листиком, забирается на ближайший забор и дружит со всеми, кто готов его погладить. Легко ладит с людьми и другими кошками, быстро оказывается в центре внимания. Несмотря на энергию, любит свернуться клубочком на тёплых коленях.
   birth: 2025-02
   sterilized: true
   parents:
@@ -23,8 +23,8 @@
   gender: female
   photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
   description:
-    en: Calm and affectionate, loves to cuddle.
-    ru: Спокойная и ласковая, любит обниматься.
+    en: Calm and affectionate, Murka happily watches over the younger cats in the yard. She enjoys long naps by the window and greets visitors with a gentle purr. In the evenings she curls up beside her friends, keeping them warm. Beneath her soft demeanor hides a playful spirit that awakens whenever a toy rolls by.
+    ru: Спокойная и ласковая, Мурка с удовольствием присматривает за младшими котятами во дворе. Любит подолгу дремать у окна и встречает гостей тихим мурлыканьем. По вечерам устраивается рядом с друзьями, согревая их своим теплом. За мягким нравом скрывается игривый характер, который просыпается, стоит покатиться игрушке.
   birth: 2021-06
   sterilized: false
   parents: []
@@ -39,11 +39,79 @@
   gender: male
   photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
   description:
-    en: Loves to nap in the sun.
-    ru: Любит дремать на солнце.
+    en: Snezhok is a fluffy white tom who loves to nap in the sun and watch birds from the fence. He prefers peaceful mornings and stretches lazily before joining others for breakfast. When the yard quiets down, he patrols his territory with dignity. On chilly nights he seeks a cozy box and dreams of endless summer.
+    ru: Снежок — пушистый белый кот, который любит греться на солнце и наблюдать за птицами с забора. Предпочитает спокойные утра и лениво потягивается, прежде чем присоединиться к остальным на завтрак. Когда двор затихает, обходит свои владения с достоинством. В прохладные вечера ищет уютную коробку и мечтает о бесконечном лете.
   birth: 2024-09
   sterilized: true
   parents: []
   treatment:
     en: ""
     ru: ""
+
+- id: ryzhik
+  name:
+    en: Ryzhik
+    ru: Рыжик
+  gender: male
+  photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+  description:
+    en: Ginger tom who wandered into the yard last winter. He meows loudly for attention and follows anyone carrying food. Though wary at first, he now trusts the caretakers and enjoys gentle head scratches. Recently he has shown great patience while recovering from an ear infection.
+    ru: Рыжий кот, появившийся во дворе прошлой зимой. Громко мяукает, требуя внимания, и следует за каждым, кто несёт еду. Сначала был осторожен, но теперь доверяет опекунам и любит, когда его гладят по голове. Недавно проявил большое терпение, восстанавливаясь после ушной инфекции.
+  birth: 2021-11
+  sterilized: false
+  parents: []
+  treatment:
+    en: "ear infection"
+    ru: "ушная инфекция"
+
+- id: luna
+  name:
+    en: Luna
+    ru: Луна
+  gender: female
+  photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+  description:
+    en: Graceful gray queen with curious bright eyes. Luna likes to perch on the fence and observe the neighborhood like a quiet guardian. She befriends newcomers and often brings them to the feeding spot. After her evening patrol she settles down, purring softly as the street grows quiet.
+    ru: Стройная серая кошка с любопытными яркими глазами. Луна любит сидеть на заборе и наблюдать за окрестностями, словно тихий хранитель. Дружелюбна к новым гостям и часто приводит их к миске с едой. После вечернего обхода устраивается поудобнее и тихо мурлычет, когда улица затихает.
+  birth: 2020-03
+  sterilized: true
+  parents: []
+  treatment:
+    en: ""
+    ru: ""
+
+- id: timka
+  name:
+    en: Timka
+    ru: Тимка
+  gender: male
+  photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+  description:
+    en: Tiny ball of energy who can't stay still for a second. Timka wrestles with any piece of string and tumbles over his own paws. He shadows his mother on adventures and learns to climb after his father. When exhausted he collapses into deep sleep, dreaming of new games.
+    ru: Маленький комочек энергии, который не может усидеть на месте ни секунды. Тимка борется с любой верёвочкой и спотыкается о собственные лапы. Следует за мамой в приключениях и учится лазать, глядя на отца. Устав, падает в глубокий сон и видит сны о новых играх.
+  birth: 2025-03
+  sterilized: false
+  parents:
+    - luna
+    - ryzhik
+  treatment:
+    en: ""
+    ru: ""
+
+- id: mila
+  name:
+    en: Mila
+    ru: Мила
+  gender: female
+  photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+  description:
+    en: Shy tortoiseshell girl with a gentle gaze. Mila prefers hiding behind boxes until she feels safe to approach. She watches over her brother Timka and carefully shares treats with him. After a recent eye infection, she enjoys the extra care and warm compresses.
+    ru: Скромная черепаховая кошечка с мягким взглядом. Мила предпочитает прятаться за коробками, пока не почувствует себя в безопасности. Присматривает за братом Тимкой и аккуратно делится с ним лакомствами. После недавнего воспаления глаза особенно ценит заботу и тёплые компрессы.
+  birth: 2024-07
+  sterilized: false
+  parents:
+    - luna
+    - ryzhik
+  treatment:
+    en: "eye infection"
+    ru: "воспаление глаза"

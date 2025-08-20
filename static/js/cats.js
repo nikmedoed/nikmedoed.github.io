@@ -95,4 +95,13 @@ document.addEventListener('DOMContentLoaded', () => {
             applyFilters();
         });
     });
+
+    document.querySelectorAll('.cat-ster-tag').forEach(tag => {
+        tag.addEventListener('click', () => {
+            if (!statusFilter) return;
+            const status = tag.dataset.status;
+            const target = statusFilter.querySelector(`[data-status="${status}"]`);
+            if (target) setActive(target, statusFilter);
+        });
+    });
 });

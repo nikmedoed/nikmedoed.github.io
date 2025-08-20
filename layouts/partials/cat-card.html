@@ -15,7 +15,7 @@
           <span class="icon cat-gender ml-2" data-gender="{{ $cat.gender }}">
             <i class="fas {{ if eq $cat.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i>
           </span>
-          <span class="tag is-rounded ml-2 {{ if $cat.sterilized }}is-success{{ else }}is-warning{{ end }}">
+          <span class="tag is-rounded is-hoverable cat-ster-tag ml-2 {{ if $cat.sterilized }}is-success{{ else }}is-warning{{ end }}" data-status="{{ if $cat.sterilized }}sterilized{{ else }}intact{{ end }}">
             {{ if $cat.sterilized }}{{ i18n "filterSterilized" }}{{ else }}{{ i18n "filterNotSterilized" }}{{ end }}
           </span>
         </div>
@@ -30,7 +30,7 @@
         {{ range $id := $cat.parents }}
           {{ $p := index (where $cats "id" $id) 0 }}
           {{ if $p }}
-            <span class="tag is-info cat-relative ml-1" data-target="cat-{{ $p.id }}">
+            <span class="tag is-light {{ if eq $p.gender "male" }}is-link{{ else }}is-danger{{ end }} cat-relative ml-1" data-target="cat-{{ $p.id }}">
               <span class="icon is-small mr-1"><i class="fas {{ if eq $p.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i></span>
               <span>{{ index $p.name $lang }}</span>
             </span>
@@ -44,7 +44,7 @@
       <div class="mt-1">
         <span class="has-text-weight-semibold">{{ i18n "childrenLabel" }}:</span>
         {{ range $child := $children }}
-          <span class="tag is-info cat-relative ml-1" data-target="cat-{{ $child.id }}">
+          <span class="tag is-light {{ if eq $child.gender "male" }}is-link{{ else }}is-danger{{ end }} cat-relative ml-1" data-target="cat-{{ $child.id }}">
             <span class="icon is-small mr-1"><i class="fas {{ if eq $child.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i></span>
             <span>{{ index $child.name $lang }}</span>
           </span>
@@ -54,7 +54,7 @@
 
       {{ $t := index $cat.treatment $lang }}
       {{ if $t }}
-      <div class="tags bottom-tags">
+      <div class="tags bottom-tags mt-2">
         <span class="tag is-danger">{{ $t }}</span>
       </div>
       {{ end }}

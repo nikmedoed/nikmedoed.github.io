@@ -172,8 +172,14 @@ html, body {
 
 #status-filter .tag,
 #year-filter .tag,
-.cat-card .cat-relative {
+.cat-card .cat-relative,
+.cat-card .cat-ster-tag {
   cursor: pointer;
+}
+
+.cat-card .cat-ster-tag {
+  font-size: 0.75rem;
+  padding: 0 0.5em;
 }
 
 .project-media {
