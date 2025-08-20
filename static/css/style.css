@@ -113,6 +113,9 @@ html, body {
   padding: 1.5rem;
   border-radius: 8px;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .cat-card:hover {
   transform: translateY(-4px);
@@ -122,8 +125,8 @@ html, body {
   margin-top: 0.5rem;
 }
 .cat-card img.cat-photo {
-  width: 128px;
-  height: 128px;
+  width: 256px;
+  height: 256px;
   border-radius: 50%;
   object-fit: cover;
 }
