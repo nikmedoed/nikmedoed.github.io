@@ -38,6 +38,21 @@ html, body {
   inherits: false;
 }
 
+/* Cat gallery */
+.grid {
+  margin: 0 auto;
+}
+
+.grid-item {
+  width: 300px;
+  margin-bottom: 16px;
+}
+
+.grid-item img {
+  width: 100%;
+  display: block;
+}
+
 @property --wave {
   syntax: "<length>";
   initial-value: 0px;

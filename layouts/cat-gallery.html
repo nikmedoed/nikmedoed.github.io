@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="section">
+  <div class="container">
+    <div id="cat-gallery" class="grid" data-masonry='{"itemSelector": ".grid-item", "columnWidth": 300, "gutter": 16, "fitWidth": true}'>
+      {{ range $cat := .Site.Data.cats }}
+      <div class="grid-item cat-info" data-cat="{{ $cat.id }}" style="display:none">
+        {{ partial "cat-card.html" (dict "cat" $cat "lang" $.Site.Language.Lang "cats" $.Site.Data.cats "showPhoto" false "wrapper" false) }}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+<script>
+window.catsData = {{ .Site.Data.cats | jsonify }};
+</script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="{{ "/js/cat-gallery.js" | relURL }}"></script>
+{{ end }}
