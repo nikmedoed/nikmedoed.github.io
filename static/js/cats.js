@@ -93,4 +93,41 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    const modal = document.getElementById('cat-modal');
+    if (modal) {
+        const modalName = document.getElementById('cat-modal-name');
+        const modalDesc = document.getElementById('cat-modal-desc');
+        const modalPhotos = document.getElementById('cat-modal-photos');
+
+        function closeModal() {
+            modal.classList.remove('is-active');
+            modalPhotos.innerHTML = '';
+        }
+
+        modal.querySelector('.modal-background').addEventListener('click', closeModal);
+        modal.querySelector('.modal-close').addEventListener('click', closeModal);
+
+        cards.forEach(card => {
+            card.addEventListener('click', e => {
+                if (e.target.closest('.cat-relative')) return;
+                modalName.textContent = card.dataset.name;
+                modalDesc.textContent = card.dataset.description;
+                modalPhotos.innerHTML = '';
+                const photos = card.dataset.photos ? card.dataset.photos.split('|') : [];
+                photos.forEach(url => {
+                    const col = document.createElement('div');
+                    col.className = 'column is-6';
+                    const fig = document.createElement('figure');
+                    fig.className = 'image';
+                    const img = document.createElement('img');
+                    img.src = url.trim();
+                    fig.appendChild(img);
+                    col.appendChild(fig);
+                    modalPhotos.appendChild(col);
+                });
+                modal.classList.add('is-active');
+            });
+        });
+    }
 });

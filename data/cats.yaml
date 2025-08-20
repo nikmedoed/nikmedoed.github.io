@@ -3,7 +3,10 @@
     en: Barsik
     ru: Барсик
   gender: male
-  photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+  photos:
+    - https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+    - https://placekitten.com/300/300
+    - https://placekitten.com/400/300
   description:
     en: Playful striped kitten, always exploring.
     ru: Игривый полосатый котёнок, обожает исследовать.
@@ -21,7 +24,10 @@
     en: Murka
     ru: Мурка
   gender: female
-  photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+  photos:
+    - https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+    - https://placekitten.com/301/300
+    - https://placekitten.com/401/300
   description:
     en: Calm and affectionate, loves to cuddle.
     ru: Спокойная и ласковая, любит обниматься.
@@ -37,7 +43,10 @@
     en: Snezhok
     ru: Снежок
   gender: male
-  photo: https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+  photos:
+    - https://animals-travel.ru/upload/medialibrary/693/693042430520412f7d94b7a6886799c3.jpg
+    - https://placekitten.com/302/300
+    - https://placekitten.com/402/300
   description:
     en: Loves to nap in the sun.
     ru: Любит дремать на солнце.

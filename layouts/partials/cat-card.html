@@ -1,12 +1,13 @@
 {{ $cat := .cat }}
 {{ $lang := .lang }}
 {{ $cats := .cats }}
+{{ $avatar := index $cat.photos 0 }}
 <div class="column is-12-mobile is-6-tablet is-4-desktop">
-  <div class="box cat-card" id="cat-{{ $cat.id }}" data-year="{{ substr $cat.birth 0 4 }}" data-birth="{{ $cat.birth }}" data-sterilized="{{ if $cat.sterilized }}yes{{ else }}no{{ end }}" data-treatment="{{ if (index $cat.treatment $lang) }}yes{{ else }}no{{ end }}">
+  <div class="box cat-card" id="cat-{{ $cat.id }}" data-year="{{ substr $cat.birth 0 4 }}" data-birth="{{ $cat.birth }}" data-sterilized="{{ if $cat.sterilized }}yes{{ else }}no{{ end }}" data-treatment="{{ if (index $cat.treatment $lang) }}yes{{ else }}no{{ end }}" data-name="{{ htmlEscape (index $cat.name $lang) }}" data-description="{{ htmlEscape (index $cat.description $lang) }}" data-photos="{{ htmlEscape (delimit $cat.photos "|") }}">
     <article class="media">
       <figure class="media-left">
         <p class="image is-128x128">
-          <img class="cat-photo" src="{{ $cat.photo }}" alt="{{ index $cat.name $lang }}">
+          <img class="cat-photo" src="{{ $avatar }}" alt="{{ index $cat.name $lang }}">
         </p>
       </figure>
       <div class="media-content">
