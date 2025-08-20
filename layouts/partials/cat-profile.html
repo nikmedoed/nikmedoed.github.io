@@ -1,33 +1,35 @@
 {{ $cat := .cat }}
 {{ $lang := .lang }}
 {{ $cats := .cats }}
-<div class="box cat-card cat-profile" data-birth="{{ $cat.birth }}">
-  <article class="media">
-    <div class="media-content">
-      <p class="title is-4">{{ index $cat.name $lang }}</p>
-      <p class="subtitle is-5">{{ index $cat.description $lang }}</p>
-      <p class="is-size-7">{{ i18n "age" }}: <span class="cat-age"></span></p>
-      <div class="tags mt-2">
-        <span class="tag {{ if $cat.sterilized }}is-success{{ else }}is-warning{{ end }}">
-          {{ if $cat.sterilized }}{{ i18n "filterSterilized" }}{{ else }}{{ i18n "filterNotSterilized" }}{{ end }}
-        </span>
-        {{ $t := index $cat.treatment $lang }}
-        {{ if $t }}<span class="tag is-danger">{{ $t }}</span>{{ end }}
-        <span class="tag is-light">{{ i18n (printf "gender%s" (title $cat.gender)) }}</span>
-        <span class="tag is-link cat-category"></span>
-        {{ range $id := $cat.parents }}
-          {{ $p := index (where $cats "id" $id) 0 }}
-          {{ if $p }}
-            {{ $key := cond (eq $p.gender "female") "mother" "father" }}
-            <a class="tag is-info" href="{{ (printf "/cats/%s" $p.id) | relLangURL }}">{{ i18n $key }}: {{ index $p.name $lang }}</a>
+<div class="grid-item">
+  <div class="box cat-card cat-profile" data-birth="{{ $cat.birth }}">
+    <article class="media">
+      <div class="media-content">
+        <p class="title is-4">{{ index $cat.name $lang }}</p>
+        <p class="subtitle is-5">{{ index $cat.description $lang }}</p>
+        <p class="is-size-7">{{ i18n "age" }}: <span class="cat-age"></span></p>
+        <div class="tags mt-2">
+          <span class="tag {{ if $cat.sterilized }}is-success{{ else }}is-warning{{ end }}">
+            {{ if $cat.sterilized }}{{ i18n "filterSterilized" }}{{ else }}{{ i18n "filterNotSterilized" }}{{ end }}
+          </span>
+          {{ $t := index $cat.treatment $lang }}
+          {{ if $t }}<span class="tag is-danger">{{ $t }}</span>{{ end }}
+          <span class="tag is-light">{{ i18n (printf "gender%s" (title $cat.gender)) }}</span>
+          <span class="tag is-link cat-category"></span>
+          {{ range $id := $cat.parents }}
+            {{ $p := index (where $cats "id" $id) 0 }}
+            {{ if $p }}
+              {{ $key := cond (eq $p.gender "female") "mother" "father" }}
+              <a class="tag is-info" href="{{ (printf "/cats/%s" $p.id) | relLangURL }}">{{ i18n $key }}: {{ index $p.name $lang }}</a>
+            {{ end }}
           {{ end }}
-        {{ end }}
-        {{ $children := where $cats "parents" "intersect" (slice $cat.id) }}
-        {{ range $child := $children }}
-          {{ $key := cond (eq $child.gender "female") "daughter" "son" }}
-          <a class="tag is-info" href="{{ (printf "/cats/%s" $child.id) | relLangURL }}">{{ i18n $key }}: {{ index $child.name $lang }}</a>
-        {{ end }}
+          {{ $children := where $cats "parents" "intersect" (slice $cat.id) }}
+          {{ range $child := $children }}
+            {{ $key := cond (eq $child.gender "female") "daughter" "son" }}
+            <a class="tag is-info" href="{{ (printf "/cats/%s" $child.id) | relLangURL }}">{{ i18n $key }}: {{ index $child.name $lang }}</a>
+          {{ end }}
+        </div>
       </div>
-    </div>
-  </article>
+    </article>
+  </div>
 </div>
