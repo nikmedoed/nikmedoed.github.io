@@ -9,7 +9,7 @@
 {{ range .Site.Data.cats }}
   {{ $cats = merge $cats (dict .id .) }}
 {{ end }}
-window.cats = {{ $cats | jsonify }};
+window.cats = {{ $cats | jsonify | safeJS }};
 </script>
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="/js/cat-gallery.js"></script>

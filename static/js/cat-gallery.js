@@ -1,10 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   const params = new URLSearchParams(location.search);
   const id = params.get('id');
-  if (!id || !window.cats || !window.cats[id]) return;
+  const catsData = typeof window.cats === 'string' ? JSON.parse(window.cats) : window.cats;
+  if (!id || !catsData || !catsData[id]) return;
 
   const lang = document.documentElement.lang;
-  const cat = window.cats[id];
+  const cat = catsData[id];
 
   document.title = cat.name[lang];
 
@@ -37,17 +38,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const sterClass = cat.sterilized ? 'is-success' : 'is-warning';
     const wildIcon = cat.wild ? '<span class="icon is-medium cat-flag mr-2" tabindex="0"><i class="fa-solid fa-explosion fa-lg"></i></span>' : '';
     const wandererIcon = cat.wanderer ? '<span class="icon is-medium cat-flag mr-2" tabindex="0"><i class="fas fa-route fa-lg"></i></span>' : '';
-    const parents = (cat.parents || []).map(pid => {
-      const p = window.cats[pid];
+      const parents = (cat.parents || []).map(pid => {
+      const p = catsData[pid];
       if (!p) return '';
       const icon = p.gender === 'male' ? 'fa-mars has-text-link' : 'fa-venus has-text-danger';
       return `<a class="tag is-light ${p.gender === 'male' ? 'is-link' : 'is-danger'} cat-relative ml-1" href="?id=${p.id}"><span class="icon is-small mr-1"><i class="fas ${icon}"></i></span><span>${p.name[lang]}</span></a>`;
     }).join('');
     const parentsBlock = parents ? `<div class="mt-1"><span class="has-text-weight-semibold">${lang==='ru' ? 'Родители:' : 'Parents:'}</span>${parents}</div>` : '';
-    const children = Object.values(window.cats).filter(c => (c.parents || []).includes(cat.id)).map(ch => {
-      const icon = ch.gender === 'male' ? 'fa-mars has-text-link' : 'fa-venus has-text-danger';
-      return `<a class="tag is-light ${ch.gender === 'male' ? 'is-link' : 'is-danger'} cat-relative ml-1" href="?id=${ch.id}"><span class="icon is-small mr-1"><i class="fas ${icon}"></i></span><span>${ch.name[lang]}</span></a>`;
-    }).join('');
+      const children = Object.values(catsData).filter(c => (c.parents || []).includes(cat.id)).map(ch => {
+        const icon = ch.gender === 'male' ? 'fa-mars has-text-link' : 'fa-venus has-text-danger';
+        return `<a class="tag is-light ${ch.gender === 'male' ? 'is-link' : 'is-danger'} cat-relative ml-1" href="?id=${ch.id}"><span class="icon is-small mr-1"><i class="fas ${icon}"></i></span><span>${ch.name[lang]}</span></a>`;
+      }).join('');
     const childrenBlock = children ? `<div class="mt-1"><span class="has-text-weight-semibold">${lang==='ru' ? 'Дети:' : 'Children:'}</span>${children}</div>` : '';
     const treatment = cat.treatment && cat.treatment[lang] ? `<div class="tags bottom-tags mt-2"><span class="tag is-danger">${cat.treatment[lang]}</span></div>` : '';
     const adoptText = lang === 'ru' ? 'Забрать' : 'Adopt';
