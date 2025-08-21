@@ -169,6 +169,23 @@ html, body {
 .cat-card.highlight {
   box-shadow: 0 0 0 3px #ffdd57;
 }
+.cat-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem;
+}
+.cat-card-header .cat-card-zone-a {
+  display: flex;
+  align-items: center;
+}
+.cat-card-header .cat-card-zone-b {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex: 1 0 0;
+}
 .cat-gender {
   cursor: pointer;
 }
