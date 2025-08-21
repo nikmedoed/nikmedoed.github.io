@@ -211,14 +211,34 @@ html, body {
   font-size: 0.75rem;
   color: #fff;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .goal-progress .progress {
   margin-bottom: 0;
 }
 
+
+.goal-item {
+  width: 100%;
+  align-items: center;
+}
 .goal-item:not(:last-child) {
   margin-bottom: 0.5rem;
+}
+
+@media (max-width: 589px), (min-width: 768px) and (max-width: 1400px) {
+  .goal-item {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+  .goal-item > span {
+    margin-right: 0 !important;
+    margin-bottom: 0.25rem;
+  }
+  .goal-item .goal-progress {
+    width: 100%;
+  }
 }
 
 .cat-flag:focus {
