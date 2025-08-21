@@ -198,6 +198,9 @@ html, body {
   display: flex;
   align-items: center;
 }
+.cat-card .cat-age {
+  white-space: nowrap;
+}
 
 .cat-flag[data-tooltip]:hover::after,
 .cat-flag.tooltip-active::after {
