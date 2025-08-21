@@ -311,19 +311,20 @@ html, body {
 }
 
 /* Cat card header with smart wrapping */
+/* Cat card header with grouped metadata */
 .cat-card .cat-header{
   display:flex;
   flex-wrap:wrap;
   align-items:center;
-  row-gap:.4rem;
   column-gap:.5rem;
+  row-gap:.45rem;
 }
 
 .cat-card .cat-name{
   display:flex;
   align-items:center;
   min-width:0;
-  flex:0 1 auto;
+  flex:1 1 auto;
 }
 
 .cat-card .cat-name .title{
@@ -331,25 +332,32 @@ html, body {
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
-  max-width:100%;
+}
+
+.cat-card .cat-meta{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  flex:0 1 auto;
+  white-space:nowrap;
+  margin-left:auto;
 }
 
 .cat-card .cat-ster-tag{
-  flex:0 0 auto;
   margin-left:0!important;
 }
 
-.cat-card .cat-flex-spacer{
-  flex:1 1 0;
-  min-width:0;
+.cat-card .cat-right{
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+  white-space:nowrap;
 }
 
 .cat-card .cat-flags{
   display:flex;
   align-items:center;
   gap:.35rem;
-  flex:0 0 auto;
-  margin-left:auto;
 }
 
 .cat-card .cat-flag{
@@ -358,7 +366,6 @@ html, body {
 
 .cat-card .cat-age{
   white-space:nowrap;
-  flex:0 0 auto;
 }
 
 .project-media {
