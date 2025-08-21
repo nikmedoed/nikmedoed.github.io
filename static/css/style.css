@@ -211,6 +211,7 @@ html, body {
   font-size: 0.75rem;
   color: #fff;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .goal-progress .progress {
@@ -230,9 +231,12 @@ html, body {
     flex-direction: column;
     align-items: stretch !important;
   }
+  .goal-item > span {
+    margin-right: 0 !important;
+    margin-bottom: 0.25rem;
+  }
   .goal-item .goal-progress {
     width: 100%;
-    margin-top: 0.25rem;
   }
 }
 
