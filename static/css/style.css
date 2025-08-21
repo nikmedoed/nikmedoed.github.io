@@ -310,6 +310,57 @@ html, body {
   padding: 0 0.5em;
 }
 
+/* Cat card header with smart wrapping */
+.cat-card .cat-header{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  row-gap:.4rem;
+  column-gap:.5rem;
+}
+
+.cat-card .cat-name{
+  display:flex;
+  align-items:center;
+  min-width:0;
+  flex:0 1 auto;
+}
+
+.cat-card .cat-name .title{
+  margin-bottom:0;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  max-width:100%;
+}
+
+.cat-card .cat-ster-tag{
+  flex:0 0 auto;
+  margin-left:0!important;
+}
+
+.cat-card .cat-flex-spacer{
+  flex:1 1 0;
+  min-width:0;
+}
+
+.cat-card .cat-flags{
+  display:flex;
+  align-items:center;
+  gap:.35rem;
+  flex:0 0 auto;
+  margin-left:auto;
+}
+
+.cat-card .cat-flag{
+  line-height:1;
+}
+
+.cat-card .cat-age{
+  white-space:nowrap;
+  flex:0 0 auto;
+}
+
 .project-media {
   position: relative;
   overflow: hidden;
