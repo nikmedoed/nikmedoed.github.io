@@ -173,23 +173,34 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  column-gap: 0.5rem;
   row-gap: 0.25rem;
-  justify-content: flex-start;
 }
 
 .cat-card-header .cat-name-block {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
   min-width: 0;
 }
 
-.cat-card-header .cat-flags {
+.cat-meta-right {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.cat-meta-right .cat-flags {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.cat-card-header .cat-age {
+.cat-meta-right .cat-age {
   white-space: nowrap;
 }
 .cat-gender {
