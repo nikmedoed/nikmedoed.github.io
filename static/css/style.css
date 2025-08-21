@@ -173,6 +173,7 @@ html, body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  column-gap: 0.5rem;
   row-gap: 0.25rem;
 }
 
@@ -181,21 +182,13 @@ html, body {
   min-width: 0;
 }
 
-.cat-card-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-}
-
-.cat-card-meta .cat-flags {
+.cat-card-header .cat-flags {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.cat-card-meta .cat-age {
+.cat-card-header .cat-age {
   white-space: nowrap;
 }
 .cat-gender {
