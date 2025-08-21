@@ -9,9 +9,18 @@
         <div class="card-image">
             <figure class="project-media{{ if not (strings.HasSuffix $p.media ".mp4") }} contain{{ end }}">
                 {{ if (strings.HasSuffix $p.media ".mp4") }}
-                <video autoplay loop muted playsinline src="/media/{{ $p.media }}"></video>
+                {{ $video := resources.Get (printf "media/%s" $p.media) | resources.Fingerprint }}
+                <video controls muted playsinline preload="none" loading="lazy" src="{{ $video.RelPermalink }}"></video>
                 {{ else }}
-                <img alt="{{ $title }} screenshot" src="/media/{{ $p.media }}">
+                {{ $img := resources.Get (printf "media/%s" $p.media) }}
+                {{ $small := $img.Resize "205x" }}
+                {{ $large := $img.Resize "410x" }}
+                {{ $smallWebp := $img.Resize "205x webp" }}
+                {{ $largeWebp := $img.Resize "410x webp" }}
+                <picture>
+                    <source type="image/webp" srcset="{{ $smallWebp.RelPermalink }} 1x, {{ $largeWebp.RelPermalink }} 2x">
+                    <img alt="{{ $title }} screenshot" src="{{ $small.RelPermalink }}" srcset="{{ $small.RelPermalink }} 1x, {{ $large.RelPermalink }} 2x" width="{{ $small.Width }}" height="{{ $small.Height }}" loading="lazy" decoding="async">
+                </picture>
                 {{ end }}
             </figure>
         </div>
