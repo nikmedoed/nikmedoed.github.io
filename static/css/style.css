@@ -169,6 +169,26 @@ html, body {
 .cat-card.highlight {
   box-shadow: 0 0 0 3px #ffdd57;
 }
+.cat-card-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.cat-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-left: auto;
+  gap: 0.5rem;
+}
+
+.cat-card-meta .cat-flags {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 .cat-gender {
   cursor: pointer;
 }
