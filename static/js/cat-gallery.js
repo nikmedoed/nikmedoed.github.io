@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const genderIcon = cat.gender === 'male' ? 'fa-mars has-text-link' : 'fa-venus has-text-danger';
     const sterText = cat.sterilized ? (lang === 'ru' ? 'Стерилизован' : 'Sterilized') : (lang === 'ru' ? 'Не стерилизован' : 'Not sterilized');
     const sterClass = cat.sterilized ? 'is-success' : 'is-warning';
-    const wildIcon = cat.wild ? '<span class="icon is-medium cat-flag mr-2" tabindex="0"><i class="fa-solid fa-explosion fa-lg"></i></span>' : '';
-    const wandererIcon = cat.wanderer ? '<span class="icon is-medium cat-flag mr-2" tabindex="0"><i class="fas fa-route fa-lg"></i></span>' : '';
+    const wildIcon = cat.wild ? '<span class="icon is-medium cat-flag" tabindex="0"><i class="fa-solid fa-explosion fa-lg"></i></span>' : '';
+    const wandererIcon = cat.wanderer ? '<span class="icon is-medium cat-flag" tabindex="0"><i class="fas fa-route fa-lg"></i></span>' : '';
       const parents = (cat.parents || []).map(pid => {
       const p = catsData[pid];
       if (!p) return '';
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const childrenBlock = children ? `<div class="mt-1"><span class="has-text-weight-semibold">${lang==='ru' ? 'Дети:' : 'Children:'}</span>${children}</div>` : '';
     const treatment = cat.treatment && cat.treatment[lang] ? `<div class="tags bottom-tags mt-2"><span class="tag is-danger">${cat.treatment[lang]}</span></div>` : '';
     const adoptText = lang === 'ru' ? 'Забрать' : 'Adopt';
-    return `<div class="card cat-card"><div class="card-content"><div class="is-flex is-align-items-center is-justify-content-space-between mb-2"><div class="is-flex is-align-items-center"><p class="title is-5 mb-0">${name}</p><span class="icon cat-gender ml-2"><i class="fas ${genderIcon}"></i></span><span class="tag is-rounded is-hoverable cat-ster-tag ml-2 ${sterClass}">${sterText}</span></div><div class="is-flex is-align-items-center">${wildIcon}${wandererIcon}<p class="is-size-7 mb-0 cat-age">${ageString(cat.birth)}</p></div></div><p class="content mb-0">${cat.description[lang]}</p>${parentsBlock}${childrenBlock}${treatment}</div><footer class="card-footer"><a class="card-footer-item adopt-btn" data-name="${name}">${adoptText}</a></footer></div>`;
+    return `<div class="card cat-card"><div class="card-content"><div class="cat-header mb-2"><div class="cat-left"><p class="title is-5 mb-0">${name}</p><span class="icon cat-gender ml-2"><i class="fas ${genderIcon}"></i></span></div><div class="cat-meta"><span class="tag is-rounded is-hoverable cat-ster-tag ${sterClass}">${sterText}</span><div class="cat-meta-right">${wildIcon}${wandererIcon}<p class="is-size-7 mb-0 cat-age">${ageString(cat.birth)}</p></div></div></div><p class="content mb-0">${cat.description[lang]}</p>${parentsBlock}${childrenBlock}${treatment}</div><footer class="card-footer"><a class="card-footer-item adopt-btn" data-name="${name}">${adoptText}</a></footer></div>`;
   }
 
   const infoItem = document.createElement('div');

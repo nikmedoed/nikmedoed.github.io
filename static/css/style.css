@@ -199,6 +199,52 @@ html, body {
   margin-bottom: 4px;
 }
 
+/* Cat card header layout */
+.cat-card .cat-header{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  column-gap:.6rem;
+  row-gap:.45rem;
+}
+
+.cat-card .cat-left{
+  display:flex;
+  align-items:center;
+  min-width:0;
+  flex:1 1 auto;
+}
+.cat-card .cat-left .title{
+  margin-bottom:0;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.cat-card .cat-meta{
+  display:flex;
+  align-items:center;
+  gap:.5rem;
+  min-width:14rem;
+  flex:1 1 18rem;
+}
+
+.cat-card .cat-ster-tag{
+  margin-left:0 !important;
+  white-space:nowrap;
+}
+
+.cat-card .cat-meta-right{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+  white-space:nowrap;
+}
+
+.cat-card .cat-flag{ line-height:1; }
+.cat-card .cat-age{ white-space:nowrap; }
+
 /* Goals progress numbers */
 .goal-progress {
   position: relative;
