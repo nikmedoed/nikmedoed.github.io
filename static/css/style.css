@@ -221,25 +221,15 @@ html, body {
   text-overflow:ellipsis;
 }
 
-.cat-card .cat-meta{
-  display:flex;
-  align-items:center;
-  gap:.5rem;
-  min-width:14rem;
-  flex:1 1 18rem;
-}
-
 .cat-card .cat-ster-tag{
-  margin-left:0 !important;
   white-space:nowrap;
 }
 
-.cat-card .cat-meta-right{
+.cat-card .cat-flags{
   margin-left:auto;
   display:flex;
   align-items:center;
   gap:.4rem;
-  white-space:nowrap;
 }
 
 .cat-card .cat-flag{ line-height:1; }

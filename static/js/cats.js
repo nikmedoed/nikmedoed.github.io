@@ -179,6 +179,51 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    function arrangeHeader(header) {
+        const left = header.querySelector('.cat-left');
+        const tag = header.querySelector('.cat-ster-tag');
+        const icons = header.querySelector('.cat-flags');
+        const age = header.querySelector('.cat-age');
+        if (!left || !tag || !icons || !age) return;
+
+        left.style.flexBasis = '';
+        tag.style.order = 2;
+        icons.style.order = 3;
+        age.style.order = 4;
+        icons.style.marginLeft = 'auto';
+        age.style.marginLeft = '';
+
+        if (header.scrollWidth > header.clientWidth) {
+            tag.style.order = 4;
+            icons.style.order = 2;
+            age.style.order = 3;
+            icons.style.marginLeft = 'auto';
+            age.style.marginLeft = '';
+            if (header.scrollWidth > header.clientWidth) {
+                age.style.order = 2;
+                tag.style.order = 3;
+                icons.style.order = 4;
+                icons.style.marginLeft = '';
+                age.style.marginLeft = 'auto';
+                if (header.scrollWidth > header.clientWidth) {
+                    left.style.flexBasis = '100%';
+                    tag.style.order = 2;
+                    icons.style.order = 3;
+                    age.style.order = 4;
+                    icons.style.marginLeft = 'auto';
+                    age.style.marginLeft = '';
+                }
+            }
+        }
+    }
+
+    function updateHeaders() {
+        document.querySelectorAll('.cat-header').forEach(arrangeHeader);
+    }
+
+    updateHeaders();
+    window.addEventListener('resize', updateHeaders);
+
     cards.forEach(card => {
         const img = card.querySelector('img.cat-photo');
         if (!img) return;
