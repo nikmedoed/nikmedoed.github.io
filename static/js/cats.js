@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     progress.value = g.raised;
                     progress.style.width = '100%';
                     const numbers = document.createElement('span');
-                    numbers.textContent = `${g.raised.toLocaleString()} / ${g.amount.toLocaleString()}`;
+                    numbers.textContent = `${g.raised.toLocaleString()} / ${g.amount.toLocaleString()} AMD`;
                     progressWrap.appendChild(progress);
                     progressWrap.appendChild(numbers);
                     wrapper.appendChild(title);

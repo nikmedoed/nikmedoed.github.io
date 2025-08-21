@@ -39,16 +39,16 @@ footerQuote: "Have a vision, aspire to be a leader, make some humor, Resist, Inv
 backToMain: "Back to main page"
 metaDescription: "Nikita Muromtsev is a developer and technical manager about projects and open-source tools for automating routine and increasing awareness using Python and JavaScript."
 catsTitle: "Cats of Nansen street"
-catsHeroTitle: "Nansen street cats seek homes and support"
+catsHeroTitle: "Nansen's street cats seek homes and support"
 catsHeroSubtitle: "<a href=\"#cat-filters\" class=\"cats-count-link\">{{ .Count }} tails seek a home</a>. Adopt or support financially. We treat, sterilize and care for street cats."
 catsIntro: |
   <p>Street cats have always stirred in Toma an irresistible urge to feed them. For many years she has carried pouches of cat food in her bag. Then we arrived in Yerevan, a city with so many strays.</p>
   
-  <p>At first, Toma fed the fluffballs only now and then. But one cat learned to call at our window every evening, loudly inviting us to serve dinner… The trap was set. Before we knew it, we were feeding her kittens—the ones she pointedly left in our care before walking off to enjoy her freedom.</p>
+  <p>At first, Toma fed the fluffballs only now and then. But one cat learned to call at our window every evening, loudly inviting us to serve dinner… The trap was set. Before we knew it, we were feeding her kittens — the ones she pointedly left in our care before walking off to enjoy her freedom.</p>
   
   <p>In return, we had her spayed. While arranging that, we met our neighbors and the cats they’d been looking after. That’s how a small crew of friendly yard‑buddies gathered around us.</p>
   
-  <p>Everything was fine—until 2025, when new pregnant cats appeared, and suddenly we had a crowd of kittens. Wild roamers may drop by and move on, but we can’t in good conscience abandon our tame, resident friends.</p>
+  <p>Everything was fine — until 2025, when new pregnant cats appeared, and suddenly we had a crowd of kittens. Wild roamers may drop by and move on, but we can’t in good conscience abandon our tame, resident friends.</p>
   
   <p>Once, Fridtjof Nansen helped refugees find a new home and a future. Now we want to give a similar chance to the street cats from his street.</p>
   
@@ -57,7 +57,7 @@ catsMediaTelegram: "Telegram"
 catsMediaInstagram: "Instagram"
 catsMediaTikTok: "TikTok"
 catsMediaSpreadsheet: "Expense sheet"
-catsSupportTitle: "Help Nansen street cats"
+catsSupportTitle: "Help Nansen's street cats"
 catsSupportText: "We need funds for food, surgeries, medicine and finding homes for our buddies"
 catsContactIntro: "Other ways to help:<br>reach us via <a class=\"has-text-weight-bold\" href=\"#cats-hero\">the networks above</a> or →"
 catsIntroTitle: "Who, What & Why"
