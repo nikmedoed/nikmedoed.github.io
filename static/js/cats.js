@@ -276,7 +276,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (emailModal) {
         const bg = emailModal.querySelector('.modal-background');
         const closeBtn = emailModal.querySelector('.modal-close');
-        [bg, closeBtn].forEach(el => el && el.addEventListener('click', resetForm));
+        [bg, closeBtn].forEach(el => el && el.addEventListener('click', () => {
+            resetForm();
+            emailModal.classList.remove('is-active');
+            document.documentElement.classList.remove('is-clipped');
+        }));
     }
     const emailBtn = document.getElementById('email-btn');
     if (emailBtn) emailBtn.addEventListener('click', resetForm);
