@@ -245,6 +245,16 @@ html, body {
   cursor: pointer;
 }
 
+.cat-card .cat-relative {
+  display: inline-flex;
+  align-items: center;
+}
+
+.cat-card .card-content > .mt-1 {
+  display: flex;
+  align-items: center;
+}
+
 #cat-filters .tag {
   transition: transform 0.15s;
 }
@@ -668,4 +678,52 @@ html[data-theme='light'] footer.footer .has-text-white {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox.hidden {
+  display: none;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lightbox-close {
+  top: 1rem;
+  right: 1rem;
+}
+
+.lightbox-prev {
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
 }

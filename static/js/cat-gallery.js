@@ -60,10 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
   infoItem.innerHTML = infoCardHTML();
   grid.appendChild(infoItem);
 
-  cat.photos.forEach(url => {
+  const photos = [];
+  cat.photos.forEach((url, idx) => {
+    photos.push(url);
     const item = document.createElement('div');
     item.className = 'grid-item';
-    item.innerHTML = `<figure class="image"><img src="${url}" alt="${cat.name[lang]}"></figure>`;
+    item.innerHTML = `<figure class="image"><img src="${url}" alt="${cat.name[lang]}" data-index="${idx}"></figure>`;
     grid.appendChild(item);
   });
 
@@ -74,4 +76,64 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   imagesLoaded(grid).on('progress', () => msnry.layout());
+
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox hidden';
+  overlay.innerHTML = `
+    <button class="lightbox-close" aria-label="close">&times;</button>
+    <button class="lightbox-prev" aria-label="previous">&#10094;</button>
+    <img class="lightbox-image" alt="${cat.name[lang]}">
+    <button class="lightbox-next" aria-label="next">&#10095;</button>
+  `;
+  document.body.appendChild(overlay);
+
+  const lbImg = overlay.querySelector('.lightbox-image');
+  const closeBtn = overlay.querySelector('.lightbox-close');
+  const prevBtn = overlay.querySelector('.lightbox-prev');
+  const nextBtn = overlay.querySelector('.lightbox-next');
+  let current = 0;
+
+  function show(idx) {
+    current = idx;
+    lbImg.src = photos[current];
+    overlay.classList.remove('hidden');
+  }
+
+  function hide() {
+    overlay.classList.add('hidden');
+  }
+
+  function prev() {
+    show((current - 1 + photos.length) % photos.length);
+  }
+
+  function next() {
+    show((current + 1) % photos.length);
+  }
+
+  grid.addEventListener('click', e => {
+    const img = e.target.closest('img[data-index]');
+    if (!img) return;
+    show(Number(img.dataset.index));
+  });
+
+  closeBtn.addEventListener('click', hide);
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) hide();
+  });
+  prevBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    prev();
+  });
+  nextBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    next();
+  });
+
+  document.addEventListener('keydown', e => {
+    if (overlay.classList.contains('hidden')) return;
+    if (e.key === 'Escape') hide();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  });
 });
