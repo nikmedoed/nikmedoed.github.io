@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const subjectField = subjectInput ? subjectInput.closest('.field') : null;
     const messageLabel = document.querySelector('label[for="message"]');
     const defaultMsgLabel = messageLabel ? messageLabel.textContent : '';
-    const adoptSubjects = { en: 'I want to adopt', ru: 'Хочу забрать' };
+    const adoptSubjects = { en: 'I want to adopt', ru: 'Забрать домой' };
     const adoptMsgLabels = { en: 'Your contacts and questions', ru: 'Ваши контакты и вопросы' };
 
     function resetForm() {

@@ -68,6 +68,7 @@
       {{ end }}
     </div>
     <footer class="card-footer">
+      <a class="card-footer-item" href="gallery/?id={{ $cat.id }}">{{ i18n "moreButton" }}</a>
       <a class="card-footer-item adopt-btn" data-name="{{ index $cat.name $lang }}">{{ i18n "adoptButton" }}</a>
     </footer>
   </div>
