@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="section cat-gallery">
+  <div class="container">
+    <div class="grid"></div>
+  </div>
+</section>
+<script>
+{{ $cats := dict }}
+{{ range .Site.Data.cats }}
+  {{ $cats = merge $cats (dict .id .) }}
+{{ end }}
+window.cats = {{ $cats | jsonify | safeJS }};
+</script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="/js/cat-gallery.js"></script>
+{{ end }}

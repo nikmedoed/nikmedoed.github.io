@@ -179,6 +179,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    cards.forEach(card => {
+        const img = card.querySelector('img.cat-photo');
+        if (!img) return;
+        img.addEventListener('click', () => {
+            const id = card.id.replace('cat-', '');
+            location.href = `gallery/?id=${id}`;
+        });
+    });
+
     document.querySelectorAll('.cat-relative').forEach(tag => {
         tag.addEventListener('click', () => {
             const id = tag.dataset.target;

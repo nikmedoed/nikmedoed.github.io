@@ -164,6 +164,7 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
 }
 .cat-card.highlight {
   box-shadow: 0 0 0 3px #ffdd57;
@@ -264,6 +265,16 @@ html, body {
 .cat-card .cat-relative,
 .cat-card .cat-ster-tag {
   cursor: pointer;
+}
+
+.cat-card .cat-relative {
+  display: inline-flex;
+  align-items: center;
+}
+
+.cat-card .card-content > .mt-1 {
+  display: flex;
+  align-items: center;
 }
 
 #cat-filters .tag {
@@ -674,4 +685,73 @@ html[data-theme='light'] footer.footer a {
 }
 html[data-theme='light'] footer.footer .has-text-white {
   color: inherit !important;
+}
+
+/* Cat gallery */
+.cat-gallery .grid {
+  margin-top: 1rem;
+}
+
+.cat-gallery .grid-sizer,
+.cat-gallery .grid-item {
+  width: 33.333%;
+  box-sizing: border-box;
+}
+
+.cat-gallery .grid-item {
+  padding: 0.5rem;
+}
+
+.cat-gallery .grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox.hidden {
+  display: none;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lightbox-close {
+  top: 1rem;
+  right: 1rem;
+}
+
+.lightbox-prev {
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lightbox-next {
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
 }
