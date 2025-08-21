@@ -1,4 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const goalsContainer = document.getElementById('goals-content');
+    const goalsLoading = document.getElementById('goals-loading');
+    if (goalsContainer && goalsLoading) {
+        const GOALS_URL = 'https://script.google.com/macros/s/AKfycbw25JOVoqGd9A40TpJeFTzFCkVPF7xVukDbK5RrbHGTq0OTRk7pB3FfzgKNSodg9ov8vg/exec';
+        const CACHE_KEY = 'cats_goals_cache';
+        const TTL = 15 * 60 * 1000;
+        async function fetchGoals() {
+            const cached = localStorage.getItem(CACHE_KEY);
+            if (cached) {
+                try {
+                    const parsed = JSON.parse(cached);
+                    if (Date.now() - parsed.time < TTL) {
+                        return parsed.data;
+                    }
+                } catch (e) {}
+            }
+            const res = await fetch(GOALS_URL);
+            const data = await res.json();
+            localStorage.setItem(CACHE_KEY, JSON.stringify({ time: Date.now(), data }));
+            return data;
+        }
+        const lang = document.documentElement.lang;
+        fetchGoals().then(data => {
+            goalsLoading.remove();
+            if (data.goals && data.goals.length) {
+                data.goals.forEach(g => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'goal-item is-flex is-align-items-center';
+                    const title = document.createElement('span');
+                    title.textContent = g[lang] || g.ru || g.en;
+                    title.className = 'mr-2';
+                    const progressWrap = document.createElement('div');
+                    progressWrap.className = 'goal-progress is-flex-grow-1';
+                    const progress = document.createElement('progress');
+                    progress.className = 'progress is-large is-link';
+                    progress.max = g.amount;
+                    progress.value = g.raised;
+                    progress.style.width = '100%';
+                    const numbers = document.createElement('span');
+                    numbers.textContent = `${g.raised.toLocaleString()} / ${g.amount.toLocaleString()} AMD`;
+                    progressWrap.appendChild(progress);
+                    progressWrap.appendChild(numbers);
+                    wrapper.appendChild(title);
+                    wrapper.appendChild(progressWrap);
+                    goalsContainer.appendChild(wrapper);
+                });
+            }
+        }).catch(() => {
+            goalsLoading.textContent = 'Error';
+        });
+    }
+
     const cards = Array.from(document.querySelectorAll('.cat-card'));
     if (!cards.length) return;
 
