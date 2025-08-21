@@ -657,6 +657,7 @@ html[data-theme='light'] footer.footer .has-text-white {
 .cat-gallery .grid-sizer,
 .cat-gallery .grid-item {
   width: 33.333%;
+  box-sizing: border-box;
 }
 
 .cat-gallery .grid-item {
