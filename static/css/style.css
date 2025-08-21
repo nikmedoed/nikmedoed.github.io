@@ -217,6 +217,10 @@ html, body {
   margin-bottom: 0;
 }
 
+.goal-item {
+  width: 100%;
+  align-items: center;
+}
 .goal-item:not(:last-child) {
   margin-bottom: 0.5rem;
 }
@@ -224,7 +228,7 @@ html, body {
 @media (max-width: 480px) {
   .goal-item {
     flex-direction: column;
-    align-items: stretch;
+    align-items: stretch !important;
   }
   .goal-item .goal-progress {
     width: 100%;
