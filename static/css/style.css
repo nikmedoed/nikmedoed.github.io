@@ -201,13 +201,11 @@ html, body {
 
 /* Goals progress numbers */
 .goal-progress {
-  position: relative;
+  text-align: center;
 }
 .goal-progress span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: block;
+  margin-top: 0.25rem;
   font-size: 0.75rem;
   color: #fff;
   font-weight: 600;
@@ -288,6 +286,37 @@ html, body {
 .cat-card .cat-ster-tag {
   font-size: 0.75rem;
   padding: 0 0.5em;
+}
+
+.cat-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.cat-header .cat-main {
+  display: flex;
+  align-items: center;
+}
+.cat-header .cat-ster-tag {
+  margin-left: 0.5rem;
+}
+.cat-header .cat-meta {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+@media (max-width: 400px) {
+  .cat-header .cat-ster-tag {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 0.25rem;
+  }
+  .cat-header .cat-meta {
+    width: 100%;
+    justify-content: flex-start;
+    margin-left: 0;
+    margin-top: 0.25rem;
+  }
 }
 
 .project-media {
