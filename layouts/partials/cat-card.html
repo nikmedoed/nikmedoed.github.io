@@ -10,14 +10,16 @@
     </div>
     <div class="card-content">
       <div class="cat-card-header mb-2">
-        <div class="is-flex is-align-items-center">
+        <div class="cat-name-block is-flex is-align-items-center">
           <p class="title is-5 mb-0">{{ index $cat.name $lang }}</p>
           <span class="icon cat-gender ml-2" data-gender="{{ $cat.gender }}">
             <i class="fas {{ if eq $cat.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i>
           </span>
         </div>
         <div class="cat-card-meta">
-          <p class="is-size-7 mb-0 cat-age"></p>
+          <span class="tag is-rounded is-hoverable cat-ster-tag {{ if $cat.sterilized }}is-success{{ else }}is-warning{{ end }}" data-status="{{ if $cat.sterilized }}sterilized{{ else }}intact{{ end }}">
+            {{ if $cat.sterilized }}{{ i18n "filterSterilized" }}{{ else }}{{ i18n "filterNotSterilized" }}{{ end }}
+          </span>
           {{ if or $cat.wild $cat.wanderer }}
           <div class="cat-flags">
             {{ if $cat.wild }}
@@ -28,9 +30,7 @@
             {{ end }}
           </div>
           {{ end }}
-          <span class="tag is-rounded is-hoverable cat-ster-tag {{ if $cat.sterilized }}is-success{{ else }}is-warning{{ end }}" data-status="{{ if $cat.sterilized }}sterilized{{ else }}intact{{ end }}">
-            {{ if $cat.sterilized }}{{ i18n "filterSterilized" }}{{ else }}{{ i18n "filterNotSterilized" }}{{ end }}
-          </span>
+          <p class="is-size-7 mb-0 cat-age"></p>
         </div>
       </div>
 
