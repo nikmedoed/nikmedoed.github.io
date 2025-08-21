@@ -15,11 +15,11 @@
           <span class="icon cat-gender" data-gender="{{ $cat.gender }}">
             <i class="fas {{ if eq $cat.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i>
           </span>
+        </div>
+        <div class="cat-meta">
           <span class="tag is-rounded is-hoverable cat-ster-tag {{ if $cat.sterilized }}is-success{{ else }}is-warning{{ end }}" data-status="{{ if $cat.sterilized }}sterilized{{ else }}intact{{ end }}">
             {{ if $cat.sterilized }}{{ i18n "filterSterilized" }}{{ else }}{{ i18n "filterNotSterilized" }}{{ end }}
           </span>
-        </div>
-        <div class="cat-meta-right">
           {{ if or $cat.wild $cat.wanderer }}
           <div class="cat-flags">
             {{ if $cat.wild }}
