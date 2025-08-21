@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.goals && data.goals.length) {
                 data.goals.forEach(g => {
                     const wrapper = document.createElement('div');
-                    wrapper.className = 'goal-item is-flex is-align-items-center mb-3';
+                    wrapper.className = 'goal-item is-flex is-align-items-center';
                     const title = document.createElement('span');
                     title.textContent = g[lang] || g.ru || g.en;
                     title.className = 'mr-2';

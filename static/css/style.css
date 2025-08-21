@@ -212,6 +212,14 @@ html, body {
   font-weight: 600;
 }
 
+.goal-progress .progress {
+  margin-bottom: 0;
+}
+
+.goal-item:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+
 .cat-flag:focus {
   outline: none;
 }
@@ -438,6 +446,12 @@ body.no-scroll {
   background-color: #6F2DBD;
   border-color: #6F2DBD;
   color: #fff;
+}
+
+.button.tinkoff {
+  background-color: #FFDD2D;
+  border-color: #FFDD2D;
+  color: #000;
 }
 
 .button.telegram {
