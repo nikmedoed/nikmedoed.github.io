@@ -26,20 +26,23 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.goals && data.goals.length) {
                 data.goals.forEach(g => {
                     const wrapper = document.createElement('div');
-                    wrapper.className = 'mb-3';
-                    const title = document.createElement('p');
+                    wrapper.className = 'goal-item is-flex is-align-items-center mb-3';
+                    const title = document.createElement('span');
                     title.textContent = g[lang] || g.ru || g.en;
-                    title.className = 'mb-1';
+                    title.className = 'mr-2';
+                    const progressWrap = document.createElement('div');
+                    progressWrap.className = 'goal-progress is-flex-grow-1';
                     const progress = document.createElement('progress');
-                    progress.className = 'progress is-small is-link';
+                    progress.className = 'progress is-large is-link';
                     progress.max = g.amount;
                     progress.value = g.raised;
-                    const numbers = document.createElement('p');
-                    numbers.className = 'is-size-7 mt-1';
+                    progress.style.width = '100%';
+                    const numbers = document.createElement('span');
                     numbers.textContent = `${g.raised.toLocaleString()} / ${g.amount.toLocaleString()}`;
+                    progressWrap.appendChild(progress);
+                    progressWrap.appendChild(numbers);
                     wrapper.appendChild(title);
-                    wrapper.appendChild(progress);
-                    wrapper.appendChild(numbers);
+                    wrapper.appendChild(progressWrap);
                     goalsContainer.appendChild(wrapper);
                 });
             }
