@@ -44,3 +44,20 @@ function doPost(e) {
 ### GitHub Pages Deployment
 
 Disable GitHub’s default `pages-build-deployment` workflow to avoid duplicate builds. In **Settings → Pages**, set **Source** to **GitHub Actions** and select the Hugo workflow if one isn’t already present.
+
+---
+# TODO
+
+Добавить котам поля
+- exit - дата
+- location - куда уехал
+
+Влияет на отображение в списках.
+Не заполнены поля (отсутствуют) - текущий список в самом начале.
+
+Есть exit и локейшн = Забрали - раздел "Нашли дом". Дополнительно в карточках выводим когда забрали и куда (exit date и location)
+Текст раздела
+Им повезло найти дом. Помогите и вы найти дом дружочкам выше.
+
+exit, но нет локейшена = погиб - Раздел "не всё так прекрасно"
+Улица жестокое место: зимы, дожди, болезни, драки, бродячие собаки. Кто-то уходит гулять и не возвращается, а кто-то погибает прямо у дома, скрывая раны. Ниже те, кого мы уже потеряли.
