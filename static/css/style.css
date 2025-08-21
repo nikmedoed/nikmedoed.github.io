@@ -312,6 +312,55 @@ html, body {
   padding: 0 0.5em;
 }
 
+/* Container header: max 2 lines */
+.cat-card .cat-header{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  column-gap:.6rem;
+  row-gap:.45rem;
+}
+
+/* Line 1: name + gender — no wrap */
+.cat-card .cat-left{
+  display:flex;
+  align-items:center;
+  min-width:0;
+  flex:1 1 auto;
+}
+.cat-card .cat-left .title{
+  margin-bottom:0;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+/* Line 2: all remaining info moves together */
+.cat-card .cat-meta{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:.5rem;
+  flex:1 1 18rem;
+  min-width:16rem;
+  white-space:nowrap;
+}
+
+/* Sterilization tag: no forced margin */
+.cat-card .cat-ster-tag{
+  margin-left:0 !important;
+}
+
+/* Right subblock: icons + age stay together */
+.cat-card .cat-meta-right{
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+  white-space:nowrap;
+}
+.cat-card .cat-flag{ line-height:1; }
+.cat-card .cat-age{ white-space:nowrap; }
+
 .project-media {
   position: relative;
   overflow: hidden;
