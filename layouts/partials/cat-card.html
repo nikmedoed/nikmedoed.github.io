@@ -15,23 +15,21 @@
           <span class="icon cat-gender" data-gender="{{ $cat.gender }}">
             <i class="fas {{ if eq $cat.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i>
           </span>
-        </div>
-        <div class="cat-meta">
           <span class="tag is-rounded is-hoverable cat-ster-tag {{ if $cat.sterilized }}is-success{{ else }}is-warning{{ end }}" data-status="{{ if $cat.sterilized }}sterilized{{ else }}intact{{ end }}">
             {{ if $cat.sterilized }}{{ i18n "filterSterilized" }}{{ else }}{{ i18n "filterNotSterilized" }}{{ end }}
           </span>
-          {{ if or $cat.wild $cat.wanderer }}
-          <div class="cat-flags">
-            {{ if $cat.wild }}
-            <span class="icon is-medium cat-flag" data-tooltip="{{ i18n "wildTooltip" }}" tabindex="0"><i class="fa-solid fa-explosion fa-lg"></i></span>
-            {{ end }}
-            {{ if $cat.wanderer }}
-            <span class="icon is-medium cat-flag" data-tooltip="{{ i18n "wandererTooltip" }}" tabindex="0"><i class="fas fa-route fa-lg"></i></span>
-            {{ end }}
-          </div>
-          {{ end }}
-          <p class="is-size-7 mb-0 cat-age"></p>
         </div>
+        {{ if or $cat.wild $cat.wanderer }}
+        <div class="cat-flags">
+          {{ if $cat.wild }}
+          <span class="icon is-medium cat-flag" data-tooltip="{{ i18n "wildTooltip" }}" tabindex="0"><i class="fa-solid fa-explosion fa-lg"></i></span>
+          {{ end }}
+          {{ if $cat.wanderer }}
+          <span class="icon is-medium cat-flag" data-tooltip="{{ i18n "wandererTooltip" }}" tabindex="0"><i class="fas fa-route fa-lg"></i></span>
+          {{ end }}
+        </div>
+        {{ end }}
+        <p class="is-size-7 mb-0 cat-age"></p>
       </div>
 
       <p class="content mb-0">{{ index $cat.description $lang }}</p>

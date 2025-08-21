@@ -186,23 +186,16 @@ html, body {
   min-width: 0;
 }
 
-.cat-meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
-  flex: 1 1 100%;
-}
-
-.cat-meta .cat-flags {
+.cat-card-header .cat-flags {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.cat-meta .cat-age {
+.cat-card-header .cat-age {
   margin-left: auto;
   white-space: nowrap;
+  flex: 0 0 auto;
 }
 .cat-gender {
   cursor: pointer;
