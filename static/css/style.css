@@ -295,6 +295,8 @@ html, body {
 .cat-card .card-content > .mt-1 {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;
 }
 
 #cat-filters .tag {
