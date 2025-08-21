@@ -19,10 +19,21 @@
     <link rel="canonical" href="{{ .Permalink }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap&subset=cyrillic" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+    <noscript><link href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css" rel="stylesheet" crossorigin></noscript>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin>
+    <noscript><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" crossorigin></noscript>
+    {{ $style := resources.Get "css/style.css" | resources.Minify | resources.Fingerprint }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+    <style>
+      @font-face{font-family:'Font Awesome 6 Free';font-style:normal;font-weight:900;font-display:swap;src:url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-solid-900.woff2') format('woff2')}
+      @font-face{font-family:'Font Awesome 6 Brands';font-style:normal;font-weight:400;font-display:swap;src:url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-brands-400.woff2') format('woff2')}
+    </style>
+    {{ block "head_extra" . }}{{ end }}
     <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg">
     <link rel="shortcut icon" href="/favicon/favicon.ico">
@@ -80,6 +91,7 @@
         <a href="https://t.me/etonikmedoed" target="_blank" class="has-text-warning">Telegram</a>
     </p>
 </footer>
-<script src="/js/script.js"></script>
+{{ $script := resources.Get "js/script.js" | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ $script.RelPermalink }}" integrity="{{ $script.Data.Integrity }}"></script>
 </body>
 </html>

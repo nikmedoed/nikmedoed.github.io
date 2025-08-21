@@ -1,3 +1,7 @@
+{{ define "head_extra" }}
+<link rel="preload" as="image" fetchpriority="high" href="https://res.cloudinary.com/nikmedoed/image/upload/f_auto,q_auto,w_1280/v1755716393/20250813_195232-3293dadb.jpg">
+{{ end }}
+
 {{ define "main" }}
 <section id="cats-hero" class="hero is-medium is-bold cats-hero">
   <div class="hero-body has-text-centered">
@@ -124,5 +128,6 @@
     </div>
   </div>
 </section>
-<script src="/js/cats.js"></script>
+{{ $catsJS := resources.Get "js/cats.js" | resources.Minify | resources.Fingerprint }}
+<script defer src="{{ $catsJS.RelPermalink }}" integrity="{{ $catsJS.Data.Integrity }}"></script>
 {{ end }}
