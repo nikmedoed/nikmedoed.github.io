@@ -181,17 +181,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (sortBtn) {
         const icon = sortBtn.querySelector('i');
-        sortBtn.setAttribute('aria-label', labels[lang].sortOldFirst);
-        sortBtn.setAttribute('title', labels[lang].sortOldFirst);
-        sortBtn.addEventListener('click', () => {
-            sortAsc = !sortAsc;
-            sortCards();
-            const label = labels[lang][sortAsc ? 'sortYoungFirst' : 'sortOldFirst'];
+        function updateSortDisplay() {
+            const label = labels[lang][sortAsc ? 'sortOldFirst' : 'sortYoungFirst'];
             sortBtn.setAttribute('aria-label', label);
             sortBtn.setAttribute('title', label);
             if (icon) {
                 icon.className = sortAsc ? 'fas fa-sort-amount-up' : 'fas fa-sort-amount-down';
             }
+        }
+        updateSortDisplay();
+        sortBtn.addEventListener('click', () => {
+            sortAsc = !sortAsc;
+            sortCards();
+            updateSortDisplay();
         });
     }
 
