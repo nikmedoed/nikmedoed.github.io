@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const lang = document.documentElement.lang;
   const cat = catsData[id];
 
-  document.title = cat.name[lang];
+  const catsTitle = { en: 'Cats of Nansen street', ru: 'Коты улицы Нансена' };
+  document.title = `${cat.name[lang]} - ${catsTitle[lang] || catsTitle.en}`;
 
   const grid = document.querySelector('.grid');
   if (!grid) return;
