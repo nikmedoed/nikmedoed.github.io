@@ -311,9 +311,7 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716339/20250805_180353-fd742df5.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716345/20250812_162221-89e4934a.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716346/20250812_162242-daa74c23.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1755716347/20250812_162345-d8498f2a.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716348/20250812_162424-155cd870.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1755716350/20250812_162433-8e4e3485.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716352/20250812_163730-1f4071c7.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716353/20250812_163749-12feca9e.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716358/20250812_164246-e193e845.jpg
@@ -343,9 +341,7 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716344/20250812_162139-1a4ba127.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716345/20250812_162221-89e4934a.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716346/20250812_162242-daa74c23.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1755716347/20250812_162345-d8498f2a.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716348/20250812_162424-155cd870.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1755716350/20250812_162433-8e4e3485.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716351/20250812_163606-a2d5cae6.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716355/20250812_164019-b8b118fe.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716356/20250812_164036-ec485d00.jpg
@@ -368,8 +364,8 @@
 
 - id: sevuk-son-1
   name:
-    en: Sevuk Son 1
-    ru: "Сын Севук 1"
+    en: Puh
+    ru: "Пух"
   gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866038/20250815-193031-IMG_8745-RD-f0a24a16.jpg
   photos:
@@ -395,8 +391,8 @@
 
 - id: sevuk-son-2
   name:
-    en: Sevuk Son 2
-    ru: "Сын Севук 2"
+    en: Lev
+    ru: "Лев"
   gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866040/20250815-193155-IMG_8781-RD-a58bc983.jpg
   photos:
@@ -425,8 +421,8 @@
 
 - id: sevuk-son-3
   name:
-    en: Sevuk Son 3
-    ru: "Сын Севук 3"
+    en: Ser
+    ru: "Сер"
   gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866039/20250815-193106-IMG_8764-RD-fd8ccc6c.jpg
   photos:
