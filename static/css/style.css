@@ -158,6 +158,16 @@ html[data-theme='light'] .found-home-section {
   transform: translateY(-4px);
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
+.cat-card.adopted,
+.cat-card.adopted .card-content,
+.cat-card.adopted .card-footer {
+  background-color: #163d2e;
+}
+html[data-theme='light'] .cat-card.adopted,
+html[data-theme='light'] .cat-card.adopted .card-content,
+html[data-theme='light'] .cat-card.adopted .card-footer {
+  background-color: #f0fff4;
+}
 .cat-card .card-content {
   flex-grow: 1;
   display: flex;
