@@ -43,7 +43,10 @@
     <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-end">
             <a class="navbar-item" href="{{ "/#projects" | relURL }}">{{ i18n "projectsTitle" }}</a>
-            <a class="navbar-item" href="{{ "/cats/" | relURL }}">{{ i18n "navCats" }}</a>
+            <a class="navbar-item has-text-warning" href="{{ "/cats/" | relURL }}">
+                <span class="icon mr-1"><i class="fas fa-cat"></i></span>
+                <span>{{ i18n "navCats" }}</span>
+            </a>
             <a class="navbar-item" href="https://t.me/etonikmedoed" target="_blank">{{ i18n "navBlog" | default "Blog" }}</a>
             <a class="navbar-item" href="{{ "/#about" | relURL }}">{{ i18n "navContacts" | default "Contacts" }}</a>
             <div class="navbar-item">
