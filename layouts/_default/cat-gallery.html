@@ -3,7 +3,7 @@
   <div class="container">
     <div class="cat-links is-flex is-flex-wrap-wrap is-justify-content-center mb-4">
       {{ $lang := .Site.Language.Lang }}
-      {{ range .Site.Data.cats }}
+      {{ range sort .Site.Data.cats "birth" "desc" }}
         <a class="cat-link" href="?id={{ .id }}">
           <figure class="image is-48x48">
             <img src="{{ if .avatar }}{{ .avatar }}{{ else }}{{ index .photos 0 }}{{ end }}" alt="{{ index .name $lang }}" class="is-rounded">
