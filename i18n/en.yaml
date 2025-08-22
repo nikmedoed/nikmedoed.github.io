@@ -6,6 +6,7 @@ heroSubtitle: |
   <span class="tagline-accent">Give them a try — maybe you’ll get excited too.</span>
 navBlog: "Blog"
 navContacts: "Contacts"
+navCats: "Cats"
 heroAboutBtn: "About"
 heroProjectsBtn: "Projects"
 projectsTitle: "Featured Projects"
@@ -37,3 +38,59 @@ formSend: "Send"
 footerQuote: "Have a vision, aspire to be a leader, make some humor, Resist, Invent & Projects."
 backToMain: "Back to main page"
 metaDescription: "Nikita Muromtsev is a developer and technical manager about projects and open-source tools for automating routine and increasing awareness using Python and JavaScript."
+catsTitle: "Cats of Nansen street"
+catsHeroTitle: "Nansen's street cats seek homes and support"
+catsHeroSubtitle: "<a href=\"#cat-filters\" class=\"cats-count-link\">{{ .Count }} tails seek a home</a>. Adopt or support financially. We treat, sterilize and care for street cats."
+catsIntro: |
+  <p>Street cats have always stirred in Toma an irresistible urge to feed them. For many years she has carried pouches of cat food in her bag. Then we arrived in Yerevan, a city with so many strays.</p>
+  
+  <p>At first, Toma fed the fluffballs only now and then. But one cat learned to call at our window every evening, loudly inviting us to serve dinner… The trap was set. Before we knew it, we were feeding her kittens — the ones she pointedly left in our care before walking off to enjoy her freedom.</p>
+  
+  <p>In return, we had her spayed. While arranging that, we met our neighbors and the cats they’d been looking after. That’s how a small crew of friendly yard‑buddies gathered around us.</p>
+  
+  <p>Everything was fine — until 2025, when new pregnant cats appeared, and suddenly we had a crowd of kittens. Wild roamers may drop by and move on, but we can’t in good conscience abandon our tame, resident friends.</p>
+  
+  <p>Once, Fridtjof Nansen helped refugees find a new home and a future. Now we want to give a similar chance to the street cats from his street.</p>
+  
+  <p>Help us find homes for these friendly tails — or support our initiative financially.</p>
+catsMediaTelegram: "Telegram"
+catsMediaInstagram: "Instagram"
+catsMediaTikTok: "TikTok"
+catsMediaSpreadsheet: "Expense sheet"
+catsSupportTitle: "Help Nansen's street cats"
+catsSupportText: "We need funds for food, surgeries, medicine and finding homes for our buddies"
+catsContactIntro: "Other ways to help:<br>reach us via <a class=\"has-text-weight-bold\" href=\"#cats-hero\">the networks above</a> or →"
+catsIntroTitle: "Who, What & Why"
+heroCharityBtn: "Charity: adopt or sponsor a street cat"
+filterAll: "All"
+filterSterilized: "Sterilized"
+filterNotSterilized: "Not sterilized"
+filterAllYears: "All years"
+filterHealthy: "Healthy"
+filterTame: "Tame"
+sortYoungFirst: "Youngest first"
+sortOldFirst: "Oldest first"
+genderMale: "Male"
+genderFemale: "Female"
+mother: "mother"
+father: "father"
+son: "son"
+daughter: "daughter"
+brother: "brother"
+sister: "sister"
+parentsLabel: "Parents"
+childrenLabel: "Children"
+contactSocialNote: "For other inquiries, reach out via our social links above."
+adoptButton: "Want to adopt"
+adoptSubject: "I want to adopt"
+adoptMessageLabel: "Your contacts and questions"
+moreButton: "More"
+wildTooltip: "Feral: avoids hands, hard to catch"
+wandererTooltip: "Wanderer: rarely in the yard, likes to roam"
+catsAdoptHeading: "Meet and take home"
+catsFoundHomeHeading: "Found a Home"
+catsFoundHomeText: "They were lucky to find a home. Help the buddies above find theirs too."
+catsGoneHeading: "Not Everything is Perfect"
+catsGoneText: "The street is harsh: winters, rain, disease, fights, stray dogs. Some wander off and never return, others die right outside, hiding their wounds. Below are those we've already lost."
+catAdoptedLabel: "Adopted:"
+catDiedLabel: "Died:"

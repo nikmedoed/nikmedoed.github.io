@@ -6,6 +6,7 @@
 
     <title>Muromtsev Nikita: {{ .Title }}</title>
     <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ i18n "metaDescription" }}{{ end }}">
+    {{ with .Params.keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
     <meta property="og:title" content="{{ .Title }} | Muromtsev Nikita">
     <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ i18n "metaDescription" }}{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}">
@@ -68,13 +69,23 @@
     <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-end">
             <a class="navbar-item" href="{{ "/#projects" | relURL }}">{{ i18n "projectsTitle" }}</a>
+            <a class="navbar-item has-text-warning" href="{{ "/cats/" | relURL }}">
+                <span class="icon mr-1"><i class="fas fa-cat"></i></span>
+                <span>{{ i18n "navCats" }}</span>
+            </a>
             <a class="navbar-item" href="https://t.me/etonikmedoed" target="_blank">{{ i18n "navBlog" | default "Blog" }}</a>
             <a class="navbar-item" href="{{ "/#about" | relURL }}">{{ i18n "navContacts" | default "Contacts" }}</a>
             <div class="navbar-item">
-                {{ if eq .Site.Language.Lang "en" }}
-                <a class="lang-switch" data-lang="ru" href="/ru/">RU</a>
+                {{ if .IsTranslated }}
+                  {{ range .Translations }}
+                  <a class="lang-switch" data-lang="{{ .Lang }}" href="{{ .RelPermalink }}">{{ upper .Lang }}</a>
+                  {{ end }}
                 {{ else }}
-                <a class="lang-switch" data-lang="en" href="/">EN</a>
+                  {{ if eq .Site.Language.Lang "en" }}
+                  <a class="lang-switch" data-lang="ru" href="/ru/">RU</a>
+                  {{ else }}
+                  <a class="lang-switch" data-lang="en" href="/">EN</a>
+                  {{ end }}
                 {{ end }}
             </div>
             <div class="navbar-item">

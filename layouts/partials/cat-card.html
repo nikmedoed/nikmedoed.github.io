@@ -1,0 +1,100 @@
+{{ $cat := .cat }}
+{{ $lang := .lang }}
+{{ $cats := .cats }}
+<div class="column is-12-mobile is-6-tablet is-4-desktop">
+  <div class="card cat-card{{ if $cat.location }} adopted{{ end }}" id="cat-{{ $cat.id }}" data-year="{{ substr $cat.birth 0 4 }}" data-birth="{{ $cat.birth }}" {{ if $cat.end }}data-end="{{ $cat.end }}"{{ end }} data-sterilized="{{ if $cat.sterilized }}yes{{ else }}no{{ end }}" data-treatment="{{ if (index $cat.treatment $lang) }}yes{{ else }}no{{ end }}" data-gender="{{ $cat.gender }}" data-wild="{{ if $cat.wild }}yes{{ else }}no{{ end }}" data-wanderer="{{ if $cat.wanderer }}yes{{ else }}no{{ end }}">
+    <div class="card-image">
+      <figure class="image is-3by2">
+        <img class="cat-photo" src="{{ index $cat.photos 0 }}" alt="{{ index $cat.name $lang }}">
+      </figure>
+    </div>
+    <div class="card-content">
+      <div class="cat-card-header mb-2">
+        <div class="cat-card-zone-a">
+          <p class="title is-5 mb-0">{{ index $cat.name $lang }}</p>
+          <span class="icon cat-gender ml-2" data-gender="{{ $cat.gender }}">
+            <i class="fas {{ if eq $cat.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i>
+          </span>
+        </div>
+        <div class="cat-card-zone-b">
+          <span class="tag is-rounded is-hoverable cat-ster-tag {{ if $cat.sterilized }}is-success{{ else }}is-warning{{ end }}" data-status="{{ if $cat.sterilized }}sterilized{{ else }}intact{{ end }}">
+            {{ if $cat.sterilized }}{{ i18n "filterSterilized" }}{{ else }}{{ i18n "filterNotSterilized" }}{{ end }}
+          </span>
+          <div class="is-flex is-align-items-center">
+            {{ if $cat.wild }}
+            <span class="icon is-medium cat-flag mr-2" data-tooltip="{{ i18n "wildTooltip" }}" tabindex="0"><i class="fa-solid fa-explosion fa-lg"></i></span>
+            {{ end }}
+            {{ if $cat.wanderer }}
+            <span class="icon is-medium cat-flag mr-2" data-tooltip="{{ i18n "wandererTooltip" }}" tabindex="0"><i class="fas fa-route fa-lg"></i></span>
+            {{ end }}
+            <p class="is-size-7 mb-0 cat-age"></p>
+          </div>
+        </div>
+      </div>
+
+      <p class="content mb-0">{{ index $cat.description $lang }}</p>
+
+      {{ if $cat.end }}
+      <p class="content mb-0 mt-2">
+        {{ if $cat.location }}
+          <span class="has-text-weight-semibold">{{ i18n "catAdoptedLabel" }}</span> {{ $cat.end }} — {{ $cat.location }}
+        {{ else }}
+          <span class="has-text-weight-semibold">{{ i18n "catDiedLabel" }}</span> {{ $cat.end }}
+        {{ end }}
+      </p>
+      {{ end }}
+
+      {{ if $cat.parents }}
+      <div class="mt-1">
+        <span class="has-text-weight-semibold">{{ i18n "parentsLabel" }}:</span>
+        {{ range $id := $cat.parents }}
+          {{ $p := index (where $cats "id" $id) 0 }}
+          {{ if $p }}
+            <span class="tag is-light {{ if eq $p.gender "male" }}is-link{{ else }}is-danger{{ end }} cat-relative ml-1" data-target="cat-{{ $p.id }}">
+              <span class="icon is-small mr-1"><i class="fas {{ if eq $p.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i></span>
+              <span>{{ index $p.name $lang }}</span>
+            </span>
+          {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+
+      {{ $children := where $cats "parents" "intersect" (slice $cat.id) }}
+      {{ if $children }}
+      <div class="mt-1">
+        <span class="has-text-weight-semibold">{{ i18n "childrenLabel" }}:</span>
+        {{ range $child := $children }}
+          <span class="tag is-light {{ if eq $child.gender "male" }}is-link{{ else }}is-danger{{ end }} cat-relative ml-1" data-target="cat-{{ $child.id }}">
+            <span class="icon is-small mr-1"><i class="fas {{ if eq $child.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i></span>
+            <span>{{ index $child.name $lang }}</span>
+          </span>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      {{ $t := index $cat.treatment $lang }}
+      {{ if $t }}
+      <div class="tags bottom-tags mt-2">
+        {{ if (reflect.IsSlice $t) }}
+          {{ range $t }}
+          <span class="tag is-danger">{{ . }}</span>
+          {{ end }}
+        {{ else }}
+          <span class="tag is-danger">{{ $t }}</span>
+        {{ end }}
+      </div>
+      {{ end }}
+
+      {{ if and (not $cat.location) $cat.cause }}
+      <p class="content is-italic mt-2 mb-0">{{ $cat.cause }}</p>
+      {{ end }}
+    </div>
+    <footer class="card-footer">
+      <a class="card-footer-item" href="gallery/?id={{ $cat.id }}">{{ i18n "moreButton" }}</a>
+      {{ if not $cat.end }}
+      <a class="card-footer-item adopt-btn" data-name="{{ index $cat.name $lang }}">{{ i18n "adoptButton" }}</a>
+      {{ end }}
+    </footer>
+  </div>
+</div>
+

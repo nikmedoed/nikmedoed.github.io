@@ -266,18 +266,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const sendBtn = document.getElementById('send-btn');
     const emailBtn = document.getElementById('email-btn');
     const emailModal = document.getElementById('email-modal');
-    if (emailBtn && emailModal) {
-        const closeModal = () => {
-            emailModal.classList.remove('is-active');
-            document.documentElement.classList.remove('is-clipped');
-        };
-        emailBtn.addEventListener('click', () => {
-            trackEvent('email_click');
-            emailModal.classList.add('is-active');
-            document.documentElement.classList.add('is-clipped');
-        });
-        emailModal.querySelector('.modal-background').addEventListener('click', closeModal);
-        emailModal.querySelector('.modal-close').addEventListener('click', closeModal);
+    function openEmailModal() {
+        if (!emailModal) return;
+        emailModal.classList.add('is-active');
+        document.documentElement.classList.add('is-clipped');
+    }
+    function closeEmailModal() {
+        if (!emailModal) return;
+        emailModal.classList.remove('is-active');
+        document.documentElement.classList.remove('is-clipped');
+    }
+    if (emailModal) {
+        const bg = emailModal.querySelector('.modal-background');
+        const closeBtn = emailModal.querySelector('.modal-close');
+        [bg, closeBtn].forEach(el => el && el.addEventListener('click', closeEmailModal));
+    }
+    if (emailBtn) {
+        emailBtn.addEventListener('click', openEmailModal);
     }
     if (form) {
         form.addEventListener('submit', e => {
@@ -308,10 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     sendBtn.classList.remove('is-loading');
                     sendBtn.disabled = false;
                 }
-                if (emailModal) {
-                    emailModal.classList.remove('is-active');
-                    document.documentElement.classList.remove('is-clipped');
-                }
+                closeEmailModal();
             });
         });
     }

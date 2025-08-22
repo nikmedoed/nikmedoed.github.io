@@ -1,0 +1,177 @@
+{{ define "main" }}
+{{ $cats := .Site.Data.cats }}
+{{ $current := slice }}
+{{ $found := slice }}
+{{ $gone := slice }}
+{{ range $cats }}
+  {{ if not .end }}
+    {{ $current = $current | append . }}
+  {{ else if .location }}
+    {{ $found = $found | append . }}
+  {{ else }}
+    {{ $gone = $gone | append . }}
+  {{ end }}
+{{ end }}
+<section id="cats-hero" class="hero is-medium is-bold cats-hero">
+  <div class="hero-body has-text-centered">
+    <div class="container">
+      <h1 class="title has-text-white">{{ i18n "catsHeroTitle" }}</h1>
+      {{ $adoptable := where (where $current "wild" false) "wanderer" false }}
+      <p class="subtitle has-text-light mt-2">{{ i18n "catsHeroSubtitle" (dict "Count" (len $adoptable)) | safeHTML }}</p>
+      <div class="buttons is-centered mt-5">
+        <a class="button telegram" href="https://t.me/" target="_blank">
+          <span class="icon"><i class="fab fa-telegram"></i></span><span>{{ i18n "catsMediaTelegram" }}</span>
+        </a>
+        <a class="button instagram" href="https://instagram.com/" target="_blank">
+          <span class="icon"><i class="fab fa-instagram"></i></span><span>{{ i18n "catsMediaInstagram" }}</span>
+        </a>
+        <a class="button tiktok" href="https://tiktok.com/" target="_blank">
+          <span class="icon"><i class="fab fa-tiktok"></i></span><span>{{ i18n "catsMediaTikTok" }}</span>
+        </a>
+        <a class="button spreadsheet" href="https://docs.google.com/" target="_blank">
+          <span class="icon"><i class="fas fa-table"></i></span><span>{{ i18n "catsMediaSpreadsheet" }}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="columns is-variable is-6 mb-4">
+      <div class="column">
+        <h2 class="title has-text-link mb-4">{{ i18n "catsIntroTitle" }}</h2>
+        <div class="content mb-5">{{ i18n "catsIntro" | safeHTML }}</div>
+      </div>
+      <div class="column">
+        <h2 class="title has-text-warning mb-4">{{ i18n "catsSupportTitle" }}</h2>
+        <div id="goals-block" class="box">
+          <div id="goals-loading" class="has-text-centered">
+            <span class="icon is-large"><i class="fas fa-spinner fa-pulse"></i></span>
+          </div>
+          <div id="goals-content"></div>
+        </div>
+        <div class="box support-box has-text-centered mt-4">
+          <p>{{ i18n "catsSupportText" }}</p>
+          <div class="buttons is-centered mt-2">
+            <a class="button boosty" href="https://boosty.to/nansencats/donate" target="_blank">Boosty 🌍</a>
+            <a class="button paypal" href="https://paypal.me/etonikmedoed" target="_blank">PayPal 🌍</a>
+            <a class="button yoomoney" href="https://yoomoney.ru/to/4100119289394604" target="_blank">YooMoney 🇷🇺</a>
+            <a class="button tinkoff" href="https://tbank.ru/cf/D9nIkPdwdL" target="_blank">Tinkoff 🇷🇺</a>
+          </div>
+          <p class="is-size-6 is-family-monospace wallets mt-3">
+            <strong>BTC:</strong> <span data-addr="1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7">1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7</span>
+            <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7"><span class="icon"><i class="fas fa-copy"></i></span></button><br>
+            <strong>USDT (TRC20):</strong> <span data-addr="TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE">TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE</span>
+            <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE"><span class="icon"><i class="fas fa-copy"></i></span></button><br>
+            <strong>TON (USDT-TON):</strong> <span data-addr="UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N">UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N</span>
+            <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N"><span class="icon"><i class="fas fa-copy"></i></span></button>
+          </p>
+        </div>
+        <div class="box contact-box mt-4">
+          <div class="columns is-vcentered is-mobile contact-row">
+            <div class="column">
+              <span>{{ i18n "catsContactIntro" | safeHTML }}</span>
+            </div>
+            <div class="column is-narrow">
+              <button id="email-btn" class="button is-link is-light">{{ i18n "sendEmail" }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="email-modal" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <form id="contact-form" class="box contact-box">
+          <div class="field">
+            <label class="label has-text-white" for="email">{{ i18n "formYourEmail" }}</label>
+            <div class="control">
+              <input id="email" class="input" type="email" placeholder="{{ i18n "formPlaceholderEmail" }}">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label has-text-white" for="subject">{{ i18n "formSubject" }}</label>
+            <div class="control">
+              <input id="subject" class="input" type="text" placeholder="{{ i18n "formPlaceholderSubject" }}">
+            </div>
+          </div>
+          <div class="field">
+            <label class="label has-text-white" for="message">{{ i18n "formMessage" }}</label>
+            <div class="control">
+              <textarea id="message" class="textarea" placeholder="{{ i18n "formPlaceholderMessage" }}"></textarea>
+            </div>
+          </div>
+          <div class="field mt-2">
+            <button id="send-btn" type="submit" class="button is-link is-fullwidth">{{ i18n "formSend" }}</button>
+          </div>
+        </form>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+      <h2 class="title has-text-link has-text-centered mb-4">{{ i18n "catsAdoptHeading" }}</h2>
+      <div id="cat-filters" class="is-flex is-flex-wrap-wrap is-justify-content-center mb-5">
+        <div class="tags are-small filter-group">
+          <span class="tag is-dark" id="filter-reset">{{ i18n "filterAll" }}</span>
+        </div>
+        <div class="tags are-small filter-group" id="filter-ster">
+          <span class="tag is-success is-light" data-ster="yes">{{ i18n "filterSterilized" }}</span>
+          <span class="tag is-warning is-light" data-ster="no">{{ i18n "filterNotSterilized" }}</span>
+        </div>
+        <div class="tags are-small filter-group" id="filter-gender">
+          <span class="tag is-danger is-light" data-gender="female">{{ i18n "genderFemale" }}</span>
+          <span class="tag is-info is-light" data-gender="male">{{ i18n "genderMale" }}</span>
+        </div>
+        <div class="tags are-small filter-group" id="filter-health">
+          <span class="tag is-success is-light" data-health="healthy">{{ i18n "filterHealthy" }}</span>
+        </div>
+        <div class="tags are-small filter-group" id="filter-tame">
+          <span class="tag is-info is-light" data-tame="yes">{{ i18n "filterTame" }}</span>
+        </div>
+        <div class="tags are-small filter-group" id="year-filter"></div>
+        <div class="tags are-small filter-group">
+          <span class="tag is-light" id="sort-toggle" aria-label="{{ i18n "sortYoungFirst" }}" title="{{ i18n "sortYoungFirst" }}">
+            <span class="icon"><i class="fas fa-sort-amount-down"></i></span>
+          </span>
+        </div>
+      </div>
+    <div class="columns is-multiline" id="cats-list">
+      {{ $lang := .Site.Language.Lang }}
+      {{ range sort $current "birth" "desc" }}
+        {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $cats) }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{ if $found }}
+<section class="section found-home-section">
+  <div class="container">
+    <h2 class="title has-text-centered has-text-link mb-4">{{ i18n "catsFoundHomeHeading" }}</h2>
+    <p class="has-text-centered mb-5">{{ i18n "catsFoundHomeText" }}</p>
+    <div class="columns is-multiline">
+      {{ $lang := .Site.Language.Lang }}
+      {{ range sort $found "end" "desc" }}
+        {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $cats) }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ if $gone }}
+<section class="section">
+  <div class="container">
+    <h2 class="title has-text-centered has-text-danger mb-4">{{ i18n "catsGoneHeading" }}</h2>
+    <p class="has-text-centered mb-5">{{ i18n "catsGoneText" }}</p>
+    <div class="columns is-multiline">
+      {{ $lang := .Site.Language.Lang }}
+      {{ range sort $gone "end" "desc" }}
+        {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $cats) }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+<script src="/js/cats.js"></script>
+{{ end }}
