@@ -51,7 +51,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const cards = Array.from(document.querySelectorAll('.cat-card'));
+    const allCards = Array.from(document.querySelectorAll('.cat-card'));
+    const cards = Array.from(document.querySelectorAll('#cats-list .cat-card'));
+    const lang = document.documentElement.lang;
+    const labels = {
+        en: {y: 'y', m: 'm', sortYoungFirst: 'Youngest first', sortOldFirst: 'Oldest first'},
+        ru: {y: 'г.', m: 'мес.', sortYoungFirst: 'Сначала молодые', sortOldFirst: 'Сначала взрослые'}
+    };
+
+    allCards.forEach(card => {
+        const birth = card.dataset.birth;
+        const ageSpan = card.querySelector('.cat-age');
+        if (birth && ageSpan) {
+            const [year, month] = birth.split('-').map(Number);
+            const ref = card.dataset.end ? new Date(card.dataset.end) : new Date();
+            let y = ref.getFullYear() - year;
+            let m = ref.getMonth() + 1 - month;
+            if (m < 0) {
+                y--;
+                m += 12;
+            }
+            ageSpan.textContent = `${y} ${labels[lang].y} ${m} ${labels[lang].m}`;
+        }
+    });
+
     if (!cards.length) return;
 
     const sterFilter = document.getElementById('filter-ster');
@@ -174,12 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
     sortCards();
     applyFilters();
 
-    const lang = document.documentElement.lang;
-    const labels = {
-        en: {y: 'y', m: 'm', sortYoungFirst: 'Youngest first', sortOldFirst: 'Oldest first'},
-        ru: {y: 'г.', m: 'мес.', sortYoungFirst: 'Сначала молодые', sortOldFirst: 'Сначала взрослые'}
-    };
-
     if (sortBtn) {
         const icon = sortBtn.querySelector('i');
         function updateSortDisplay() {
@@ -197,22 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
             updateSortDisplay();
         });
     }
-
-    cards.forEach(card => {
-        const birth = card.dataset.birth;
-        const ageSpan = card.querySelector('.cat-age');
-        if (birth && ageSpan) {
-            const [year, month] = birth.split('-').map(Number);
-            const now = new Date();
-            let y = now.getFullYear() - year;
-            let m = now.getMonth() + 1 - month;
-            if (m < 0) {
-                y--;
-                m += 12;
-            }
-            ageSpan.textContent = `${y} ${labels[lang].y} ${m} ${labels[lang].m}`;
-        }
-    });
 
     cards.forEach(card => {
         const img = card.querySelector('img.cat-photo');
