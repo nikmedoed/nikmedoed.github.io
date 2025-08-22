@@ -486,25 +486,25 @@
   location: ""
   cause: ""
 
-- id: rysik
-  name:
-    en: Rysik
-    ru: "Рысик"
-  gender: male
-  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755716396/20250813_195540-b4277e05.jpg
-  photos:
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1755716396/20250813_195540-b4277e05.jpg
-  description:
-    en: ""
-    ru: ""
-  birth: 2025-07
-  sterilized: false
-  wild: false
-  wanderer: false
-  parents: []
-  treatment:
-    en: []
-    ru: []
+#- id: rysik
+#  name:
+#    en: Rysik
+#    ru: "Рысик"
+#  gender: male
+#  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755716396/20250813_195540-b4277e05.jpg
+#  photos:
+#    - https://res.cloudinary.com/nikmedoed/image/upload/v1755716396/20250813_195540-b4277e05.jpg
+#  description:
+#    en: ""
+#    ru: ""
+#  birth: 2025-07
+#  sterilized: false
+#  wild: false
+#  wanderer: false
+#  parents: []
+#  treatment:
+#    en: []
+#    ru: []
 
 #- id: boyarin
 #  name:
