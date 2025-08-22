@@ -1,11 +1,13 @@
 ---
-title: "Adopt an Armenian cat for free"
-description: "Rescue cats from Yerevan and give them homes across Europe and Dubai. Free kittens and cats waiting for adoption."
+title: "Adopt a cat from Armenia | Free kittens from Yerevan"
+description: "Adopt a home cat or kitten from Nansen Street. You can help with food, medicine, and sterilization, and we will help find a family and arrange delivery to Russia, Europe, and Dubai."
 keywords:
   - "adopt a cat"
-  - "help stray cats"
-  - "cats of Armenia"
+  - "cats from Armenia"
+  - "cats Yerevan"
   - "free kittens"
+  - "help stray cats"
+  - "adopt free cats"
   - "free cats"
 layout: cats
 ---
