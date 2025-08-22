@@ -3,6 +3,7 @@
     en: Krichulka
     ru: Кричулька
   gender: female
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866038/20250813-195910-IMG_8503-_-35594bf3.jpg
   photos:
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716383/20250813_194028-f70c5ec8.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716381/20250813_193921-ed271081.jpg
@@ -31,6 +32,7 @@
     en: Kartoshkin
     ru: Картошкин
   gender: male
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866035/20250812-164158-IMG_7952-2b2043b6.jpg
   photos:
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716394/20250813_195256-99b9e57f.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716321/20250805_173057-fc30a8a1.jpg
@@ -63,6 +65,7 @@
     en: Archie
     ru: Арчи
   gender: male
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866033/20250812-163303-IMG_7848-358d7d9b.jpg
   photos:
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716363/20250812_165057-cca2bc77.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716380/20250813_193810-8b3eeb93.jpg
@@ -94,6 +97,7 @@
     en: Star (Glista)
     ru: "Глиста"
   gender: female
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866037/20250813-194444-IMG_8367-RD-fe0ec4c0.jpg
   photos:
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716388/20250813_194444-8af58820.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716395/20250813_195410-eff3f136.jpg
@@ -117,6 +121,7 @@
     en: Sevuk
     ru: Севук
   gender: female
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866035/20250812-165726-IMG_8103-6702d7e8.jpg
   photos:
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716376/20250812_170228-ebe43f23.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716366/20250812_165614-691f2aca.jpg
@@ -145,6 +150,7 @@
     en: Matyora
     ru: Матёрая
   gender: female
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866036/20250812-170318-IMG_8210-RD-ced34e94.jpg
   photos:
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716404/20250815_192652-33d6427c.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716333/20250805_174825-ccea7193.jpg
@@ -170,6 +176,7 @@
     en: Tigra
     ru: "Тигра"
   gender: male
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866040/20250815-193443-IMG_8814-RD-97d4b321.jpg
   photos:
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716332/20250805_174349-123734ab.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716331/20250805_174300-83274aa6.jpg
@@ -194,6 +201,7 @@
     en: Bulochka
     ru: "Булочка"
   gender: female
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866041/20250815-193532-IMG_8817-RD-446d105d.jpg
   photos:
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716326/20250805_173757-16e62f57.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716324/20250805_173546-fddb06ee.jpg
@@ -224,6 +232,7 @@
     en: Rusty
     ru: Расти
   gender: male
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866037/20250813-194948-IMG_8413-_-373c1312.jpg
   photos:
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716392/20250813_194948-7d77fa09.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716392/20250813_195013-2ec50802.jpg
@@ -247,6 +256,7 @@
     en: Mamashka
     ru: Мамашка
   gender: female
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866036/20250813-194401-IMG_8355-RD-c2628dc0.jpg
   photos:
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716388/20250813_194401-9ed6d85a.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716375/20250812_165911-3084865f.jpg
@@ -269,6 +279,7 @@
     en: Mini Panther
     ru: "Мини-пантера"
   gender: female
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866033/20250805-180039-IMG_7683-7a7b841a.jpg
   photos:
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716355/20250812_163925-c65573bf.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716320/20250805_173030-d1287ba6.jpg
@@ -302,6 +313,7 @@
     en: Sprinter
     ru: "Спринтер"
   gender: male
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866034/20250812-163808-IMG_7908-b7baf055.jpg
   photos:
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716354/20250812_163808-2df1e9a1.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716342/20250812_161948-6a107c1a.jpg
