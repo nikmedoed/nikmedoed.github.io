@@ -1,9 +1,22 @@
 {{ define "main" }}
+{{ $cats := .Site.Data.cats }}
+{{ $current := slice }}
+{{ $found := slice }}
+{{ $gone := slice }}
+{{ range $cats }}
+  {{ if not .exit }}
+    {{ $current = $current | append . }}
+  {{ else if .location }}
+    {{ $found = $found | append . }}
+  {{ else }}
+    {{ $gone = $gone | append . }}
+  {{ end }}
+{{ end }}
 <section id="cats-hero" class="hero is-medium is-bold cats-hero">
   <div class="hero-body has-text-centered">
     <div class="container">
       <h1 class="title has-text-white">{{ i18n "catsHeroTitle" }}</h1>
-      {{ $adoptable := where (where $.Site.Data.cats "wild" false) "wanderer" false }}
+      {{ $adoptable := where (where $current "wild" false) "wanderer" false }}
       <p class="subtitle has-text-light mt-2">{{ i18n "catsHeroSubtitle" (dict "Count" (len $adoptable)) | safeHTML }}</p>
       <div class="buttons is-centered mt-5">
         <a class="button telegram" href="https://t.me/" target="_blank">
@@ -123,11 +136,42 @@
       </div>
     <div class="columns is-multiline" id="cats-list">
       {{ $lang := .Site.Language.Lang }}
-      {{ range sort .Site.Data.cats "birth" "desc" }}
-        {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $.Site.Data.cats) }}
+      {{ range sort $current "birth" "desc" }}
+        {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $cats) }}
       {{ end }}
     </div>
   </div>
 </section>
+
+{{ if $found }}
+<section class="section has-background-light">
+  <div class="container">
+    <h2 class="title has-text-centered has-text-link mb-4">{{ i18n "catsFoundHomeHeading" }}</h2>
+    <p class="has-text-centered mb-5">{{ i18n "catsFoundHomeText" }}</p>
+    <div class="columns is-multiline">
+      {{ $lang := .Site.Language.Lang }}
+      {{ range sort $found "exit" "desc" }}
+        {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $cats) }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ if $gone }}
+<section class="section">
+  <div class="container">
+    <h2 class="title has-text-centered has-text-danger mb-4">{{ i18n "catsGoneHeading" }}</h2>
+    <p class="has-text-centered mb-5">{{ i18n "catsGoneText" }}</p>
+    <div class="columns is-multiline">
+      {{ $lang := .Site.Language.Lang }}
+      {{ range sort $gone "exit" "desc" }}
+        {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $cats) }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
+
 <script src="/js/cats.js"></script>
 {{ end }}

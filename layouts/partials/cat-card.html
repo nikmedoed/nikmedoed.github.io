@@ -34,6 +34,16 @@
 
       <p class="content mb-0">{{ index $cat.description $lang }}</p>
 
+      {{ if $cat.exit }}
+      <p class="content mb-0 mt-2">
+        {{ if $cat.location }}
+          <span class="has-text-weight-semibold">{{ i18n "catAdoptedLabel" }}</span> {{ $cat.exit }} — {{ $cat.location }}
+        {{ else }}
+          <span class="has-text-weight-semibold">{{ i18n "catPassedLabel" }}</span> {{ $cat.exit }}
+        {{ end }}
+      </p>
+      {{ end }}
+
       {{ if $cat.parents }}
       <div class="mt-1">
         <span class="has-text-weight-semibold">{{ i18n "parentsLabel" }}:</span>
@@ -77,7 +87,9 @@
     </div>
     <footer class="card-footer">
       <a class="card-footer-item" href="gallery/?id={{ $cat.id }}">{{ i18n "moreButton" }}</a>
+      {{ if not $cat.exit }}
       <a class="card-footer-item adopt-btn" data-name="{{ index $cat.name $lang }}">{{ i18n "adoptButton" }}</a>
+      {{ end }}
     </footer>
   </div>
 </div>

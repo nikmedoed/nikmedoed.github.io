@@ -26,6 +26,8 @@
   treatment:
     en: ""
     ru: ""
+  exit: ""
+  location: ""
 
 - id: kartoshkin
   name:
@@ -59,6 +61,8 @@
   treatment:
     en: Feline Leukemia (FeLV)
     ru: Лейкоз
+  exit: ""
+  location: ""
 
 - id: archi
   name:
@@ -91,6 +95,8 @@
   treatment:
     en: ""
     ru: ""
+  exit: ""
+  location: ""
 
 - id: glista
   name:
@@ -115,6 +121,8 @@
   treatment:
     en: ""
     ru: ""
+  exit: ""
+  location: ""
 
 - id: sevuk
   name:
@@ -144,6 +152,8 @@
   treatment:
     en: ""
     ru: ""
+  exit: ""
+  location: ""
 
 - id: Mature
   name:
@@ -170,6 +180,8 @@
   treatment:
     en: ""
     ru: ""
+  exit: ""
+  location: ""
 
 - id: tigra
   name:
@@ -195,6 +207,8 @@
   treatment:
     en: ""
     ru: ""
+  exit: ""
+  location: ""
 
 - id: bulochka
   name:
@@ -226,6 +240,8 @@
   treatment:
     en: ""
     ru: ""
+  exit: ""
+  location: ""
 
 - id: rusty
   name:
@@ -250,6 +266,8 @@
   treatment:
     en: Eye issues
     ru: Проблемы с глазом
+  exit: ""
+  location: ""
 
 - id: mamashka
   name:
@@ -273,6 +291,8 @@
   treatment:
     en: ""
     ru: ""
+  exit: ""
+  location: ""
 
 - id: mini-panther
   name:
@@ -307,6 +327,8 @@
   treatment:
     en: Possible ringworm
     ru: Возможен лишай
+  exit: ""
+  location: ""
 
 - id: sprinter
   name:
@@ -344,6 +366,8 @@
     ru:
       - На передней ноге перекушен нерв
       - Возможен лишай
+  exit: ""
+  location: ""
 
 - id: sevuk-son-1
   name:
@@ -365,6 +389,8 @@
   treatment:
     en: []
     ru: []
+  exit: ""
+  location: ""
 
 - id: sevuk-son-2
   name:
@@ -386,6 +412,8 @@
   treatment:
     en: []
     ru: []
+  exit: ""
+  location: ""
 
 - id: sevuk-son-3
   name:
@@ -407,6 +435,8 @@
   treatment:
     en: []
     ru: []
+  exit: ""
+  location: ""
 
 #- id: boyarin
 #  name:

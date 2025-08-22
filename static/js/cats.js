@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const cards = Array.from(document.querySelectorAll('.cat-card'));
+    const cards = Array.from(document.querySelectorAll('#cats-list .cat-card'));
     if (!cards.length) return;
 
     const sterFilter = document.getElementById('filter-ster');
