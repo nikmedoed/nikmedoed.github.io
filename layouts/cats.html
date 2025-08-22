@@ -115,10 +115,15 @@
           <span class="tag is-info is-light" data-tame="yes">{{ i18n "filterTame" }}</span>
         </div>
         <div class="tags are-small filter-group" id="year-filter"></div>
+        <div class="tags are-small filter-group">
+          <span class="tag is-light" id="sort-toggle" aria-label="{{ i18n "sortYoungFirst" }}" title="{{ i18n "sortYoungFirst" }}">
+            <span class="icon"><i class="fas fa-sort-amount-down"></i></span>
+          </span>
+        </div>
       </div>
     <div class="columns is-multiline" id="cats-list">
       {{ $lang := .Site.Language.Lang }}
-      {{ range .Site.Data.cats }}
+      {{ range sort .Site.Data.cats "birth" "desc" }}
         {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $.Site.Data.cats) }}
       {{ end }}
     </div>
