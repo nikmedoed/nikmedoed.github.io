@@ -40,7 +40,7 @@ backToMain: "Back to main page"
 metaDescription: "Nikita Muromtsev is a developer and technical manager about projects and open-source tools for automating routine and increasing awareness using Python and JavaScript."
 catsTitle: "Cats of Nansen street"
 catsHeroTitle: "Nansen's street cats seek homes and support"
-catsHeroSubtitle: "<a href=\"#cat-filters\" class=\"cats-count-link\">{{ .Count }} tails seek a home</a>. Adopt or support financially. We treat, sterilize and care for street cats."
+catsHeroSubtitle: "<a href=\"#cat-filters\" class=\"cats-count-link\">{{ .Count }} tails seek a home</a>. Adopt a cat for free or support financially. We treat, sterilize and care for street cats in Yerevan and deliver across Europe and Dubai."
 catsIntro: |
   <p>Street cats have always stirred in Toma an irresistible urge to feed them. For many years she has carried pouches of cat food in her bag. Then we arrived in Yerevan, a city with so many strays.</p>
   
@@ -52,7 +52,7 @@ catsIntro: |
   
   <p>Once, Fridtjof Nansen helped refugees find a new home and a future. Now we want to give a similar chance to the street cats from his street.</p>
   
-  <p>Help us find homes for these friendly tails — or support our initiative financially.</p>
+  <p>Help us find homes for these friendly tails or support our initiative financially. We offer free kittens and ship Armenian cats across Europe and to Dubai.</p>
 catsMediaTelegram: "Telegram"
 catsMediaInstagram: "Instagram"
 catsMediaTikTok: "TikTok"

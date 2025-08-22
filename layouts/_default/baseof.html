@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Muromtsev Nikita: {{ .Title }}</title>
     <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ i18n "metaDescription" }}{{ end }}">
+    {{ with .Params.keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
     <meta property="og:title" content="{{ .Title }} | Muromtsev Nikita">
     <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ i18n "metaDescription" }}{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}">
