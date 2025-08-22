@@ -408,42 +408,42 @@
     en: []
     ru: []
 
-- id: boyarin
-  name:
-    en: Boyarin
-    ru: "Боярин"
-  gender: male
-  avatar: https://placehold.co/400?text=No+Photo
-  photos: []
-  description:
-    en: Independent and self-sufficient tomcat who likes chasing youngsters.
-    ru: "Деловой, самодостаточный котяра. Любит гонять молодняк."
-  birth: 2022-01
-  sterilized: false
-  wild: true
-  wanderer: true
-  parents: []
-  treatment:
-    en: []
-    ru: []
-
-- id: kuzmich
-  name:
-    en: Kuzmich
-    ru: "Кузьмич"
-  gender: male
-  avatar: https://placehold.co/400?text=No+Photo
-  photos: []
-  description:
-    en: Ginger terror of the neighborhood, marks every corner and fights with pleasure. Surprisingly friendly and allows petting.
-    ru: "Рыжая гроза района, метит каждый угол территории, гоняет котов и дерется с ними с большим удовольствием. При этом на удивление ручной, разрешает себя гладить."
-  birth: 2021-01
-  sterilized: true
-  wild: false
-  wanderer: true
-  parents: []
-  treatment:
-    en:
-      - Battle scars
-    ru:
-      - "боевые шрамы"
+#- id: boyarin
+#  name:
+#    en: Boyarin
+#    ru: "Боярин"
+#  gender: male
+#  avatar: https://placehold.co/400?text=No+Photo
+#  photos: []
+#  description:
+#    en: Independent and self-sufficient tomcat who likes chasing youngsters.
+#    ru: "Деловой, самодостаточный котяра. Любит гонять молодняк."
+#  birth: 2022-01
+#  sterilized: false
+#  wild: true
+#  wanderer: true
+#  parents: []
+#  treatment:
+#    en: []
+#    ru: []
+#
+#- id: kuzmich
+#  name:
+#    en: Kuzmich
+#    ru: "Кузьмич"
+#  gender: male
+#  avatar: https://placehold.co/400?text=No+Photo
+#  photos: []
+#  description:
+#    en: Ginger terror of the neighborhood, marks every corner and fights with pleasure. Surprisingly friendly and allows petting.
+#    ru: "Рыжая гроза района, метит каждый угол территории, гоняет котов и дерется с ними с большим удовольствием. При этом на удивление ручной, разрешает себя гладить."
+#  birth: 2021-01
+#  sterilized: true
+#  wild: false
+#  wanderer: true
+#  parents: []
+#  treatment:
+#    en:
+#      - Battle scars
+#    ru:
+#      - "боевые шрамы"
