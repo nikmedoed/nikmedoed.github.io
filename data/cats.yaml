@@ -94,8 +94,8 @@
 
 - id: glista
   name:
-    en: Star (Glista)
-    ru: "Глиста"
+    en: Star
+    ru: "Звезда"
   gender: female
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866037/20250813-194444-IMG_8367-RD-fe0ec4c0.jpg
   photos:
@@ -104,14 +104,14 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716395/20250813_195422-1126abb2.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716404/20250815_191918-e9e8529e.jpg
   description:
-    en: Calm, curious and emotionally stable. She endured all procedures related to sterilization very well.
+    en: Calm, curious and emotionally stable. She endured all procedures related to sterilization very bravely.
     ru: Спокойная, любознательная и эмоционально стабильная кошка. Одна из тех, кто очень стойко перенесла все манипуляции, связанные со стерилизацией.
   birth: 2024-10
   sterilized: true
   wild: false
   wanderer: false
   parents:
-    - matyora
+    - Mature
   treatment:
     en: ""
     ru: ""
@@ -133,21 +133,21 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716401/20250813_200343-d185be12.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716402/20250815_191803-9ff8576b.jpg
   description:
-    en: Very affectionate and people-oriented, she loves to press against a person's leg and purr like a tractor. Protects her feline family.
+    en: Very affectionate and people-oriented, she loves to snuggle up against a person's leg and purr like a tractor. Protects her feline family.
     ru: Очень ласковая, ручная, обожает прижаться к ноге человека и мурчать, как трактор. Любит и защищает свою кошачью семью.
   birth: 2024-10
   sterilized: false
   wild: false
   wanderer: false
   parents:
-    - matyora
+    - Mature
   treatment:
     en: ""
     ru: ""
 
-- id: matyora
+- id: Mature
   name:
-    en: Matyora
+    en: Mature
     ru: Матёрая
   gender: female
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866036/20250812-170318-IMG_8210-RD-ced34e94.jpg
@@ -160,7 +160,7 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716371/20250812_165739-f47be557.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716372/20250812_165812-bd77bf8c.jpg
   description:
-    en: The businesslike mom of the family, born on the street to live indoors. Affectionate with people, fierce with cats.
+    en: The businesslike mom of the family, born on the street but truly meant for a home. Affectionate with people, but feisty  with cats.
     ru: Деловая мама семейства, рождена на улице, чтобы жить дома. Ласковая с людьми, боевая с котами.
   birth: 2023-05
   sterilized: true
@@ -173,7 +173,7 @@
 
 - id: tigra
   name:
-    en: Tigra
+    en: Tiger
     ru: "Тигра"
   gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866040/20250815-193443-IMG_8814-RD-97d4b321.jpg
@@ -184,14 +184,14 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716374/20250812_165842-3eaa4fe5.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716391/20250813_194657-29a0e215.jpg
   description:
-    en: Active, very curious, quick-witted and with a stable psyche — the perfect partner for games and life.
+    en: Active, very curious, intelligent and with a stable psyche — the perfect partner for games and life.
     ru: Активный, очень любознательный, сообразительный и с устойчивой психикой — идеальный напарник для игр и жизни.
   birth: 2025-05
   sterilized: false
   wild: false
   wanderer: false
   parents:
-    - matyora
+    - Mature
   treatment:
     en: ""
     ru: ""
@@ -215,14 +215,14 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716374/20250812_165842-3eaa4fe5.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716391/20250813_194657-29a0e215.jpg
   description:
-    en: Gentle and sociable, she adores her feline family and is ready to share her love with new caretakers.
+    en: Gentle and sociable, she adores her feline family and is ready to share her love with new cat parents.
     ru: Нежная и компанейская, обожает свою кошачью семью. Готова дарить свою любовь своим новым котородителям.
   birth: 2025-05
   sterilized: false
   wild: false
   wanderer: false
   parents:
-    - matyora
+    - Mature
   treatment:
     en: ""
     ru: ""
@@ -231,8 +231,8 @@
   name:
     en: Rusty
     ru: Расти
-  gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866037/20250813-194948-IMG_8413-_-373c1312.jpg
+  gender: female
   photos:
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716392/20250813_194948-7d77fa09.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716392/20250813_195013-2ec50802.jpg
@@ -242,14 +242,14 @@
   description:
     en: ""
     ru: ""
-  birth: 2025-07
+  birth: 2024-09
   sterilized: false
-  wild: false
+  wild: true
   wanderer: false
   parents: []
   treatment:
-    en: ""
-    ru: ""
+    en: Eye issues
+    ru: Проблемы с глазом
 
 - id: mamashka
   name:
@@ -338,5 +338,5 @@
   wanderer: false
   parents: []
   treatment:
-    en: Nerve damaged in front leg
-    ru: На передней ноге перекушен нерв
+    en: Nerve damaged in front leg. Possible ringworm.
+    ru: На передней ноге перекушен нерв. Возможен лишай.
