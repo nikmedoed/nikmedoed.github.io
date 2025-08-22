@@ -180,11 +180,18 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (sortBtn) {
-        sortBtn.textContent = labels[lang].sortOldFirst;
+        const icon = sortBtn.querySelector('i');
+        sortBtn.setAttribute('aria-label', labels[lang].sortOldFirst);
+        sortBtn.setAttribute('title', labels[lang].sortOldFirst);
         sortBtn.addEventListener('click', () => {
             sortAsc = !sortAsc;
             sortCards();
-            sortBtn.textContent = labels[lang][sortAsc ? 'sortYoungFirst' : 'sortOldFirst'];
+            const label = labels[lang][sortAsc ? 'sortYoungFirst' : 'sortOldFirst'];
+            sortBtn.setAttribute('aria-label', label);
+            sortBtn.setAttribute('title', label);
+            if (icon) {
+                icon.className = sortAsc ? 'fas fa-sort-amount-up' : 'fas fa-sort-amount-down';
+            }
         });
     }
 
