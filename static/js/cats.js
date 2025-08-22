@@ -65,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let sortAsc = false;
     function sortCards() {
         const list = document.getElementById('cats-list');
+        if (!list) return;
         const sorted = cards.slice().sort((a, b) => {
             const [ay, am] = a.dataset.birth.split('-').map(Number);
             const [by, bm] = b.dataset.birth.split('-').map(Number);
