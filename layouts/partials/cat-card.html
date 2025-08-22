@@ -65,7 +65,13 @@
       {{ $t := index $cat.treatment $lang }}
       {{ if $t }}
       <div class="tags bottom-tags mt-2">
-        <span class="tag is-danger">{{ $t }}</span>
+        {{ if (reflect.IsSlice $t) }}
+          {{ range $t }}
+          <span class="tag is-danger">{{ . }}</span>
+          {{ end }}
+        {{ else }}
+          <span class="tag is-danger">{{ $t }}</span>
+        {{ end }}
       </div>
       {{ end }}
     </div>

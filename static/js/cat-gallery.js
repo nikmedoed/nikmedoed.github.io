@@ -51,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return `<a class="tag is-light ${ch.gender === 'male' ? 'is-link' : 'is-danger'} cat-relative ml-1" href="?id=${ch.id}"><span class="icon is-small mr-1"><i class="fas ${icon}"></i></span><span>${ch.name[lang]}</span></a>`;
       }).join('');
     const childrenBlock = children ? `<div class="mt-1"><span class="has-text-weight-semibold">${lang==='ru' ? 'Дети:' : 'Children:'}</span>${children}</div>` : '';
-    const treatment = cat.treatment && cat.treatment[lang] ? `<div class="tags bottom-tags mt-2"><span class="tag is-danger">${cat.treatment[lang]}</span></div>` : '';
+    const issues = cat.treatment && cat.treatment[lang] ? (Array.isArray(cat.treatment[lang]) ? cat.treatment[lang] : [cat.treatment[lang]]) : [];
+    const treatment = issues.length ? `<div class="tags bottom-tags mt-2">${issues.map(t => `<span class="tag is-danger">${t}</span>`).join('')}</div>` : '';
     const adoptText = lang === 'ru' ? 'Забрать' : 'Adopt';
     return `<div class="card cat-card"><div class="card-content"><div class="is-flex is-align-items-center is-justify-content-space-between mb-2"><div class="is-flex is-align-items-center"><p class="title is-5 mb-0">${name}</p><span class="icon cat-gender ml-2"><i class="fas ${genderIcon}"></i></span><span class="tag is-rounded is-hoverable cat-ster-tag ml-2 ${sterClass}">${sterText}</span></div><div class="is-flex is-align-items-center">${wildIcon}${wandererIcon}<p class="is-size-7 mb-0 cat-age">${ageString(cat.birth)}</p></div></div><p class="content mb-0">${cat.description[lang]}</p>${parentsBlock}${childrenBlock}${treatment}</div><footer class="card-footer"><a class="card-footer-item adopt-btn" data-name="${name}">${adoptText}</a></footer></div>`;
   }
