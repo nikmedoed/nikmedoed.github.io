@@ -3,7 +3,7 @@
 This repository contains the source for my personal landing page and portfolio.
 The site is generated with **Hugo** using Bulma for styling and a small dark/vivid palette.
 
-Visit the site here: <https://nikmedoed.github.io>
+Visit the site here: <https://nikmedoed.com>
 
 Main page features:
 
