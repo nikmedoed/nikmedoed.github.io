@@ -60,6 +60,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const tameFilter = document.getElementById('filter-tame');
     const yearFilter = document.getElementById('year-filter');
     const resetBtn = document.getElementById('filter-reset');
+    const sortBtn = document.getElementById('sort-toggle');
+
+    let sortAsc = false;
+    function sortCards() {
+        const list = document.getElementById('cats-list');
+        const sorted = cards.slice().sort((a, b) => {
+            const [ay, am] = a.dataset.birth.split('-').map(Number);
+            const [by, bm] = b.dataset.birth.split('-').map(Number);
+            if (sortAsc) {
+                return ay !== by ? ay - by : am - bm;
+            }
+            return by !== ay ? by - ay : bm - am;
+        });
+        sorted.forEach(c => list.appendChild(c.parentElement));
+    }
 
     const filters = { ster: null, gender: null, health: null, tame: null, years: [] };
 
@@ -155,13 +170,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    sortCards();
     applyFilters();
 
     const lang = document.documentElement.lang;
     const labels = {
-        en: {y: 'y', m: 'm'},
-        ru: {y: 'г.', m: 'мес.'}
+        en: {y: 'y', m: 'm', sortYoungFirst: 'Youngest first', sortOldFirst: 'Oldest first'},
+        ru: {y: 'г.', m: 'мес.', sortYoungFirst: 'Сначала молодые', sortOldFirst: 'Сначала взрослые'}
     };
+
+    if (sortBtn) {
+        sortBtn.textContent = labels[lang].sortOldFirst;
+        sortBtn.addEventListener('click', () => {
+            sortAsc = !sortAsc;
+            sortCards();
+            sortBtn.textContent = labels[lang][sortAsc ? 'sortYoungFirst' : 'sortOldFirst'];
+        });
+    }
 
     cards.forEach(card => {
         const birth = card.dataset.birth;
