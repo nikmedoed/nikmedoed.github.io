@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ .Title }} | Муромцевы Тамара и Никита</title>
+    <title>Muromtsev Nikita: {{ .Title }}</title>
     <meta name="description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ i18n "metaDescription" }}{{ end }}">
     {{ with .Params.keywords }}<meta name="keywords" content="{{ delimit . ", " }}">{{ end }}
-    <meta property="og:title" content="{{ .Title }} | Муромцевы Тамара и Никита">
+    <meta property="og:title" content="{{ .Title }} | Muromtsev Nikita">
     <meta property="og:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ i18n "metaDescription" }}{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:type" content="website">
     <meta property="og:image" content="{{ with .Params.og_image }}{{ . | absURL }}{{ else }}{{ .Site.BaseURL }}favicon/web-app-manifest-512x512.png{{ end }}">
-    <meta property="og:site_name" content="Муромцевы Тамара и Никита">
+    <meta property="og:site_name" content="Nikita Muromtsev">
     <meta property="og:locale" content="{{ .Site.Language.Lang }}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ .Title }} | Муромцевы Тамара и Никита">
+    <meta name="twitter:title" content="{{ .Title }} | Muromtsev Nikita">
     <meta name="twitter:description" content="{{ with .Params.description }}{{ . }}{{ else }}{{ i18n "metaDescription" }}{{ end }}">
     <meta name="twitter:image" content="{{ with .Params.og_image }}{{ . | absURL }}{{ else }}{{ .Site.BaseURL }}favicon/web-app-manifest-512x512.png{{ end }}">
     <link rel="canonical" href="{{ .Permalink }}">
