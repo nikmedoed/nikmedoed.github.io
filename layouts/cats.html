@@ -4,7 +4,7 @@
 {{ $found := slice }}
 {{ $gone := slice }}
 {{ range $cats }}
-  {{ if not .exit }}
+  {{ if not .end }}
     {{ $current = $current | append . }}
   {{ else if .location }}
     {{ $found = $found | append . }}
@@ -144,13 +144,13 @@
 </section>
 
 {{ if $found }}
-<section class="section has-background-light">
+<section class="section found-home-section">
   <div class="container">
     <h2 class="title has-text-centered has-text-link mb-4">{{ i18n "catsFoundHomeHeading" }}</h2>
     <p class="has-text-centered mb-5">{{ i18n "catsFoundHomeText" }}</p>
     <div class="columns is-multiline">
       {{ $lang := .Site.Language.Lang }}
-      {{ range sort $found "exit" "desc" }}
+      {{ range sort $found "end" "desc" }}
         {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $cats) }}
       {{ end }}
     </div>
@@ -165,7 +165,7 @@
     <p class="has-text-centered mb-5">{{ i18n "catsGoneText" }}</p>
     <div class="columns is-multiline">
       {{ $lang := .Site.Language.Lang }}
-      {{ range sort $gone "exit" "desc" }}
+      {{ range sort $gone "end" "desc" }}
         {{ partial "cat-card.html" (dict "cat" . "lang" $lang "cats" $cats) }}
       {{ end }}
     </div>

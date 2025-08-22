@@ -93,4 +93,4 @@ catsFoundHomeText: "They were lucky to find a home. Help the buddies above find 
 catsGoneHeading: "Not Everything is Perfect"
 catsGoneText: "The street is harsh: winters, rain, disease, fights, stray dogs. Some wander off and never return, others die right outside, hiding their wounds. Below are those we've already lost."
 catAdoptedLabel: "Adopted:"
-catPassedLabel: "Passed:"
+catDiedLabel: "Died:"
