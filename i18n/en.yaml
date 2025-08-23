@@ -39,20 +39,45 @@ footerQuote: "Have a vision, aspire to be a leader, make some humor, Resist, Inv
 backToMain: "Back to main page"
 metaDescription: "Nikita Muromtsev is a developer and technical manager about projects and open-source tools for automating routine and increasing awareness using Python and JavaScript."
 catsTitle: "Cats of Nansen street"
-catsHeroTitle: "<a href=\"#cat-filters\" class=\"cats-count-link\">{{ .Count }} cats of Nansen's street</a> seek homes and support"
+catsHeroTitle: "<a href=\"#cat-filters\" class=\"cats-count-link\">{{ .Count }} cats of Nansen's street</a> dream of homes and support"
 catsHeroSubtitle: "We rescue, sterilize and care for stray cats. You can give them a home — or help us keep them safe."
 catsIntro: |
-  <p>Street cats have always stirred in my wife an irresistible urge to feed them. For many years she's carried pouches of cat food in her bag. Then we arrived in Yerevan, a city with so many strays.</p>
-  
-  <p>At first, Toma fed the fluffballs only now and then. But one cat learned to call at our window every evening, loudly inviting us to serve dinner… The trap was set. Before we knew it, we were feeding her kittens — the ones she pointedly left in our care before walking off to enjoy her freedom.</p>
-  
-  <p>In return, we had her spayed. While arranging that, we met our neighbors and the cats they’d been looking after. That’s how a small crew of friendly yard‑buddies gathered around us.</p>
-  
-  <p>Everything was fine — until 2025, when new pregnant cats appeared, and suddenly we had a crowd of kittens. Wild roamers may drop by and move on, but we can’t in good conscience abandon our tame, resident friends.</p>
-  
-  <p>Once, Fridtjof Nansen helped refugees find a new home and a future. Now we want to give a similar chance to the street cats from his street.</p>
-  
-  <p>Help us find homes for these friendly tails — or support our initiative financially.</p>
+  <p>
+   That’s what we used to hear under our window in Yerevan — a clever cat we 
+   nicknamed <em>Krichulka</em> came every night to call us for dinner. 
+   And then… she brought her kittens and went off to enjoy her freedom.
+  </p>
+
+  <p>
+   We had her spayed and started taking care of the little ones. 
+   But in 2025 two new pregnant cats appeared in our yard, and Krichulka’s 
+   mom kept escaping our attempts to catch her for sterilization.
+  </p>
+
+  <p>
+   Now we have a whole crowd of fluffy friends. If we do nothing, 
+   90% of them will die — from disease, cold, hunger, or even stray dogs 
+   attacking them right before our eyes.
+  </p>
+
+  <p>
+   We could manage feeding and treating 4 cats. But now there are 15. 
+   We can’t take them home — our own cat is terminally ill. 
+   Please help us spay, treat, and find families for these sweet, 
+   hand-tamed fluffballs.
+  </p>
+
+  <p><strong>How can you help?</strong></p>
+  <ul>
+   <li>💸 Donate — for food, spaying, and treatment</li>
+   <li>🏠 Adopt — come on, they’re amazing!</li>
+   <li>🤝 Foster — prepare them for a forever home and give them a better chance</li>
+  </ul>
+
+  <p>
+   Support with a donation, share our story on social media, 
+   and follow us.<br>Every bit of help matters. ❤️
+  </p>
 catsMediaTelegram: "Telegram"
 catsMediaInstagram: "Instagram"
 catsMediaTikTok: "TikTok"
