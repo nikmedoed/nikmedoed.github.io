@@ -5,9 +5,7 @@
   <div class="card cat-card{{ if $cat.location }} adopted{{ end }}" id="cat-{{ $cat.id }}" data-year="{{ substr $cat.birth 0 4 }}" data-birth="{{ $cat.birth }}" {{ if $cat.end }}data-end="{{ $cat.end }}"{{ end }} data-sterilized="{{ if $cat.sterilized }}yes{{ else }}no{{ end }}" data-treatment="{{ if (index $cat.treatment $lang) }}yes{{ else }}no{{ end }}" data-gender="{{ $cat.gender }}" data-wild="{{ if $cat.wild }}yes{{ else }}no{{ end }}" data-wanderer="{{ if $cat.wanderer }}yes{{ else }}no{{ end }}">
     <div class="card-image">
       <figure class="image is-3by2">
-        {{ $photo := index $cat.photos 0 }}
-        {{ $optimized := replace $photo "/upload/" "/upload/w_716/" }}
-        <img class="cat-photo" src="{{ $optimized }}" alt="{{ index $cat.name $lang }}" loading="lazy" width="358" height="239">
+        <img class="cat-photo" src="{{ index $cat.photos 0 }}" alt="{{ index $cat.name $lang }}">
       </figure>
     </div>
     <div class="card-content">
