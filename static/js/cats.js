@@ -297,9 +297,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cryptoBtn = document.getElementById('crypto-btn');
     const cryptoBlock = document.getElementById('crypto-block');
-    if (cryptoBtn && cryptoBlock) {
+    const donateButtons = document.getElementById('donate-buttons');
+    if (cryptoBtn && cryptoBlock && donateButtons) {
         cryptoBtn.addEventListener('click', () => {
             cryptoBlock.classList.toggle('is-hidden');
+            donateButtons.classList.toggle('mb-0', cryptoBlock.classList.contains('is-hidden'));
         });
     }
 
