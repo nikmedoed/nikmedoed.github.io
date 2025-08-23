@@ -20,16 +20,16 @@
       {{ $adoptable := where (where $current "wild" false) "wanderer" false }}
       <p class="subtitle has-text-light mt-2">{{ i18n "catsHeroSubtitle" (dict "Count" (len $adoptable)) | safeHTML }}</p>
       <div class="buttons is-centered mt-5">
-        <a class="button telegram" href="https://t.me/" target="_blank">
-          <span class="icon"><i class="fab fa-telegram"></i></span><span>{{ i18n "catsMediaTelegram" }}</span>
-        </a>
-        <a class="button instagram" href="https://instagram.com/" target="_blank">
-          <span class="icon"><i class="fab fa-instagram"></i></span><span>{{ i18n "catsMediaInstagram" }}</span>
-        </a>
-        <a class="button tiktok" href="https://tiktok.com/" target="_blank">
-          <span class="icon"><i class="fab fa-tiktok"></i></span><span>{{ i18n "catsMediaTikTok" }}</span>
-        </a>
-        <a class="button spreadsheet" href="https://docs.google.com/" target="_blank">
+<!--        <a class="button telegram" href="https://t.me/" target="_blank">-->
+<!--          <span class="icon"><i class="fab fa-telegram"></i></span><span>{{ i18n "catsMediaTelegram" }}</span>-->
+<!--        </a>-->
+<!--        <a class="button instagram" href="https://instagram.com/" target="_blank">-->
+<!--          <span class="icon"><i class="fab fa-instagram"></i></span><span>{{ i18n "catsMediaInstagram" }}</span>-->
+<!--        </a>-->
+<!--        <a class="button tiktok" href="https://tiktok.com/" target="_blank">-->
+<!--          <span class="icon"><i class="fab fa-tiktok"></i></span><span>{{ i18n "catsMediaTikTok" }}</span>-->
+<!--        </a>-->
+        <a class="button spreadsheet" href="https://docs.google.com/spreadsheets/d/1T4yvr6_XoW3XjdHdqrNcun2t4SHeLDnBXnj49W_IaD0" target="_blank">
           <span class="icon"><i class="fas fa-table"></i></span><span>{{ i18n "catsMediaSpreadsheet" }}</span>
         </a>
       </div>
