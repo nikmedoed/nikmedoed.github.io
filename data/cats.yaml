@@ -93,7 +93,7 @@
   sterilized: false
   wild: false
   wanderer: false
-  parents: []
+  parents: [ ]
   treatment:
     en: ""
     ru: ""
@@ -186,7 +186,7 @@
   sterilized: true
   wild: false
   wanderer: false
-  parents: []
+  parents: [ ]
   treatment:
     en: ""
     ru: ""
@@ -285,13 +285,13 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716401/20250813_200250-5c7076d9.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716403/20250815_191842-3a8946b7.jpg
   description:
-    en: ""
-    ru: ""
+    en: Gentle but very shy. She had just started trusting us, but after several treatments for her sore eye, she became wary again. In a loving home, she will surely blossom.
+    ru: Нежная, но очень пугливая кошечка. Начала нам доверять, но после нескольких обработок её больного глаза мы потеряли доверие. В любящей семье обязательно расцветёт.
   birth: 2024-09
   sterilized: false
   wild: true
   wanderer: false
-  parents: []
+  parents: [ ]
   treatment:
     en: Eye issues
     ru: Проблемы с глазом
@@ -317,7 +317,7 @@
   sterilized: false
   wild: true
   wanderer: false
-  parents: []
+  parents: [ ]
   treatment:
     en: ""
     ru: ""
@@ -352,7 +352,7 @@
   sterilized: false
   wild: false
   wanderer: false
-  parents: []
+  parents: [ ]
   treatment:
     en: Possible ringworm
     ru: Возможен лишай
@@ -362,8 +362,8 @@
 
 - id: sprinter
   name:
-    en: Sprinter
-    ru: "Спринтер"
+    en: Charlie
+    ru: "Чарли"
   gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866034/20250812-163808-IMG_7908-b7baf055.jpg
   photos:
@@ -386,7 +386,7 @@
   sterilized: false
   wild: false
   wanderer: false
-  parents: []
+  parents: [ ]
   treatment:
     en:
       - Nerve damaged in front leg
@@ -400,7 +400,7 @@
 
 - id: sevuk-son-1
   name:
-    en: Puh
+    en: Pooh
     ru: "Пух"
   gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866038/20250815-193031-IMG_8745-RD-f0a24a16.jpg
@@ -420,8 +420,8 @@
     - sevuk
     - archi
   treatment:
-    en: []
-    ru: []
+    en: [ ]
+    ru: [ ]
   end: ""
   location: ""
   cause: ""
@@ -452,8 +452,8 @@
     - sevuk
     - archi
   treatment:
-    en: []
-    ru: []
+    en: [ ]
+    ru: [ ]
   end: ""
   location: ""
   cause: ""
@@ -480,8 +480,8 @@
     - sevuk
     - archi
   treatment:
-    en: []
-    ru: []
+    en: [ ]
+    ru: [ ]
   end: ""
   location: ""
   cause: ""

@@ -53,20 +53,23 @@
         </div>
         <div class="box support-box has-text-centered mt-4">
           <p>{{ i18n "catsSupportText" }}</p>
-          <div class="buttons is-centered mt-2">
+          <div id="donate-buttons" class="buttons is-centered mt-2 mb-0">
             <a class="button boosty" href="https://boosty.to/nansencats/donate" target="_blank">Boosty 🌍</a>
             <a class="button paypal" href="https://paypal.me/etonikmedoed" target="_blank">PayPal 🌍</a>
             <a class="button yoomoney" href="https://yoomoney.ru/to/4100119289394604" target="_blank">YooMoney 🇷🇺</a>
             <a class="button tinkoff" href="https://tbank.ru/cf/D9nIkPdwdL" target="_blank">Tinkoff 🇷🇺</a>
+            <button id="crypto-btn" class="button crypto">{{ i18n "catsCryptoButton" }} 🪙</button>
           </div>
-<!--          <p class="is-size-6 is-family-monospace wallets mt-3">-->
-<!--            <strong>BTC:</strong> <span data-addr="1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7">1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7</span>-->
-<!--            <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7"><span class="icon"><i class="fas fa-copy"></i></span></button><br>-->
-<!--            <strong>USDT (TRC20):</strong> <span data-addr="TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE">TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE</span>-->
-<!--            <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE"><span class="icon"><i class="fas fa-copy"></i></span></button><br>-->
-<!--            <strong>TON (USDT-TON):</strong> <span data-addr="UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N">UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N</span>-->
-<!--            <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N"><span class="icon"><i class="fas fa-copy"></i></span></button>-->
-<!--          </p>-->
+          <p id="crypto-block" class="is-hidden is-size-6 is-family-monospace wallets mt-3">
+              <strong>BTC:</strong> <span data-addr="1EtmErxSrnm9Z57Jvp2dHReUJiY9NiKzmi">1EtmErxSrnm9Z57Jvp2dHReUJiY9NiKzmi</span>
+              <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="1EtmErxSrnm9Z57Jvp2dHReUJiY9NiKzmi"><span class="icon"><i class="fas fa-copy"></i></span></button><br>
+              <strong>USDT (TRC20):</strong> <span data-addr="TAQ69GYXLqaqovU1LdYqi3aYNw58suESFi">TAQ69GYXLqaqovU1LdYqi3aYNw58suESFi</span>
+              <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="TAQ69GYXLqaqovU1LdYqi3aYNw58suESFi"><span class="icon"><i class="fas fa-copy"></i></span></button><br>
+              <strong>USDT (TON):</strong> <span data-addr="UQCrkJPppkj-OiCgRSAOWNN9zjg5IYSP3LDB-82IGVAy22-I">UQCrkJPppkj-OiCgRSAOWNN9zjg5IYSP3LDB-82IGVAy22-I</span>
+              <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="UQCrkJPppkj-OiCgRSAOWNN9zjg5IYSP3LDB-82IGVAy22-I"><span class="icon"><i class="fas fa-copy"></i></span></button><br>
+              <strong>ETH:</strong> <span data-addr="0x28a65A15827F2Cf75dE34c6477e3CEe20C35dc04">0x28a65A15827F2Cf75dE34c6477e3CEe20C35dc04</span>
+              <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="0x28a65A15827F2Cf75dE34c6477e3CEe20C35dc04"><span class="icon"><i class="fas fa-copy"></i></span></button>
+          </p>
         </div>
         <div class="box contact-box mt-4">
           <div class="columns is-vcentered is-mobile contact-row">
