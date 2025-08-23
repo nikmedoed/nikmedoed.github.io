@@ -75,6 +75,48 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const emailModal = document.getElementById('email-modal');
+    const subjectInput = document.getElementById('subject');
+    const subjectField = subjectInput ? subjectInput.closest('.field') : null;
+    const messageLabel = document.querySelector('label[for="message"]');
+    const defaultMsgLabel = messageLabel ? messageLabel.textContent : '';
+    const adoptSubjects = { en: 'I want to adopt', ru: 'Забрать домой' };
+    const adoptMsgLabels = { en: 'Your contacts and questions', ru: 'Ваши контакты и вопросы' };
+
+    function resetForm() {
+        if (subjectField) subjectField.classList.remove('is-hidden');
+        if (messageLabel) messageLabel.textContent = defaultMsgLabel;
+        if (subjectInput) subjectInput.value = '';
+    }
+
+    const form = document.getElementById('contact-form');
+    if (form) form.addEventListener('reset', resetForm);
+    if (emailModal) {
+        const bg = emailModal.querySelector('.modal-background');
+        const closeBtn = emailModal.querySelector('.modal-close');
+        [bg, closeBtn].forEach(el => el && el.addEventListener('click', () => {
+            resetForm();
+            emailModal.classList.remove('is-active');
+            document.documentElement.classList.remove('is-clipped');
+        }));
+    }
+    const emailBtn = document.getElementById('email-btn');
+    if (emailBtn) emailBtn.addEventListener('click', resetForm);
+
+    document.addEventListener('click', e => {
+        const btn = e.target.closest('.adopt-btn');
+        if (!btn) return;
+        resetForm();
+        const name = btn.dataset.name;
+        if (subjectInput) subjectInput.value = `${adoptSubjects[lang]} ${name}`;
+        if (subjectField) subjectField.classList.add('is-hidden');
+        if (messageLabel) messageLabel.textContent = adoptMsgLabels[lang];
+        if (emailModal) {
+            emailModal.classList.add('is-active');
+            document.documentElement.classList.add('is-clipped');
+        }
+    });
+
     if (!cards.length) return;
 
     const sterFilter = document.getElementById('filter-ster');
@@ -305,45 +347,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    const emailModal = document.getElementById('email-modal');
-    const subjectInput = document.getElementById('subject');
-    const subjectField = subjectInput ? subjectInput.closest('.field') : null;
-    const messageLabel = document.querySelector('label[for="message"]');
-    const defaultMsgLabel = messageLabel ? messageLabel.textContent : '';
-    const adoptSubjects = { en: 'I want to adopt', ru: 'Забрать домой' };
-    const adoptMsgLabels = { en: 'Your contacts and questions', ru: 'Ваши контакты и вопросы' };
-
-    function resetForm() {
-        if (subjectField) subjectField.classList.remove('is-hidden');
-        if (messageLabel) messageLabel.textContent = defaultMsgLabel;
-        if (subjectInput) subjectInput.value = '';
-    }
-
-    const form = document.getElementById('contact-form');
-    if (form) form.addEventListener('reset', resetForm);
-    if (emailModal) {
-        const bg = emailModal.querySelector('.modal-background');
-        const closeBtn = emailModal.querySelector('.modal-close');
-        [bg, closeBtn].forEach(el => el && el.addEventListener('click', () => {
-            resetForm();
-            emailModal.classList.remove('is-active');
-            document.documentElement.classList.remove('is-clipped');
-        }));
-    }
-    const emailBtn = document.getElementById('email-btn');
-    if (emailBtn) emailBtn.addEventListener('click', resetForm);
-
-    document.querySelectorAll('.adopt-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            resetForm();
-            const name = btn.dataset.name;
-            if (subjectInput) subjectInput.value = `${adoptSubjects[lang]} ${name}`;
-            if (subjectField) subjectField.classList.add('is-hidden');
-            if (messageLabel) messageLabel.textContent = adoptMsgLabels[lang];
-            if (emailModal) {
-                emailModal.classList.add('is-active');
-                document.documentElement.classList.add('is-clipped');
-            }
-        });
-    });
 });
