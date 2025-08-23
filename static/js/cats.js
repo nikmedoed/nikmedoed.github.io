@@ -293,6 +293,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    const cryptoBtn = document.getElementById('crypto-btn');
+    const cryptoBlock = document.getElementById('crypto-block');
+    if (cryptoBtn && cryptoBlock) {
+        cryptoBtn.addEventListener('click', () => {
+            cryptoBlock.classList.toggle('is-hidden');
+        });
+    }
+
     const emailModal = document.getElementById('email-modal');
     const subjectInput = document.getElementById('subject');
     const subjectField = subjectInput ? subjectInput.closest('.field') : null;
