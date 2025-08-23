@@ -225,13 +225,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelectorAll('.cat-relative').forEach(tag => {
-        tag.addEventListener('click', () => {
+        tag.addEventListener('click', e => {
+            e.preventDefault();
             const id = tag.dataset.target;
             const el = document.getElementById(id);
             if (el) {
                 el.scrollIntoView({behavior: 'smooth', block: 'center'});
                 el.classList.add('highlight');
                 setTimeout(() => el.classList.remove('highlight'), 2000);
+                history.replaceState(null, '', '#' + id);
             }
         });
     });
@@ -292,6 +294,16 @@ document.addEventListener('DOMContentLoaded', () => {
             applyFilters();
         });
     });
+
+    const cryptoBtn = document.getElementById('crypto-btn');
+    const cryptoBlock = document.getElementById('crypto-block');
+    const donateButtons = document.getElementById('donate-buttons');
+    if (cryptoBtn && cryptoBlock && donateButtons) {
+        cryptoBtn.addEventListener('click', () => {
+            cryptoBlock.classList.toggle('is-hidden');
+            donateButtons.classList.toggle('mb-0', cryptoBlock.classList.contains('is-hidden'));
+        });
+    }
 
     const emailModal = document.getElementById('email-modal');
     const subjectInput = document.getElementById('subject');

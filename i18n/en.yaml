@@ -43,15 +43,14 @@ catsHeroTitle: "<a href=\"#cat-filters\" class=\"cats-count-link\">{{ .Count }} 
 catsHeroSubtitle: "We rescue, sterilize and care for stray cats. You can give them a home — or help us keep them safe."
 catsIntro: |
   <p>
-   That’s what we used to hear under our window in Yerevan — a clever cat we 
-   nicknamed <em>Krichulka</em> came every night to call us for dinner. 
+   That’s what we used to hear under our window in Yerevan — a clever cat we
+   nicknamed <a href="#cat-krichulka" class="cat-relative" data-target="cat-krichulka">Krichulka</a> came every night to call us for dinner.
    And then… she brought her kittens and went off to enjoy her freedom.
   </p>
 
   <p>
-   We had her spayed and started taking care of the little ones. 
-   But in 2025 two new pregnant cats appeared in our yard, and Krichulka’s 
-   mom kept escaping our attempts to catch her for sterilization.
+   We had her spayed and started taking care of the little ones.
+   But in 2025 two new pregnant cats appeared in our yard, and <a href="#cat-mamashka" class="cat-relative" data-target="cat-mamashka">Krichulka’s mom</a> kept escaping our attempts to catch her for sterilization.
   </p>
 
   <p>
@@ -84,6 +83,7 @@ catsMediaTikTok: "TikTok"
 catsMediaSpreadsheet: "Expense sheet"
 catsSupportTitle: "Help Nansen's street cats"
 catsSupportText: "We need funds for food, surgeries, medicine and finding homes for our buddies"
+catsCryptoButton: "Cryptocurrencies"
 catsContactIntro: "Other ways to help:<br>reach us via <a class=\"has-text-weight-bold\" href=\"#cats-hero\">the networks above</a> or →"
 catsIntroTitle: "Ever heard a hungry mee-ee-ow?"
 heroCharityBtn: "Charity: adopt or sponsor a street cat"
