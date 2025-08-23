@@ -1,4 +1,7 @@
 {{/* cats layout lives in _default for Hugo lookup */}}
+{{ define "extra_head" }}
+<link rel="preload" as="image" href="https://res.cloudinary.com/nikmedoed/image/upload/w_1200/v1755716393/20250813_195232-3293dadb.jpg" fetchpriority="high">
+{{ end }}
 {{ define "main" }}
 {{ $cats := .Site.Data.cats }}
 {{ $current := slice }}
