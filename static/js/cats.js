@@ -225,13 +225,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.querySelectorAll('.cat-relative').forEach(tag => {
-        tag.addEventListener('click', () => {
+        tag.addEventListener('click', e => {
+            e.preventDefault();
             const id = tag.dataset.target;
             const el = document.getElementById(id);
             if (el) {
                 el.scrollIntoView({behavior: 'smooth', block: 'center'});
                 el.classList.add('highlight');
                 setTimeout(() => el.classList.remove('highlight'), 2000);
+                history.replaceState(null, '', '#' + id);
             }
         });
     });

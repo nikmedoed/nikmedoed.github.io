@@ -44,13 +44,13 @@ catsHeroSubtitle: "We rescue, sterilize and care for stray cats. You can give th
 catsIntro: |
   <p>
    That’s what we used to hear under our window in Yerevan — a clever cat we
-   nicknamed <a href="#cat-krichulka">Krichulka</a> came every night to call us for dinner.
+   nicknamed <a href="#cat-krichulka" class="cat-relative" data-target="cat-krichulka">Krichulka</a> came every night to call us for dinner.
    And then… she brought her kittens and went off to enjoy her freedom.
   </p>
 
   <p>
    We had her spayed and started taking care of the little ones.
-   But in 2025 two new pregnant cats appeared in our yard, and <a href="#cat-mamashka">Krichulka’s mom</a> kept escaping our attempts to catch her for sterilization.
+   But in 2025 two new pregnant cats appeared in our yard, and <a href="#cat-mamashka" class="cat-relative" data-target="cat-mamashka">Krichulka’s mom</a> kept escaping our attempts to catch her for sterilization.
   </p>
 
   <p>

@@ -530,6 +530,12 @@ body.no-scroll {
   color: #000;
 }
 
+.button.crypto {
+  background-color: #0098EA;
+  border-color: #0098EA;
+  color: #fff;
+}
+
 .button.telegram {
   background-color: #229ED9;
   border-color: #229ED9;
