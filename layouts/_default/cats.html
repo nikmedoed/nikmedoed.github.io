@@ -16,9 +16,9 @@
 <section id="cats-hero" class="hero is-medium is-bold cats-hero">
   <div class="hero-body has-text-centered">
     <div class="container">
-      <h1 class="title has-text-white">{{ i18n "catsHeroTitle" }}</h1>
       {{ $adoptable := where (where $current "wild" false) "wanderer" false }}
-      <p class="subtitle has-text-light mt-2">{{ i18n "catsHeroSubtitle" (dict "Count" (len $adoptable)) | safeHTML }}</p>
+      <h1 class="title has-text-white">{{ i18n "catsHeroTitle" (dict "Count" (len $adoptable)) | safeHTML }}</h1>
+      <p class="subtitle has-text-light mt-2">{{ i18n "catsHeroSubtitle" | safeHTML }}</p>
       <div class="buttons is-centered mt-5">
 <!--        <a class="button telegram" href="https://t.me/" target="_blank">-->
 <!--          <span class="icon"><i class="fab fa-telegram"></i></span><span>{{ i18n "catsMediaTelegram" }}</span>-->

@@ -325,10 +325,10 @@
   location: ""
   cause: ""
 
-- id: mini-panther
+- id: panther
   name:
-    en: Mini Panther
-    ru: "Мини-пантера"
+    en: Panther
+    ru: "Пантера"
   gender: female
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866033/20250805-180039-IMG_7683-7a7b841a.jpg
   photos:
@@ -346,8 +346,8 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716353/20250812_163749-12feca9e.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716358/20250812_164246-e193e845.jpg
   description:
-    en: One and a half month old girl. Incredibly affectionate tail, follows on your heels and purrs nonstop.
-    ru: Мини-пантера -1,5 месяца, девочка. Невероятно ласковый хвостик. Бегает по пятам и мурчит без остановки.
+    en: Incredibly affectionate tail, follows on your heels and purrs nonstop.
+    ru: Невероятно ласковый хвостик. Бегает по пятам и мурчит без остановки.
   birth: 2025-06
   sterilized: false
   wild: false
