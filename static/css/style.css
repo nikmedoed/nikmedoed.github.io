@@ -221,6 +221,16 @@ html[data-theme='light'] .cat-card.adopted .card-footer {
   white-space: nowrap;
 }
 
+.card-footer-item.adopt-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.card-footer-item.adopt-btn:hover {
+  background-color: rgba(50, 115, 220, 0.1);
+}
+
 .cat-flag[data-tooltip]:hover::after,
 .cat-flag.tooltip-active::after {
   content: attr(data-tooltip);
