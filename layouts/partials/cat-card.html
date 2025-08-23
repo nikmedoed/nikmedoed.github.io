@@ -90,9 +90,9 @@
       {{ end }}
     </div>
     <footer class="card-footer">
-      <a class="card-footer-item" href="gallery/?id={{ $cat.id }}">{{ i18n "moreButton" }}</a>
+      <a class="card-footer-item" href="gallery/?id={{ $cat.id }}">{{ i18n "moreAbout" (dict "Name" (index $cat.name $lang)) }}</a>
       {{ if not $cat.end }}
-      <a class="card-footer-item adopt-btn" data-name="{{ index $cat.name $lang }}">{{ i18n "adoptButton" }}</a>
+      <button class="card-footer-item adopt-btn" type="button" data-name="{{ index $cat.name $lang }}">{{ i18n "adoptButton" }}</button>
       {{ end }}
     </footer>
   </div>
