@@ -492,6 +492,10 @@ body.no-scroll {
   font-weight: 600;
 }
 
+.footer-links {
+  display: inline-block;
+}
+
 #about {
   padding-bottom: 3rem;
 }
