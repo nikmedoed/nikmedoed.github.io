@@ -39,10 +39,10 @@ footerQuote: "Have a vision, aspire to be a leader, make some humor, Resist, Inv
 backToMain: "Back to main page"
 metaDescription: "Nikita Muromtsev is a developer and technical manager about projects and open-source tools for automating routine and increasing awareness using Python and JavaScript."
 catsTitle: "Cats of Nansen street"
-catsHeroTitle: "Nansen's street cats seek homes and support"
-catsHeroSubtitle: "<a href=\"#cat-filters\" class=\"cats-count-link\">{{ .Count }} tails seek a home</a>. Adopt or support financially. We treat, sterilize and care for street cats."
+catsHeroTitle: "<a href=\"#cat-filters\" class=\"cats-count-link\">{{ .Count }} cats of Nansen's street</a> seek homes and support"
+catsHeroSubtitle: "We rescue, sterilize and care for stray cats. You can give them a home — or help us keep them safe."
 catsIntro: |
-  <p>Street cats have always stirred in Toma an irresistible urge to feed them. For many years she has carried pouches of cat food in her bag. Then we arrived in Yerevan, a city with so many strays.</p>
+  <p>Street cats have always stirred in my wife an irresistible urge to feed them. For many years she's carried pouches of cat food in her bag. Then we arrived in Yerevan, a city with so many strays.</p>
   
   <p>At first, Toma fed the fluffballs only now and then. But one cat learned to call at our window every evening, loudly inviting us to serve dinner… The trap was set. Before we knew it, we were feeding her kittens — the ones she pointedly left in our care before walking off to enjoy her freedom.</p>
   
@@ -60,7 +60,7 @@ catsMediaSpreadsheet: "Expense sheet"
 catsSupportTitle: "Help Nansen's street cats"
 catsSupportText: "We need funds for food, surgeries, medicine and finding homes for our buddies"
 catsContactIntro: "Other ways to help:<br>reach us via <a class=\"has-text-weight-bold\" href=\"#cats-hero\">the networks above</a> or →"
-catsIntroTitle: "Who, What & Why"
+catsIntroTitle: "Ever heard a hungry mee-ee-ow?"
 heroCharityBtn: "Charity: adopt or sponsor a street cat"
 filterAll: "All"
 filterSterilized: "Sterilized"
