@@ -362,8 +362,8 @@
 
 - id: sprinter
   name:
-    en: Sprinter
-    ru: "Спринтер"
+    en: Charlie
+    ru: "Чарли"
   gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866034/20250812-163808-IMG_7908-b7baf055.jpg
   photos:
