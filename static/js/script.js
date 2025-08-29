@@ -8,20 +8,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     const currentLang = document.documentElement.lang;
-    const baseAttr = document.documentElement.dataset.base || '/';
-    const basePath = baseAttr.replace(/\/$/, '');
     const storedLang = localStorage.getItem('lang');
     const translations = {
         en: {all: 'All', sent: 'Message sent!', fail: 'Failed to send message.'},
         ru: {all: 'Все', sent: 'Сообщение отправлено!', fail: 'Не удалось отправить сообщение.'}
     };
     let lastScroll = window.scrollY;
+    const langPath = lang => (lang === 'en' ? '' : `/${lang}`);
+    const stripLang = path => {
+        const stripped = path.replace(/^\/(en|ru)(?=\/|$)/, '');
+        return stripped === '' ? '/' : stripped;
+    };
+    if (storedLang && storedLang !== currentLang) {
+        const target = langPath(storedLang) + stripLang(location.pathname) + location.search + location.hash;
+        if (target !== location.pathname + location.search + location.hash) {
+            location.replace(target);
+        }
+        return;
+    }
     if (!storedLang) {
         const navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
-        if (navLang.startsWith('ru') && currentLang === 'en') {
-            const newPath = basePath + '/ru' + location.pathname.slice(basePath.length) + location.search + location.hash;
-            localStorage.setItem('lang', 'ru');
-            location.replace(newPath);
+        const detected = navLang.startsWith('ru') ? 'ru' : 'en';
+        if (detected !== currentLang) {
+            localStorage.setItem('lang', detected);
+            const target = langPath(detected) + stripLang(location.pathname) + location.search + location.hash;
+            if (target !== location.pathname + location.search + location.hash) {
+                location.replace(target);
+            }
             return;
         }
     }
