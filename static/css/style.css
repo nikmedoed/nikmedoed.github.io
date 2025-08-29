@@ -638,6 +638,8 @@ body.no-scroll {
 
 #email-btn {
   width: 12rem;
+  white-space: normal;
+  height: auto;
 }
 
 html[data-theme='light'] #email-btn {
