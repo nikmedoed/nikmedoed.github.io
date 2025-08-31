@@ -227,9 +227,11 @@
   treatment:
     en: ""
     ru: ""
-  end: ""
+  end: 2025-08-31
   location: ""
-  cause: ""
+  cause:
+    en: Feline panleukopenia (FPV)
+    ru: "Кошачья чумка (FPV)"
 
 - id: bulochka
   name:

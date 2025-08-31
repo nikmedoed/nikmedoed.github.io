@@ -34,13 +34,9 @@
 
       <p class="content mb-0">{{ index $cat.description $lang }}</p>
 
-      {{ if $cat.end }}
+      {{ if and $cat.end $cat.location }}
       <p class="content mb-0 mt-2">
-        {{ if $cat.location }}
           <span class="has-text-weight-semibold">{{ i18n "catAdoptedLabel" }}</span> {{ $cat.end }} — {{ $cat.location }}
-        {{ else }}
-          <span class="has-text-weight-semibold">{{ i18n "catDiedLabel" }}</span> {{ $cat.end }}
-        {{ end }}
       </p>
       {{ end }}
 
@@ -85,8 +81,21 @@
       </div>
       {{ end }}
 
-      {{ if and (not $cat.location) $cat.cause }}
-      <p class="content is-italic mt-2 mb-0">{{ $cat.cause }}</p>
+      {{ $cause := "" }}
+      {{ if $cat.cause }}
+        {{ if (reflect.IsMap $cat.cause) }}
+          {{ $cause = index $cat.cause $lang }}
+        {{ else }}
+          {{ $cause = $cat.cause }}
+        {{ end }}
+      {{ end }}
+      {{ if and $cat.end (not $cat.location) }}
+      <p class="content mb-0 mt-1">
+          <span class="has-text-weight-semibold">{{ i18n "catDiedLabel" }}</span> {{ $cat.end }}
+      </p>
+      {{ end }}
+      {{ if and (not $cat.location) $cause }}
+      <p class="content is-italic mb-0">{{ $cause }}</p>
       {{ end }}
     </div>
     <footer class="card-footer">
