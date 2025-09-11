@@ -719,6 +719,11 @@ html[data-theme='light'] #email-btn {
   background-color: var(--c-violet);
   border-color: var(--c-violet);
   color: #fff;
+  display: inline-block;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  height: auto;
+  text-align: center;
 }
 
 .hero-buttons .button:hover,

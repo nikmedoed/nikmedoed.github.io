@@ -54,7 +54,7 @@
     en: Extremely affectionate, obedient, and calm cat. He adores human company and is always ready to purr endlessly while lying on your lap.
     ru: Безумно ласковый, послушный и спокойный кот. Обожает компанию людей, готов мурчать, лежа на коленях, бесконечно.
   birth: 2024-05
-  sterilized: false
+  sterilized: true
   wild: false
   wanderer: false
   parents:
@@ -90,7 +90,7 @@
     en: Handsome, affectionate, and very friendly cat. He always finds a common language with other cats, and sometimes even with dogs.
     ru: Красивый, ласковый и очень дружелюбный кот. Всегда найдет общий язык с разными котами, а порой даже с собаками.
   birth: 2024-05
-  sterilized: false
+  sterilized: true
   wild: false
   wanderer: false
   parents: [ ]
@@ -227,9 +227,11 @@
   treatment:
     en: ""
     ru: ""
-  end: ""
+  end: 2025-08-31
   location: ""
-  cause: ""
+  cause:
+    en: Feline panleukopenia (FPV)
+    ru: "Кошачья чумка (FPV)"
 
 - id: bulochka
   name:
