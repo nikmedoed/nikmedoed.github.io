@@ -5,6 +5,7 @@
   gender: female
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866038/20250813-195910-IMG_8503-_-35594bf3.jpg
   photos:
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601255/20250910-184945-IMG_8992-cd11df70.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716383/20250813_194028-f70c5ec8.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716381/20250813_193921-ed271081.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716381/20250813_193829-79c3e442.jpg
@@ -14,6 +15,7 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716393/20250813_195232-3293dadb.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716398/20250813_195910-12c25832.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716414/20250815_193338-c36addb4.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601250/20250910-182650-IMG_8915-b7cfd05f.jpg
   description:
     en: Independent and intelligent, she managed to organize us to feed herself and her family. Loves her people.
     ru: Самодостаточная, сообразительная, организовала нас на кормежку себя и своей семьи. Любит своих людей.
@@ -50,6 +52,7 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716361/20250812_164737-251d4808.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716375/20250812_165911-3084865f.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716385/20250813_194235-e700194c.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601246/20250910-182313-IMG_8854-96095679.jpg
   description:
     en: Extremely affectionate, obedient, and calm cat. He adores human company and is always ready to purr endlessly while lying on your lap.
     ru: Безумно ласковый, послушный и спокойный кот. Обожает компанию людей, готов мурчать, лежа на коленях, бесконечно.
@@ -86,6 +89,8 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716384/20250813_194133-142e52e3.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716390/20250813_194555-47b309f0.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716401/20250813_200250-5c7076d9.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601247/20250910-182433-IMG_8881-78f0c345.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601249/20250910-182540-IMG_8901-87cdb7d1.jpg
   description:
     en: Handsome, affectionate, and very friendly cat. He always finds a common language with other cats, and sometimes even with dogs.
     ru: Красивый, ласковый и очень дружелюбный кот. Всегда найдет общий язык с разными котами, а порой даже с собаками.
@@ -112,6 +117,9 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716395/20250813_195410-eff3f136.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716395/20250813_195422-1126abb2.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716404/20250815_191918-e9e8529e.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601253/20250910-184023-IMG_8978-485a4643.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601256/20250910-185138-IMG_9000-0d0c4308.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601257/20250910-185330-IMG_9017-51bfef54.jpg
   description:
     en: Calm, curious and emotionally stable. She endured all procedures related to sterilization very bravely.
     ru: Спокойная, любознательная и эмоционально стабильная кошка. Одна из тех, кто очень стойко перенесла все манипуляции, связанные со стерилизацией.
@@ -147,6 +155,7 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716379/20250812_170803-1b9177bc.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716379/20250812_170811-03395159.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716399/20250813_200057-2-4ab5afe6.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601251/20250910-183630-IMG_8934-c98a83ec.jpg
   description:
     en: Very affectionate and people-oriented, she loves to snuggle up against a person's leg and purr like a tractor. Protects her feline family.
     ru: Очень ласковая, ручная, обожает прижаться к ноге человека и мурчать, как трактор. Любит и защищает свою кошачью семью.
@@ -179,6 +188,7 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716372/20250812_165812-bd77bf8c.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716379/20250812_170803-1b9177bc.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716379/20250812_170811-03395159.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601252/20250910-183700-IMG_8939-7b9f50fb.jpg
   description:
     en: The businesslike mom of the family, born on the street but truly meant for a home. Affectionate with people, but feisty  with cats.
     ru: Деловая мама семейства, рождена на улице, чтобы жить дома. Ласковая с людьми, боевая с котами.
@@ -238,8 +248,10 @@
     en: Bulochka
     ru: "Булочка"
   gender: female
-  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866041/20250815-193532-IMG_8817-RD-446d105d.jpg
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1757601260/20250910-183711-IMG_8942-2528958b.jpg
   photos:
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601253/20250910-183751-IMG_8960-085be709.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757607776/20250910-183711-IMG_8942-24691cbd.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716326/20250805_173757-16e62f57.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716324/20250805_173546-fddb06ee.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716325/20250805_173745-7f8ac79c.jpg
@@ -356,8 +368,8 @@
   wanderer: false
   parents: [ ]
   treatment:
-    en: Possible ringworm
-    ru: Возможен лишай
+    en: ""
+    ru: ""
   end: ""
   location: ""
   cause: ""
@@ -392,10 +404,8 @@
   treatment:
     en:
       - Nerve damaged in front leg
-      - Possible ringworm
     ru:
       - На передней ноге перекушен нерв
-      - Возможен лишай
   end: ""
   location: ""
   cause: ""
@@ -488,31 +498,90 @@
   treatment:
     en: [ ]
     ru: [ ]
-  end: 2025-09-04
+  end: 2025-04-04
   location: ""
   cause:
     en: Feline panleukopenia (FPV)
     ru: "Кошачья чумка (FPV)"
 
-#- id: rysik
-#  name:
-#    en: Rysik
-#    ru: "Рысик"
-#  gender: male
-#  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755716396/20250813_195540-b4277e05.jpg
-#  photos:
-#    - https://res.cloudinary.com/nikmedoed/image/upload/v1755716396/20250813_195540-b4277e05.jpg
-#  description:
-#    en: ""
-#    ru: ""
-#  birth: 2025-07
-#  sterilized: false
-#  wild: false
-#  wanderer: false
-#  parents: []
-#  treatment:
-#    en: []
-#    ru: []
+# New kittens from Mamashka (litter 2025-05-25)
+- id: rysik-1
+  name:
+    en: Rysik 1
+    ru: "Рысик 1"
+  gender: male
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1757601259/20250910-182323-IMG_8860-1a4765d8.jpg
+  photos:
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601249/20250910-182529-IMG_8895-9f705cd2.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601251/20250910-182709-IMG_8918-bffe389e.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601248/20250910-182447-IMG_8884-eed0cd31.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757607775/20250910-182323-IMG_8860-34b8256e.jpg
+  description:
+    en: ""
+    ru: ""
+  birth: 2025-04-25
+  sterilized: false
+  wild: false
+  wanderer: false
+  parents:
+    - mamashka
+  treatment:
+    en: [ ]
+    ru: [ ]
+  end: ""
+  location: ""
+  cause: ""
+
+- id: rysik-2
+  name:
+    en: Rysik 2
+    ru: "Рысик 2"
+  gender: female
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1757601260/20250910-185714-IMG_9050-8466897f.jpg
+  photos:
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601256/20250910-185233-IMG_9004-84fcd8f9.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601254/20250910-184236-IMG_8987-_-38761805.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601258/20250910-185643-IMG_9042-987757ab.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757601258/20250910-185718-IMG_9054-5a38f35f.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1757607777/20250910-185714-IMG_9050-dc88428e.jpg
+  description:
+    en: ""
+    ru: ""
+  birth: 2025-04-25
+  sterilized: false
+  wild: false
+  wanderer: false
+  parents:
+    - mamashka
+  treatment:
+    en: [ ]
+    ru: [ ]
+  end: ""
+  location: ""
+  cause: ""
+
+# - id: rysik-3
+#   name:
+#     en: Rysik 3
+#     ru: "Рысик 3"
+#   gender: male
+#   avatar: https://placehold.co/400?text=No+Photo
+#   photos: [ ]
+#   description:
+#     en: ""
+#     ru: ""
+#   birth: 2025-05-25
+#   sterilized: false
+#   wild: true
+#   wanderer: false
+#   parents:
+#     - mamashka
+#   treatment:
+#     en: [ ]
+#     ru: [ ]
+#   end: ""
+#   location: ""
+#   cause: ""
 
 #- id: boyarin
 #  name:
