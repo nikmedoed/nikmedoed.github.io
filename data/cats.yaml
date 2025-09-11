@@ -422,9 +422,11 @@
   treatment:
     en: [ ]
     ru: [ ]
-  end: ""
+  end: 2025-09-04
   location: ""
-  cause: ""
+  cause:
+    en: Feline panleukopenia (FPV)
+    ru: "Кошачья чумка (FPV)"
 
 - id: sevuk-son-2
   name:
@@ -454,9 +456,11 @@
   treatment:
     en: [ ]
     ru: [ ]
-  end: ""
+  end: 2025-09-04
   location: ""
-  cause: ""
+  cause:
+    en: Feline panleukopenia (FPV)
+    ru: "Кошачья чумка (FPV)"
 
 - id: sevuk-son-3
   name:
@@ -482,9 +486,11 @@
   treatment:
     en: [ ]
     ru: [ ]
-  end: ""
+  end: 2025-09-04
   location: ""
-  cause: ""
+  cause:
+    en: Feline panleukopenia (FPV)
+    ru: "Кошачья чумка (FPV)"
 
 #- id: rysik
 #  name:
