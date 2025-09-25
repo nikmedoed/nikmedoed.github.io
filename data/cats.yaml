@@ -53,6 +53,8 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716375/20250812_165911-3084865f.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716385/20250813_194235-e700194c.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757601246/20250910-182313-IMG_8854-96095679.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812650/20250923_174543-d5a7fc6b.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812655/20250923_174745-c795a9de.jpg
   description:
     en: Extremely affectionate, obedient, and calm cat. He adores human company and is always ready to purr endlessly while lying on your lap.
     ru: Безумно ласковый, послушный и спокойный кот. Обожает компанию людей, готов мурчать, лежа на коленях, бесконечно.
@@ -91,6 +93,8 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716401/20250813_200250-5c7076d9.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757601247/20250910-182433-IMG_8881-78f0c345.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757601249/20250910-182540-IMG_8901-87cdb7d1.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812658/20250923_174935-119dfee0.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812678/20250923_180558-c31d979d.jpg
   description:
     en: Handsome, affectionate, and very friendly cat. He always finds a common language with other cats, and sometimes even with dogs.
     ru: Красивый, ласковый и очень дружелюбный кот. Всегда найдет общий язык с разными котами, а порой даже с собаками.
@@ -98,7 +102,7 @@
   sterilized: true
   wild: false
   wanderer: false
-  parents: [ ]
+  parents: []
   treatment:
     en: ""
     ru: ""
@@ -189,6 +193,7 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716379/20250812_170803-1b9177bc.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716379/20250812_170811-03395159.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757601252/20250910-183700-IMG_8939-7b9f50fb.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812686/20250923_181221-62193265.jpg
   description:
     en: The businesslike mom of the family, born on the street but truly meant for a home. Affectionate with people, but feisty  with cats.
     ru: Деловая мама семейства, рождена на улице, чтобы жить дома. Ласковая с людьми, боевая с котами.
@@ -196,7 +201,7 @@
   sterilized: true
   wild: false
   wanderer: false
-  parents: [ ]
+  parents: []
   treatment:
     en: ""
     ru: ""
@@ -307,7 +312,7 @@
   sterilized: false
   wild: true
   wanderer: false
-  parents: [ ]
+  parents: []
   treatment:
     en: Eye issues
     ru: Проблемы с глазом
@@ -333,7 +338,7 @@
   sterilized: false
   wild: true
   wanderer: false
-  parents: [ ]
+  parents: []
   treatment:
     en: ""
     ru: ""
@@ -346,8 +351,23 @@
     en: Panther
     ru: "Пантера"
   gender: female
-  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866033/20250805-180039-IMG_7683-7a7b841a.jpg
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1758812701/20250923_180713-bc4010e8.jpg
   photos:
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812677/20250923_180320-5fcd8ffe.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812660/20250923_175005-69beea53.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812661/20250923_175050-a0c77aa5.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812664/20250923_175215-f02d7fa7.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812664/20250923_175220-a99d4bf2.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812665/20250923_175222-5b4aa221.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812666/20250923_175224-cb8c6712.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812667/20250923_175252-1bab057a.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812668/20250923_175523-30bdb096.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812669/20250923_175530-a4343077.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812671/20250923_175651-0a851e7d.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812673/20250923_175828-752633e9.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812674/20250923_180031-9229606c.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812678/20250923_180558-c31d979d.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812680/20250923_180713-b596d7ad.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716355/20250812_163925-c65573bf.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716320/20250805_173030-d1287ba6.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716323/20250805_173157-951fbe3d.jpg
@@ -368,7 +388,7 @@
   sterilized: false
   wild: false
   wanderer: false
-  parents: [ ]
+  parents: []
   treatment:
     en: ""
     ru: ""
@@ -381,8 +401,20 @@
     en: Charlie
     ru: "Чарли"
   gender: male
-  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1755866034/20250812-163808-IMG_7908-b7baf055.jpg
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1758812700/20250923_180606-c522fad3.jpg
   photos:
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812669/20250923_175629-1230a0df.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812658/20250923_174953-fe156326.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812659/20250923_174958-324fee59.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812660/20250923_175029-4532a703.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812662/20250923_175143-b28adce4.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812663/20250923_175156-4be6b50a.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812665/20250923_175222-5b4aa221.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812666/20250923_175224-cb8c6712.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812667/20250923_175233-14496969.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812676/20250923_180313-77a8fa5b.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812678/20250923_180558-c31d979d.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812679/20250923_180606-4e9a1c67.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716354/20250812_163808-2df1e9a1.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716342/20250812_161948-6a107c1a.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716342/20250812_162001-b04ea281.jpg
@@ -402,7 +434,7 @@
   sterilized: false
   wild: false
   wanderer: false
-  parents: [ ]
+  parents: []
   treatment:
     en:
       - Nerve damaged in front leg
@@ -434,8 +466,8 @@
     - sevuk
     - archi
   treatment:
-    en: [ ]
-    ru: [ ]
+    en: []
+    ru: []
   end: 2025-09-04
   location: ""
   cause:
@@ -468,8 +500,8 @@
     - sevuk
     - archi
   treatment:
-    en: [ ]
-    ru: [ ]
+    en: []
+    ru: []
   end: 2025-09-04
   location: ""
   cause:
@@ -498,8 +530,8 @@
     - sevuk
     - archi
   treatment:
-    en: [ ]
-    ru: [ ]
+    en: []
+    ru: []
   end: 2025-09-04
   location: ""
   cause:
@@ -514,6 +546,17 @@
   gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1757601259/20250910-182323-IMG_8860-1a4765d8.jpg
   photos:
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812647/20250923_174509-2781b066.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812648/20250923_174538-de9128a4.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812652/20250923_174618-161416f6.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812683/20250923_180825-664354f1.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812685/20250923_181127-c5a19b89.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812687/20250923_181644-794a30f4.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812689/20250923_181819-f6d8eef7.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812689/20250923_182027-4f195333.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812692/20250923_182423-bfa6d57c.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812698/20250923_183051-f197077f.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812699/20250923_183058-68718209.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757601249/20250910-182529-IMG_8895-9f705cd2.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757601251/20250910-182709-IMG_8918-bffe389e.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757601248/20250910-182447-IMG_8884-eed0cd31.jpg
@@ -528,8 +571,8 @@
   parents:
     - mamashka
   treatment:
-    en: [ ]
-    ru: [ ]
+    en: []
+    ru: []
   end: ""
   location: ""
   cause: ""
@@ -541,6 +584,17 @@
   gender: female
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1757601260/20250910-185714-IMG_9050-8466897f.jpg
   photos:
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812652/20250923_174624-611ebc71.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812654/20250923_174737-bb1c6e9e.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812656/20250923_174750-2591ddd3.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812656/20250923_174809-2da65326.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812683/20250923_180930-f728c420.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812684/20250923_180948-7dbda24a.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812687/20250923_181557-6afb3e6c.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812688/20250923_181744-a81120e2.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812689/20250923_182027-4f195333.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812692/20250923_182423-bfa6d57c.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812699/20250923_183126-be03a24d.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757601256/20250910-185233-IMG_9004-84fcd8f9.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757601254/20250910-184236-IMG_8987-_-38761805.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757601258/20250910-185643-IMG_9042-987757ab.jpg
@@ -556,34 +610,47 @@
   parents:
     - mamashka
   treatment:
-    en: [ ]
-    ru: [ ]
+    en: []
+    ru: []
   end: ""
   location: ""
   cause: ""
 
-# - id: rysik-3
-#   name:
-#     en: Rysik 3
-#     ru: "Рысик 3"
-#   gender: male
-#   avatar: https://placehold.co/400?text=No+Photo
-#   photos: [ ]
-#   description:
-#     en: ""
-#     ru: ""
-#   birth: 2025-05-25
-#   sterilized: false
-#   wild: true
-#   wanderer: false
-#   parents:
-#     - mamashka
-#   treatment:
-#     en: [ ]
-#     ru: [ ]
-#   end: ""
-#   location: ""
-#   cause: ""
+- id: rysik-3
+  name:
+    en: Rysik 3
+    ru: "Рысик 3"
+  gender: male
+  avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1758812702/20250923_182543-1260459d.jpg
+  photos:
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812691/20250923_182341-5715b511.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812651/20250923_174548-15b59035.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812653/20250923_174626-6510bfcf.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812657/20250923_174815-881058d4.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812690/20250923_182258-68eb3e01.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812691/20250923_182356-f3e47a00.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812692/20250923_182423-bfa6d57c.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812693/20250923_182543-6c4c1e18.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812695/20250923_182800-428fa372.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812695/20250923_182835-21f56a99.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812696/20250923_182853-02f69dbd.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812697/20250923_182922-d8dda6ed.jpg
+  description:
+    en: ""
+    ru: ""
+  birth: 2025-04-25
+  sterilized: false
+  wild: false
+  wanderer: false
+  parents:
+    - mamashka
+  treatment:
+    en: []
+    ru: []
+  end: ""
+  location: ""
+  cause: ""
+
 
 #- id: boyarin
 #  name:
