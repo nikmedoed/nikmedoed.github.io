@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const currentLang = document.documentElement.lang;
     const storedLang = localStorage.getItem('lang');
+    const pathHasExplicitLang = /^\/(en|ru)(?:\/|$)/.test(location.pathname);
     const translations = {
         en: {all: 'All', sent: 'Message sent!', fail: 'Failed to send message.'},
         ru: {all: 'Все', sent: 'Сообщение отправлено!', fail: 'Не удалось отправить сообщение.'}
@@ -29,8 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!storedLang) {
         const navLang = (navigator.languages && navigator.languages[0]) || navigator.language || '';
         const detected = navLang.startsWith('ru') ? 'ru' : 'en';
-        if (detected !== currentLang) {
-            localStorage.setItem('lang', detected);
+        if (!pathHasExplicitLang && detected !== currentLang) {
             const target = langPath(detected) + stripLang(location.pathname) + location.search + location.hash;
             if (target !== location.pathname + location.search + location.hash) {
                 location.replace(target);
