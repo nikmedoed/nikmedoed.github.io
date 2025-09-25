@@ -160,7 +160,7 @@
     en: Very affectionate and people-oriented, she loves to snuggle up against a person's leg and purr like a tractor. Protects her feline family.
     ru: Очень ласковая, ручная, обожает прижаться к ноге человека и мурчать, как трактор. Любит и защищает свою кошачью семью.
   birth: 2024-10
-  sterilized: false
+  sterilized: true
   wild: false
   wanderer: false
   parents:
@@ -282,9 +282,11 @@
   treatment:
     en: ""
     ru: ""
-  end: ""
+  end: 2025-09-20
   location: ""
-  cause: ""
+  cause:
+    en: Torn apart by dogs
+    ru: "Разорвали собаки"
 
 - id: rusty
   name:
@@ -498,7 +500,7 @@
   treatment:
     en: [ ]
     ru: [ ]
-  end: 2025-04-04
+  end: 2025-09-04
   location: ""
   cause:
     en: Feline panleukopenia (FPV)
