@@ -552,6 +552,12 @@ body.no-scroll {
   color: #fff;
 }
 
+.button.youtube {
+  background-color: #ff0000;
+  border-color: #ff0000;
+  color: #fff;
+}
+
 .button.instagram {
   background-color: #E1306C;
   border-color: #E1306C;
