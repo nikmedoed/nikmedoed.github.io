@@ -546,17 +546,19 @@
   gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1757601259/20250910-182323-IMG_8860-1a4765d8.jpg
   photos:
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812647/20250923_174509-2781b066.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812648/20250923_174538-de9128a4.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812652/20250923_174618-161416f6.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1758812683/20250923_180825-664354f1.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812685/20250923_181127-c5a19b89.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812687/20250923_181644-794a30f4.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812689/20250923_181819-f6d8eef7.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812689/20250923_182027-4f195333.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812648/20250923_174538-de9128a4.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812651/20250923_174548-15b59035.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812653/20250923_174626-6510bfcf.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812657/20250923_174815-881058d4.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812690/20250923_182258-68eb3e01.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812691/20250923_182341-5715b511.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812691/20250923_182356-f3e47a00.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1758812692/20250923_182423-bfa6d57c.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812698/20250923_183051-f197077f.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812699/20250923_183058-68718209.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812692/20250923_182423-bfa6d57c.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812695/20250923_182835-21f56a99.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812696/20250923_182853-02f69dbd.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812697/20250923_182922-d8dda6ed.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757601249/20250910-182529-IMG_8895-9f705cd2.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757601251/20250910-182709-IMG_8918-bffe389e.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757601248/20250910-182447-IMG_8884-eed0cd31.jpg
@@ -590,6 +592,7 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1758812656/20250923_174809-2da65326.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1758812683/20250923_180930-f728c420.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1758812684/20250923_180948-7dbda24a.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812685/20250923_181127-c5a19b89.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1758812687/20250923_181557-6afb3e6c.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1758812688/20250923_181744-a81120e2.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1758812689/20250923_182027-4f195333.jpg
@@ -623,18 +626,15 @@
   gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1758812702/20250923_182543-1260459d.jpg
   photos:
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812691/20250923_182341-5715b511.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812651/20250923_174548-15b59035.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812653/20250923_174626-6510bfcf.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812657/20250923_174815-881058d4.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812690/20250923_182258-68eb3e01.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812691/20250923_182356-f3e47a00.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812692/20250923_182423-bfa6d57c.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812652/20250923_174618-161416f6.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812647/20250923_174509-2781b066.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812687/20250923_181644-794a30f4.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812689/20250923_181819-f6d8eef7.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812689/20250923_182027-4f195333.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1758812693/20250923_182543-6c4c1e18.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1758812695/20250923_182800-428fa372.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812695/20250923_182835-21f56a99.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812696/20250923_182853-02f69dbd.jpg
-    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812697/20250923_182922-d8dda6ed.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812698/20250923_183051-f197077f.jpg
+    - https://res.cloudinary.com/nikmedoed/image/upload/v1758812699/20250923_183058-68718209.jpg
   description:
     en: ""
     ru: ""
@@ -650,8 +650,6 @@
   end: ""
   location: ""
   cause: ""
-
-
 #- id: boyarin
 #  name:
 #    en: Boyarin
