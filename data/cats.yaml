@@ -107,8 +107,10 @@
     en: ""
     ru: ""
   end: "2025-10-01"
-  location: ""
-  cause: ""
+  location: ""  
+  cause:
+    en: Mauled by dogs
+    ru: "Растерзали собаки"
 
 - id: glista
   name:
@@ -139,8 +141,8 @@
   end: ""
   location: ""
   cause:
-    en: Mauled by dogs
-    ru: "Растерзали собаки"
+    en: ""
+    ru: ""
 
 - id: sevuk
   name:
