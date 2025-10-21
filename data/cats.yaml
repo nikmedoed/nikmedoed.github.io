@@ -67,8 +67,10 @@
   treatment:
     en: Feline Leukemia (FeLV)
     ru: Лейкоз
-  end: ""
-  location: ""
+  end: 2025-10-17
+  location:
+    en: Yerevan, Armenia
+    ru: "Ереван, Армения"
   cause: ""
 
 - id: archi
