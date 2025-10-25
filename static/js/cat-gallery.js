@@ -37,6 +37,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const genderIcon = cat.gender === 'male' ? 'fa-mars has-text-link' : 'fa-venus has-text-danger';
     const sterText = cat.sterilized ? (lang === 'ru' ? 'Стерилизован' : 'Sterilized') : (lang === 'ru' ? 'Не стерилизован' : 'Not sterilized');
     const sterClass = cat.sterilized ? 'is-success' : 'is-warning';
+    const adoptedLabel = lang === 'ru' ? 'Забрали:' : 'Adopted:';
+    const diedLabel = lang === 'ru' ? 'Умер:' : 'Died:';
+    const locationText = (() => {
+      if (!cat.location) return '';
+      if (typeof cat.location === 'string') return cat.location;
+      if (typeof cat.location === 'object') {
+        return cat.location[lang] || cat.location.ru || cat.location.en || Object.values(cat.location)[0] || '';
+      }
+      return '';
+    })();
+    const causeText = (() => {
+      if (!cat.cause) return '';
+      if (typeof cat.cause === 'string') return cat.cause;
+      if (typeof cat.cause === 'object') {
+        return cat.cause[lang] || cat.cause.ru || cat.cause.en || Object.values(cat.cause)[0] || '';
+      }
+      return '';
+    })();
     const wildIcon = cat.wild ? '<span class="icon is-medium cat-flag mr-2" tabindex="0"><i class="fa-solid fa-explosion fa-lg"></i></span>' : '';
     const wandererIcon = cat.wanderer ? '<span class="icon is-medium cat-flag mr-2" tabindex="0"><i class="fas fa-route fa-lg"></i></span>' : '';
       const parents = (cat.parents || []).map(pid => {
@@ -58,7 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
       ? `<button class="card-footer-item adopt-btn has-text-link" type="button" data-name="${name}">${adoptText}</button>`
       : '';
     const footer = adoptBtn ? `<footer class="card-footer">${adoptBtn}</footer>` : '';
-    return `<div class="card cat-card"><div class="card-content"><div class="is-flex is-align-items-center is-justify-content-space-between mb-2"><div class="is-flex is-align-items-center"><p class="title is-5 mb-0">${name}</p><span class="icon cat-gender ml-2"><i class="fas ${genderIcon}"></i></span><span class="tag is-rounded is-hoverable cat-ster-tag ml-2 ${sterClass}">${sterText}</span></div><div class="is-flex is-align-items-center">${wildIcon}${wandererIcon}<p class="is-size-7 mb-0 cat-age">${ageString(cat.birth)}</p></div></div><p class="content mb-0">${cat.description[lang]}</p>${parentsBlock}${childrenBlock}${treatment}</div>${footer}</div>`;
+    const adoptionBlock = cat.end && locationText ? `<p class="content mb-0 mt-2"><span class="has-text-weight-semibold">${adoptedLabel}</span> ${cat.end} — ${locationText}</p>` : '';
+    const deathBlock = cat.end && !locationText ? `<p class="content mb-0 mt-1"><span class="has-text-weight-semibold">${diedLabel}</span> ${cat.end}</p>` : '';
+    const causeBlock = !locationText && causeText ? `<p class="content is-italic mb-0">${causeText}</p>` : '';
+    const description = cat.description && cat.description[lang] ? cat.description[lang] : '';
+    return `<div class="card cat-card"><div class="card-content"><div class="is-flex is-align-items-center is-justify-content-space-between mb-2"><div class="is-flex is-align-items-center"><p class="title is-5 mb-0">${name}</p><span class="icon cat-gender ml-2"><i class="fas ${genderIcon}"></i></span><span class="tag is-rounded is-hoverable cat-ster-tag ml-2 ${sterClass}">${sterText}</span></div><div class="is-flex is-align-items-center">${wildIcon}${wandererIcon}<p class="is-size-7 mb-0 cat-age">${ageString(cat.birth)}</p></div></div><p class="content mb-0">${description}</p>${adoptionBlock}${deathBlock}${causeBlock}${parentsBlock}${childrenBlock}${treatment}</div>${footer}</div>`;
   }
 
   const infoItem = document.createElement('div');

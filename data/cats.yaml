@@ -28,8 +28,10 @@
   treatment:
     en: ""
     ru: ""
-  end: ""
-  location: ""
+  end: 2025-10-23
+  location:
+    en: Yerevan, Armenia
+    ru: "Ереван, Армения"
   cause: ""
 
 - id: kartoshkin
@@ -65,8 +67,8 @@
   parents:
     - krichulka
   treatment:
-    en: Feline Leukemia (FeLV)
-    ru: Лейкоз
+    en: ""
+    ru: ""
   end: 2025-10-17
   location:
     en: Yerevan, Armenia
@@ -341,7 +343,7 @@
     en: Smart but cautious. A true mother by calling, she gives birth and raises kittens perfectly.
     ru: Умная, но осторожная. Настоящая мама по призванию, рожает и выкармливает идеально.
   birth: 2022-01
-  sterilized: false
+  sterilized: true
   wild: true
   wanderer: false
   parents: []
