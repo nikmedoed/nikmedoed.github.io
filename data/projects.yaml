@@ -108,21 +108,34 @@
     - Python
     - Telethon
     - NLP
-- id: meetings-timer
-  repo: https://github.com/nikmedoed/meetings-timer
-  icon: fas fa-stopwatch
-  media: meeting_timer.mp4
-  title: Meetings Timer
+    - Starlette
+
+- id: triz-quiz
+  repo: https://github.com/nikmedoed/triz_quiz
+  icon: fas fa-chalkboard
+  media: triz_quiz.webm
+  title: TRIZ Quiz
   subtitle:
-    en: Interactive event tracker
-    ru: Интерактивный трекер мероприятия
+    en: Telegram + web quiz for TRIZ sessions
+    ru: Викторина TRIZ с ботом и экраном
   description:
-    en: Minimalist timer with stages. Shows if you're ahead or behind. Always visible. Perfect for multi-stages events with a strong timeline.
-    ru: Минималистичный таймер с этапами. Показывает, успеваете вы или нет. Всегда на экране. Подходит для многоэтапных мероприятий с регламентом.
+    en: >-
+      Telegram-first quiz system: aiogram bot handles registration, open ideas with voting,
+      MCQ, sequences, and scoring; FastAPI + WebSockets drive the public screen; scenarios
+      load from JSON/YAML; SQLite or Postgres persist state; Pillow renders avatars from
+      emojis or stickers (including animated).
+    ru: >-
+      Квиз-платформа для TRIZ: бот на aiogram регистрирует участников, собирает идеи с голосованием,
+      проводит тесты и последовательности с подсчётом баллов; FastAPI и WebSockets дают публичный
+      экран; сценарии загружаются из JSON/YAML; состояние хранится в SQLite или Postgres;
+      Pillow создаёт аватарки из эмодзи и стикеров (в том числе анимированных).
   tags:
-    - Tauri
-    - JavaScript
-    - Svelte
+    - Python
+    - aiogram
+    - FastAPI
+    - WebSockets
+    - PIL
+
 - id: vocabulary-coach-bot
   repo: https://github.com/nikmedoed/vocabulary_coach_bot
   icon: fas fa-brain
@@ -227,3 +240,19 @@
   tags:
     - Python
     - Selenium
+
+- id: meetings-timer
+  repo: https://github.com/nikmedoed/meetings-timer
+  icon: fas fa-stopwatch
+  media: meeting_timer.mp4
+  title: Meetings Timer
+  subtitle:
+    en: Interactive event tracker
+    ru: Интерактивный трекер мероприятия
+  description:
+    en: Minimalist timer with stages. Shows if you're ahead or behind. Always visible. Perfect for multi-stages events with a strong timeline.
+    ru: Минималистичный таймер с этапами. Показывает, успеваете вы или нет. Всегда на экране. Подходит для многоэтапных мероприятий с регламентом.
+  tags:
+    - Tauri
+    - JavaScript
+    - Svelte

@@ -7,11 +7,12 @@
     <div class="card project-card">
         {{ if $p.media }}
         <div class="card-image">
-            <figure class="project-media{{ if not (strings.HasSuffix $p.media ".mp4") }} contain{{ end }}">
-                {{ if (strings.HasSuffix $p.media ".mp4") }}
-                <video autoplay loop muted playsinline src="/media/{{ $p.media }}"></video>
+            {{ $isVideo := or (strings.HasSuffix $p.media ".mp4") (strings.HasSuffix $p.media ".webm") }}
+            <figure class="project-media{{ if not $isVideo }} contain{{ end }}">
+                {{ if $isVideo }}
+                    <video autoplay loop muted playsinline src="/media/{{ $p.media }}"></video>
                 {{ else }}
-                <img alt="{{ $title }} screenshot" src="/media/{{ $p.media }}">
+                    <img alt="{{ $title }} screenshot" src="/media/{{ $p.media }}">
                 {{ end }}
             </figure>
         </div>
