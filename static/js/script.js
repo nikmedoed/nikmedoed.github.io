@@ -277,10 +277,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const form = document.getElementById('contact-form');
     const sendBtn = document.getElementById('send-btn');
-    const emailBtn = document.getElementById('email-btn');
+    const emailBtns = document.querySelectorAll('#email-btn, .email-btn');
     const emailModal = document.getElementById('email-modal');
     function openEmailModal() {
-        if (!emailModal) return;
+        if (!emailModal) {
+            const target = document.getElementById('form') || document.getElementById('contact-form');
+            if (target && typeof target.scrollIntoView === 'function') {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            return;
+        }
         emailModal.classList.add('is-active');
         document.documentElement.classList.add('is-clipped');
     }
@@ -294,8 +300,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const closeBtn = emailModal.querySelector('.modal-close');
         [bg, closeBtn].forEach(el => el && el.addEventListener('click', closeEmailModal));
     }
-    if (emailBtn) {
-        emailBtn.addEventListener('click', openEmailModal);
+    if (emailBtns.length) {
+        emailBtns.forEach(btn => btn.addEventListener('click', openEmailModal));
     }
     if (form) {
         form.addEventListener('submit', e => {

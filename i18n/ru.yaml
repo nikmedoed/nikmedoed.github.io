@@ -1,6 +1,6 @@
 heroTitle: "Муромцев Никита: автоматизация рутины и повышение осознанности"
 heroSubtitle: |
-  Всем привет! Я Разработчик × Технический менеджер × Ментор.<br><br>
+  Всем привет! Я Разработчик × Технический менеджер × энтузиаст ТРИЗ.<br><br>
   Здесь собраны мои инструменты, которым я не смог найти достойных альтернатив.<br>
   Большинство из них я с удовольствием использую ежедневно.<br><br>
   <span class="tagline-accent">Попробуйте, может и вы кайфанёте.</span>
@@ -34,6 +34,22 @@ formPlaceholderEmail: "name@example.com"
 formPlaceholderSubject: "Тема"
 formPlaceholderMessage: "Текст сообщения"
 formSend: "Отправить"
+contactHeroAbout: "Разработчик × Технический менеджер × энтузиаст ТРИЗ"
+contactCalendarsTitle: "Календари"
+contactCalendarPersonalTitle: "Персональный календарь"
+contactCalendarFamilyTitle: "Календарь Муромцевых"
+contactCalendarPersonalSubtitle: "Свободные слоты"
+contactCalendarFamilySubtitle: "Семейный график"
+contactCalendarOpen: "Открыть календарь"
+contactQuickLinksTitle: "Контакты"
+contactQuickTelegramPersonal: "Мой Telegram"
+contactQuickProjects: "GitHub"
+contactQuickLinkedIn: "LinkedIn"
+contactQuickYouTubePersonal: "Личный YouTube"
+contactQuickInstagram: "Instagram"
+contactQuickBlogTitle: "Ссылки блога"
+contactQuickBlogTelegram: "Resist, Invent & Projects"
+contactQuickBlogYouTube: "RIP YouTube"
 footerQuote: "Имейте видение, стремитесь быть лидером, шутите, сопротивляйтесь, изобретайте и пилите проекты."
 backToMain: "Вернуться на главную"
 metaDescription: "Никита Муромцев — разработчик и технический менеджер о проектах и open-source инструментах по автоматизации рутины и повышению осознанности с помощью Python, JavaScript."

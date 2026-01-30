@@ -1,0 +1,39 @@
+quick_links:
+  - class: bento-telegram
+    url: "https://t.me/nikmedoed"
+    icon: "fab fa-telegram"
+    label_i18n: "contactQuickTelegramPersonal"
+  - class: bento-linkedin
+    url: "https://www.linkedin.com/in/muromcevn/"
+    icon: "fab fa-linkedin"
+    label_i18n: "contactQuickLinkedIn"
+  - class: bento-github
+    url: "https://github.com/nikmedoed"
+    icon: "fab fa-github"
+    label_i18n: "contactQuickProjects"
+  - class: bento-youtube
+    url: "https://www.youtube.com/@nikmedoed"
+    icon: "fab fa-youtube"
+    label_i18n: "contactQuickYouTubePersonal"
+  - class: bento-instagram
+    url: "https://www.instagram.com/nikmedoed"
+    icon: "fab fa-instagram"
+    label_i18n: "contactQuickInstagram"
+
+blog_links:
+  - class: bento-telegram
+    url: "https://t.me/etonikmedoed"
+    icon: "fab fa-telegram"
+    label_i18n: "contactQuickBlogTelegram"
+  - class: bento-youtube
+    url: "https://www.youtube.com/@etonikmedoed"
+    icon: "fab fa-youtube"
+    label_i18n: "contactQuickBlogYouTube"
+
+calendars:
+  - title_i18n: "contactCalendarPersonalTitle"
+    subtitle_i18n: "contactCalendarPersonalSubtitle"
+    url: "https://calendar.google.com/calendar/embed?src=484145d086caa7ee8172c24b16042af0b6d85ac27fd3f9daef1639d0c33eef6f%40group.calendar.google.com&ctz=Asia%2FYerevan&mode=WEEK&wkst=2"
+  - title_i18n: "contactCalendarFamilyTitle"
+    subtitle_i18n: "contactCalendarFamilySubtitle"
+    url: "https://calendar.google.com/calendar/embed?src=65730bb784356f59f2454712d204dce488f8a2f9137fa0edea9cac2dfb649e3e%40group.calendar.google.com&ctz=Asia%2FYerevan&wkst=2&mode=WEEK"

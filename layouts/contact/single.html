@@ -1,0 +1,69 @@
+{{ define "main" }}
+{{ $contact := site.Data.contact }}
+<section class="hero is-medium is-bold gradient-bg contact-hero">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <h1 class="title gradient-text mb-3">Nikita Muromtsev</h1>
+            <p class="subtitle has-text-white">{{ i18n "contactHeroAbout" }}</p>
+        </div>
+    </div>
+</section>
+
+<section class="section has-background-black-ter" id="links">
+    <div class="container">
+        <h2 class="title has-text-centered has-text-warning">{{ i18n "contactQuickLinksTitle" }}</h2>
+        <div class="bento-grid mt-5">
+            {{ range $contact.quick_links }}
+            <a class="bento-card {{ .class }}" href="{{ .url }}" target="_blank" rel="noopener">
+                <div class="bento-head">
+                    <i class="{{ .icon }}"></i>
+                    <span class="bento-title">{{ i18n .label_i18n }}</span>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+        <h3 class="title is-5 has-text-centered has-text-light mt-6">{{ i18n "contactQuickBlogTitle" }}</h3>
+        <div class="bento-row mt-4">
+            {{ range $contact.blog_links }}
+            <a class="bento-card {{ .class }}" href="{{ .url }}" target="_blank" rel="noopener">
+                <div class="bento-head">
+                    <i class="{{ .icon }}"></i>
+                    <span class="bento-title">{{ i18n .label_i18n }}</span>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<section class="section" id="calendars">
+    <div class="container">
+        <h2 class="title has-text-centered has-text-link mb-6">{{ i18n "contactCalendarsTitle" }}</h2>
+        <div class="columns is-variable is-6">
+            {{ range $contact.calendars }}
+            <div class="column">
+                <div class="card contact-card">
+                    <header class="card-header">
+                        <div class="card-header-title is-flex is-flex-direction-column">
+                            <span>{{ i18n .title_i18n }}</span>
+                            <span class="is-size-7 has-text-grey-light">{{ i18n .subtitle_i18n }}</span>
+                        </div>
+                        <a class="card-header-icon" href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ i18n "contactCalendarOpen" }}">
+                            <span class="icon"><i class="fas fa-up-right-from-square"></i></span>
+                        </a>
+                    </header>
+                    <div class="card-content">
+                        <div class="calendar-preview" data-label="{{ i18n "contactCalendarOpen" }}">
+                            <iframe src="{{ .url }}" frameborder="0" scrolling="no"></iframe>
+                            <a class="calendar-link-overlay" href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ i18n "contactCalendarOpen" }}"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ partial "about-support-contact.html" . }}
+{{ end }}

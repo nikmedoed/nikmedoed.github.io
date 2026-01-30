@@ -1,0 +1,93 @@
+<section class="section has-background-link-dark has-text-white" id="about">
+    <div class="container">
+        <div class="columns is-variable is-6">
+            <div class="column">
+                <h2 class="title has-text-centered has-text-rose mb-4">{{ i18n "aboutTitle" }}</h2>
+                <div class="content has-text-left mb-5">
+                    <p>{{ i18n "aboutIntro1" }}</p>
+                    <p><strong>{{ i18n "aboutIntro2" }}</strong></p>
+                    <p>{{ i18n "aboutIntro3" }}</p>
+                    <ul>
+                        <li>{{ i18n "aboutBullet1" }}</li>
+                        <li>{{ i18n "aboutBullet2" }}</li>
+                        <li>{{ i18n "aboutBullet3" }}</li>
+                        <li>{{ i18n "aboutBullet4" }}</li>
+                        <li>{{ i18n "aboutBullet5" }}</li>
+                        <li>{{ i18n "aboutBullet6" }}</li>
+                    </ul>
+                    <p>{{ i18n "aboutParagraph1" }}</p>
+                    <p>{{ i18n "aboutParagraph2" }}</p>
+                </div>
+            </div>
+            <div class="column">
+                <h2 class="title has-text-centered has-text-warning mb-4">{{ i18n "supportTitle" }}</h2>
+                <div class="box support-box has-text-centered" id="support">
+                    <p>{{ i18n "supportText" }}</p>
+                    <div class="buttons is-centered mt-2">
+                        <a class="button ko-fi" href="https://ko-fi.com/nikmedoed" target="_blank">Ko-fi 🌍</a>
+                        <a class="button boosty" href="https://boosty.to/nikmedoed/donate" target="_blank">Boosty 🌍</a>
+                        <a class="button paypal" href="https://paypal.me/etonikmedoed" target="_blank">PayPal 🌍</a>
+                        <a class="button yoomoney" href="https://yoomoney.ru/to/4100119049495394" target="_blank">YooMoney 🇷🇺</a>
+                    </div>
+                    <p class="is-size-6 is-family-monospace wallets mt-3">
+                        <strong>BTC:</strong> <span data-addr="1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7">1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7</span>
+                        <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="1E2tqVoi16owvCsasuK3M3fzuuSyawxRe7"><span class="icon"><i class="fas fa-copy"></i></span></button><br>
+                        <strong>USDT (TRC20):</strong> <span data-addr="TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE">TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE</span>
+                        <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="TPpseUYL2hQJqY2z17HyK7EYZRoPCYbeUE"><span class="icon"><i class="fas fa-copy"></i></span></button><br>
+                        <strong>TON (USDT-TON):</strong> <span data-addr="UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N">UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N</span>
+                        <button class="button is-small is-light ml-1 copy-btn" data-clipboard-text="UQA4BSTol0gSE5ptjZ9h3QjcDfDD0p4BPuzwMFZ-v2X7N75N"><span class="icon"><i class="fas fa-copy"></i></span></button>
+                    </p>
+                </div>
+
+                <h2 class="title has-text-centered has-text-warning mb-4 mt-6">{{ i18n "contactTitle" }}</h2>
+                <div class="columns is-vcentered is-mobile contact-row">
+                    <div class="column">
+                        <span>{{ i18n "contactIntro" | safeHTML }}</span>
+                    </div>
+                    <div class="column is-narrow">
+                        <button class="button is-link is-light email-btn">{{ i18n "sendEmail" }}</button>
+                    </div>
+                </div>
+                <div class="columns is-vcentered is-mobile blog-promo mt-4">
+                    <div class="column">
+                        <span>{{ i18n "blogPromoText" }}</span>
+                    </div>
+                    <div class="column is-narrow">
+                        <a class="button is-info is-rounded blog-btn" href="https://t.me/etonikmedoed" target="_blank">
+                            <img src="{{ "media/rip.png" | relURL }}" alt="Resist, Invent &amp; Projects Blog">
+                        </a>
+                    </div>
+                </div>
+                <div id="email-modal" class="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-content">
+                        <form id="contact-form" class="box contact-box">
+                            <div class="field">
+                                <label class="label has-text-white" for="email">{{ i18n "formYourEmail" }}</label>
+                                <div class="control">
+                                    <input id="email" class="input" type="email" placeholder="{{ i18n "formPlaceholderEmail" }}">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label has-text-white" for="subject">{{ i18n "formSubject" }}</label>
+                                <div class="control">
+                                    <input id="subject" class="input" type="text" placeholder="{{ i18n "formPlaceholderSubject" }}">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label has-text-white" for="message">{{ i18n "formMessage" }}</label>
+                                <div class="control">
+                                    <textarea id="message" class="textarea" placeholder="{{ i18n "formPlaceholderMessage" }}"></textarea>
+                                </div>
+                            </div>
+                            <div class="field mt-2">
+                                <button id="send-btn" type="submit" class="button is-link is-fullwidth">{{ i18n "formSend" }}</button>
+                            </div>
+                        </form>
+                    </div>
+                    <button class="modal-close is-large" aria-label="close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

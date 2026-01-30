@@ -61,6 +61,9 @@
 <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="{{ "/" | relURL }}">Nikita Muromtsev</a>
+        <a class="navbar-item is-hidden-desktop contact-mobile-link" href="{{ "/contact/" | relLangURL }}">
+            {{ i18n "navContacts" | default "Contacts" }}
+        </a>
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -75,7 +78,8 @@
                 <span>{{ i18n "navCats" }}</span>
             </a>
             <a class="navbar-item" href="https://t.me/etonikmedoed" target="_blank">{{ i18n "navBlog" | default "Blog" }}</a>
-            <a class="navbar-item" href="{{ "/#about" | relURL }}">{{ i18n "navContacts" | default "Contacts" }}</a>
+            <a class="navbar-item" href="{{ "/#about" | relURL }}">{{ i18n "heroAboutBtn" | default "About" }}</a>
+            <a class="navbar-item" href="{{ "/contact/" | relLangURL }}">{{ i18n "navContacts" | default "Contacts" }}</a>
             <div class="navbar-item">
                 {{ if .IsTranslated }}
                   {{ range .Translations }}

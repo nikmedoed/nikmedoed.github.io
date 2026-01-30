@@ -1,6 +1,6 @@
 heroTitle: "Muromtsev Nikita: routine automation & awareness tools"
 heroSubtitle: |
-  Hi there! I'm a Developer × Technical Manager × Mentor.<br><br>
+  Hi there! I'm a Developer × Technical Manager × TRIZ enthusiast.<br><br>
   Here you'll find tools I couldn’t find decent alternatives to — so I built my own.<br>
   Now most of them are part of my daily workflow.<br><br>
   <span class="tagline-accent">Give them a try — maybe you’ll get excited too.</span>
@@ -35,6 +35,22 @@ formPlaceholderEmail: "name@example.com"
 formPlaceholderSubject: "Subject"
 formPlaceholderMessage: "Your message"
 formSend: "Send"
+contactHeroAbout: "Developer × Technical Manager × TRIZ enthusiast"
+contactCalendarsTitle: "Calendars"
+contactCalendarPersonalTitle: "Personal calendar"
+contactCalendarPersonalSubtitle: "Availability"
+contactCalendarFamilyTitle: "Muromtsev family calendar"
+contactCalendarFamilySubtitle: "Family schedule"
+contactCalendarOpen: "Open calendar"
+contactQuickLinksTitle: "Contacts"
+contactQuickTelegramPersonal: "My Telegram"
+contactQuickProjects: "GitHub"
+contactQuickLinkedIn: "LinkedIn"
+contactQuickYouTubePersonal: "Personal YouTube"
+contactQuickInstagram: "Instagram"
+contactQuickBlogTitle: "Blog links"
+contactQuickBlogTelegram: "Resist, Invent & Projects"
+contactQuickBlogYouTube: "RIP YouTube"
 footerQuote: "Have a vision, aspire to be a leader, make some humor, Resist, Invent & Projects."
 backToMain: "Back to main page"
 metaDescription: "Nikita Muromtsev is a developer and technical manager about projects and open-source tools for automating routine and increasing awareness using Python and JavaScript."
