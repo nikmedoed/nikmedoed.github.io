@@ -261,8 +261,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const img = card.querySelector('img.cat-photo');
         if (!img) return;
         img.addEventListener('click', () => {
+            const target = card.dataset.profileUrl;
+            if (target) {
+                location.href = target;
+                return;
+            }
             const id = card.id.replace('cat-', '');
-            location.href = `gallery/?id=${id}`;
+            location.href = `${id.toLowerCase()}/`;
         });
     });
 

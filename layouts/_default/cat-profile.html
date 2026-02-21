@@ -1,0 +1,192 @@
+{{ define "main" }}
+{{ $lang := .Site.Language.Lang }}
+{{ $cat := index (where .Site.Data.cats "id" .Params.cat_id) 0 }}
+{{ if not $cat }}
+<section class="section">
+  <div class="container">
+    <p class="has-text-centered">Cat not found.</p>
+  </div>
+</section>
+{{ else }}
+{{ $location := "" }}
+{{ if $cat.location }}
+  {{ if (reflect.IsMap $cat.location) }}
+    {{ $location = index $cat.location $lang }}
+    {{ if not $location }}{{ $location = index $cat.location "ru" }}{{ end }}
+    {{ if not $location }}{{ $location = index $cat.location "en" }}{{ end }}
+  {{ else }}
+    {{ $location = $cat.location }}
+  {{ end }}
+{{ end }}
+{{ $cause := "" }}
+{{ if $cat.cause }}
+  {{ if (reflect.IsMap $cat.cause) }}
+    {{ $cause = index $cat.cause $lang }}
+    {{ if not $cause }}{{ $cause = index $cat.cause "ru" }}{{ end }}
+    {{ if not $cause }}{{ $cause = index $cat.cause "en" }}{{ end }}
+  {{ else }}
+    {{ $cause = $cat.cause }}
+  {{ end }}
+{{ end }}
+<section class="section cat-gallery">
+  <div class="container">
+    <div class="cat-links is-flex is-flex-wrap-wrap is-justify-content-center mb-4">
+      {{ $current := slice }}
+      {{ range .Site.Data.cats }}
+        {{ if not .end }}
+          {{ $current = $current | append . }}
+        {{ end }}
+      {{ end }}
+      {{ range sort $current "birth" "desc" }}
+        {{ $catURL := partial "cat-profile-url.html" (dict "id" .id) }}
+        <a class="cat-link" href="{{ $catURL }}">
+          <figure class="image is-48x48">
+            <img src="{{ if .avatar }}{{ .avatar }}{{ else }}{{ index .photos 0 }}{{ end }}" alt="{{ index .name $lang }}" class="is-rounded">
+          </figure>
+          <span>{{ index .name $lang }}</span>
+        </a>
+      {{ end }}
+    </div>
+    <div class="grid">
+      <div class="grid-sizer"></div>
+      <div class="grid-item">
+        <div class="card cat-card{{ if $location }} adopted{{ end }}" id="cat-{{ $cat.id }}" data-birth="{{ $cat.birth }}" {{ if $cat.end }}data-end="{{ $cat.end }}"{{ end }}>
+          <div class="card-content">
+            <div class="cat-card-header mb-2">
+              <div class="cat-card-zone-a">
+                <p class="title is-5 mb-0">{{ index $cat.name $lang }}</p>
+                <span class="icon cat-gender ml-2">
+                  <i class="fas {{ if eq $cat.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i>
+                </span>
+              </div>
+              <div class="cat-card-zone-b">
+                <span class="tag is-rounded is-hoverable cat-ster-tag {{ if $cat.sterilized }}is-success{{ else }}is-warning{{ end }}">
+                  {{ if $cat.sterilized }}{{ i18n "filterSterilized" }}{{ else }}{{ i18n "filterNotSterilized" }}{{ end }}
+                </span>
+                <div class="is-flex is-align-items-center ml-2">
+                  {{ if $cat.wild }}
+                  <span class="icon is-medium cat-flag mr-2" data-tooltip="{{ i18n "wildTooltip" }}" tabindex="0"><i class="fa-solid fa-explosion fa-lg"></i></span>
+                  {{ end }}
+                  {{ if $cat.wanderer }}
+                  <span class="icon is-medium cat-flag mr-2" data-tooltip="{{ i18n "wandererTooltip" }}" tabindex="0"><i class="fas fa-route fa-lg"></i></span>
+                  {{ end }}
+                  <p class="is-size-7 mb-0 cat-age"></p>
+                </div>
+              </div>
+            </div>
+
+            <p class="content mb-0">{{ index $cat.description $lang }}</p>
+
+            {{ if and $cat.end $location }}
+            <p class="content mb-0 mt-2">
+              <span class="has-text-weight-semibold">{{ i18n "catAdoptedLabel" }}</span> {{ $cat.end }} — {{ $location }}
+            </p>
+            {{ end }}
+
+            {{ if and $cat.end (not $location) }}
+            <p class="content mb-0 mt-1">
+              <span class="has-text-weight-semibold">{{ i18n "catDiedLabel" }}</span> {{ $cat.end }}
+            </p>
+            {{ end }}
+
+            {{ if and (not $location) $cause }}
+            <p class="content is-italic mb-0">{{ $cause }}</p>
+            {{ end }}
+
+            {{ if $cat.parents }}
+            <div class="mt-1">
+              <span class="has-text-weight-semibold">{{ i18n "parentsLabel" }}:</span>
+              {{ range $id := $cat.parents }}
+                {{ $p := index (where $.Site.Data.cats "id" $id) 0 }}
+                {{ if $p }}
+                {{ $parentURL := partial "cat-profile-url.html" (dict "id" $p.id) }}
+                <a class="tag is-light {{ if eq $p.gender "male" }}is-link{{ else }}is-danger{{ end }} cat-relative ml-1" href="{{ $parentURL }}">
+                  <span class="icon is-small mr-1"><i class="fas {{ if eq $p.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i></span>
+                  <span>{{ index $p.name $lang }}</span>
+                </a>
+                {{ end }}
+              {{ end }}
+            </div>
+            {{ end }}
+
+            {{ $children := where $.Site.Data.cats "parents" "intersect" (slice $cat.id) }}
+            {{ if $children }}
+            <div class="mt-1">
+              <span class="has-text-weight-semibold">{{ i18n "childrenLabel" }}:</span>
+              {{ range $child := $children }}
+              {{ $childURL := partial "cat-profile-url.html" (dict "id" $child.id) }}
+              <a class="tag is-light {{ if eq $child.gender "male" }}is-link{{ else }}is-danger{{ end }} cat-relative ml-1" href="{{ $childURL }}">
+                <span class="icon is-small mr-1"><i class="fas {{ if eq $child.gender "male" }}fa-mars has-text-link{{ else }}fa-venus has-text-danger{{ end }}"></i></span>
+                <span>{{ index $child.name $lang }}</span>
+              </a>
+              {{ end }}
+            </div>
+            {{ end }}
+
+            {{ $t := index $cat.treatment $lang }}
+            {{ if $t }}
+            <div class="tags bottom-tags mt-2">
+              {{ if (reflect.IsSlice $t) }}
+                {{ range $t }}
+                <span class="tag is-danger">{{ . }}</span>
+                {{ end }}
+              {{ else }}
+                <span class="tag is-danger">{{ $t }}</span>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+          {{ if and (not $cat.end) (not $cat.wild) (not $cat.wanderer) }}
+          <footer class="card-footer">
+            <button class="card-footer-item adopt-btn has-text-link" type="button" data-name="{{ index $cat.name $lang }}">{{ i18n "adoptButton" }}</button>
+          </footer>
+          {{ end }}
+        </div>
+      </div>
+      {{ range $idx, $photo := $cat.photos }}
+      <div class="grid-item">
+        <figure class="image">
+          <img src="{{ $photo }}" alt="{{ index $cat.name $lang }}" data-index="{{ $idx }}">
+        </figure>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<div id="email-modal" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <form id="contact-form" class="box contact-box">
+      <div class="field">
+        <label class="label has-text-white" for="email">{{ i18n "formYourEmail" }}</label>
+        <div class="control">
+          <input id="email" class="input" type="email" placeholder="{{ i18n "formPlaceholderEmail" }}">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label has-text-white" for="subject">{{ i18n "formSubject" }}</label>
+        <div class="control">
+          <input id="subject" class="input" type="text" placeholder="{{ i18n "formPlaceholderSubject" }}">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label has-text-white" for="message">{{ i18n "formMessage" }}</label>
+        <div class="control">
+          <textarea id="message" class="textarea" placeholder="{{ i18n "formPlaceholderMessage" }}"></textarea>
+        </div>
+      </div>
+      <div class="field mt-2">
+        <button id="send-btn" type="submit" class="button is-link is-fullwidth">{{ i18n "formSend" }}</button>
+      </div>
+    </form>
+  </div>
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="/js/cat-profile.js"></script>
+<script src="/js/cats.js"></script>
+{{ end }}
+{{ end }}

@@ -1,0 +1,43 @@
+{{ .EnableAllLanguages }}
+{{ $lang := .Site.Language.Lang }}
+
+{{ range $cat := .Site.Data.cats }}
+  {{ with $cat.id }}
+    {{ $id := printf "%v" . | strings.TrimSpace }}
+    {{ if $id }}
+      {{ $slug := replaceRE "[^a-z0-9_-]+" ($id | lower) "-" | strings.Trim "-" }}
+      {{ if not $slug }}
+        {{ $slug = $id | lower }}
+      {{ end }}
+
+      {{ $title := $id }}
+      {{ with $cat.name }}
+        {{ if reflect.IsMap . }}
+          {{ $title = index . $lang | default (index . "en") | default (index . "ru") | default $id }}
+        {{ else }}
+          {{ $title = printf "%v" . }}
+        {{ end }}
+      {{ end }}
+
+      {{ $description := $title }}
+      {{ with $cat.description }}
+        {{ if reflect.IsMap . }}
+          {{ $description = index . $lang | default (index . "en") | default (index . "ru") | default $title }}
+        {{ else }}
+          {{ $description = printf "%v" . }}
+        {{ end }}
+      {{ end }}
+
+      {{ $.AddPage (dict
+        "kind" "page"
+        "path" $slug
+        "title" $title
+        "layout" "cat-profile"
+        "params" (dict
+          "cat_id" $id
+          "description" $description
+        )
+      ) }}
+    {{ end }}
+  {{ end }}
+{{ end }}

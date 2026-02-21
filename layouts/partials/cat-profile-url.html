@@ -1,0 +1,8 @@
+{{- $id := .id -}}
+{{- $fallback := (printf "cats/%s/" $id) | relLangURL -}}
+{{- $page := index (where site.RegularPages "Params.cat_id" $id) 0 -}}
+{{- if $page -}}
+{{- $page.RelPermalink -}}
+{{- else -}}
+{{- $fallback -}}
+{{- end -}}

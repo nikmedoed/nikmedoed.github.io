@@ -3,14 +3,13 @@
   <div class="container">
     <div class="cat-links is-flex is-flex-wrap-wrap is-justify-content-center mb-4">
       {{ $lang := .Site.Language.Lang }}
-      {{ $current := slice }}
+      {{ $all := slice }}
       {{ range .Site.Data.cats }}
-        {{ if not .end }}
-          {{ $current = $current | append . }}
-        {{ end }}
+        {{ $all = $all | append . }}
       {{ end }}
-      {{ range sort $current "birth" "desc" }}
-        <a class="cat-link" href="?id={{ .id }}">
+      {{ range sort $all "birth" "desc" }}
+        {{ $catURL := partial "cat-profile-url.html" (dict "id" .id) }}
+        <a class="cat-link" href="{{ $catURL }}">
           <figure class="image is-48x48">
             <img src="{{ if .avatar }}{{ .avatar }}{{ else }}{{ index .photos 0 }}{{ end }}" alt="{{ index .name $lang }}" class="is-rounded">
           </figure>
@@ -18,49 +17,16 @@
         </a>
       {{ end }}
     </div>
-    <div class="grid"></div>
   </div>
 </section>
 
-<div id="email-modal" class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <form id="contact-form" class="box contact-box">
-      <div class="field">
-        <label class="label has-text-white" for="email">{{ i18n "formYourEmail" }}</label>
-        <div class="control">
-          <input id="email" class="input" type="email" placeholder="{{ i18n "formPlaceholderEmail" }}">
-        </div>
-      </div>
-      <div class="field">
-        <label class="label has-text-white" for="subject">{{ i18n "formSubject" }}</label>
-        <div class="control">
-          <input id="subject" class="input" type="text" placeholder="{{ i18n "formPlaceholderSubject" }}">
-        </div>
-      </div>
-      <div class="field">
-        <label class="label has-text-white" for="message">{{ i18n "formMessage" }}</label>
-        <div class="control">
-          <textarea id="message" class="textarea" placeholder="{{ i18n "formPlaceholderMessage" }}"></textarea>
-        </div>
-      </div>
-      <div class="field mt-2">
-        <button id="send-btn" type="submit" class="button is-link is-fullwidth">{{ i18n "formSend" }}</button>
-      </div>
-    </form>
-  </div>
-  <button class="modal-close is-large" aria-label="close"></button>
-</div>
-
 <script>
-{{ $cats := dict }}
-{{ range .Site.Data.cats }}
-  {{ $cats = merge $cats (dict .id .) }}
-{{ end }}
-window.cats = {{ $cats | jsonify | safeJS }};
+document.addEventListener('DOMContentLoaded', () => {
+  const id = new URLSearchParams(window.location.search).get('id');
+  if (!id) return;
+  const sanitized = id.replace(/[^A-Za-z0-9_-]/g, '');
+  if (!sanitized) return;
+  window.location.replace('{{ "cats/" | relLangURL }}' + encodeURIComponent(sanitized.toLowerCase()) + '/');
+});
 </script>
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-<script src="/js/cat-gallery.js"></script>
-<script src="/js/cats.js"></script>
 {{ end }}

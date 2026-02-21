@@ -18,6 +18,12 @@ The `experience` page summarises my work history and links back to the main page
 
 To build the site locally run `hugo` and open `public/index.html`.
 
+## Cat profile pages (SEO)
+
+Cat profile pages are generated natively by Hugo from `data/cats.yaml` via
+`content/cats/_content.gotmpl`, so each cat has an indexable URL like `/cats/<id>/`
+without external generators.
+
 Feel free to explore the code or get in touch if you have questions!
 
 ## Contact form setup
