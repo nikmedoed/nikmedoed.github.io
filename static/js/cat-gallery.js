@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const sterText = cat.sterilized ? (lang === 'ru' ? 'Стерилизован' : 'Sterilized') : (lang === 'ru' ? 'Не стерилизован' : 'Not sterilized');
     const sterClass = cat.sterilized ? 'is-success' : 'is-warning';
     const adoptedLabel = lang === 'ru' ? 'Забрали:' : 'Adopted:';
-    const diedLabel = lang === 'ru' ? 'Умер:' : 'Died:';
+    const diedLabel = lang === 'ru' ? 'Смерть:' : 'Death:';
     const locationText = (() => {
       if (!cat.location) return '';
       if (typeof cat.location === 'string') return cat.location;

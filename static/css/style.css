@@ -218,6 +218,9 @@ html[data-theme='light'] .cat-card.adopted .card-footer {
 .cat-card .bottom-tags {
   margin-top: auto;
 }
+.cat-card .bottom-tags:not(:last-child) {
+  margin-bottom: 0.25rem;
+}
 .cat-card .card-image .image {
   overflow: hidden;
 }

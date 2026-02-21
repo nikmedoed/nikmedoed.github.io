@@ -324,9 +324,11 @@
   treatment:
     en: Eye issues
     ru: Проблемы с глазом
-  end: ""
+  end: 2025-10-21
   location: ""
-  cause: ""
+  cause:
+    en: "Disappeared, stopped coming to eat."
+    ru: "Исчезла, перестала приходить есть."
 
 - id: mamashka
   name:
@@ -393,7 +395,7 @@
     en: Incredibly affectionate tail, follows on your heels and purrs nonstop.
     ru: Невероятно ласковый хвостик. Бегает по пятам и мурчит без остановки.
   birth: 2025-06
-  sterilized: false
+  sterilized: true
   wild: false
   wanderer: false
   parents: []
@@ -439,7 +441,7 @@
     en: Fast, playful and very affectionate. Even in the toughest situations he keeps fighting for life.
     ru: Быстрый, игривый и очень ласковый. Даже в самых сложных ситуациях продолжает бороться за жизнь.
   birth: 2025-06
-  sterilized: false
+  sterilized: true
   wild: false
   wanderer: false
   parents: []
@@ -549,8 +551,8 @@
 # New kittens from Mamashka (litter 2025-05-25)
 - id: rysik-1
   name:
-    en: Rysik 1
-    ru: "Рысик 1"
+    en: Barsik
+    ru: "Барсик"
   gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1757601259/20250910-182323-IMG_8860-1a4765d8.jpg
   photos:
@@ -575,7 +577,7 @@
     en: "He is the boldest and most active of the trio, always the first to speak up and the first to leap into our arms."
     ru: "Самый смелый и активный из троицы, громче всех заявляет о себе и первым полез на руки."
   birth: 2025-04-25
-  sterilized: false
+  sterilized: true
   wild: false
   wanderer: false
   parents:
@@ -583,14 +585,16 @@
   treatment:
     en: []
     ru: []
-  end: ""
-  location: ""
+  end: 2026-02-17
+  location:
+    en: "Yerevan, Armenia"
+    ru: "Ереван, Армения"
   cause: ""
 
 - id: rysik-2
   name:
-    en: Rysik 2
-    ru: "Рысик 2"
+    en: Ryzhik
+    ru: "Рыжик"
   gender: female
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1757601260/20250910-185714-IMG_9050-8466897f.jpg
   photos:
@@ -615,7 +619,7 @@
     en: "The gingery Rysik of the trio: a cautious at first, yet affectionate and purring like a little engine."
     ru: "Самая рыжая из рысиков: немного настороженная, но ласковая и мурлычет как моторчик."
   birth: 2025-04-25
-  sterilized: false
+  sterilized: true
   wild: false
   wanderer: false
   parents:
@@ -629,8 +633,8 @@
 
 - id: rysik-3
   name:
-    en: Rysik 3
-    ru: "Рысик 3"
+    en: Kabanchik
+    ru: "Кабанчик"
   gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1758812702/20250923_182543-1260459d.jpg
   photos:
@@ -647,7 +651,7 @@
     en: "The last of the Rysiks to give in to cuddles. The fluffiest and chubbiest in the family, already close to his mom in size for all his young age."
     ru: "Последним сдался рукам. Самый пушистый и упитанный в семье: несмотря на возраст, уже почти догнал маму по размерам."
   birth: 2025-04-25
-  sterilized: false
+  sterilized: true
   wild: false
   wanderer: false
   parents:
