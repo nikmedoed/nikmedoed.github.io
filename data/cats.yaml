@@ -392,8 +392,8 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716353/20250812_163749-12feca9e.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1755716358/20250812_164246-e193e845.jpg
   description:
-    en: Incredibly affectionate tail, follows on your heels and purrs nonstop.
-    ru: Невероятно ласковый хвостик. Бегает по пятам и мурчит без остановки.
+    en: Playful and brave, she has successfully completed her "home life course" and now teaches other kittens the ropes. Always together with Charlie, like an inseparable duo. Gets along wonderfully with other cats.
+    ru: Игривая, смелая, прошла курс "домашней жизни" и теперь обучает ему других котят. Всегда вместе с Чарли, как "шерочка с машерочкой". Отлично ладит с другими кошками.
   birth: 2025-06
   sterilized: true
   wild: false
@@ -616,8 +616,8 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757601258/20250910-185718-IMG_9054-5a38f35f.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1757607777/20250910-185714-IMG_9050-dc88428e.jpg
   description:
-    en: "The gingery Rysik of the trio: a cautious at first, yet affectionate and purring like a little engine."
-    ru: "Самая рыжая из рысиков: немного настороженная, но ласковая и мурлычет как моторчик."
+    en: "Miss Charm: affectionate, clever, and full of life. Purrs like a little engine. Very people-oriented, yet respectful of personal boundaries."
+    ru: "Мисс очарование: ласковая, умная и очень живая. Мурчит как моторчик. Очень контактная, но уважает личные границы."
   birth: 2025-04-25
   sterilized: true
   wild: false
@@ -634,7 +634,7 @@
 - id: rysik-3
   name:
     en: Kabanchik
-    ru: "Кабанчик"
+    ru: "Кабан"
   gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1758812702/20250923_182543-1260459d.jpg
   photos:
@@ -648,14 +648,58 @@
     - https://res.cloudinary.com/nikmedoed/image/upload/v1758812698/20250923_183051-f197077f.jpg
     - https://res.cloudinary.com/nikmedoed/image/upload/v1758812699/20250923_183058-68718209.jpg
   description:
-    en: "The last of the Rysiks to give in to cuddles. The fluffiest and chubbiest in the family, already close to his mom in size for all his young age."
-    ru: "Последним сдался рукам. Самый пушистый и упитанный в семье: несмотря на возраст, уже почти догнал маму по размерам."
+    en: "The fluffiest and most well-fed in the family, already bigger than his mom despite his young age. Took his time to trust, but once he did, he turned into the calmest, softest, and coziest companion. A true Norwegian Forest Cat at heart."
+    ru: "Самый пушистый и упитанный в семье: несмотря на возраст, уже перегнал маму по размерам. Долго держался, но сдался рукам - теперь спокойный, мягкий и невероятно уютный кот. Настоящий норвежский лесной кот."
   birth: 2025-04-25
   sterilized: true
   wild: false
   wanderer: false
   parents:
     - mamashka
+  treatment:
+    en: []
+    ru: []
+  end: ""
+  location: ""
+  cause: ""
+
+- id: keks
+  name:
+    en: Keks
+    ru: "Кекс"
+  gender: male
+  avatar: ""
+  photos: []
+  description:
+    en: He joined our kittens during the winter. Cautious at first, but once he felt safe, he turned into an incredibly affectionate and grateful boy. A true gentleman. There's a hint of British heritage in him, with a dense coat and a serious little face.
+    ru: "Прибился к нашим котятам зимой. Сначала осторожный, потом - супер ласковый и благодарный. Настоящий джентльмен. Есть ощущение, что в роду были британцы: плотная шерсть и серьезная мордочка."
+  birth: 2025-05-15
+  sterilized: false
+  wild: false
+  wanderer: true
+  parents: []
+  treatment:
+    en: []
+    ru: []
+  end: ""
+  location: ""
+  cause: ""
+
+- id: sima
+  name:
+    en: Sima
+    ru: "Сима"
+  gender: female
+  avatar: ""
+  photos: []
+  description:
+    en: She was abandoned in our building during a freezing -12C winter night. Despite that, she adjusted quickly and proved to be incredibly resilient. Gets along with everyone, handles veterinary procedures bravely, and is playful, lively, and very people-oriented.
+    ru: Подкинута в мороз -12C. Быстро адаптируется, легко находит общий язык со всеми, стойко переносит ветеринарные процедуры. Игривая, живая и контактная.
+  birth: 2025-06-10
+  sterilized: false
+  wild: false
+  wanderer: true
+  parents: []
   treatment:
     en: []
     ru: []

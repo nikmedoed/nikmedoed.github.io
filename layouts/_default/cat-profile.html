@@ -39,9 +39,15 @@
       {{ end }}
       {{ range sort $current "birth" "desc" }}
         {{ $catURL := partial "cat-profile-url.html" (dict "id" .id) }}
+        {{ $photo := "/media/cat-placeholder.svg" }}
+        {{ if .avatar }}
+          {{ $photo = .avatar }}
+        {{ else if gt (len .photos) 0 }}
+          {{ $photo = index .photos 0 }}
+        {{ end }}
         <a class="cat-link" href="{{ $catURL }}">
           <figure class="image is-48x48">
-            <img src="{{ if .avatar }}{{ .avatar }}{{ else }}{{ index .photos 0 }}{{ end }}" alt="{{ index .name $lang }}" class="is-rounded">
+            <img src="{{ $photo }}" alt="{{ index .name $lang }}" class="is-rounded">
           </figure>
           <span>{{ index .name $lang }}</span>
         </a>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 533" role="img" aria-label="No photo">
+  <rect width="800" height="533" fill="#f2efe8"/>
+  <circle cx="400" cy="250" r="120" fill="#d4cfc3"/>
+  <circle cx="320" cy="170" r="42" fill="#d4cfc3"/>
+  <circle cx="480" cy="170" r="42" fill="#d4cfc3"/>
+  <circle cx="360" cy="250" r="12" fill="#8a7f6d"/>
+  <circle cx="440" cy="250" r="12" fill="#8a7f6d"/>
+  <path d="M390 286c7 6 13 6 20 0" stroke="#8a7f6d" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <text x="400" y="430" text-anchor="middle" font-family="Verdana, sans-serif" font-size="34" fill="#8a7f6d">No photo yet</text>
+</svg>
