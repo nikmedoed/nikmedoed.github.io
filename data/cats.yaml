@@ -706,3 +706,25 @@
   end: ""
   location: ""
   cause: ""
+
+- id: pribludysh
+  name:
+    en: Pribludysh
+    ru: "Приблудышь"
+  gender: male
+  avatar: ""
+  photos: []
+  description:
+    en: Timid boy who came to our yard on his own. He never asks for food directly, but quietly eats what is left after the other cats.
+    ru: Пугливый, сам прибежал в наш двор, никогда напрямую еду не просит, но ест, что остается после других.
+  birth: 2025-04-20
+  sterilized: false
+  wild: true
+  wanderer: true
+  parents: []
+  treatment:
+    en: []
+    ru: []
+  end: ""
+  location: ""
+  cause: ""
