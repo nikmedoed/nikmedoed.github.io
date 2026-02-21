@@ -674,9 +674,9 @@
     en: He joined our kittens during the winter. Cautious at first, but once he felt safe, he turned into an incredibly affectionate and grateful boy. A true gentleman. There's a hint of British heritage in him, with a dense coat and a serious little face.
     ru: "Прибился к нашим котятам зимой. Сначала осторожный, потом - супер ласковый и благодарный. Настоящий джентльмен. Есть ощущение, что в роду были британцы: плотная шерсть и серьезная мордочка."
   birth: 2025-05-15
-  sterilized: false
+  sterilized: true
   wild: false
-  wanderer: true
+  wanderer: false
   parents: []
   treatment:
     en: []
@@ -696,9 +696,9 @@
     en: She was abandoned in our building during a freezing -12C winter night. Despite that, she adjusted quickly and proved to be incredibly resilient. Gets along with everyone, handles veterinary procedures bravely, and is playful, lively, and very people-oriented.
     ru: Подкинута в мороз -12C. Быстро адаптируется, легко находит общий язык со всеми, стойко переносит ветеринарные процедуры. Игривая, живая и контактная.
   birth: 2025-06-10
-  sterilized: false
+  sterilized: true
   wild: false
-  wanderer: true
+  wanderer: false
   parents: []
   treatment:
     en: []

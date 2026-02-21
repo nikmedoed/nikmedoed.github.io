@@ -4,10 +4,10 @@
 {{ $catURL := partial "cat-profile-url.html" (dict "id" $cat.id) }}
 {{ $fallbackPhoto := "/media/cat-placeholder.svg" }}
 {{ $photo := $fallbackPhoto }}
-{{ if $cat.avatar }}
-  {{ $photo = $cat.avatar }}
-{{ else if gt (len $cat.photos) 0 }}
+{{ if gt (len $cat.photos) 0 }}
   {{ $photo = index $cat.photos 0 }}
+{{ else if $cat.avatar }}
+  {{ $photo = $cat.avatar }}
 {{ end }}
 {{ $location := "" }}
 {{ if $cat.location }}
