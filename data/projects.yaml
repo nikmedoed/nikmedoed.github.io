@@ -256,3 +256,18 @@
     - Tauri
     - JavaScript
     - Svelte
+- id: notion-headless
+  repo: https://github.com/nikmedoed/notion_headless
+  icon: fas fa-globe
+  media: notion-headless.svg
+  title: Notion Headless
+  subtitle:
+    en: Notion content as static HTML
+    ru: Notion-контент как статический HTML
+  description:
+    en: Watches selected Notion databases and renders their content into static HTML with local templates. Serves cached pages instantly and refreshes data in the background with minimal API calls.
+    ru: Следит за выбранными базами Notion и рендерит read-only страницы в статический HTML через локальные шаблоны. Отдаёт кеш мгновенно и обновляет контент в фоне, экономя запросы к API.
+  tags:
+    - Python
+    - FastAPI 
+    - Notion API
