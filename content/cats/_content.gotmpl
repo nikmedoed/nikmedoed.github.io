@@ -28,6 +28,28 @@
         {{ end }}
       {{ end }}
 
+      {{ $socialImage := "/media/cat-placeholder.svg" }}
+      {{ if and $cat.photos (gt (len $cat.photos) 0) }}
+        {{ $socialImage = index $cat.photos 0 }}
+      {{ else if $cat.avatar }}
+        {{ $socialImage = $cat.avatar }}
+      {{ end }}
+      {{ $isAdoptable := and (not $cat.end) (not $cat.wild) (not $cat.wanderer) }}
+      {{ $socialTitle := printf "%s | Nansen Street Cats" $title }}
+      {{ $socialDescription := printf "Meet %s from Nansen Street cats. Support rescue, treatment, and safe homes for street cats." $title }}
+      {{ if eq $lang "ru" }}
+        {{ $socialTitle = printf "%s | Коты улицы Нансена" $title }}
+        {{ $socialDescription = printf "Познакомьтесь с котиком %s с улицы Нансена. Помогите с лечением, кормом и поиском безопасного дома." $title }}
+      {{ end }}
+      {{ if $isAdoptable }}
+        {{ $socialTitle = printf "Adopt %s | Nansen Street Cats" $title }}
+        {{ $socialDescription = printf "Meet %s from Nansen Street cats and give this cat a home. Adoption and support are open." $title }}
+        {{ if eq $lang "ru" }}
+          {{ $socialTitle = printf "Приютите %s | Коты улицы Нансена" $title }}
+          {{ $socialDescription = printf "Познакомьтесь с котиком %s с улицы Нансена и подарите ему дом. Можно приютить или поддержать сбор на корм и лечение." $title }}
+        {{ end }}
+      {{ end }}
+
       {{ $.AddPage (dict
         "kind" "page"
         "path" $slug
@@ -36,6 +58,9 @@
         "params" (dict
           "cat_id" $id
           "description" $description
+          "og_image" $socialImage
+          "social_title" $socialTitle
+          "social_description" $socialDescription
         )
       ) }}
     {{ end }}
