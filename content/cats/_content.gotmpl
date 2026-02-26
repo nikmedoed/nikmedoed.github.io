@@ -36,17 +36,15 @@
       {{ end }}
       {{ $isAdoptable := and (not $cat.end) (not $cat.wild) (not $cat.wanderer) }}
       {{ $socialTitle := printf "%s | Nansen Street Cats" $title }}
-      {{ $socialDescription := printf "Meet %s from Nansen Street cats. Support rescue, treatment, and safe homes for street cats." $title }}
+      {{ $socialDescription := $description }}
       {{ if eq $lang "ru" }}
         {{ $socialTitle = printf "%s | Коты улицы Нансена" $title }}
-        {{ $socialDescription = printf "Познакомьтесь с котиком %s с улицы Нансена. Помогите с лечением, кормом и поиском безопасного дома." $title }}
+        {{ $socialDescription = $description }}
       {{ end }}
       {{ if $isAdoptable }}
         {{ $socialTitle = printf "Adopt %s | Nansen Street Cats" $title }}
-        {{ $socialDescription = printf "Meet %s from Nansen Street cats and give this cat a home. Adoption and support are open." $title }}
         {{ if eq $lang "ru" }}
           {{ $socialTitle = printf "Приютите %s | Коты улицы Нансена" $title }}
-          {{ $socialDescription = printf "Познакомьтесь с котиком %s с улицы Нансена и подарите ему дом. Можно приютить или поддержать сбор на корм и лечение." $title }}
         {{ end }}
       {{ end }}
 

@@ -689,10 +689,10 @@
   treatment:
     en: []
     ru: []
-  end: 2026-02-17
-  location:
-    en: "Yerevan, Armenia"
-    ru: "Ереван, Армения"
+  # end: 2026-02-17
+  # location:
+  #   en: "Yerevan, Armenia"
+  #   ru: "Ереван, Армения"
   cause: ""
 
 - id: rysik-2
