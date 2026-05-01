@@ -93,6 +93,51 @@
     - Whisper
     - pynput
     - PyAudio
+- id: notion-headless
+  repo: https://github.com/nikmedoed/notion_headless
+  icon: fas fa-globe
+  media: notion-headless.svg
+  title: Notion Headless
+  subtitle:
+    en: Notion content as static HTML
+    ru: Notion-контент как статический HTML
+  description:
+    en: Watches selected Notion databases and renders their content into static HTML with local templates. Serves cached pages instantly and refreshes data in the background with minimal API calls.
+    ru: Следит за выбранными базами Notion и рендерит read-only страницы в статический HTML через локальные шаблоны. Отдаёт кеш мгновенно и обновляет контент в фоне, экономя запросы к API.
+  tags:
+    - Python
+    - FastAPI
+    - Notion API
+- id: homer-or-not
+  repo: https://github.com/nikmedoed/homer_or_not
+  icon: fas fa-home
+  media: logo.svg
+  title: Homer or Not
+  subtitle:
+    en: New tab page with Homer, news and multisearch
+    ru: Новая вкладка с Homer, новостями и мультипоиском
+  description:
+    en: Chrome new tab page with configurable search engines, quick links, visited-site columns, news feeds, and Homer tiles that appear at home without breaking the page away from the local network.
+    ru: Новая вкладка Chrome с настраиваемыми поисковиками, быстрыми ссылками, колонками посещённых сайтов, новостными лентами и плитками Homer, которые работают дома и не ломают страницу вне локальной сети.
+  tags:
+    - JavaScript
+    - WebExtension
+    - Homer
+- id: owb-tools
+  repo: https://github.com/nikmedoed/owb-extension
+  icon: fas fa-shopping-cart
+  media: owb-tools.png
+  title: OWB Tools
+  subtitle:
+    en: Marketplace export and price history
+    ru: Экспорт карточек и история цен
+  description:
+    en: Chrome extension for Ozon, Wildberries, and AliExpress. Exports many product cards at once for analysis, monitors prices with change charts, and can sync data through a local Python server.
+    ru: Расширение Chrome для Ozon, Wildberries и AliExpress. Выгружает много карточек товаров за раз для анализа, мониторит цены с графиками изменений и синхронизирует данные через локальный Python-сервер.
+  tags:
+    - JavaScript
+    - WebExtension
+    - Python
 - id: telegram-important-notifies
   repo: https://github.com/nikmedoed/Telegram-important-notifies
   icon: fas fa-paper-plane
@@ -256,18 +301,3 @@
     - Tauri
     - JavaScript
     - Svelte
-- id: notion-headless
-  repo: https://github.com/nikmedoed/notion_headless
-  icon: fas fa-globe
-  media: notion-headless.svg
-  title: Notion Headless
-  subtitle:
-    en: Notion content as static HTML
-    ru: Notion-контент как статический HTML
-  description:
-    en: Watches selected Notion databases and renders their content into static HTML with local templates. Serves cached pages instantly and refreshes data in the background with minimal API calls.
-    ru: Следит за выбранными базами Notion и рендерит read-only страницы в статический HTML через локальные шаблоны. Отдаёт кеш мгновенно и обновляет контент в фоне, экономя запросы к API.
-  tags:
-    - Python
-    - FastAPI 
-    - Notion API
