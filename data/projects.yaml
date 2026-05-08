@@ -63,17 +63,17 @@
     - pystray
     - pynput
     - Tkinter
-- id: easy-video-compress
-  repo: https://github.com/nikmedoed/easy-video-compress
+- id: easy-media-compress
+  repo: https://github.com/nikmedoed/easy-media-compress
   icon: fas fa-video
   media: compress.mp4
   title: Easy Video Compress
   subtitle:
-    en: Efficient video compression for the web
-    ru: Эффективное сжатие видео для интернета
+    en: Efficient video and photo compression for the web
+    ru: Эффективное сжатие видео и фото для интернета
   description:
-    en: FFmpeg wrapper with optimized web presets, progress bars, Windows shell integration, and batch processing interface. Supports compressing clips to under 5 MB for embedding in Notion.
-    ru: Обёртка FFmpeg с эффективными настройками сжатия для интернета, индикаторами прогресса, интеграцией в оболочку Windows и интерфейсом для массовой обработки. Доступно сжатие до 5 МБ для вставки в Notion.
+    en: Utility for batch video and photo processing with web presets, progress bars, and Windows shell integration. Compresses clips for Notion and converts photos from different formats to JPEG.
+    ru: Утилита для массовой обработки видео и фото с настройками для веба, прогресс-барами и интеграцией в оболочку Windows. Сжимает видео для Notion и конвертирует фотографии из разных форматов в JPEG.
   tags:
     - Python
     - FFmpeg
