@@ -157,8 +157,10 @@
   treatment:
     en: ""
     ru: ""
-  end: ""
-  location: ""
+  end: 2026-05-28
+  location:
+    en: Yerevan, Armenia
+    ru: "Ереван, Армения"
   cause:
     en: ""
     ru: ""
@@ -205,8 +207,10 @@
   treatment:
     en: ""
     ru: ""
-  end: ""
-  location: ""
+  end: 2026-05-28
+  location:
+    en: Yerevan, Armenia
+    ru: "Ереван, Армения"
   cause: ""
 
 - id: Mature
@@ -248,8 +252,10 @@
   treatment:
     en: ""
     ru: ""
-  end: ""
-  location: ""
+  end: 2026-05-28
+  location:
+    en: Yerevan, Armenia
+    ru: "Ереван, Армения"
   cause: ""
 
 - id: tigra
