@@ -813,8 +813,8 @@
 
 - id: keks
   name:
-    en: Keks
-    ru: "Кекс"
+    en: Martiros
+    ru: "Мартирос"
   gender: male
   avatar: https://res.cloudinary.com/nikmedoed/image/upload/v1772055512/20260220-131815-IMG_0148-4930f24f.jpg
   photos:
@@ -843,10 +843,12 @@
   wanderer: false
   parents: []
   treatment:
-    en: []
-    ru: []
-  end: ""
-  location: ""
+    en: "Bitten on the rear, FIV"
+    ru: "Укушен за попу, ВИК"
+  end: 2026-07-30
+  location:
+    en: Moscow, Russia
+    ru: "Москва, Россия"
   cause: ""
 
 - id: sima
